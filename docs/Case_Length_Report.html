@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Case Length - PhilaDAO Data Dashboard</title>
+
+<script src="assets/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="assets/navigation-1.1/tabsets.js"></script>
+<script src="assets/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="assets/plotly-binding-4.9.0/plotly.js"></script>
+<script src="assets/typedarray-0.1/typedarray.min.js"></script>
+<link href="assets/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="assets/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="assets/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="assets/plotly-main-1.46.1/plotly-latest.min.js"></script>
+<script src="assets/kePrint-0.0.1/kePrint.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141263577-1');
+</script>
+<script type="text/javascript" src="./assets/maps/dao-dashboard-mapmaker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+<script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
+ <script type='text/javascript' src='./assets/maps/leaflet-choropleth/choropleth.js'></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
+<script src="https://use.fontawesome.com/42c4092025.js"></script>
+<link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<nav class="navbar row" role="navigation">
+  <div class="container-fluid">
+    <div class="row dao_header vertical-align">
+      <div class="col-sm-12 col-md-3 text-sm-center "><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
+      <div class="col-sm-12 col-md-6 col-md-offset-3 text-md-right text-sm-center dao_header_title">Public Data Dashboard</div>
+    </div>
+    <div class="dao_navbar">
+      <div class="navbar-header navbar-default dao-hamburger">
+        <button type="button" class="navbar-toggle dao-hamburger collapsed" data-toggle="collapse" data-target="#dao-collapse-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse dao-menu" id="dao-collapse-navbar">
+        <ul class="dao-nav-menu nav navbar-nav dao-menu btn-group">
+          <li class="dao-nav-menu"><a href="index.html" class="btn btn-dao-menu">Home</a></li>
+          <li class="dropdown dao-nav-menu">
+            <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+            <ul class="dropdown-menu dao_menu">
+              <li><a href="Incidents_Report.html">Incidents</a></li>
+              <li><a href="Arrest_Report.html">Arrests</a></li>
+              <li><a href="Charge_Report.html">Charges</a></li>
+              <li><a href="Bail_Report.html">Bail</a></li>
+              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+              <li><a href="Case_Length_Report.html">Case Length</a></li>
+              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+            </ul>
+          </li>
+          <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
+          <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
+          <li class="dropdown dao-nav-menu">
+            <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+            <ul class="dropdown-menu dao_menu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="definitions.html">Definitions</a></li>
+              <li><a href="limitations.html">Limitations</a></li>
+              <li><a href="howto.html">How to Use This Site</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="rmd-container-fluid rmd-container">
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Case Length - PhilaDAO Data Dashboard</h1>
+
+</div>
+
+
+<div class="row dao_report_title">
+<div class="col-md-6 col-xs-6 text-right">
+<h1 class="dao_report_title_text">
+Case Length
+</h1>
+<h4 class="dao_report_title_text">
+Year to Date Through 10/01/2019
+</h4>
+<div>
+<a class="dao_report_body dao_report_body_emphasis" href="definitions.html">Definitions</a> | <a class="dao_report_body dao_report_body_emphasis" href="limitations.html">Limitations</a>
+</div>
+</div>
+<div class="col-md-5 col-xs-5 dao_report_description dao_report_body">
+<p>Case Length is a measure of the number of days between arrest and resolution in a case. It reflects the efficiency of a criminal justice system. Faster case resolution can be a deterrent to crime; it also allows victims and the accused to move on with their lives more quickly.</p>
+</div>
+</div>
+<div class="row dao_key_numbers">
+<div class="col-print-2 col-xs-6 col-sm-2 col-print-offset-2 col-sm-offset-2">
+<p class="dao_key_number_value dao_metric">
+187 days
+</p>
+<h4 class="dao_key_number_text">
+to Complete
+<h4 class="dao_key_numbers_emphasis">
+Agg. Assault/Gun
+</h4>
+Cases
+</h4>
+</div>
+<div class="col-print-2 col-xs-6 col-sm-2">
+<p class="dao_key_number_value dao_metric">
+471 days
+</p>
+<h4 class="dao_key_number_text">
+to Complete
+<h4 class="dao_key_numbers_emphasis">
+Homicide
+</h4>
+Cases
+</h4>
+</div>
+<div class="col-print-2 col-xs-6 col-sm-2">
+<p class="dao_key_number_value dao_metric">
+32,181
+</p>
+<h4 class="dao_key_number_text">
+<h4 class="dao_key_numbers_emphasis">
+Cases Currently Open
+</h4>
+</h4>
+</div>
+<div class="col-print-2 col-xs-6 col-sm-2">
+<p class="dao_key_number_value dao_metric">
+14,581
+</p>
+<h4 class="dao_key_number_text">
+<h4 class="dao_key_numbers_emphasis">
+Open Cases Initiated Prior to 2019
+</h4>
+</h4>
+</div>
+</div>
+<div id="section" class="section level1 tabset tabset-fade tab-font">
+<h1></h1>
+<div id="all-offenses" class="section level2">
+<h2>All Offenses</h2>
+<div class="row">
+<div class="col-print-6 col-sm-6 dao_visuals">
+<div id="htmlwidget-01e825aa63a7115fd252" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-01e825aa63a7115fd252">{"x":{"visdat":{"35a815f66f50":["function () ","plotlyVisDat"]},"cur_data":"35a815f66f50","attrs":{"35a815f66f50":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"35a815f66f50.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"Median Days to Disposition","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2019-10-01"}],"annotations":[{"text":"Source: DAO Analysis of criminal justice data. Current as of 10/01/2019.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01"],"y":[155,166,167,178,174,155,150,141.5,154,155,167,153,170,167,173,171,160,166,140,147,143,143,152,152.5,140,154,167,186,172,155,145.5,146,161,168,171,167,157,157,170,165,173,154,143,136,149,151,152,148,163,152,196,174,187,183,170,172,183,161.5,166.5,170,166,171,168,168,170,160,160,164],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 155 days","February 2014: 166 days","March 2014: 167 days","April 2014: 178 days","May 2014: 174 days","June 2014: 155 days","July 2014: 150 days","August 2014: 141.5 days","September 2014: 154 days","October 2014: 155 days","November 2014: 167 days","December 2014: 153 days","January 2015: 170 days","February 2015: 167 days","March 2015: 173 days","April 2015: 171 days","May 2015: 160 days","June 2015: 166 days","July 2015: 140 days","August 2015: 147 days","September 2015: 143 days","October 2015: 143 days","November 2015: 152 days","December 2015: 152.5 days","January 2016: 140 days","February 2016: 154 days","March 2016: 167 days","April 2016: 186 days","May 2016: 172 days","June 2016: 155 days","July 2016: 145.5 days","August 2016: 146 days","September 2016: 161 days","October 2016: 168 days","November 2016: 171 days","December 2016: 167 days","January 2017: 157 days","February 2017: 157 days","March 2017: 170 days","April 2017: 165 days","May 2017: 173 days","June 2017: 154 days","July 2017: 143 days","August 2017: 136 days","September 2017: 149 days","October 2017: 151 days","November 2017: 152 days","December 2017: 148 days","January 2018: 163 days","February 2018: 152 days","March 2018: 196 days","April 2018: 174 days","May 2018: 187 days","June 2018: 183 days","July 2018: 170 days","August 2018: 172 days","September 2018: 183 days","October 2018: 161.5 days","November 2018: 166.5 days","December 2018: 170 days","January 2019: 166 days","February 2019: 171 days","March 2019: 168 days","April 2019: 168 days","May 2019: 170 days","June 2019: 160 days","July 2019: 160 days","August 2019: 164 days"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01"],"y":[163.53512527271,163.21477044583,162.923131690998,162.58523828087,162.230883982768,161.83068016524,161.419471989048,160.979564992433,160.53429909741,160.032296066213,159.423026520681,158.832674891468,158.312643524114,157.843368088046,157.403859889333,156.947728855724,156.584080805638,156.136839275362,155.549318612763,154.91952582127,154.406096805665,154.152773876106,154.068077503758,154.040219071221,154.126225699743,154.388757534569,155.32876370254,157.154901233831,159.006809229019,160.243846299241,161.127044683791,162.312554534719,163.3305664518,163.732709375975,163.112864260062,161.712544775548,159.960794138195,158.43025544683,157.684421586602,156.995804229436,155.99913671337,155.155329176758,155.023616806266,155.620929578318,156.528259329946,157.53650018399,158.542370622557,160.115963053478,162.602109913105,165.111817793499,166.683652816369,167.973491606918,169.381976904985,170.774582154858,171.842807641488,172.429442821731,172.627503131657,172.673945603634,172.49025999098,172.010181444252,171.222048218936,170.200528123993,169.065063091803,167.558831238495,165.843258011978,163.812325115014,161.608847656414,159.09824107201],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="col-print-6 col-sm-6 dao_visuals">
+<h2>
+Yearly Median Days to Disposition by Police District
+</h2>
+<div id="allcrime" class="mapframe">
+
+</div>
+<script>generateReportMap('allcrime', [{"dc_district":"01","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":143,"Year":"2014"},{"dc_district":"01","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":161,"Year":"2015"},{"dc_district":"01","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":165,"Year":"2016"},{"dc_district":"01","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":142,"Year":"2017"},{"dc_district":"01","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":170.5,"Year":"2018"},{"dc_district":"01","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":155,"Year":"2019"},{"dc_district":"02","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":142,"Year":"2014"},{"dc_district":"02","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":148,"Year":"2015"},{"dc_district":"02","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":153,"Year":"2016"},{"dc_district":"02","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":169,"Year":"2017"},{"dc_district":"02","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":192,"Year":"2018"},{"dc_district":"02","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":149,"Year":"2019"},{"dc_district":"03","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":156,"Year":"2014"},{"dc_district":"03","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":159,"Year":"2015"},{"dc_district":"03","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":176,"Year":"2016"},{"dc_district":"03","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":160.5,"Year":"2017"},{"dc_district":"03","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":171,"Year":"2018"},{"dc_district":"03","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":170,"Year":"2019"},{"dc_district":"05","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":146.5,"Year":"2014"},{"dc_district":"05","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":173.5,"Year":"2015"},{"dc_district":"05","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":133,"Year":"2016"},{"dc_district":"05","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":144,"Year":"2017"},{"dc_district":"05","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":147,"Year":"2018"},{"dc_district":"05","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":182,"Year":"2019"},{"dc_district":"06","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":150,"Year":"2014"},{"dc_district":"06","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":151.5,"Year":"2015"},{"dc_district":"06","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":140.5,"Year":"2016"},{"dc_district":"06","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":142.5,"Year":"2017"},{"dc_district":"06","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":152,"Year":"2018"},{"dc_district":"06","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":169,"Year":"2019"},{"dc_district":"07","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":166,"Year":"2014"},{"dc_district":"07","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":184,"Year":"2015"},{"dc_district":"07","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":192,"Year":"2016"},{"dc_district":"07","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":177,"Year":"2017"},{"dc_district":"07","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":173.5,"Year":"2018"},{"dc_district":"07","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":162,"Year":"2019"},{"dc_district":"08","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":158,"Year":"2014"},{"dc_district":"08","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":190,"Year":"2015"},{"dc_district":"08","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":199.5,"Year":"2016"},{"dc_district":"08","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":153,"Year":"2017"},{"dc_district":"08","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":183,"Year":"2018"},{"dc_district":"08","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":162,"Year":"2019"},{"dc_district":"09","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":142,"Year":"2014"},{"dc_district":"09","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":160,"Year":"2015"},{"dc_district":"09","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":126,"Year":"2016"},{"dc_district":"09","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":132,"Year":"2017"},{"dc_district":"09","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":138.5,"Year":"2018"},{"dc_district":"09","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":165,"Year":"2019"},{"dc_district":"12","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":173,"Year":"2014"},{"dc_district":"12","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":166,"Year":"2015"},{"dc_district":"12","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":178,"Year":"2016"},{"dc_district":"12","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":181.5,"Year":"2017"},{"dc_district":"12","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":177,"Year":"2018"},{"dc_district":"12","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":158,"Year":"2019"},{"dc_district":"14","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":153,"Year":"2014"},{"dc_district":"14","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":146,"Year":"2015"},{"dc_district":"14","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":140,"Year":"2016"},{"dc_district":"14","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":155,"Year":"2017"},{"dc_district":"14","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":152,"Year":"2018"},{"dc_district":"14","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":148,"Year":"2019"},{"dc_district":"15","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":161,"Year":"2014"},{"dc_district":"15","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":168,"Year":"2015"},{"dc_district":"15","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":175,"Year":"2016"},{"dc_district":"15","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":163,"Year":"2017"},{"dc_district":"15","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":189,"Year":"2018"},{"dc_district":"15","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":153,"Year":"2019"},{"dc_district":"16","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":164,"Year":"2014"},{"dc_district":"16","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":164,"Year":"2015"},{"dc_district":"16","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":178.5,"Year":"2016"},{"dc_district":"16","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":167,"Year":"2017"},{"dc_district":"16","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":168.5,"Year":"2018"},{"dc_district":"16","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":147,"Year":"2019"},{"dc_district":"17","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":165.5,"Year":"2014"},{"dc_district":"17","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":152,"Year":"2015"},{"dc_district":"17","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":167,"Year":"2016"},{"dc_district":"17","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":157.5,"Year":"2017"},{"dc_district":"17","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":145,"Year":"2018"},{"dc_district":"17","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":146,"Year":"2019"},{"dc_district":"18","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":157,"Year":"2014"},{"dc_district":"18","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":167.5,"Year":"2015"},{"dc_district":"18","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":151.5,"Year":"2016"},{"dc_district":"18","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":143.5,"Year":"2017"},{"dc_district":"18","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":153.5,"Year":"2018"},{"dc_district":"18","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":140,"Year":"2019"},{"dc_district":"19","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":158,"Year":"2014"},{"dc_district":"19","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":163,"Year":"2015"},{"dc_district":"19","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":159,"Year":"2016"},{"dc_district":"19","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":156,"Year":"2017"},{"dc_district":"19","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":170.5,"Year":"2018"},{"dc_district":"19","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":150,"Year":"2019"},{"dc_district":"22","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":169,"Year":"2014"},{"dc_district":"22","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":159,"Year":"2015"},{"dc_district":"22","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":163.5,"Year":"2016"},{"dc_district":"22","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":153,"Year":"2017"},{"dc_district":"22","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":169,"Year":"2018"},{"dc_district":"22","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":153,"Year":"2019"},{"dc_district":"24","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":167,"Year":"2014"},{"dc_district":"24","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":149,"Year":"2015"},{"dc_district":"24","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":152,"Year":"2016"},{"dc_district":"24","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":147,"Year":"2017"},{"dc_district":"24","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":173,"Year":"2018"},{"dc_district":"24","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":184,"Year":"2019"},{"dc_district":"25","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":165,"Year":"2014"},{"dc_district":"25","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":162,"Year":"2015"},{"dc_district":"25","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":179.5,"Year":"2016"},{"dc_district":"25","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":161,"Year":"2017"},{"dc_district":"25","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":182,"Year":"2018"},{"dc_district":"25","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":185,"Year":"2019"},{"dc_district":"26","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":160,"Year":"2014"},{"dc_district":"26","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":161.5,"Year":"2015"},{"dc_district":"26","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":151,"Year":"2016"},{"dc_district":"26","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":151,"Year":"2017"},{"dc_district":"26","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":188,"Year":"2018"},{"dc_district":"26","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":208,"Year":"2019"},{"dc_district":"35","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":146,"Year":"2014"},{"dc_district":"35","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":138,"Year":"2015"},{"dc_district":"35","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":162,"Year":"2016"},{"dc_district":"35","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":155,"Year":"2017"},{"dc_district":"35","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":172,"Year":"2018"},{"dc_district":"35","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":141,"Year":"2019"},{"dc_district":"39","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":149,"Year":"2014"},{"dc_district":"39","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":136.5,"Year":"2015"},{"dc_district":"39","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":135,"Year":"2016"},{"dc_district":"39","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":130.5,"Year":"2017"},{"dc_district":"39","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":170,"Year":"2018"},{"dc_district":"39","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":144,"Year":"2019"},{"dc_district":"77","date_value":"2014-01-01","police_UCR_category":"All Offenses","count":144,"Year":"2014"},{"dc_district":"77","date_value":"2015-01-01","police_UCR_category":"All Offenses","count":136,"Year":"2015"},{"dc_district":"77","date_value":"2016-01-01","police_UCR_category":"All Offenses","count":206,"Year":"2016"},{"dc_district":"77","date_value":"2017-01-01","police_UCR_category":"All Offenses","count":130.5,"Year":"2017"},{"dc_district":"77","date_value":"2018-01-01","police_UCR_category":"All Offenses","count":227,"Year":"2018"},{"dc_district":"77","date_value":"2019-01-01","police_UCR_category":"All Offenses","count":165,"Year":"2019"}], 'All Offenses', 'Median Days to Disposition', metric_type = 'Median')</script>
+</div>
+</div>
+<h2 class="dao_table_header">
+Data: YTD Median Days to Disposition by Offense Category
+</h2>
+<div class="table-wrapper">
+<table class="table table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;color: #4D7DBF !important;width: 16rem; text-align: left;">
+Offense Category
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2014 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2015 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2016 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2017 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2018 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2019 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;">
+Yr-Yr<br>Change
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’14-’17<br>Avg
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’18-’19<br>Avg
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’14-’17 Avg<br>Compared to<br>’18-’19 Avg
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+All Violent Offenses
+</td>
+<td style="text-align:center;">
+149
+</td>
+<td style="text-align:center;">
+167.5
+</td>
+<td style="text-align:center;">
+181
+</td>
+<td style="text-align:center;">
+189
+</td>
+<td style="text-align:center;">
+183
+</td>
+<td style="text-align:center;">
+140
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-23%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+172
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+162
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-6%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+All Property Offenses
+</td>
+<td style="text-align:center;">
+134
+</td>
+<td style="text-align:center;">
+135.0
+</td>
+<td style="text-align:center;">
+129
+</td>
+<td style="text-align:center;">
+128
+</td>
+<td style="text-align:center;">
+149
+</td>
+<td style="text-align:center;">
+155
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+4%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+132
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+152
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+15%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+All Drug Offenses
+</td>
+<td style="text-align:center;">
+178
+</td>
+<td style="text-align:center;">
+182.0
+</td>
+<td style="text-align:center;">
+176
+</td>
+<td style="text-align:center;">
+172
+</td>
+<td style="text-align:center;">
+184
+</td>
+<td style="text-align:center;">
+188
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+2%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+177
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+186
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+5%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+All Other Offenses
+</td>
+<td style="text-align:center;">
+148
+</td>
+<td style="text-align:center;">
+136.0
+</td>
+<td style="text-align:center;">
+138
+</td>
+<td style="text-align:center;">
+135
+</td>
+<td style="text-align:center;">
+167
+</td>
+<td style="text-align:center;">
+139
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-17%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+139
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+153
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+10%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;width: 16rem; text-align: left;">
+All Offenses
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+160
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+161.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+158
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+155
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+175
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+165
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;">
+-6%
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+158
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+170
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+8%
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="violent-offenses" class="section level2">
+<h2>Violent Offenses</h2>
+<div class="row">
+<div class="col-print-6 col-sm-6 dao_visuals">
+<div id="htmlwidget-f1465bb38d9c59ce5c75" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f1465bb38d9c59ce5c75">{"x":{"visdat":{"35a8571c1037":["function () ","plotlyVisDat"]},"cur_data":"35a8571c1037","attrs":{"35a8571c1037":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"35a8571c1037.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"Median Days to Disposition: Violence","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2019-10-01"}],"annotations":[{"text":"Source: DAO Analysis of criminal justice data. Current as of 10/01/2019.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01"],"y":[138,150,135,155,179.5,148,149,162.5,151,169,189,147,162,180,182,200.5,165,182,210,115,124,187.5,142,146,134,175,233,262.5,241,205,172.5,125,140.5,164,241.5,175,142,195.5,210,284.5,238,181,149,158,137,185,202,172,184,182,192,200,207,217,160,150.5,167.5,163,126,133,141,162,147.5,153,124,162.5,163.5,116],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 138 days","February 2014: 150 days","March 2014: 135 days","April 2014: 155 days","May 2014: 179.5 days","June 2014: 148 days","July 2014: 149 days","August 2014: 162.5 days","September 2014: 151 days","October 2014: 169 days","November 2014: 189 days","December 2014: 147 days","January 2015: 162 days","February 2015: 180 days","March 2015: 182 days","April 2015: 200.5 days","May 2015: 165 days","June 2015: 182 days","July 2015: 210 days","August 2015: 115 days","September 2015: 124 days","October 2015: 187.5 days","November 2015: 142 days","December 2015: 146 days","January 2016: 134 days","February 2016: 175 days","March 2016: 233 days","April 2016: 262.5 days","May 2016: 241 days","June 2016: 205 days","July 2016: 172.5 days","August 2016: 125 days","September 2016: 140.5 days","October 2016: 164 days","November 2016: 241.5 days","December 2016: 175 days","January 2017: 142 days","February 2017: 195.5 days","March 2017: 210 days","April 2017: 284.5 days","May 2017: 238 days","June 2017: 181 days","July 2017: 149 days","August 2017: 158 days","September 2017: 137 days","October 2017: 185 days","November 2017: 202 days","December 2017: 172 days","January 2018: 184 days","February 2018: 182 days","March 2018: 192 days","April 2018: 200 days","May 2018: 207 days","June 2018: 217 days","July 2018: 160 days","August 2018: 150.5 days","September 2018: 167.5 days","October 2018: 163 days","November 2018: 126 days","December 2018: 133 days","January 2019: 141 days","February 2019: 162 days","March 2019: 147.5 days","April 2019: 153 days","May 2019: 124 days","June 2019: 162.5 days","July 2019: 163.5 days","August 2019: 116 days"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01"],"y":[143.401437047907,146.471020214667,149.117924053694,151.84146666059,154.202923719211,156.336559258651,158.17069652646,159.894825353861,161.513318036513,162.784591290247,163.714506114385,164.496468728027,165.447334830879,165.937931873269,165.718379718394,165.428449494389,165.780549667017,166.94545677755,168.40352351841,170.046695726365,171.619985426879,172.877349024621,174.028265491629,175.210713107776,176.452241149176,177.661635850652,179.147128539374,181.305436629363,183.538510085525,185.554977360445,187.79039156557,190.704562835933,193.321049405598,194.701510672196,194.344800514932,192.751847666893,190.558853146612,188.564517431707,187.568401710906,187.65617168434,188.405401541302,189.272051979458,189.631631129961,189.57738961905,189.412333500426,188.958400759644,187.990348775796,186.562842788817,184.779111070554,182.793769517558,180.921520897487,178.700272422209,176.343788769776,173.786061515798,171.279299230016,168.747474912484,166.235736306547,163.716423663021,161.003211523118,158.253560417125,155.261361005281,152.132400167593,149.222442379381,145.945291052838,142.758816508652,139.445246159845,136.186143766238,132.730581219112],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="col-print-6 col-sm-6 dao_visuals">
+<h2>
+Yearly Median Days to Disposition by Police District
+</h2>
+<div id="violentcrime" class="mapframe">
+
+</div>
+<script>generateReportMap('violentcrime', [{"dc_district":"01","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":105,"Year":"2014"},{"dc_district":"01","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":115.5,"Year":"2015"},{"dc_district":"01","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":176,"Year":"2016"},{"dc_district":"01","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":178.5,"Year":"2017"},{"dc_district":"01","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":178,"Year":"2018"},{"dc_district":"01","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":130,"Year":"2019"},{"dc_district":"02","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":128,"Year":"2014"},{"dc_district":"02","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":139.5,"Year":"2015"},{"dc_district":"02","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":193,"Year":"2016"},{"dc_district":"02","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":204,"Year":"2017"},{"dc_district":"02","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":219,"Year":"2018"},{"dc_district":"02","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":125,"Year":"2019"},{"dc_district":"03","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":174,"Year":"2014"},{"dc_district":"03","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":208,"Year":"2015"},{"dc_district":"03","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":211.5,"Year":"2016"},{"dc_district":"03","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":221,"Year":"2017"},{"dc_district":"03","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":162,"Year":"2018"},{"dc_district":"03","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":160,"Year":"2019"},{"dc_district":"05","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":128,"Year":"2014"},{"dc_district":"05","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":155,"Year":"2015"},{"dc_district":"05","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":193,"Year":"2016"},{"dc_district":"05","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":134,"Year":"2017"},{"dc_district":"05","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":196,"Year":"2018"},{"dc_district":"05","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":248.5,"Year":"2019"},{"dc_district":"06","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":195,"Year":"2014"},{"dc_district":"06","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":199,"Year":"2015"},{"dc_district":"06","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":195,"Year":"2016"},{"dc_district":"06","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":167,"Year":"2017"},{"dc_district":"06","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":146,"Year":"2018"},{"dc_district":"06","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":184.5,"Year":"2019"},{"dc_district":"07","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":142,"Year":"2014"},{"dc_district":"07","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":206,"Year":"2015"},{"dc_district":"07","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":121,"Year":"2016"},{"dc_district":"07","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":149,"Year":"2017"},{"dc_district":"07","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":167,"Year":"2018"},{"dc_district":"07","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":137,"Year":"2019"},{"dc_district":"08","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":187,"Year":"2014"},{"dc_district":"08","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":167,"Year":"2015"},{"dc_district":"08","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":197,"Year":"2016"},{"dc_district":"08","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":186.5,"Year":"2017"},{"dc_district":"08","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":198,"Year":"2018"},{"dc_district":"08","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":137,"Year":"2019"},{"dc_district":"09","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":120,"Year":"2014"},{"dc_district":"09","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":241,"Year":"2015"},{"dc_district":"09","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":168,"Year":"2016"},{"dc_district":"09","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":127,"Year":"2017"},{"dc_district":"09","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":173,"Year":"2018"},{"dc_district":"09","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":158.5,"Year":"2019"},{"dc_district":"12","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":160,"Year":"2014"},{"dc_district":"12","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":194,"Year":"2015"},{"dc_district":"12","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":194.5,"Year":"2016"},{"dc_district":"12","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":262,"Year":"2017"},{"dc_district":"12","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":199,"Year":"2018"},{"dc_district":"12","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":183.5,"Year":"2019"},{"dc_district":"14","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":143,"Year":"2014"},{"dc_district":"14","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":149,"Year":"2015"},{"dc_district":"14","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":201,"Year":"2016"},{"dc_district":"14","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":183,"Year":"2017"},{"dc_district":"14","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":113,"Year":"2018"},{"dc_district":"14","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":124,"Year":"2019"},{"dc_district":"15","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":120,"Year":"2014"},{"dc_district":"15","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":134,"Year":"2015"},{"dc_district":"15","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":154.5,"Year":"2016"},{"dc_district":"15","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":257.5,"Year":"2017"},{"dc_district":"15","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":211.5,"Year":"2018"},{"dc_district":"15","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":153,"Year":"2019"},{"dc_district":"16","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":250,"Year":"2014"},{"dc_district":"16","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":280,"Year":"2015"},{"dc_district":"16","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":278,"Year":"2016"},{"dc_district":"16","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":307,"Year":"2017"},{"dc_district":"16","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":176.5,"Year":"2018"},{"dc_district":"16","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":128,"Year":"2019"},{"dc_district":"17","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":166,"Year":"2014"},{"dc_district":"17","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":152,"Year":"2015"},{"dc_district":"17","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":162,"Year":"2016"},{"dc_district":"17","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":179,"Year":"2017"},{"dc_district":"17","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":113.5,"Year":"2018"},{"dc_district":"17","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":120.5,"Year":"2019"},{"dc_district":"18","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":156,"Year":"2014"},{"dc_district":"18","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":175,"Year":"2015"},{"dc_district":"18","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":142,"Year":"2016"},{"dc_district":"18","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":165.5,"Year":"2017"},{"dc_district":"18","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":183,"Year":"2018"},{"dc_district":"18","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":146,"Year":"2019"},{"dc_district":"19","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":126,"Year":"2014"},{"dc_district":"19","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":176,"Year":"2015"},{"dc_district":"19","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":189,"Year":"2016"},{"dc_district":"19","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":174,"Year":"2017"},{"dc_district":"19","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":172,"Year":"2018"},{"dc_district":"19","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":140.5,"Year":"2019"},{"dc_district":"22","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":207,"Year":"2014"},{"dc_district":"22","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":169,"Year":"2015"},{"dc_district":"22","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":198.5,"Year":"2016"},{"dc_district":"22","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":182,"Year":"2017"},{"dc_district":"22","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":163,"Year":"2018"},{"dc_district":"22","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":153,"Year":"2019"},{"dc_district":"24","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":182,"Year":"2014"},{"dc_district":"24","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":152,"Year":"2015"},{"dc_district":"24","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":164,"Year":"2016"},{"dc_district":"24","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":139,"Year":"2017"},{"dc_district":"24","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":156,"Year":"2018"},{"dc_district":"24","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":161,"Year":"2019"},{"dc_district":"25","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":140,"Year":"2014"},{"dc_district":"25","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":163.5,"Year":"2015"},{"dc_district":"25","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":251,"Year":"2016"},{"dc_district":"25","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":204,"Year":"2017"},{"dc_district":"25","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":169.5,"Year":"2018"},{"dc_district":"25","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":158,"Year":"2019"},{"dc_district":"26","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":205,"Year":"2014"},{"dc_district":"26","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":184,"Year":"2015"},{"dc_district":"26","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":203,"Year":"2016"},{"dc_district":"26","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":142.5,"Year":"2017"},{"dc_district":"26","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":197.5,"Year":"2018"},{"dc_district":"26","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":151,"Year":"2019"},{"dc_district":"35","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":162,"Year":"2014"},{"dc_district":"35","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":146,"Year":"2015"},{"dc_district":"35","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":166,"Year":"2016"},{"dc_district":"35","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":178,"Year":"2017"},{"dc_district":"35","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":180.5,"Year":"2018"},{"dc_district":"35","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":141,"Year":"2019"},{"dc_district":"39","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":117,"Year":"2014"},{"dc_district":"39","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":139,"Year":"2015"},{"dc_district":"39","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":122,"Year":"2016"},{"dc_district":"39","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":147,"Year":"2017"},{"dc_district":"39","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":153,"Year":"2018"},{"dc_district":"39","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":94,"Year":"2019"},{"dc_district":"77","date_value":"2014-01-01","police_UCR_category":"All Violent Offenses","count":728,"Year":"2014"},{"dc_district":"77","date_value":"2015-01-01","police_UCR_category":"All Violent Offenses","count":169,"Year":"2015"},{"dc_district":"77","date_value":"2016-01-01","police_UCR_category":"All Violent Offenses","count":389.5,"Year":"2016"},{"dc_district":"77","date_value":"2017-01-01","police_UCR_category":"All Violent Offenses","count":167.5,"Year":"2017"},{"dc_district":"77","date_value":"2018-01-01","police_UCR_category":"All Violent Offenses","count":318.5,"Year":"2018"},{"dc_district":"77","date_value":"2019-01-01","police_UCR_category":"All Violent Offenses","count":82,"Year":"2019"}], 'All Violent Offenses', 'Median Days to Disposition', metric_type = 'Median')</script>
+</div>
+</div>
+<h2 class="dao_table_header">
+Data: YTD Median Days to Disposition by Offense Category
+</h2>
+<div class="table-wrapper">
+<table class="table table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;color: #4D7DBF !important;width: 16rem; text-align: left;">
+Offense Category
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2014 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2015 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2016 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2017 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2018 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2019 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;">
+Yr-Yr<br>Change
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’14-’17<br>Avg
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’18-’19<br>Avg
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’14-’17 Avg<br>Compared to<br>’18-’19 Avg
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Homicide
+</td>
+<td style="text-align:center;">
+560.0
+</td>
+<td style="text-align:center;">
+616.0
+</td>
+<td style="text-align:center;">
+542.0
+</td>
+<td style="text-align:center;">
+547.5
+</td>
+<td style="text-align:center;">
+540
+</td>
+<td style="text-align:center;">
+471
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-13%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+566
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+506
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-11%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Rape
+</td>
+<td style="text-align:center;">
+284.5
+</td>
+<td style="text-align:center;">
+280.0
+</td>
+<td style="text-align:center;">
+471.5
+</td>
+<td style="text-align:center;">
+517.0
+</td>
+<td style="text-align:center;">
+416
+</td>
+<td style="text-align:center;">
+416
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+0%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+388
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+416
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+7%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Robbery/Gun
+</td>
+<td style="text-align:center;">
+193.0
+</td>
+<td style="text-align:center;">
+296.0
+</td>
+<td style="text-align:center;">
+352.0
+</td>
+<td style="text-align:center;">
+332.0
+</td>
+<td style="text-align:center;">
+268
+</td>
+<td style="text-align:center;">
+224
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-16%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+293
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+246
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-16%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Robbery/Other
+</td>
+<td style="text-align:center;">
+124.0
+</td>
+<td style="text-align:center;">
+131.0
+</td>
+<td style="text-align:center;">
+140.5
+</td>
+<td style="text-align:center;">
+114.0
+</td>
+<td style="text-align:center;">
+142
+</td>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-23%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+127
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+126
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-1%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Aggravated Assault/Gun
+</td>
+<td style="text-align:center;">
+269.0
+</td>
+<td style="text-align:center;">
+318.0
+</td>
+<td style="text-align:center;">
+339.0
+</td>
+<td style="text-align:center;">
+338.0
+</td>
+<td style="text-align:center;">
+258
+</td>
+<td style="text-align:center;">
+187
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-28%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+316
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+222
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-30%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Aggravated Assault/Other
+</td>
+<td style="text-align:center;">
+117.0
+</td>
+<td style="text-align:center;">
+109.0
+</td>
+<td style="text-align:center;">
+113.0
+</td>
+<td style="text-align:center;">
+118.0
+</td>
+<td style="text-align:center;">
+124
+</td>
+<td style="text-align:center;">
+105
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-15%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+114
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+114
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+0%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;width: 16rem; text-align: left;">
+All Violent Offenses
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+149.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+167.5
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+181.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+189.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+183
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+140
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;">
+-23%
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+172
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+162
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-6%
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="property-offenses" class="section level2">
+<h2>Property Offenses</h2>
+<div class="row">
+<div class="col-print-6 col-sm-6 dao_visuals">
+<div id="htmlwidget-d17c6b9d0aa1bf622869" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d17c6b9d0aa1bf622869">{"x":{"visdat":{"35a86eda4aef":["function () ","plotlyVisDat"]},"cur_data":"35a86eda4aef","attrs":{"35a86eda4aef":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"35a86eda4aef.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"Median Days to Disposition: Property","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2019-10-01"}],"annotations":[{"text":"Source: DAO Analysis of criminal justice data. Current as of 10/01/2019.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01"],"y":[130.5,130,154,143,145,130,132,107,123,116.5,133,118,161.5,142,150,145,146.5,130,108,121,122,111,120,145,114,141,127,165,132,128.5,118.5,132.5,125,145,110,109,121,119,144,132.5,167.5,132,104,116,120,122,117.5,115,119.5,125,130,145,166,137,170.5,172,196,143,155.5,153,139,152,161,142.5,173,130,132.5,200],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 130.5 days","February 2014: 130 days","March 2014: 154 days","April 2014: 143 days","May 2014: 145 days","June 2014: 130 days","July 2014: 132 days","August 2014: 107 days","September 2014: 123 days","October 2014: 116.5 days","November 2014: 133 days","December 2014: 118 days","January 2015: 161.5 days","February 2015: 142 days","March 2015: 150 days","April 2015: 145 days","May 2015: 146.5 days","June 2015: 130 days","July 2015: 108 days","August 2015: 121 days","September 2015: 122 days","October 2015: 111 days","November 2015: 120 days","December 2015: 145 days","January 2016: 114 days","February 2016: 141 days","March 2016: 127 days","April 2016: 165 days","May 2016: 132 days","June 2016: 128.5 days","July 2016: 118.5 days","August 2016: 132.5 days","September 2016: 125 days","October 2016: 145 days","November 2016: 110 days","December 2016: 109 days","January 2017: 121 days","February 2017: 119 days","March 2017: 144 days","April 2017: 132.5 days","May 2017: 167.5 days","June 2017: 132 days","July 2017: 104 days","August 2017: 116 days","September 2017: 120 days","October 2017: 122 days","November 2017: 117.5 days","December 2017: 115 days","January 2018: 119.5 days","February 2018: 125 days","March 2018: 130 days","April 2018: 145 days","May 2018: 166 days","June 2018: 137 days","July 2018: 170.5 days","August 2018: 172 days","September 2018: 196 days","October 2018: 143 days","November 2018: 155.5 days","December 2018: 153 days","January 2019: 139 days","February 2019: 152 days","March 2019: 161 days","April 2019: 142.5 days","May 2019: 173 days","June 2019: 130 days","July 2019: 132.5 days","August 2019: 200 days"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01"],"y":[136.168208575046,135.741488440888,135.370067541166,134.972582064065,134.599901854174,134.224312070219,133.867418306232,133.503709226962,133.143418000214,132.74604773505,132.278157580985,131.838264636979,131.46842694775,131.251460436665,131.159393351107,131.098981444729,131.009322026829,130.857331341507,130.679808055476,130.47135752906,130.244033032316,130.01230354638,129.68930975032,129.284875603888,128.865332922608,128.53895966936,128.563903969534,128.968273075434,129.450467677077,129.746086458608,129.904610976494,130.119772163245,130.244235501395,130.14227504307,129.555448287869,128.557794050154,127.37042100542,126.316353339689,125.724676034671,124.924149646572,123.766818549018,122.824107783874,122.777673523944,123.426525553394,124.241329505411,125.294290050963,126.765584559487,129.079303774423,132.342572537363,135.686311548858,138.097698506379,140.502814230948,143.175200233073,145.973571800159,148.411609897801,150.332406619773,151.867668881501,153.326011407859,154.684015745224,155.738588094065,156.613986884544,157.361676965204,157.875315845495,158.20747979269,158.256930332143,158.056979070449,157.660240803133,157.081755823251],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="col-print-6 col-sm-6 dao_visuals">
+<h2>
+Yearly Median Days to Disposition by Police District
+</h2>
+<div id="propertycrime" class="mapframe">
+
+</div>
+<script>generateReportMap('propertycrime', [{"dc_district":"01","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":134.5,"Year":"2014"},{"dc_district":"01","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":138,"Year":"2015"},{"dc_district":"01","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":120,"Year":"2016"},{"dc_district":"01","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":107,"Year":"2017"},{"dc_district":"01","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":166,"Year":"2018"},{"dc_district":"01","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":149,"Year":"2019"},{"dc_district":"02","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":110,"Year":"2014"},{"dc_district":"02","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":130,"Year":"2015"},{"dc_district":"02","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":112,"Year":"2016"},{"dc_district":"02","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":142,"Year":"2017"},{"dc_district":"02","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":176,"Year":"2018"},{"dc_district":"02","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":149,"Year":"2019"},{"dc_district":"03","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":122,"Year":"2014"},{"dc_district":"03","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":133,"Year":"2015"},{"dc_district":"03","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":162.5,"Year":"2016"},{"dc_district":"03","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":129.5,"Year":"2017"},{"dc_district":"03","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":141,"Year":"2018"},{"dc_district":"03","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":193,"Year":"2019"},{"dc_district":"05","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":134.5,"Year":"2014"},{"dc_district":"05","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":149,"Year":"2015"},{"dc_district":"05","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":126,"Year":"2016"},{"dc_district":"05","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":124,"Year":"2017"},{"dc_district":"05","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":145,"Year":"2018"},{"dc_district":"05","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":202,"Year":"2019"},{"dc_district":"06","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":116,"Year":"2014"},{"dc_district":"06","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":113,"Year":"2015"},{"dc_district":"06","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":114,"Year":"2016"},{"dc_district":"06","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":121,"Year":"2017"},{"dc_district":"06","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":149,"Year":"2018"},{"dc_district":"06","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":179.5,"Year":"2019"},{"dc_district":"07","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":140,"Year":"2014"},{"dc_district":"07","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":147,"Year":"2015"},{"dc_district":"07","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":157,"Year":"2016"},{"dc_district":"07","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":220,"Year":"2017"},{"dc_district":"07","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":170,"Year":"2018"},{"dc_district":"07","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":176,"Year":"2019"},{"dc_district":"08","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":133,"Year":"2014"},{"dc_district":"08","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":165,"Year":"2015"},{"dc_district":"08","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":198,"Year":"2016"},{"dc_district":"08","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":138,"Year":"2017"},{"dc_district":"08","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":156,"Year":"2018"},{"dc_district":"08","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":195.5,"Year":"2019"},{"dc_district":"09","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":123,"Year":"2014"},{"dc_district":"09","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":133,"Year":"2015"},{"dc_district":"09","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":100,"Year":"2016"},{"dc_district":"09","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":115.5,"Year":"2017"},{"dc_district":"09","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":128,"Year":"2018"},{"dc_district":"09","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":144,"Year":"2019"},{"dc_district":"12","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":143,"Year":"2014"},{"dc_district":"12","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":116,"Year":"2015"},{"dc_district":"12","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":126.5,"Year":"2016"},{"dc_district":"12","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":148.5,"Year":"2017"},{"dc_district":"12","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":188,"Year":"2018"},{"dc_district":"12","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":112,"Year":"2019"},{"dc_district":"14","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":178,"Year":"2014"},{"dc_district":"14","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":138,"Year":"2015"},{"dc_district":"14","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":113,"Year":"2016"},{"dc_district":"14","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":141,"Year":"2017"},{"dc_district":"14","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":162.5,"Year":"2018"},{"dc_district":"14","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":162.5,"Year":"2019"},{"dc_district":"15","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":157,"Year":"2014"},{"dc_district":"15","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":154,"Year":"2015"},{"dc_district":"15","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":168,"Year":"2016"},{"dc_district":"15","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":133,"Year":"2017"},{"dc_district":"15","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":148,"Year":"2018"},{"dc_district":"15","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":150,"Year":"2019"},{"dc_district":"16","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":113,"Year":"2014"},{"dc_district":"16","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":135,"Year":"2015"},{"dc_district":"16","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":140.5,"Year":"2016"},{"dc_district":"16","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":105,"Year":"2017"},{"dc_district":"16","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":108,"Year":"2018"},{"dc_district":"16","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":125,"Year":"2019"},{"dc_district":"17","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":130,"Year":"2014"},{"dc_district":"17","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":154,"Year":"2015"},{"dc_district":"17","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":160,"Year":"2016"},{"dc_district":"17","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":131,"Year":"2017"},{"dc_district":"17","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":119.5,"Year":"2018"},{"dc_district":"17","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":157,"Year":"2019"},{"dc_district":"18","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":116.5,"Year":"2014"},{"dc_district":"18","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":154,"Year":"2015"},{"dc_district":"18","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":119,"Year":"2016"},{"dc_district":"18","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":107.5,"Year":"2017"},{"dc_district":"18","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":119,"Year":"2018"},{"dc_district":"18","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":103,"Year":"2019"},{"dc_district":"19","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":139,"Year":"2014"},{"dc_district":"19","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":123,"Year":"2015"},{"dc_district":"19","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":108,"Year":"2016"},{"dc_district":"19","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":113,"Year":"2017"},{"dc_district":"19","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":129,"Year":"2018"},{"dc_district":"19","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":136,"Year":"2019"},{"dc_district":"22","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":120,"Year":"2014"},{"dc_district":"22","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":122,"Year":"2015"},{"dc_district":"22","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":101,"Year":"2016"},{"dc_district":"22","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":96,"Year":"2017"},{"dc_district":"22","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":112,"Year":"2018"},{"dc_district":"22","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":138,"Year":"2019"},{"dc_district":"24","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":129.5,"Year":"2014"},{"dc_district":"24","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":126,"Year":"2015"},{"dc_district":"24","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":119,"Year":"2016"},{"dc_district":"24","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":116,"Year":"2017"},{"dc_district":"24","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":156,"Year":"2018"},{"dc_district":"24","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":179,"Year":"2019"},{"dc_district":"25","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":134,"Year":"2014"},{"dc_district":"25","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":130,"Year":"2015"},{"dc_district":"25","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":184,"Year":"2016"},{"dc_district":"25","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":118.5,"Year":"2017"},{"dc_district":"25","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":149.5,"Year":"2018"},{"dc_district":"25","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":167,"Year":"2019"},{"dc_district":"26","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":139,"Year":"2014"},{"dc_district":"26","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":135,"Year":"2015"},{"dc_district":"26","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":125,"Year":"2016"},{"dc_district":"26","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":148.5,"Year":"2017"},{"dc_district":"26","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":179.5,"Year":"2018"},{"dc_district":"26","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":206,"Year":"2019"},{"dc_district":"35","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":151,"Year":"2014"},{"dc_district":"35","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":138.5,"Year":"2015"},{"dc_district":"35","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":170.5,"Year":"2016"},{"dc_district":"35","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":124,"Year":"2017"},{"dc_district":"35","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":151,"Year":"2018"},{"dc_district":"35","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":122,"Year":"2019"},{"dc_district":"39","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":135,"Year":"2014"},{"dc_district":"39","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":124,"Year":"2015"},{"dc_district":"39","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":118.5,"Year":"2016"},{"dc_district":"39","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":122,"Year":"2017"},{"dc_district":"39","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":142,"Year":"2018"},{"dc_district":"39","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":122,"Year":"2019"},{"dc_district":"77","date_value":"2014-01-01","police_UCR_category":"All Property Offenses","count":118,"Year":"2014"},{"dc_district":"77","date_value":"2015-01-01","police_UCR_category":"All Property Offenses","count":101,"Year":"2015"},{"dc_district":"77","date_value":"2016-01-01","police_UCR_category":"All Property Offenses","count":120,"Year":"2016"},{"dc_district":"77","date_value":"2017-01-01","police_UCR_category":"All Property Offenses","count":149,"Year":"2017"},{"dc_district":"77","date_value":"2018-01-01","police_UCR_category":"All Property Offenses","count":227,"Year":"2018"},{"dc_district":"77","date_value":"2019-01-01","police_UCR_category":"All Property Offenses","count":168.5,"Year":"2019"}], 'All Property Offenses', 'Median Days to Disposition', metric_type = 'Median')</script>
+</div>
+</div>
+<h2 class="dao_table_header">
+Data: YTD Median Days to Disposition by Offense Category
+</h2>
+<div class="table-wrapper">
+<table class="table table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;color: #4D7DBF !important;width: 16rem; text-align: left;">
+Offense Category
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2014 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2015 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2016 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2017 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2018 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2019 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;">
+Yr-Yr<br>Change
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’14-’17<br>Avg
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’18-’19<br>Avg
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’14-’17 Avg<br>Compared to<br>’18-’19 Avg
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Burglary/Residential
+</td>
+<td style="text-align:center;">
+178.0
+</td>
+<td style="text-align:center;">
+181.0
+</td>
+<td style="text-align:center;">
+185.0
+</td>
+<td style="text-align:center;">
+222.0
+</td>
+<td style="text-align:center;">
+180.0
+</td>
+<td style="text-align:center;">
+161
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-11%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+192
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+170
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-11%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Burglary/Commercial
+</td>
+<td style="text-align:center;">
+184.0
+</td>
+<td style="text-align:center;">
+185.0
+</td>
+<td style="text-align:center;">
+225.0
+</td>
+<td style="text-align:center;">
+161.0
+</td>
+<td style="text-align:center;">
+146.5
+</td>
+<td style="text-align:center;">
+168
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+15%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+189
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+157
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-17%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Theft of Motor Vehicle Tag
+</td>
+<td style="text-align:center;">
+135.5
+</td>
+<td style="text-align:center;">
+117.0
+</td>
+<td style="text-align:center;">
+247.5
+</td>
+<td style="text-align:center;">
+142.0
+</td>
+<td style="text-align:center;">
+408.0
+</td>
+<td style="text-align:center;">
+205
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-50%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+160
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+306
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+91%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Theft from Person
+</td>
+<td style="text-align:center;">
+119.0
+</td>
+<td style="text-align:center;">
+173.5
+</td>
+<td style="text-align:center;">
+109.5
+</td>
+<td style="text-align:center;">
+112.0
+</td>
+<td style="text-align:center;">
+166.0
+</td>
+<td style="text-align:center;">
+117
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-30%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+128
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+142
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+11%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Theft from Auto
+</td>
+<td style="text-align:center;">
+123.0
+</td>
+<td style="text-align:center;">
+155.0
+</td>
+<td style="text-align:center;">
+119.0
+</td>
+<td style="text-align:center;">
+151.0
+</td>
+<td style="text-align:center;">
+149.0
+</td>
+<td style="text-align:center;">
+130
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-13%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+137
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+140
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+2%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Retail Theft
+</td>
+<td style="text-align:center;">
+106.0
+</td>
+<td style="text-align:center;">
+111.0
+</td>
+<td style="text-align:center;">
+99.0
+</td>
+<td style="text-align:center;">
+98.0
+</td>
+<td style="text-align:center;">
+133.0
+</td>
+<td style="text-align:center;">
+193
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+45%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+104
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+163
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+57%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Theft
+</td>
+<td style="text-align:center;">
+144.5
+</td>
+<td style="text-align:center;">
+139.0
+</td>
+<td style="text-align:center;">
+130.0
+</td>
+<td style="text-align:center;">
+134.0
+</td>
+<td style="text-align:center;">
+152.5
+</td>
+<td style="text-align:center;">
+156
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+2%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+137
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+154
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+12%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Auto Theft
+</td>
+<td style="text-align:center;">
+172.5
+</td>
+<td style="text-align:center;">
+164.0
+</td>
+<td style="text-align:center;">
+206.0
+</td>
+<td style="text-align:center;">
+152.5
+</td>
+<td style="text-align:center;">
+146.5
+</td>
+<td style="text-align:center;">
+146
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+0%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+174
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+146
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-16%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;width: 16rem; text-align: left;">
+All Property Offenses
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+134.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+135.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+129.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+128.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+149.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+155
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;">
+4%
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+132
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+152
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+15%
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="drug-offenses" class="section level2">
+<h2>Drug Offenses</h2>
+<div class="row">
+<div class="col-print-6 col-sm-6 dao_visuals">
+<div id="htmlwidget-044f1ceeff5c955143a7" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-044f1ceeff5c955143a7">{"x":{"visdat":{"35a8565fea8e":["function () ","plotlyVisDat"]},"cur_data":"35a8565fea8e","attrs":{"35a8565fea8e":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"35a8565fea8e.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"Median Days to Disposition: Drugs","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2019-10-01"}],"annotations":[{"text":"Source: DAO Analysis of criminal justice data. Current as of 10/01/2019.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01"],"y":[178,181,177,198,186.5,170,166,160,176,177,186,175,185,192,191,188,180,193,160,178,166,165,188,178,167,165,186,184,190,168,154.5,164,198,197.5,201,203,207,175.5,186,177.5,172.5,165,165.5,151.5,168,172,172,165,184,166,182.5,185,189.5,185.5,182,188,197,187,183.5,186,188,191,189,198,200,189,178,183],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 178 days","February 2014: 181 days","March 2014: 177 days","April 2014: 198 days","May 2014: 186.5 days","June 2014: 170 days","July 2014: 166 days","August 2014: 160 days","September 2014: 176 days","October 2014: 177 days","November 2014: 186 days","December 2014: 175 days","January 2015: 185 days","February 2015: 192 days","March 2015: 191 days","April 2015: 188 days","May 2015: 180 days","June 2015: 193 days","July 2015: 160 days","August 2015: 178 days","September 2015: 166 days","October 2015: 165 days","November 2015: 188 days","December 2015: 178 days","January 2016: 167 days","February 2016: 165 days","March 2016: 186 days","April 2016: 184 days","May 2016: 190 days","June 2016: 168 days","July 2016: 154.5 days","August 2016: 164 days","September 2016: 198 days","October 2016: 197.5 days","November 2016: 201 days","December 2016: 203 days","January 2017: 207 days","February 2017: 175.5 days","March 2017: 186 days","April 2017: 177.5 days","May 2017: 172.5 days","June 2017: 165 days","July 2017: 165.5 days","August 2017: 151.5 days","September 2017: 168 days","October 2017: 172 days","November 2017: 172 days","December 2017: 165 days","January 2018: 184 days","February 2018: 166 days","March 2018: 182.5 days","April 2018: 185 days","May 2018: 189.5 days","June 2018: 185.5 days","July 2018: 182 days","August 2018: 188 days","September 2018: 197 days","October 2018: 187 days","November 2018: 183.5 days","December 2018: 186 days","January 2019: 188 days","February 2019: 191 days","March 2019: 189 days","April 2019: 198 days","May 2019: 200 days","June 2019: 189 days","July 2019: 178 days","August 2019: 183 days"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01"],"y":[178.472521215237,178.747127917666,178.968849376398,179.191887675398,179.391899514721,179.579973612271,179.733454698293,179.856297496671,179.936419578874,179.962366010645,179.939207767463,179.883777863048,179.808405380106,179.846852984841,179.994240528751,180.130952609872,180.087172954677,179.536848925136,178.521996426483,177.302091782627,176.240652459617,175.6809136816,175.219688834771,174.579154213276,174.087838390171,174.147205381544,175.366776847761,177.745710223083,180.122236556251,181.615841149164,182.668551997929,184.213056781231,185.571479750556,186.089762080511,185.590812370133,184.515612898686,183.119331177043,181.765336715804,180.858051261369,179.327606114291,176.964353719128,174.574564274231,173.235008759711,172.398869786267,171.337620997672,170.515079127052,170.309175916997,171.353455280279,173.50682529889,175.868356424151,177.437197934623,178.930833156772,180.767729924755,182.763157466399,184.49432865426,185.769464344154,186.704256595241,187.585377508428,188.362956470443,188.882861184852,189.208968406574,189.404764239136,189.450524425303,189.334927949309,189.03155926659,188.525379385189,187.873940426527,187.059821021237],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="col-print-6 col-sm-6 dao_visuals">
+<h2>
+Yearly Median Days to Disposition by Police District
+</h2>
+<div id="drugcrime" class="mapframe">
+
+</div>
+<script>generateReportMap('drugcrime', [{"dc_district":"01","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":188,"Year":"2014"},{"dc_district":"01","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":229,"Year":"2015"},{"dc_district":"01","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":241.5,"Year":"2016"},{"dc_district":"01","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":220,"Year":"2017"},{"dc_district":"01","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":206,"Year":"2018"},{"dc_district":"01","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":229,"Year":"2019"},{"dc_district":"02","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":239.5,"Year":"2014"},{"dc_district":"02","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":222,"Year":"2015"},{"dc_district":"02","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":213,"Year":"2016"},{"dc_district":"02","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":213.5,"Year":"2017"},{"dc_district":"02","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":215,"Year":"2018"},{"dc_district":"02","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":228,"Year":"2019"},{"dc_district":"03","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":256,"Year":"2014"},{"dc_district":"03","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":246,"Year":"2015"},{"dc_district":"03","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":231,"Year":"2016"},{"dc_district":"03","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":217,"Year":"2017"},{"dc_district":"03","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":215,"Year":"2018"},{"dc_district":"03","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":179.5,"Year":"2019"},{"dc_district":"05","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":369,"Year":"2014"},{"dc_district":"05","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":243.5,"Year":"2015"},{"dc_district":"05","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":185.5,"Year":"2016"},{"dc_district":"05","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":209,"Year":"2017"},{"dc_district":"05","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":140,"Year":"2018"},{"dc_district":"05","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":146.5,"Year":"2019"},{"dc_district":"06","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":187,"Year":"2014"},{"dc_district":"06","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":242,"Year":"2015"},{"dc_district":"06","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":179,"Year":"2016"},{"dc_district":"06","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":213.5,"Year":"2017"},{"dc_district":"06","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":197,"Year":"2018"},{"dc_district":"06","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":195.5,"Year":"2019"},{"dc_district":"07","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":277,"Year":"2014"},{"dc_district":"07","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":296.5,"Year":"2015"},{"dc_district":"07","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":365,"Year":"2016"},{"dc_district":"07","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":220,"Year":"2017"},{"dc_district":"07","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":228,"Year":"2018"},{"dc_district":"07","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":288,"Year":"2019"},{"dc_district":"08","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":194,"Year":"2014"},{"dc_district":"08","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":257,"Year":"2015"},{"dc_district":"08","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":247.5,"Year":"2016"},{"dc_district":"08","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":186,"Year":"2017"},{"dc_district":"08","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":246,"Year":"2018"},{"dc_district":"08","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":145,"Year":"2019"},{"dc_district":"09","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":204,"Year":"2014"},{"dc_district":"09","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":237,"Year":"2015"},{"dc_district":"09","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":188,"Year":"2016"},{"dc_district":"09","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":174,"Year":"2017"},{"dc_district":"09","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":148,"Year":"2018"},{"dc_district":"09","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":216,"Year":"2019"},{"dc_district":"12","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":205,"Year":"2014"},{"dc_district":"12","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":229,"Year":"2015"},{"dc_district":"12","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":221.5,"Year":"2016"},{"dc_district":"12","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":201,"Year":"2017"},{"dc_district":"12","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":172.5,"Year":"2018"},{"dc_district":"12","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":158,"Year":"2019"},{"dc_district":"14","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":160,"Year":"2014"},{"dc_district":"14","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":163,"Year":"2015"},{"dc_district":"14","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":146.5,"Year":"2016"},{"dc_district":"14","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":161.5,"Year":"2017"},{"dc_district":"14","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":168,"Year":"2018"},{"dc_district":"14","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":159,"Year":"2019"},{"dc_district":"15","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":189.5,"Year":"2014"},{"dc_district":"15","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":222,"Year":"2015"},{"dc_district":"15","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":247,"Year":"2016"},{"dc_district":"15","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":190.5,"Year":"2017"},{"dc_district":"15","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":216.5,"Year":"2018"},{"dc_district":"15","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":229.5,"Year":"2019"},{"dc_district":"16","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":194,"Year":"2014"},{"dc_district":"16","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":187,"Year":"2015"},{"dc_district":"16","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":182.5,"Year":"2016"},{"dc_district":"16","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":191.5,"Year":"2017"},{"dc_district":"16","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":177.5,"Year":"2018"},{"dc_district":"16","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":174,"Year":"2019"},{"dc_district":"17","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":195,"Year":"2014"},{"dc_district":"17","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":203,"Year":"2015"},{"dc_district":"17","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":225,"Year":"2016"},{"dc_district":"17","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":197,"Year":"2017"},{"dc_district":"17","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":180.5,"Year":"2018"},{"dc_district":"17","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":194.5,"Year":"2019"},{"dc_district":"18","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":196,"Year":"2014"},{"dc_district":"18","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":227,"Year":"2015"},{"dc_district":"18","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":181,"Year":"2016"},{"dc_district":"18","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":162,"Year":"2017"},{"dc_district":"18","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":182,"Year":"2018"},{"dc_district":"18","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":160,"Year":"2019"},{"dc_district":"19","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":168,"Year":"2014"},{"dc_district":"19","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":187,"Year":"2015"},{"dc_district":"19","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":195.5,"Year":"2016"},{"dc_district":"19","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":188,"Year":"2017"},{"dc_district":"19","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":190,"Year":"2018"},{"dc_district":"19","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":215,"Year":"2019"},{"dc_district":"22","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":184,"Year":"2014"},{"dc_district":"22","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":188.5,"Year":"2015"},{"dc_district":"22","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":190.5,"Year":"2016"},{"dc_district":"22","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":188,"Year":"2017"},{"dc_district":"22","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":188,"Year":"2018"},{"dc_district":"22","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":166,"Year":"2019"},{"dc_district":"24","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":174,"Year":"2014"},{"dc_district":"24","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":153,"Year":"2015"},{"dc_district":"24","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":160,"Year":"2016"},{"dc_district":"24","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":154,"Year":"2017"},{"dc_district":"24","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":173,"Year":"2018"},{"dc_district":"24","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":187,"Year":"2019"},{"dc_district":"25","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":169,"Year":"2014"},{"dc_district":"25","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":169,"Year":"2015"},{"dc_district":"25","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":177,"Year":"2016"},{"dc_district":"25","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":168,"Year":"2017"},{"dc_district":"25","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":187,"Year":"2018"},{"dc_district":"25","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":202,"Year":"2019"},{"dc_district":"26","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":170.5,"Year":"2014"},{"dc_district":"26","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":191.5,"Year":"2015"},{"dc_district":"26","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":172.5,"Year":"2016"},{"dc_district":"26","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":198,"Year":"2017"},{"dc_district":"26","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":222.5,"Year":"2018"},{"dc_district":"26","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":254,"Year":"2019"},{"dc_district":"35","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":156,"Year":"2014"},{"dc_district":"35","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":160,"Year":"2015"},{"dc_district":"35","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":177,"Year":"2016"},{"dc_district":"35","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":166,"Year":"2017"},{"dc_district":"35","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":179,"Year":"2018"},{"dc_district":"35","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":157.5,"Year":"2019"},{"dc_district":"39","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":172,"Year":"2014"},{"dc_district":"39","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":152,"Year":"2015"},{"dc_district":"39","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":150,"Year":"2016"},{"dc_district":"39","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":132,"Year":"2017"},{"dc_district":"39","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":190,"Year":"2018"},{"dc_district":"39","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":172,"Year":"2019"},{"dc_district":"77","date_value":"2014-01-01","police_UCR_category":"All Drug Offenses","count":104,"Year":"2014"},{"dc_district":"77","date_value":"2015-01-01","police_UCR_category":"All Drug Offenses","count":559,"Year":"2015"},{"dc_district":"77","date_value":"2016-01-01","police_UCR_category":"All Drug Offenses","count":165,"Year":"2016"},{"dc_district":"77","date_value":"2017-01-01","police_UCR_category":"All Drug Offenses","count":79.5,"Year":"2017"},{"dc_district":"77","date_value":"2018-01-01","police_UCR_category":"All Drug Offenses","count":114,"Year":"2018"},{"dc_district":"77","date_value":"2019-01-01","police_UCR_category":"All Drug Offenses","count":225.5,"Year":"2019"}], 'All Drug Offenses', 'Median Days to Disposition', metric_type = 'Median')</script>
+</div>
+</div>
+<h2 class="dao_table_header">
+Data: YTD Median Days to Disposition by Offense Category
+</h2>
+<div class="table-wrapper">
+<table class="table table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;color: #4D7DBF !important;width: 16rem; text-align: left;">
+Offense Category
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2014 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2015 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2016 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2017 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2018 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;">
+2019 YTD
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;">
+Yr-Yr<br>Change
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’14-’17<br>Avg
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’18-’19<br>Avg
+</th>
+<th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+’14-’17 Avg<br>Compared to<br>’18-’19 Avg
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Drug Possession
+</td>
+<td style="text-align:center;">
+142.5
+</td>
+<td style="text-align:center;">
+149
+</td>
+<td style="text-align:center;">
+134
+</td>
+<td style="text-align:center;">
+125
+</td>
+<td style="text-align:center;">
+155.5
+</td>
+<td style="text-align:center;">
+172
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+11%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+138
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+164
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+19%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+Drug Sales
+</td>
+<td style="text-align:center;">
+203.0
+</td>
+<td style="text-align:center;">
+221
+</td>
+<td style="text-align:center;">
+197
+</td>
+<td style="text-align:center;">
+185
+</td>
+<td style="text-align:center;">
+199.0
+</td>
+<td style="text-align:center;">
+189
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-5%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+202
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+194
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-4%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 16rem; text-align: left;">
+DUI
+</td>
+<td style="text-align:center;">
+232.0
+</td>
+<td style="text-align:center;">
+201
+</td>
+<td style="text-align:center;">
+214
+</td>
+<td style="text-align:center;">
+217
+</td>
+<td style="text-align:center;">
+210.5
+</td>
+<td style="text-align:center;">
+203
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;">
+-4%
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+216
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+207
+</td>
+<td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+-4%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;width: 16rem; text-align: left;">
+All Drug Offenses
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+178.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+182
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+176
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+172
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+184.0
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
+188
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;">
+2%
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+177
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+186
+</td>
+<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
+5%
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="section-1" class="section level1">
+<h1></h1>
+</div>
+
+</div>
+<footer class="row">
+<div class="container-fluid padding">
+<div class="row text-center">
+	<div class="col-md-4">
+    <h2 class="connectext">Office</h2>
+		<hr class="light">
+		<p>
+		  Three South Penn Square<br/>
+		  Philadelphia, PA 19107-3499<br/>
+		  215-686-8000
+		</p>
+	</div>
+	<div class="col-md-4">
+		<div class="col-12">
+			<h2 class="connectext">Connect</h2>
+		<hr class="light">
+			</div>
+			<div class="col-12 social padding">
+				<a href="https://www.facebook.com/philaDAO/" target="_blank"><i class="fa fa-facebook social-circle-icon" title="facebook"></i></a>
+				<a href="https://www.instagram.com/philadao/?hl=en" target="_blank"><i class="fa fa-instagram social-circle-icon" title="instagram"></i></a>
+				<a href="https://twitter.com/philadao?lang=en" target="_blank"><i class="fa fa-twitter social-circle-icon" title="twitter"></i></a>
+				<a href="mailto:justice@phila.gov"><i class="fa fa-envelope social-circle-icon" title="email us"></i></a>
+			</div>
+		</div>
+	<div class="col-md-4">
+	  <div class="col-12">
+	    <h2 class="connectext">More</h2>
+		<hr class="light">
+      <ul>
+        <li><a href="https://medium.com/philadelphia-justice" target="_blank">The Justice Wire</a></li>
+        <li><a href="https://www.phila.gov/districtattorney/pages/default.aspx" target="_blank">Office of the District Attorney</a></li>
+        <li><a href="howto.html#constraints">Public Access and Use</a></li>
+		  </ul>
+		</div>
+  </div>
+</div>
+<p class="copytext">&copy; City of Philadelphia, Philadelphia District Attorney's Office<p>
+</div>
+</footer>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+</body>
+</html>
