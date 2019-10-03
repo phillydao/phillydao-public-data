@@ -245,6 +245,10 @@ table, .table {
 
 .dao_key_numbers {
   background-color: #DAEDFE;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flexbox;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -267,10 +271,12 @@ table, .table {
 @media (max-width: 767px) {
 .dao_key_numbers > div {
   border-bottom: 1rem solid #ffffff;
-  min-width: 50%;
-  max-width: 50%;
+  /*min-width: 50%;
+  max-width: 50%;*/
   -webkit-flex-grow: 1;
+  -ms-flex-grow:1;
   flex-grow: 1;
+  flex-basis: 49%
 }
 
 .dao_key_numbers_blank {
