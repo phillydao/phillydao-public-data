@@ -173,6 +173,13 @@ table, .table {
   max-width: none;
 }
 
+/*Set logo to adjust to max width if screen falls below default width of logo (453px)*/
+@media (max-width: 453px) {
+  .dao_header > div > img {
+    width: 100%;
+  }
+}
+
 .dao_menu {
   background-color: #192833;
   color: #fff;
@@ -296,6 +303,19 @@ table, .table {
 .dao_key_number_text {
   margin-bottom: 0;
   color: #444;
+}
+
+/* up down and right pointing triangles!*/
+.up-pointing-triangle::after {
+  content: "\25B2 \FE0E";
+}
+
+.down-pointing-triangle::after {
+  content: "\25BC \FE0E";
+}
+
+.right-pointing-triangle::after {
+  content: "\25B6 \FE0E";
 }
 
 .dao-warning {
