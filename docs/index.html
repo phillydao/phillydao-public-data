@@ -30,12 +30,13 @@
 
   gtag('config', 'UA-141263577-1');
 </script>
-<script type="text/javascript" src="./assets/maps/dao-dashboard-mapmaker.js"></script>
+<script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
+<script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
- <script type='text/javascript' src='./assets/maps/leaflet-choropleth/choropleth.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
+<script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
 
@@ -193,6 +194,23 @@ summary {
           <li class="dropdown dao-nav-menu">
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
+            <li class="dropdown-submenu">
+                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu">
+                    <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
+                    <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
+                    <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
+                    <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
+                    <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
+                    <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
+                    <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
+                    <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
+                    <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
+                    <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
+                    <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
+                    <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
+                </ul>
+              </li>
               <li><a href="Incidents_Report.html">Incidents</a></li>
               <li><a href="Arrest_Report.html">Arrests</a></li>
               <li><a href="Charge_Report.html">Charges</a></li>
@@ -201,6 +219,10 @@ summary {
               <li><a href="Case_Length_Report.html">Case Length</a></li>
               <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
               <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
             </ul>
           </li>
           <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
@@ -242,7 +264,7 @@ summary {
   <!-- Wrapper for slides -->
   <div class="carousel-inner dao_carousel_inner" role="listbox">
     <div class="item active">
-      <img src="assets/images/Carousel-LK_speaking.png" alt="Story 1: A Note from DA Krasner about transparency.">
+      <img src="assets/images/Carousel-LK_Speaking.png" alt="Story 1: A Note from DA Krasner about transparency.">
       <div class="carousel-caption">
         <p class="dao-carousel-text col-md-8">“This new website is a first step toward providing greater transparency and accountability to the public. This site uses data to replace fear-driven fiction with fact. It replaces doubt with data to tell a true story that has not been told about crime, about public safety, about our people, and about our city.”</p>
         <p class="dao-carousel-text dao-carousel-text-emphasis col-md-11"><a href="https://medium.com/philadelphia-justice/video-test-1-ba9ad564e734" target="_blank">DA Larry Krasner on Transparency and Acccountability</a></p>
@@ -377,25 +399,37 @@ Available Reports
 <p>
 <a href="Charge_Report.html" class="dao-report-link dao_report_body_emphasis">Charges</a>
 </p>
-</div>
-<div class="col-md-3 col-md-offset-1 col-sm-12">
 <p>
 <a href="Bail_Report.html" class="dao-report-link dao_report_body_emphasis">Bail</a>
 </p>
+</div>
+<div class="col-md-3 col-md-offset-1 col-sm-12">
 <p>
 <a href="Case_Outcomes_Report.html" class="dao-report-link dao_report_body_emphasis">Case Outcomes</a>
 </p>
 <p>
 <a href="Case_Length_Report.html" class="dao-report-link dao_report_body_emphasis">Case Length</a>
 </p>
-</div>
-<div class="col-md-4 col-md-offset-1 col-sm-12">
 <p>
 <a href="Future_Years_Incarceration_Report.html" class="dao-report-link dao_report_body_emphasis">Future Years of Incarceration</a>
 </p>
 <p>
 <a href="Future_Years_Supervision_Report.html" class="dao-report-link dao_report_body_emphasis">Future Years of Supervision</a>
 </p>
+</div>
+<div class="col-md-4 col-md-offset-1 col-sm-12">
+<p>
+<a href="Summary_Arrest_Report.html" class="dao-report-link dao_report_body_emphasis">Summary Arrests</a>
+</li>
+<p>
+<a href="Summary_Charge_Report.html" class="dao-report-link dao_report_body_emphasis">Summary Charges</a>
+</li>
+<p>
+<a href="Summary_Case_Outcomes_Report.html" class="dao-report-link dao_report_body_emphasis">Summary Case Outcomes</a>
+</li>
+<p>
+<a href="Summary_Case_Length_Report.html" class="dao-report-link dao_report_body_emphasis">Summary Case Length</a>
+</li>
 </div>
 </div>
 

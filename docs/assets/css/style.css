@@ -94,11 +94,6 @@ table, .table {
   padding-top: 1.1rem;
 }
 
-
-.table>tbody>tr:hover {
-  filter: brightness(85%);
-}
-
 .clickable[aria-expanded=true] .fa-plus-circle {
    display: none;
 }
@@ -189,6 +184,21 @@ table, .table {
   font-size: 1.2rem;
 }
 
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dao_menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  z-index: 1000;
+}
+
+.dropdown-submenu .right-pointing-triangle {
+  font-size: .9rem;
+}
+
 /* WES: how do I get this to work?  Should remove the border for the dropdown menu ul */
 .dao_menu > ul {
   border: 0;
@@ -248,6 +258,14 @@ table, .table {
 
 .dao_report_title_text {
   margin: 0;
+}
+
+.dao_page_header {
+  background-color: #DAEDFE;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .dao_key_numbers {
@@ -504,6 +522,10 @@ table, .table {
   size: 1.5rem;
 }
 
+.leaflet-top {
+  z-index: 500 !important;
+}
+
 pop1, .pop1 {
   font-family: 'nimbus-sans', sans-serif;
   font-weight: 500;
@@ -644,7 +666,6 @@ pop3, .pop3 {
 .dao-definition-letter-links {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  overflow-wrap: break-word;
 }
 
 .dao-definition-letter-links > p {

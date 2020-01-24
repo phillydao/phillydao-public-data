@@ -30,12 +30,13 @@
 
   gtag('config', 'UA-141263577-1');
 </script>
-<script type="text/javascript" src="./assets/maps/dao-dashboard-mapmaker.js"></script>
+<script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
+<script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
- <script type='text/javascript' src='./assets/maps/leaflet-choropleth/choropleth.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
+<script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
 
@@ -193,6 +194,23 @@ summary {
           <li class="dropdown dao-nav-menu">
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
+            <li class="dropdown-submenu">
+                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu">
+                    <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
+                    <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
+                    <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
+                    <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
+                    <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
+                    <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
+                    <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
+                    <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
+                    <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
+                    <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
+                    <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
+                    <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
+                </ul>
+              </li>
               <li><a href="Incidents_Report.html">Incidents</a></li>
               <li><a href="Arrest_Report.html">Arrests</a></li>
               <li><a href="Charge_Report.html">Charges</a></li>
@@ -201,6 +219,10 @@ summary {
               <li><a href="Case_Length_Report.html">Case Length</a></li>
               <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
               <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
             </ul>
           </li>
           <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
@@ -231,7 +253,7 @@ summary {
 </div>
 
 
-<div class="row dao_key_numbers col-11">
+<div class="row dao_page_header col-11">
 <div class="col-md-4 col-md-offset-1 h1">
 How to Use This Site
 </h1>
@@ -365,7 +387,7 @@ The data tables show the Year-to-Date (YTD) totals for each data point in a repo
 Downloading Data
 </div>
 <div class="dao-definition">
-<p>The reports show Year-To-Date numbers, but we understand that this isn’t enough to fully understand the criminal justice system. To that end, we are making available CSV files with the information from each report summarized on a daily (rather than yearly) basis. These files are avilable as both citywide summaries and summaries by police district. If you are interested in analyzing our data yourself you can download these files and analyze them in excel or any other statistics program.</p>
+<p>The reports show Year-To-Date numbers, but we understand that this isn’t enough to fully understand the criminal justice system. To that end, we are making available CSV files with the information from each report summarized on a more frequent basis. Daily summaries are available for the whole city, by police district, and by zip code (technically <a href="https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html">ZCTA</a>). Weekly summaries are available by census tract. If you are interested in analyzing our data yourself you can download these files and analyze them in excel or any other statistics program.</p>
 <img type="image/png" src="assets/images/download_page_howtouse.png" alt="Image showing the download page with numbers indicating each section." class="dao_report_flowchart"></img>
 <h5>
 Components
@@ -391,15 +413,15 @@ The names of each available dataset.
 </li>
 <li>
 <h5>
-Time Period
+Data Time Period and Geogrpahy
 </h5>
-The update interval for each dataset. Currently all datasets are updated daily.
+Each dataset is available by a few geographies: citywide, police districts, ZIP Codes (ZCTA), and Census tracts. Most are provided as daily totals, though due to file size limitations we’ve restricted Census tracts to weekly totals.
 </li>
 <li>
 <h5>
 Download Links
 </h5>
-Links to the CSV files. There are two available for each dataset: citywide data data broken down by police district. The only exception to this is the Police Incident data, which includes a link to OpenDataPhilly. We do not create, or maintain Incident data, as that is made public by the Police. Unlike to other datasets, Incident data consists of data for each reported crime incidents rather than daily summary information. Further, this data is only incidents that the Federal Bureau of Investigation (FBI) classifies as Parts I &amp; II crimes. See the <a href="limitations.html">Limitations</a> page for more information on FBI classification.
+Links to the comma separated value (CSV) files. We do not provide a direct download for Police incident data. Instead, we include a link to OpenDataPhilly. We do not create or maintain Incident data, as that is made public by the Police. Unlike to other datasets, Incident data consists of data for each reported crime incidents rather than daily summary information. Further, this data is only incidents that the Federal Bureau of Investigation (FBI) classifies as Parts I &amp; II crimes. See the <a href="limitations.html">Limitations</a> page for more information on FBI classification.
 </li>
 <li>
 <h5>

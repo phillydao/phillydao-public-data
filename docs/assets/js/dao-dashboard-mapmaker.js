@@ -1,7 +1,9 @@
 var all_crime_map;
-var violent_crime_map;
-var property_crime_map;
-var drug_crime_map;
+var category1_crime_map;
+var category2_crime_map;
+var category3_crime_map;
+var category4_crime_map;
+var category5_crime_map;
 
 function generateReportMap(divnamestring, jsondata, category, type, metric_type = "Total"){
 	var map = L.map(divnamestring, {
@@ -25,7 +27,7 @@ function generateReportMap(divnamestring, jsondata, category, type, metric_type 
 
 	var data = jsondata;
 
-	var geodata = $.ajax({url:'./assets/maps/geom/police_districts.geojson',
+	var geodata = $.ajax({url:'./assets/js/geom/police_districts.geojson',
 	dataType: 'json'
 	});
 
@@ -94,34 +96,30 @@ function generateReportMap(divnamestring, jsondata, category, type, metric_type 
 	  case 'allcrime':
 	    all_crime_map = map;
 	    break;
-	  case 'violentcrime':
-	    violent_crime_map = map;
+	  case 'category1crime':
+	    category1_crime_map = map;
 	    break;
-	  case 'propertycrime':
-	    property_crime_map = map;
+	  case 'category2crime':
+	    category2_crime_map = map;
 	    break;
-	  case 'drugcrime':
-	    drug_crime_map = map;
+	  case 'category3crime':
+	    category3_crime_map = map;
+	    break;
+	  case 'category4crime':
+	    category4_crime_map = map;
+	    break;
+	  case 'category5crime':
+	    category5_crime_map = map;
 	    break;
 	}
 }
 
 // Clears and resizes map on tab change. Fixes problem of bad map loading when resizing windows.
 $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
-    all_crime_map.invalidateSize();
-    violent_crime_map.invalidateSize();
-    property_crime_map.invalidateSize();
-    drug_crime_map.invalidateSize();
+    if (typeof all_crime_map !== 'undefined'){all_crime_map.invalidateSize();}
+    if (typeof category1_crime_map !== 'undefined'){category1_crime_map.invalidateSize();}
+    if (typeof category2_crime_map !== 'undefined'){category2_crime_map.invalidateSize();}
+    if (typeof category3_crime_map !== 'undefined'){category3_crime_map.invalidateSize();}
+    if (typeof category4_crime_map !== 'undefined'){category4_crime_map.invalidateSize();}
+    if (typeof category5_crime_map !== 'undefined'){category5_crime_map.invalidateSize();}
   })
-  
-// handle tag switching for collapsible table icons. probably doesn't belong in mapmaker.js but it lives here for now.
-$(function(){
-  $('tr').on('click', function(e){
-    var trow = $(e.currentTarget);
-    if(trow.attr('aria-expanded') === 'true') {
-      $(this).attr('aria-expanded', 'false');
-    } else {
-      $(this).attr('aria-expanded', 'true')
-    }
-  })
-})
