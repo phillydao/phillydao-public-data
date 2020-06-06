@@ -22,4 +22,20 @@ $(function(){
       $(this).attr('aria-expanded', 'true')
     }
   })
-})
+});
+
+function fix_rowspanning() {
+  if ($(window).width() > 550) {
+    $("tspan:contains('____')").removeAttr('x');
+    $("tspan:contains('____')").attr('dy','0');
+    $("tspan:contains('____')").text(function(){return $(this).text().replace("____", "");}); 
+
+  } else {
+    $("tspan:contains('____')").text(function(){return $(this).text().replace("____", "");}); 
+  }
+}
+
+// remove rowspanning labels on charts (preceded by xxxx) and then remove the xxxx; this is a hack for the covid faceted plots
+$(window).on("load", function() {fix_rowspanning();});
+
+$(window).resize(function() {setTimeout(()=>  {fix_rowspanning();}, 5)});
