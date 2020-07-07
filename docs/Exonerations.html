@@ -11,7 +11,7 @@
 
 
 
-<title>About - PhilaDAO Data Dashboard</title>
+<title>Exonerations - PhilaDAO Data Dashboard</title>
 
 <script src="assets/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,6 +20,7 @@
 <script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="assets/navigation-1.1/tabsets.js"></script>
+<script src="assets/kePrint-0.0.1/kePrint.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
 <script>
@@ -250,32 +251,463 @@ summary {
 
 
 
-<h1 class="title toc-ignore">About - PhilaDAO Data Dashboard</h1>
+<h1 class="title toc-ignore">Exonerations - PhilaDAO Data Dashboard</h1>
 
 </div>
 
 
 <div class="row dao_page_header col-11">
-<div class="col-md-8 col-md-offset-1 h1">
-About Philadelphia’s Criminal Justice System and the Public Data Dashboard
+<div class="col-md-3 col-md-offset-1 h1">
+Exonerations
 </h1>
 </div>
 </div>
 <div>
  
 </div>
-<div class="col-md-10 col-md-offset-1">
-<div class="dao-definition">
-<p>The purpose of this website is to provide the public with transparent, comprehensive, and centralized data on the Philadelphia criminal justice system. We hope that Philadelphians will visit this website regularly to learn about long-term criminal justice trends and new metrics, read data stories, and <a href="mailto:justice@phila.gov">tell us about the kinds of analysis and information you want to see</a>. The Philadelphia District Attorney’s Office (DAO) Data Dashboard is a work in progress, but it is our hope that it can help the public hold the District Attorney accountable for ending mass incarceration and mass supervision without endangering public safety.</p>
-<object type="image/svg+xml" data="assets/images/Report_Flowchart_links.svg" alt="Chart showing flow of cases from incidents to outcomes." class="dao_report_flowchart">
-</object>
-<p>The DAO Data Dashboard provides an initial data-based framework for understanding how the broad policy efforts that District Attorney Krasner is pursuing relate to the criminal justice system in Philadelphia. For the first time, the public will have access to some basic numbers that describe what is happening in the Philadelphia criminal justice system from the time an <a href="Incidents_Report.html">incident</a> is first reported until a <a href="Case_Outcomes_Report.html">final disposition</a>. For the first time, the aspirational concept of reducing mass supervision and mass incarceration will become more tangible through a new metric that calculates the number of <a href="Future_Years_Incarceration_Report.html">future years of incarceration</a> and <a href="Future_Years_Supervision_Report.html">future years of supervision</a> imposed in actual cases on a daily basis.</p>
-<p>The Philadelphia DAO plays a pivotal role in the criminal justice system, but does not take part in every aspect of the criminal justice system. As shown in the diagram on the right, the DAO usually doesn’t become involved in a case until after an arrest is made. The taking of an incident report, the investigation of the incident, and the arrest are all done by the Philadelphia Police Department (PPD) or other law enforcement agencies such as the State or SEPTA Police. In some cases, in cooperation with other law enforcement agencies, the DAO will be involved in the investigative stage of a case. Examples include homicide cases and cases such as <a href="https://www.inquirer.com/philly/news/crime/kensington-drug-bust-alameda-larry-krasner-district-attorney-philadelphia-20181004.html">large “drug busts”</a> where the DAO works with the PPD and other law enforcement agencies to develop strong evidence in support of arrest and prosecution.</p>
-<p>Following an arrest, the case is then turned over to the DAO, where Assistant District Attorneys (ADAs) in the Charging Unit review the facts of the case to determine if there is sufficient evidence to bring charges and, if so, what charges to bring. Once a case is charged, a Bail Magistrate sets bail based on recommendations by the lawyer for the accused and the DAO. The decisions by the Bail Magistrate determine whether a person will be held without bail (very rare), held with cash bail, or released with only non-monetary conditions (ROR). Those held on cash bail can be released by paying 10% of what they owe. You can see bail breakdowns for various case types in our <a href="Bail_Report.html">Bail Report</a>.</p>
-<p>Another aspect of charging is diversion. While charging a case, the DAO may decide to divert a defendant into one of the <a href="https://www.phila.gov/districtattorney/diversion/Pages/default.aspx">many diversionary programs available</a>. The purpose of these programs is to facilitate community-based alternatives to incarceration for people in need of treatment and support. Diversion can reduce collateral consequences of arrest and reduce recidivism for participants while saving system resources. Diversion is one of several outcomes you can learn more about in our report on <a href="Case_Outcomes_Report.html">Case Outcomes</a>.</p>
-<p>If the case is not diverted, it will progress through the criminal justice system until it is resolved by a verdict, guilty plea, dismissal or withdrawal. If the case is resolved by a guilty plea or guilty verdict, the judge will impose a sentence. One way in which the DAO has tried to reduce future years of incarceration and future years of supervision is by making plea offers and sentencing recommendations that are below the lowest level of the <a href="https://www.pacode.com/secure/data/204/chapter303/chap303toc.html">Pennsylvania Sentencing Guidelines</a>. To monitor our success look at our reports on <a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a> and <a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a>.</p>
-<p>Finally, the DAO is aware that “justice delayed is justice denied,” and is constantly striving to find ways to increase efficiency and decrease unnecessary delays within the system. We believe resolving cases more swiftly improves the deterrent effect of the criminal justice system while reducing the burden of the system on victims and witnesses. To see the results of our efforts look at the report on <a href="Case_Length_Report.html">Case Length</a>.</p>
+<div class="row dao_text_block_row col-11" style="background-color:none">
+<div class="col-md-11 col-md-offset-1 h2">
+Summary
 </div>
+<div class="col-md-11 p">
+Every year innocent people are incarcerated for crimes that they did not commit, and others are wrongfully convicted. The National Registry of Exonerations states that “an exoneration occurs when a person who has been convicted of a crime is officially cleared based on new evidence of innocence.”<a href='#ref1'><sup>1</sup></a> So far in the United States 2,624 people have been exonerated since 1989, 367 of whom have been exonerated with the use of DNA evidence.<a href='#ref2'><sup>2</sup></a> The Philadelphia District Attorney’s Office (DAO) is dedicated to providing justice and reversing instances of wrongful convictions whenever possible. Since 2018 the Philadelphia DAO’s Conviction Integrity Unit (CIU) has exonerated 14 people who collectively were incarcerated for over 280 years. Unfortunately, Pennsylvania is one of the few states that does not offer any compensation to those who have been wrongfully convicted.<br><br>Out of respect for the privacy of the exonerated, we have chosen not to include the names of the individuals on this page. To do your own research, we recommend consulting the University of Michigan’s <a href='https://www.law.umich.edu/special/exoneration/Pages/detaillist.aspx?View={FAF6EDDB-5A68-4F8F-8A52-2C61F5BF9EA7}&FilterField1=ST&FilterValue1=PA&FilterField2=County%5Fx0020%5Fof%5Fx0020%5FCrime&FilterValue2=Philadelphia'>National Registry of Exonerations for Philadelphia County</a>.
+</div>
+</div>
+<div class='table-wrapper'>
+<table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Exoneree
+</th>
+<th style="text-align:center;">
+Race of exoneree
+</th>
+<th style="text-align:center;">
+Date of wrongful conviction
+</th>
+<th style="text-align:center;">
+Convicting<br>District Attorney
+</th>
+<th style="text-align:center;">
+Date of exoneration
+</th>
+<th style="text-align:center;">
+Exonerating<br>District Attorney
+</th>
+<th style="text-align:center;">
+Number of years<br>incarcerated<a href="#ref3"><sup>3</sup></a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Exoneree 1
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+November 2007
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+December 2016
+</td>
+<td style="text-align:center;">
+Williams
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 2
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+December 1994
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+May 2017
+</td>
+<td style="text-align:center;">
+Williams
+</td>
+<td style="text-align:center;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 3
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+September 1984
+</td>
+<td style="text-align:center;">
+Rendell
+</td>
+<td style="text-align:center;">
+July 2017
+</td>
+<td style="text-align:center;">
+Martin
+</td>
+<td style="text-align:center;">
+33
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 4
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+July 2009
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+May 2018
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 5
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+January 2012
+</td>
+<td style="text-align:center;">
+Williams
+</td>
+<td style="text-align:center;">
+December 2018
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 6
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+December 2009
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+March 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 7
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+September 2013
+</td>
+<td style="text-align:center;">
+Williams
+</td>
+<td style="text-align:center;">
+April 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 8
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+September 2016
+</td>
+<td style="text-align:center;">
+Williams
+</td>
+<td style="text-align:center;">
+May 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 9
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+May 1999
+</td>
+<td style="text-align:center;">
+Rendell
+</td>
+<td style="text-align:center;">
+May 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+22
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 10
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+September 1995
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+June 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 11
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+May 1993
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+July 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 12
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+September 1998
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+July 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+22
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 13
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+February 1993
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+October 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 14
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+August 1993
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+December 2019
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+30
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 15
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+August 1993
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+January 2020
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 16
+</td>
+<td style="text-align:center;">
+White
+</td>
+<td style="text-align:center;">
+October 1996
+</td>
+<td style="text-align:center;">
+Abraham
+</td>
+<td style="text-align:center;">
+June 2020
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Exoneree 17
+</td>
+<td style="text-align:center;">
+Black
+</td>
+<td style="text-align:center;">
+March 1989
+</td>
+<td style="text-align:center;">
+Castille
+</td>
+<td style="text-align:center;">
+June 2020
+</td>
+<td style="text-align:center;">
+Krasner
+</td>
+<td style="text-align:center;">
+32
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="row dao_text_block_row col-11" style="background-color:none">
+<div class="col-md-11 col-md-offset-1 h2">
+Notes
+</div>
+<div class = "col-md-11 p">
+<p id="ref1">
+[1] <a href = 'http://www.law.umich.edu/special/exoneration/Pages/glossary.aspx'>National Registry of Exonerations: Glossary</a>
+</p>
+<p id="ref2">
+[2] <a href = 'https://www.innocenceproject.org/exonerate'>The Innocence Project: Exonerate the Innocent</a>
+</p>
+<p id='ref3'>
+[3] Number of years incarcerated includes time spent incarcerated pretrial.
 </div>
 </div>
 
