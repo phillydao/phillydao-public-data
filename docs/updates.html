@@ -39,6 +39,15 @@
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
 
 
 
@@ -223,6 +232,7 @@ summary {
               <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
               <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
               <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+              <li><a href="Exonerations.html">Exonerations</a></li>
             </ul>
           </li>
           <li class="dao-nav-menu"><a href="COVID19_Report.html" class="btn btn-dao-menu">COVID-19 Report</a></li>
@@ -273,6 +283,36 @@ Updates
 <div class="row dao_definition_block">
 <div class="col-md-10 col-md-offset-1">
 <div class="dao-definition-title-word">
+September 17, 2020
+</div>
+<div class="dao-definition">
+We are now able to identify cases in which the defendant has been exonerated or won their case on an appeal. This is reflected in the <a href='Case_Outcomes_Report.html'>Case Outcomes</a> report. Previously, these cases would appear as ‘Dismissed/Withdrawn/Etc.’ This is counted at the time that the exoneration or resolution of the appeal occurs. As these cases are resolved, you may see minor adjustments to cases in previous years. Details on exonerations can still be found on the <a href='Exonerations.html'>Exonerations</a> page.
+</div>
+</div>
+</div>
+<div class="row dao_definition_block">
+<div class="col-md-10 col-md-offset-1">
+<div class="dao-definition-title-word">
+July 23, 2020
+</div>
+<div class="dao-definition">
+We improved the quality of bail information that is on the dashboard. In particular, we can now distingiush between monetary bail and unsecured bail (SOB), we can distinguish ROR from held without bail, and we have very few unknown bail amounts. This was made possible through a large batch of updated data that the DAO received from the Administrative Office of Pennsylvania Courts.
+</div>
+</div>
+</div>
+<div class="row dao_definition_block">
+<div class="col-md-10 col-md-offset-1">
+<div class="dao-definition-title-word">
+July 07, 2020
+</div>
+<div class="dao-definition">
+We added <a href='Exonerations.html'>a report</a> detailing the exonerations that have occurred since 2016. You can find basic information about each exoneration and links to more information about exonerations in Philadelphia.
+</div>
+</div>
+</div>
+<div class="row dao_definition_block">
+<div class="col-md-10 col-md-offset-1">
+<div class="dao-definition-title-word">
 June 06, 2020
 </div>
 <div class="dao-definition">
@@ -288,15 +328,15 @@ January 24, 2020
 <div class='dao-definition'>
 <p>Updates and fixes, including:</p>
 <ul>
-<li>You can now download daily data by ZIP Code Tabulation Area and weekly data by Census Tract. This was one of the most popularly requested features. Please see the <a href='https://data.philadao.com/limitations.html'>Limitations</a> page for more information on these datasets.</li>
-<li>We have added 8 new offense categories to the misdemeanor/felony reports: Other Assaults, Sexual Assault and Other Sex Offenses, Fraud/Theft of Services, Embezzlement, Possession of Firearms, Prostitution/Sex Work, Patronizing Prostitutes, and Threats of Violence. Similar categories were added to the Incidents report, although the incidents data available on OpenDataPhilly is not as fine-grained as our other data so the new incident categories are a bit more general.</li>
-<li>We have added two new tabs: Firearms and Other.</li>
-<li>We have now added reports on summary offenses for Arrests, Charges, Case Length, and Case Outcomes. These help to fill a hole in the original dashboard, which only reported on felony and misdemeanor offenses and therefore missed an important part of the system. Many of the offense categories reported on are the same as for felony and misdemeanors, although several are not reported on (e.g. violent offenses tend to not be summaries) and others have been added (e.g. Disorderly Conduct). In all, we report on the 9 most common summary offenses.</li>
-<li>You can now view year end data as well as year to date data. Year end reports are available through the navigation menu at the top of the page. Rather than just viewing what has happened since January 1 of each year, these reports allow you to view years as a whole.</li>
-<li>A small error was found in how we have been connecting arrests to case information. This caused a small number, about 0.5%, of cases to be duplicated in the Charges, Bail, Outcomes, Case Length, Future Years of Incarceration, and Future Years of Supervision reports. This error has been fixed, and the total count of cases in these reports have decreased slightly as a result.</li>
-<li>The line chart on the Violent Offenses tab on the Bail Report was reporting by quarter. This has been changed to report by month.</li>
-<li>The Arrests report inadvertantly excluded arrests where there was no date of birth listed for the defendant. These cases are now included.</li>
-<li>A bug causing some Safari users to experience issues when interacting with the report tables has been fixed.
+<li><p>You can now download daily data by ZIP Code Tabulation Area and weekly data by Census Tract. This was one of the most popularly requested features. Please see the <a href='https://data.philadao.com/limitations.html'>Limitations</a> page for more information on these datasets.</p></li>
+<li><p>We have added 8 new offense categories to the misdemeanor/felony reports: Other Assaults, Sexual Assault and Other Sex Offenses, Fraud/Theft of Services, Embezzlement, Possession of Firearms, Prostitution/Sex Work, Patronizing Prostitutes, and Threats of Violence. Similar categories were added to the Incidents report, although the incidents data available on OpenDataPhilly is not as fine-grained as our other data so the new incident categories are a bit more general.</p></li>
+<li><p>We have added two new tabs: Firearms and Other.</p></li>
+<li><p>We have now added reports on summary offenses for Arrests, Charges, Case Length, and Case Outcomes. These help to fill a hole in the original dashboard, which only reported on felony and misdemeanor offenses and therefore missed an important part of the system. Many of the offense categories reported on are the same as for felony and misdemeanors, although several are not reported on (e.g. violent offenses tend to not be summaries) and others have been added (e.g. Disorderly Conduct). In all, we report on the 9 most common summary offenses.</p></li>
+<li><p>You can now view year end data as well as year to date data. Year end reports are available through the navigation menu at the top of the page. Rather than just viewing what has happened since January 1 of each year, these reports allow you to view years as a whole.</p></li>
+<li><p>A small error was found in how we have been connecting arrests to case information. This caused a small number, about 0.5%, of cases to be duplicated in the Charges, Bail, Outcomes, Case Length, Future Years of Incarceration, and Future Years of Supervision reports. This error has been fixed, and the total count of cases in these reports have decreased slightly as a result.</p></li>
+<li><p>The line chart on the Violent Offenses tab on the Bail Report was reporting by quarter. This has been changed to report by month.</p></li>
+<li><p>The Arrests report inadvertantly excluded arrests where there was no date of birth listed for the defendant. These cases are now included.</p></li>
+<li><p>A bug causing some Safari users to experience issues when interacting with the report tables has been fixed.</p>
 </div>
 </div>
 </div>
@@ -347,10 +387,10 @@ October 09, 2019
 </div>
 <div class='dao-definition'>
 <p>Various bug fixes, including:</p></li>
-<li>Fixed header scaling on small screens.</li>
-<li>A broken link to our GitHub Repository on the How to Use This Site page has been repaired.</li>
-<li>Fixed how some ‘Key Metrics’ arrow symbols render on iOS devices.</li>
-<li>Changed how many significant figures are shown on the Rates tab on the Future Years of Supervision and Future Years of Incarceration reports.
+<li><p>Fixed header scaling on small screens.</p></li>
+<li><p>A broken link to our GitHub Repository on the How to Use This Site page has been repaired.</p></li>
+<li><p>Fixed how some ‘Key Metrics’ arrow symbols render on iOS devices.</p></li>
+<li><p>Changed how many significant figures are shown on the Rates tab on the Future Years of Supervision and Future Years of Incarceration reports.</p>
 </div>
 </div>
 </div>
