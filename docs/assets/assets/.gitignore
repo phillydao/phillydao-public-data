@@ -1,0 +1,8 @@
+# ignore everything
+*-*
+
+# except the images folder
+!images/*
+!css/*
+!geom/*
+!maps/*
