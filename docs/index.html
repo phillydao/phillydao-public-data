@@ -20,6 +20,8 @@
 <script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="assets/navigation-1.1/tabsets.js"></script>
+<link href="assets/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.0/anchor-sections.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
 <script>
@@ -46,7 +48,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 
 
@@ -334,7 +336,7 @@ Imposed Since 2018 (vs. ’14-’17)
 </div>
 <div class="col-print-2 col-xs-6 col-sm-2" onclick="location.href=&#39;Future_Years_Supervision_Report.html&#39;;" style="cursor:pointer;">
 <p class="dao_key_number_value dao_metric">
-<span class="down-pointing-triangle"> </span> -71,800
+<span class="down-pointing-triangle"> </span> -71,900
 </p>
 <h4 class="dao_key_number_text">
 <h4 class="dao_key_numbers_emphasis">
@@ -502,7 +504,7 @@ Available Reports
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
