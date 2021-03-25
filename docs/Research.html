@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Research at the DAO - PhilaDAO Data Dashboard</title>
+
+<script src="assets/header-attrs-2.6/header-attrs.js"></script>
+<script src="assets/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="assets/navigation-1.1/tabsets.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141263577-1');
+</script>
+<script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
+<script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+<script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
+<script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
+<script src="https://use.fontawesome.com/42c4092025.js"></script>
+<link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
+<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<nav class="navbar row" role="navigation">
+  <div class="container-fluid">
+    <div class="row dao_header vertical-align">
+      <div class="col-sm-12 col-md-3 text-sm-center "><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
+      <div class="col-sm-12 col-md-6 col-md-offset-3 text-md-right text-sm-center dao_header_title">Public Data Dashboard</div>
+    </div>
+    <div class="dao_navbar">
+      <div class="navbar-header navbar-default dao-hamburger">
+        <button type="button" class="navbar-toggle dao-hamburger collapsed" data-toggle="collapse" data-target="#dao-collapse-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse dao-menu" id="dao-collapse-navbar">
+        <ul class="dao-nav-menu nav navbar-nav dao-menu btn-group">
+          <li class="dao-nav-menu"><a href="index.html" class="btn btn-dao-menu">Home</a></li>
+          <li class="dropdown dao-nav-menu">
+            <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+            <ul class="dropdown-menu dao_menu">
+            <li class="dropdown-submenu">
+                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu">
+                    <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
+                    <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
+                    <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
+                    <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
+                    <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
+                    <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
+                    <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
+                    <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
+                    <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
+                    <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
+                    <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
+                    <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
+                </ul>
+              </li>
+              <li><a href="Incidents_Report.html">Incidents</a></li>
+              <li><a href="Arrest_Report.html">Arrests</a></li>
+              <li><a href="Charge_Report.html">Charges</a></li>
+              <li><a href="Bail_Report.html">Bail</a></li>
+              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+              <li><a href="Case_Length_Report.html">Case Length</a></li>
+              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+              <li><a href="Exonerations.html">Exonerations</a></li>
+              <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+            </ul>
+          </li>
+          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
+          <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
+          <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
+          <li class="dropdown dao-nav-menu">
+            <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+            <ul class="dropdown-menu dao_menu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="definitions.html">Definitions</a></li>
+              <li><a href="limitations.html">Limitations</a></li>
+              <li><a href="howto.html">How to Use This Site</a></li>
+              <li><a href="updates.html">Updates</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="rmd-container-fluid rmd-container">
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Research at the DAO - PhilaDAO Data Dashboard</h1>
+
+</div>
+
+
+<h1>
+Research at the DAO
+</h1>
+<div class="content-section">
+<div class="contain">
+<p>
+<p>The DATA Lab at the Philadelphia District Attorney’s Office (DAO) uses police, court, and other data streams to support a wide range of research on the criminal legal system. We work with external partners across all phases of the research arc to help develop impactful interventions, evaluations, and scholarship. This includes discussions around data sharing, data use agreements, and facilitating research involving Assistant District Attorneys (ADAs) and DAO personnel.</p>
+The DAO DATA Lab was created by District Attorney Krasner to help the Philadelphia District Attorney’s Office and the criminal legal system end the era of mass incarceration and mass supervision, and to ensure transparency and accountability while doing so. During a time of rapid change in the criminal legal system, the DATA Lab supports research that aligns with the following principles:
+</p>
+<div class="row list-box">
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+<ul class="fa-ul caret-list">
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Provide external evaluation of DAO decisions, processes, and policies
+</li>
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Investigate racism, sexism, classism, and other systemic disparities in the criminal legal system
+</li>
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Involve and center communities most impacted by criminal legal system
+</li>
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Improve the day-to-day functioning of the DAO (e.g., training, case processing, work product)
+</li>
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Offer potential long-term benefits to DAO (e.g., process, maps, reports, code)
+</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+<ul class="fa-ul caret-list">
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Complement DAO resources and helping to better understand social problems and the role of DAO
+</li>
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Address research questions of immediate interest or specific need
+</li>
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Work with investigators who are subject-matter experts on topic(s) of inquiry
+</li>
+<li>
+<span class="fa-li"><i class="fas fa-caret-right"></i></span>Help address gaps in social science research
+</li>
+</ul>
+</div>
+</div>
+<p>Following are DAO DATA Lab grant-funded partnerships, publications based on work supported by the DAO, and ongoing studies with research partners. If you are interested in submitting a research proposal or potentially collaborating with the DATA Lab, <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrfMFPNzHXRUuLJn63YDO3ucbm-RQvRFIxyUx5B7NrEC1XeA/viewform" target=_blank'>please complete this form</a>. If you have any comments or questions, please email Director of Research Oren Gur, PhD (<a href="mailto:oren.gur@phila.gov" class="email">oren.gur@phila.gov</a>).</p>
+</div>
+</div>
+<div class="row contain-highlight">
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 subscribe-col">
+<h1 class="unmargin">
+Get updates from the DAO DATA Lab
+</h1>
+<p>
+Subscribe to our mailing list to receive news and updates on research projects, publications, data stories, and data releases.
+</p>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 subscribe-col vertical-align align-self-center">
+<button class="subscribe-button" onclick="window.open(&quot;https://mailchi.mp/e580ff54a0b1/join-the-philadelphia-daos-data-lab-mailing-list&quot;, &quot;_blank&quot;)">
+Subscribe
+</button>
+</div>
+</div>
+<h1>
+Grant-Funded Partnerships
+</h1>
+<div class="publications content-section">
+<div class="contain">
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+A researchable prosecutorial office in the criminal justice reform era: A partnership with the University of Pennsylvania and Temple University supported by Arnold Ventures and the Chan Zuckerberg Initiative
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p>
+<p><strong>Researchers</strong>: Greg Ridgeway, Aurélie Ouss, David Abrams, Aaron Chalfin, Paul Heaton, Charles Loeffler, Francesca Amaral, Miguel Garza-Casado, Jacob Kaplan, Viet Nguyen, Lee Ozier (University of Pennsylvania). Peter Jones, Jeffrey T. Ward, E. Rely Vîlcică, Caterina G. Roman, Cathryn Rosen, Cheryl Irons, Doris Weiland (Temple University)<br> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/district-attorney-krasner-announces-dao-transparency-accountability-research-collaboration-27b12ad833db' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
+<em>The DATA Lab and DAO are working with independent researchers at the University of Pennsylvania and Temple University to investigate the impacts of ADA discretionary decision-making and prosecutor-led criminal legal reform. Funded by the largest research grant in the history of the DAO, this private-public collaboration with local universities aims to study the short- and long-term impacts of prosecutorial decision-making on individuals, families, and communities in Philadelphia.</em><br><br> <em>$3.5M over 3 years to DAO, $2.2M over 3 years to Penn Criminology and Temple Criminal Justice</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+<p>Research partners from Penn’s Department of Criminology will focus on the quantitative impacts of reforms on a broad scope of prosecutor touchpoints, while research partners from Temple University’s Department of Criminal Justice will utilize mixed methods to study the implementation fidelity of new policies and practices.</p>
+This unique partnership will:
+<ul>
+<li>
+Improve existing data systems and bolster the DAO’s data analytics and programming capacity
+</li>
+<li>
+Establish a local and national hub for research on prosecutorial decision-making, data-informed policy, and analytical innovations
+</li>
+<li>
+Investigate racial and other disparities in the criminal legal system
+</li>
+<li>
+Consider the relationship between criminal legal system contact and broader outcomes related to social and economic health
+</li>
+<li>
+Engage with DAO personnel and actors across Philadelphia’s criminal legal system
+</li>
+<li>
+Examine the efficiency and effectiveness of policy and programmatic changes made within the DAO
+</li>
+<li>
+Provide accountability and transparency both internally and to the public
+</li>
+</ul>
+</p>
+<div class="logo-row">
+<a href='https://www.arnoldventures.org'><img class='partner-logo' src='assets/images/partner_logos/av_circle.png'></a><a href='https://chanzuckerberg.com'><img class='partner-logo' src='assets/images/partner_logos/czi_circle.png'></a><a href='https://www.sas.upenn.edu'><img class='partner-logo' src='assets/images/partner_logos/penn_vertical.png'></a><a href='https://www.cla.temple.edu/criminal-justice/'><img class='partner-logo' src='assets/images/partner_logos/TempleCJ_logo.png'></a>
+</div>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+Prosecutorial Performance Indicators (PPI) Network: A partnership with Florida International University and Loyola-Chicago supported by the John D. and Catherine T. MacArthur Foundation’s Safety &amp; Justice Challenge
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p>
+<p><strong>Researchers</strong>: Besiki Luka Kutateladze, Rebecca Richardson, Melba Pearson, Ana Carazo, Lin Liu (Florida International University). Don Stemen, David Olson (Loyola University, Chicago). Branden DuPont (Medical College of Wisconsin)<br> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/philadelphia-district-attorneys-office-joins-prosecutorial-performance-indicators-network-fc94673722b7' target=_blank'><i class='far fa-file-alt'></i> Press Release</a> <a class='link-to-paper' href='https://prosecutorialperformanceindicators.org/' target=_blank'><i class='far fa-file-alt'></i> Website</a></p>
+<em>The DAO has partnered with researchers to implement a series of Prosecutorial Performance Indicators (PPIs) that measure office performance, specifically related to disparities and fairness in the criminal justice system. The researchers will also collect data through interviews, focus groups, and/or surveys to further contextualize the PPIs. The PPIs will then be used within the DAO to advance prosecutorial effectiveness and fairness through data and innovation to improve the legal system.</em><br><br> <em>$100k over 2 years</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+<p>Florida International University and Loyola University Chicago are implementing a two-year project with six prosecutor’s offices across the country, including the Philadelphia DAO. Most prosecutor’s offices lack the resources to systematically and objectively measure their performance. This project stems from a growing recognition that prosecutors need to become more data-driven and evidence-based, and each partner office is interested in developing greater data collection and analytical capacity to run their offices more effectively and fairly. The backdrop for this project is the Safety and Justice Challenge, the John D. and Catherine T. MacArthur Foundation initiative to reduce jail misuse and overuse as both a crucial component and a major driver of America’s over-reliance on incarceration. Unnecessary jail incarceration carries significant costs to individuals, families, communities, and society at large. These costs take their greatest toll on low-income people and communities of color.</p>
+The PPI project has a goal to advance both social science and prosecutorial practice. Prosecutorial practice is advanced through the following four objectives:
+<ol type="1">
+<li>
+Improve data and analytical capacity
+</li>
+<li>
+Develop and implement new performance indicators to assess progress over time
+</li>
+<li>
+Respond to the need to ameliorate racial and ethnic disparities in the justice system
+</li>
+<li>
+Communicate more effectively within and outside the prosecutor’s office
+</li>
+</ol>
+</p>
+<div class="logo-row">
+<a href='https://www.fiu.edu'><img class='partner-logo' src='assets/images/partner_logos/fiu-logo-vertical.png'></a><a href='https://www.luc.edu'><img class='partner-logo' src='assets/images/partner_logos/LUC_vertical.png'></a><a href='https://prosecutorialperformanceindicators.org'><img class='partner-logo' src='assets/images/partner_logos/ppi-logo.png'></a><a href='https://www.macfound.org'><img class='partner-logo' src='assets/images/partner_logos/MacArth_Alt_logo_stacked.png'></a>
+</div>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+</div>
+</div>
+<h1>
+Published Studies
+</h1>
+<div class="publications content-section">
+<div class="contain">
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+Resentencing of juvenile lifers: The Philadelphia experience
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p>
+<p><strong>Researchers</strong>: Tarika Daftary-Kapur (Montclair State University), Tina Zottoli (Montclair State University)<br> <a class='link-to-paper' href='https://digitalcommons.montclair.edu/justice-studies-facpubs/84/' target=_blank'><i class='far fa-file-alt'></i> Working Paper</a> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/new-study-finds-1-recidivism-rate-among-released-philly-juvenile-lifers-607f19d6d822' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
+<em>Illuminating the cost savings and low recidivism rates associated with juvenile lifers from Philadelphia who were resentenced following a recent U.S. Supreme Court decision and released.</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+<strong>Abstract:</strong> In this study we examined the Philadelphia District Attorney Office’s approach to juvenile lifer resentencing, which began in 2017 under the administration of District Attorney Williams and has continued under the administration of District Attorney Krasner. For 174 cases resentenced as of December 31st, 2019, we describe similarities and differences between the Williams and Krasner administrations in decision making and sentence length reductions, and report on the recidivism rate and estimated cost savings for Pennsylvania as a result of release. Philadelphia’s experience also shows that when this review process leads to release, successful reintegration is not just possible, but is the most likely outcome (as evidenced by negligible recidivism rates, 1.14% reconviction rate). These releases also come with substantial cost savings, an estimated $9.5M in correctional costs for Pennsylvania over the first decade, just for the 174 juvenile lifers released. Considering that the overwhelming majority of individuals who commit crime—even serious crime—“age out” of criminal behavior, the societal, financial, and public safety benefits of continued incarceration of those serving lengthy sentences is called into question by the Philadelphia experience.
+</p>
+<div class="logo-row">
+<a href='https://www.montclair.edu'><img class='partner-logo' src='assets/images/partner_logos/Montclair%20State%20Stacked%20Wordmark.png'></a>
+</div>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+Bail, jail, and pretrial misconduct: The influence of prosecutors
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p>
+<p><strong>Researchers</strong>: Aurélie Ouss, (University of Pennsylvania), Megan T. Stevenson (University of Virginia School of Law)<br> <a class='link-to-paper' href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3335138' target=_blank'><i class='far fa-file-alt'></i> Working Paper</a> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/release-after-one-year-the-reduction-of-cash-bail-in-philadelphia-for-low-level-offenses-found-a-13448516a5bf' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
+<em>An evaluation showing that 2018 bail reform led by the DAO successfully increased the number of people released without having to pay cash bail while not increasing pretrial misconduct or decreasing court appearance rates.</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+<strong>Abstract:</strong> Dozens of jurisdictions across the country are engaging in bail reform, but there are concerns that reducing monetary incentives will increase pretrial misconduct. We provide new evidence on this question by evaluating a prosecutor-led bail reform in Philadelphia. In February 2018, Philadelphia’s district attorney announced that his oﬃce would no longer request monetary bail for defendants charged with certain eligible oﬀenses. This was an advisory change; bail magistrates retained ﬁnal say. Using a diﬀerence-in-diﬀerences approach we ﬁnd that this policy led to a 22% increase in the likelihood a defendant will be released with no monetary or supervisory conditions, but had no impact on pretrial detention. This provides a unique opportunity to evaluate the primary justiﬁcation for cash bail: that it provides incentive for released defendants to appear in court. We ﬁnd no evidence that cash bail or pretrial supervision has a deterrent eﬀect on failure-to-appear or pretrial crime. We argue that one explanation is that asymmetric reputational penalties cause magistrates to set bail higher than necessary. In addition, our study provides evidence on the role of discretion within criminal justice reform. We ﬁnd that discretion led to racial disparities in implementation, and diluted the impacts of the reform.
+</p>
+<div class="logo-row">
+<a href='https://www.sas.upenn.edu'><img class='partner-logo' src='assets/images/partner_logos/penn_vertical.png'></a><a href='https://www.law.virginia.edu'><img class='partner-logo' src='assets/images/partner_logos/uva_law_primary_rgb.png'></a>
+</div>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+Missed opportunities: Arrest and court touchpoints for individuals who fatally overdosed in Philadelphia in 2016
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p>
+<p><strong>Researchers</strong>: Ruth T. Shefner (Columbia University), Jason S. Sloan (University of Pennsylvania), Kayla R. Sandler (University of Pennsylvania), Evan D. Anderson (University of Pennsylvania)<br> <a class='link-to-paper' href='https://pubmed.ncbi.nlm.nih.gov/32279054/' target=_blank'><i class='far fa-file-alt'></i> Peer-Reviewed Paper</a></p>
+<em>This study describes how often people who fatally overdosed in Philadelphia in 2016 interacted with the criminal legal system throughout their life, including how their criminal history may have made them ineligible for diversion programs. These contact points are framed as missed opportunities to help people.</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+<p><strong>Abstract:</strong> Many studies document high risk of fatal overdose after incarceration. Few explore earlier touchpoints in criminal justice processes, like arrests and court hearings. Understanding these touchpoints is important for several reasons. Arrest and adjudicatory processes are harmful even when not resulting in incarceration. Arrests and criminal hearings also may reflect changes in overdose-related risk factors like transitions in employment and housing stability. Moreover, knowledge about these touchpoints contextualizes debate about the implementation of court-based programs like Drug Treatment Courts. This study described the incidence and accumulation of touchpoints for people who fatally overdosed in Philadelphia in 2016, and depicted how touchpoint incidence and characteristics interface with court-program eligibility.</p>
+<p>In 2016, 907 people fatally overdosed in Philadelphia. Of these, 605 had at least one or more of 3,926 arrests and 3,822 hearings over their lifetime. There were 488 arrests and 533 hearings in the two years before death, with public disorder charges especially common closer to death. Less than 20% of these hearings resulted in custodial sentences. Of individuals with touchpoints, only nine participated in Drug Treatment Court, consistent with findings that most individuals were ineligible. Latent class analysis suggested five distinguishable patterns in age, timing, and characteristics of touchpoints.</p>
+The type and frequency of touchpoints preceding fatal overdose reflect a period of complex vulnerability. Few individuals qualified for court-based programming, underscoring the limitations of supporting this population in specialized court settings. Reducing incidence and improving the health impact of criminal justice touchpoints remain important public health priorities.
+</p>
+<div class="logo-row">
+<a href='https://www.cphi.upenn.edu'><img class='partner-logo' src='assets/images/partner_logos/center_publichealthinitiatives.png'></a><a href='https://www.publichealth.columbia.edu'><img class='partner-logo' src='assets/images/partner_logos/columbia_mailman.png'></a>
+</div>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+</div>
+</div>
+<h1>
+Ongoing Studies
+</h1>
+<div class="publications content-section">
+<div class="contain">
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+Understanding the impact of body worn cameras on prosecutorial outcomes
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p>
+<p><strong>Researchers</strong>: Amanda Agan (Rutgers University), Danielle Li (MIT Sloan School of Management), Liz Groff (Temple University)<br> <a class='link-to-paper' href='https://liberalarts.temple.edu/sites/liberalarts/files/BWCProsecution_FinalReport_1_18_19.pdf' target=_blank'><i class='far fa-file-alt'></i> Relevant Reading</a></p>
+<em>This study examines how the availability of body worn camera (BWC) footage impacts criminal cases as they move through the legal system. It will look at how the presence of BWC footage affects the types of charges brought, conviction rates, and sentencing outcomes, as well as how these effects may vary based on attributes like arrestee race and prior convictions.</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+<strong>Abstract:</strong> New technological advances are rapidly impacting the type of evidence available in criminal cases. This includes advances in DNA technology, fingerprint detection, and the existence and usage of body-worn camera (BWC) footage, amongst others. This study is broadly interested in understanding whether the use and interpretation of such technologically-aided evidence impacts prosecutorial decisions, conviction, and sentencing outcomes, and how these impacts differ across groups.
+</p>
+<div class="logo-row">
+<a href='https://www.rutgers.edu'><img class='partner-logo' src='assets/images/partner_logos/RUTGERS_S_RED.png'></a><a href='https://mitsloan.mit.edu'><img class='partner-logo' src='assets/images/partner_logos/MITSloanLogo_MASTER.png'></a><a href='https://www.cla.temple.edu/criminal-justice/'><img class='partner-logo' src='assets/images/partner_logos/TempleCJ_logo.png'></a>
+</div>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+Minor charges with major impacts: Understanding the use of select misdemeanors among persons with serious mental illnesses
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p>
+<p><strong>Researchers</strong>: Jen Wood (Temple University), Michael Compton (Columbia University), Leah Pope (Vera Institute of Justice), Amy Watson (University of Wisconsin-Milwaukee)<br></p>
+<em>The goal of this study is to gain an in-depth understanding of the use and processing of misdemeanor charges that are historically common among individuals with serious mental illnesses.</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+<strong>Abstract:</strong> Approximately one million arrests per year in the United States involve persons with serious mental illnesses (SMI), and such individuals are over-represented across all facets of the criminal justice system. Research to date has shown that it is misdemeanor charges that are often used to address behaviors associated with manifestations of illness (e.g., a person with disorganized thinking and disorganized behavior stemming from schizophrenia could be charged with disorderly conduct or another public nuisance misdemeanor), or stem from the circumstances in which persons with SMI find themselves (e.g., a person with limited financial resources and homelessness could be charged with criminal trespass, loitering, panhandling, or other misdemeanor charges). However, remarkably little research has been done to describe and explain the exact nature of the applied misdemeanor charges. This includes the underlying logic(s) for applying such charges in the face of limited alternatives, as well as how such charges move through different stages of criminal justice decision-making, beginning with officers on the street. By deepening our knowledge of the nature, use and processing of select misdemeanor charges, the findings of this study should inform current research and policy efforts in Philadelphia and elsewhere centered on alternative approaches to the handling of mental health-related incidents. This study has a 4-site comparative focus – Atlanta, Philadelphia, New York, and Chicago.
+</p>
+<div class="logo-row">
+<a href='https://www.cla.temple.edu/criminal-justice/'><img class='partner-logo' src='assets/images/partner_logos/TempleCJ_logo.png'></a>
+</div>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+Study on the effects of automatic sealing of cases on recidivism and economic outcomes
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p>
+<p><strong>Researchers</strong>: Amanda Agan (Rutgers University), Andrew Garin (University of Illinois Urbana-Champaign), Dmitri Koustas (University of Chicago), Alexandre Mas (Princeton University), Crystal Yang (Harvard Law School)<br></p>
+<em>This project aims to evaluate the short- and long-term benefits to individuals who have had their criminal record automatically sealed under Pennsylvania’s Clean Slate Law.</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+This study will include an evaluation of Pennsylvania’s Clean Slate law, pioneering legislation mandating the automatic sealing of eligible criminal records, rather than relying on a petition-based system as Pennsylvania used to do (and most jurisdictions still do). The evaluation would seek to understand how the sealing automatically undertaken through the Clean Slate law impacts economic and criminal justice outcomes for affected defendants.
+</p>
+<div class="logo-row">
+<a href='https://www.rutgers.edu'><img class='partner-logo' src='assets/images/partner_logos/RUTGERS_S_RED.png'></a>
+</div>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<footer class="row">
+<div class="container-fluid padding">
+<div class="row text-center">
+	<div class="col-md-4">
+    <h2 class="connectext">Office</h2>
+		<hr class="light">
+		<p>
+		  Three South Penn Square<br/>
+		  Philadelphia, PA 19107-3499<br/>
+		  215-686-8000
+		</p>
+	</div>
+	<div class="col-md-4">
+		<div class="col-12">
+			<h2 class="connectext">Connect</h2>
+		<hr class="light">
+			</div>
+			<div class="col-12 social padding">
+				<a href="https://www.facebook.com/philaDAO/" target="_blank"><i class="fa fa-facebook social-circle-icon" title="facebook"></i></a>
+				<a href="https://www.instagram.com/philadao/?hl=en" target="_blank"><i class="fa fa-instagram social-circle-icon" title="instagram"></i></a>
+				<a href="https://twitter.com/philadao?lang=en" target="_blank"><i class="fa fa-twitter social-circle-icon" title="twitter"></i></a>
+				<a href="mailto:justice@phila.gov"><i class="fa fa-envelope social-circle-icon" title="email us"></i></a>
+			</div>
+		</div>
+	<div class="col-md-4">
+	  <div class="col-12">
+	    <h2 class="connectext">More</h2>
+		<hr class="light">
+      <ul>
+        <li><a href="https://medium.com/philadelphia-justice" target="_blank">The Justice Wire</a></li>
+        <li><a href="https://www.phila.gov/districtattorney/pages/default.aspx" target="_blank">Office of the District Attorney</a></li>
+        <li><a href="howto.html#constraints">Public Access and Use</a></li>
+		  </ul>
+		</div>
+  </div>
+</div>
+<p class="copytext">&copy; City of Philadelphia, Philadelphia District Attorney's Office<p>
+</div>
+</footer>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+</body>
+</html>
