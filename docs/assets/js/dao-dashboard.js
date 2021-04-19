@@ -1,11 +1,22 @@
 // submenu dropdown
 $(document).ready(function(){
-  $('.dropdown-submenu a.test').on("click", function(e){
+  $('.dropdown-submenu a.drop-menu-head').on("click", function(e){
+    $(this).parent().parent().find('.dropdown-menu').hide();
     $(this).next('ul').toggle();
     e.stopPropagation();
     e.preventDefault();
   });
   
+$(document).click(function(){
+  $(".drop-menu-item").hide();
+});
+
+/* Clicks within the dropdown won't make
+   it past the dropdown itself */
+$(".drop-menu-item").click(function(e){
+  e.stopPropagation();
+});
+
   //ACCORDION
 var style = document.createElement("style");
 style.type = "text/css";
