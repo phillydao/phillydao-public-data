@@ -8,7 +8,7 @@
 }
 
 /* hide default rmd titling */
-#header.fluid-row {
+#header {
   display:none;
 }
 
