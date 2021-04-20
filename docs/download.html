@@ -13,12 +13,22 @@
 
 <title>Downloads - PhilaDAO Data Dashboard</title>
 
+<script src="assets/header-attrs-2.7/header-attrs.js"></script>
 <script src="assets/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -31,43 +41,29 @@
 </script>
 <script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
 <script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
 <script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
-
-
-
+<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
 
 <style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+
+
+
+
+
 
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
@@ -78,10 +74,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -98,6 +90,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -110,7 +105,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -195,8 +189,25 @@ summary {
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
             <li class="dropdown-submenu">
-                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu">
+                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                    <li><a href="Incidents_Report.html">Incidents</a></li>
+                    <li><a href="Arrest_Report.html">Arrests</a></li>
+                    <li><a href="Charge_Report.html">Charges</a></li>
+                    <li><a href="Bail_Report.html">Bail</a></li>
+                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+                    <li><a href="Case_Length_Report.html">Case Length</a></li>
+                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
                     <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
                     <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
                     <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
@@ -211,21 +222,17 @@ summary {
                     <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
                 </ul>
               </li>
-              <li><a href="Incidents_Report.html">Incidents</a></li>
-              <li><a href="Arrest_Report.html">Arrests</a></li>
-              <li><a href="Charge_Report.html">Charges</a></li>
-              <li><a href="Bail_Report.html">Bail</a></li>
-              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-              <li><a href="Case_Length_Report.html">Case Length</a></li>
-              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+              <li class="dropdown-submenu">
+                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                    <li><a href="Exonerations.html">Exonerations</a></li>
+                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+                </ul>
+              </li>
+              <li><a href="Research.html#reports">DAO Publications</a></li>
             </ul>
           </li>
-          <li class="dao-nav-menu"><a href="COVID19_Report.html" class="btn btn-dao-menu">COVID-19 Report</a></li>
+          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
           <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
           <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
           <li class="dropdown dao-nav-menu">
@@ -245,7 +252,7 @@ summary {
 </nav>
 <div class="rmd-container-fluid rmd-container">
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -260,7 +267,7 @@ summary {
 Download Data
 </h1>
 <h4 class="dao_report_title_text">
-Updated through 06/07/2020
+Updated through 04/19/2021
 </h4>
 </div>
 <div class="col-md-5 dao_report_description dao_report_body">
@@ -272,7 +279,7 @@ Summary data from each report may be downloaded for further analysis.
 <table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto">
 <thead>
 <tr>
-<th style="text-align:right" class="col-xs-4">
+<th style="text-align:right" class="col-xs-2">
 Dataset
 </th>
 <th style="text-align:right" class="col-xs-2">
@@ -286,6 +293,9 @@ Daily by ZIP Code (ZCTA)
 </th>
 <th style="text-align:right" class="col-xs-2">
 Weekly by Census Tract
+</th>
+<th style="text-align:right" class="col-xs-2">
+Quarterly by Census Tract
 </th>
 </thead>
 <tbody>
@@ -302,22 +312,27 @@ Incident Data
 </td>
 <td class="text-right">
 </td>
+<td class="text-right">
+</td>
 </tr>
 <tr>
 <td class="text-right">
 Arrests Data
 </td>
 <td class="text-right">
-<a href="data/arrest_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/arrest_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/arrest_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/arrest_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/arrest_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/arrest_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/arrest_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/arrest_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/arrest_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -325,16 +340,19 @@ Arrests Data
 Charges Data
 </td>
 <td class="text-right">
-<a href="data/charges_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/charges_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/charges_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/charges_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/charges_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/charges_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/charges_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/charges_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/charges_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -342,16 +360,19 @@ Charges Data
 Case Outcome Data
 </td>
 <td class="text-right">
-<a href="data/case_outcomes_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/case_outcomes_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/case_outcomes_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/case_outcomes_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/case_outcomes_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/case_outcomes_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/case_outcomes_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/case_outcomes_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/case_outcomes_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -359,16 +380,19 @@ Case Outcome Data
 Bail Data
 </td>
 <td class="text-right">
-<a href="data/bail_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/bail_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/bail_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/bail_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/bail_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/bail_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/bail_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/bail_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/bail_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -376,16 +400,19 @@ Bail Data
 Future Years of Incarceration Data
 </td>
 <td class="text-right">
-<a href="data/future_years_incarceration_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_incarceration_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/future_years_incarceration_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_incarceration_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/future_years_incarceration_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_incarceration_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/future_years_incarceration_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_incarceration_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_incarceration_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -393,16 +420,19 @@ Future Years of Incarceration Data
 Future Years of Supervision Data
 </td>
 <td class="text-right">
-<a href="data/future_years_supervision_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_supervision_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/future_years_supervision_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_supervision_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/future_years_supervision_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_supervision_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/future_years_supervision_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_supervision_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/future_years_supervision_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -410,16 +440,19 @@ Future Years of Supervision Data
 Case Length Data
 </td>
 <td class="text-right">
-<a href="data/time_to_disposition_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/time_to_disposition_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/time_to_disposition_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/time_to_disposition_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/time_to_disposition_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/time_to_disposition_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/time_to_disposition_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/time_to_disposition_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/time_to_disposition_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -427,16 +460,19 @@ Case Length Data
 Summary Arrests Data
 </td>
 <td class="text-right">
-<a href="data/summary_arrest_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_arrest_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_arrest_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_arrest_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_arrest_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_arrest_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_arrest_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_arrest_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_arrest_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -444,16 +480,19 @@ Summary Arrests Data
 Summary Charges Data
 </td>
 <td class="text-right">
-<a href="data/summary_charges_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_charges_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_charges_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_charges_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_charges_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_charges_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_charges_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_charges_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_charges_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -461,16 +500,19 @@ Summary Charges Data
 Summary Case Outcomes Data
 </td>
 <td class="text-right">
-<a href="data/summary_case_outcomes_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_case_outcomes_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_case_outcomes_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_case_outcomes_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_case_outcomes_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_case_outcomes_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_case_outcomes_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_case_outcomes_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_case_outcomes_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 <tr>
@@ -478,16 +520,19 @@ Summary Case Outcomes Data
 Summary Case Length Data
 </td>
 <td class="text-right">
-<a href="data/summary_time_to_disposition_data_daily_citywide.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_time_to_disposition_data_daily_citywide.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_time_to_disposition_data_daily_by_district.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_time_to_disposition_data_daily_by_district.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_time_to_disposition_data_daily_by_zip.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_time_to_disposition_data_daily_by_zip.csv" download>CSV</a>
 </td>
 <td class="text-right">
-<a href="data/summary_time_to_disposition_data_weekly_by_census_tract.csv" download>CSV</a>
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_time_to_disposition_data_weekly_by_census_tract.csv" download>CSV</a>
+</td>
+<td class="text-right">
+<a href="https://github.com/phillydao/phillydao-public-data/raw/master/docs/data/summary_time_to_disposition_data_quarterly_by_census_tract.csv" download>CSV</a>
 </td>
 </tr>
 </table>
@@ -547,7 +592,7 @@ Summary Case Length Data
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -565,7 +610,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
