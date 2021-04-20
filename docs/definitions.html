@@ -13,7 +13,6 @@
 
 <title>Data Definitions - PhilaDAO Data Dashboard</title>
 
-<script src="assets/header-attrs-2.6/header-attrs.js"></script>
 <script src="assets/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
@@ -32,24 +31,13 @@
 </script>
 <script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
 <script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
 <script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
-<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
 
 
 
@@ -80,7 +68,6 @@ h6 {
   text-align: left;
 }
 </style>
-
 
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
@@ -208,25 +195,8 @@ summary {
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
             <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Incidents_Report.html">Incidents</a></li>
-                    <li><a href="Arrest_Report.html">Arrests</a></li>
-                    <li><a href="Charge_Report.html">Charges</a></li>
-                    <li><a href="Bail_Report.html">Bail</a></li>
-                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-                    <li><a href="Case_Length_Report.html">Case Length</a></li>
-                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu">
                     <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
                     <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
                     <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
@@ -241,17 +211,22 @@ summary {
                     <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
                 </ul>
               </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Exonerations.html">Exonerations</a></li>
-                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
-                </ul>
-              </li>
-              <li><a href="Research.html#reports">DAO Publications</a></li>
+              <li><a href="Incidents_Report.html">Incidents</a></li>
+              <li><a href="Arrest_Report.html">Arrests</a></li>
+              <li><a href="Charge_Report.html">Charges</a></li>
+              <li><a href="Bail_Report.html">Bail</a></li>
+              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+              <li><a href="Case_Length_Report.html">Case Length</a></li>
+              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+              <li><a href="Exonerations.html">Exonerations</a></li>
             </ul>
           </li>
-          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
+          <li class="dao-nav-menu"><a href="COVID19_Report.html" class="btn btn-dao-menu">COVID-19 Report</a></li>
           <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
           <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
           <li class="dropdown dao-nav-menu">
@@ -421,8 +396,8 @@ Dismissed/Withdrawn/Etc
 <div class="dao-definition">
 <p>The catchall category in our data for cases that are ‘dropped’ at some point in the process. Some common reasons a case can be dropped include:</p>
 <ul>
-<li><p><em>Withdrawal/Nolle Prosequi</em>: a voluntary decision by the DAO to end prosecution in an individual case.</p></li>
-<li><p><em>Dismissal</em>: a decision by the judge to end prosecution in an individal case.</p>
+<li><em>Withdrawal/Nolle Prosequi</em>: a voluntary decision by the DAO to end prosecution in an individual case.</li>
+<li><em>Dismissal</em>: a decision by the judge to end prosecution in an individal case.
 </div>
 <div class="dao-definition-title-word">
 Disorderly Conduct
@@ -441,9 +416,9 @@ Diversion
 </div>
 <div class='dao-definition'>
 <p>Diversion is a procedure by which the DAO removes cases from the usual path through the criminal justice process of incarceration and probation. Diversion allows the accused to participate in a program that is often court supervised and, if completed successfully, will serve the needs of the criminal justice system. The programs are designed to be rehabilitative rather than punitive and the goal is to redirect individuals who have committed minor crime into a lifestyle that will keep them away from criminal involvement. Some of the benefits of diversionary programs are:</p></li>
-<li><p>People are able to stay in the community while being held accountable.</p></li>
-<li><p>Their specialized nature allows for targeting of specific programs for specific types of people (e.g., drug treatment for people with drug disuse disorders).</p></li>
-<li><p>Many allow for the charges to be cleared from the accused’s record after successful program completion. This helps people move on from their contact with the criminal justice system without the lifetime burden a criminal record can pose in finding housing, employment, and other important life activities.</p></li>
+<li>People are able to stay in the community while being held accountable.</li>
+<li>Their specialized nature allows for targeting of specific programs for specific types of people (e.g., drug treatment for people with drug disuse disorders).</li>
+<li>Many allow for the charges to be cleared from the accused’s record after successful program completion. This helps people move on from their contact with the criminal justice system without the lifetime burden a criminal record can pose in finding housing, employment, and other important life activities.</li>
 <li><p>They allow the accused to quickly move out of the criminal justice system, bringing swift resolution of the case and reducing loads on overburdened agencies and system actors.</p></li>
 </ul>
 <p>Some <a href="https://www.phila.gov/districtattorney/diversion/Pages/default.aspx">common diversion programs in Philadelphia include</a>:</p>
@@ -603,10 +578,10 @@ Guilty Plea/Nolo
 <div class='dao-definition'>
 <p>Instead of going to trial, an accused person may choose to admit guilt and go directly to sentence. A guilty plea can be open or negotiated.</p>
 <ul>
-<li><p>A <strong>negotiated</strong> plea is an agreement between the DAO and the accused on the charges that the accused will admit guilt to, the charges that will be dropped, and the sentence that will be recommended to the judge for the case. The agreement is sometimes called a plea bargain.</p></li>
-<li><p>An <strong>open plea</strong> is one where the accused admits guilt and then the judge sets the sentence without a recommendation from the DAO.</p>
+<li>A <strong>negotiated</strong> plea is an agreement between the DAO and the accused on the charges that the accused will admit guilt to, the charges that will be dropped, and the sentence that will be recommended to the judge for the case. The agreement is sometimes called a plea bargain.</li>
+<li>An <strong>open plea</strong> is one where the accused admits guilt and then the judge sets the sentence without a recommendation from the DAO.
 </div>
-<p><a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a></p>
+<a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div id="H" class="row dao_definition_block">
@@ -683,12 +658,6 @@ N
 </div>
 <div class="col-md-8 dao-definition">
 <div class="dao-definition-title-word">
-Non-Fatal Shooting
-</div>
-<div class="dao-definition">
-An offense is labeled as a non-fatal shooting if there is a shooting, at least one person is hit, and nobody dies. If a person dies, the case would be classified as a homicide. If nobody is hit, it would likely be classified as an Aggravated Assault/Gun. In order to identify non-fatal shooting cases, we link incidents to the <a href="https://www.opendataphilly.org/dataset/shooting-victims">Open Data Philly Shooting Victims Data Set</a>. Information about Non-Fatal Shootings only includes shooting victims since 2015. That means that only shooting incidents since 2015 are reflected in the reports (arrests, cases charged, outcomes, etc…). As an example, the <a href="https://data.philadao.com/Case_Outcomes_Report.html">Case Outcomes report</a> shows very few cases resolved in 2015 and a very high rate of non-convictions. The reason for this is that very few shooting incidents that occured in 2015 were also resolved in 2015; those that were resolved that quickly were often quickly dismissed.
-</div>
-<div class="dao-definition-title-word">
 Not Guilty/Acquittal
 </div>
 <div class="dao-definition">
@@ -733,13 +702,13 @@ Outcomes
 </div>
 <div class='dao-definition'>
 <p>The various ways that a criminal case can end. We have created 5 high level outcome groupings that capture all of the ways a case can end. These are all defined elsewhere on this page:</p></li>
-<li><p>Dismissed/Withdrawn/Etc</p></li>
-<li><p>Diversion</p></li>
-<li><p>Not Guilty/Acquittal</p></li>
-<li><p>Guilty</p></li>
-<li><p>Guilty Plea/Nolo</p>
+<li>Dismissed/Withdrawn/Etc</li>
+<li>Diversion</li>
+<li>Not Guilty/Acquittal</li>
+<li>Guilty</li>
+<li>Guilty Plea/Nolo
 </div>
-<p><a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a></p>
+<a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div class='row dao_definition_block' id='P'>
@@ -759,10 +728,10 @@ The period of community supervision that occurs when a person has been sentenced
 Parts I &amp; II Offenses
 </div>
 <div class='dao-definition'>
-<p>As part of the FBI’s Uniform Crime Reporting (UCR) Program, offense types are divided into three categories:</p></li>
-<li><p>Part I Crimes, considered the most serious. These include: criminal homicide, forcible rape, robbery, aggravated assault, burglary, larceny, auto theft, and arson.</p></li>
-<li><p>Part II Crimes. These include: other assaults, forgery and counterfeiting, fraud, embezzlement, stolen property, vandalism, weapons violations, prostitution and commercialized vice, sex offenses, drug violations, gambling, offenses against family and children, driving under the influence, liquor law violations, public drunkenness, disorderly conduct, and vagrancy.</p></li>
-<li><p>All other offenses. This category includes all violations of state and local laws not specifically defined as a Part I or II offense, except traffic violations.</p>
+As part of the FBI’s Uniform Crime Reporting (UCR) Program, offense types are divided into three categories:</li>
+<li>Part I Crimes, considered the most serious. These include: criminal homicide, forcible rape, robbery, aggravated assault, burglary, larceny, auto theft, and arson.</li>
+<li>Part II Crimes. These include: other assaults, forgery and counterfeiting, fraud, embezzlement, stolen property, vandalism, weapons violations, prostitution and commercialized vice, sex offenses, drug violations, gambling, offenses against family and children, driving under the influence, liquor law violations, public drunkenness, disorderly conduct, and vagrancy.</li>
+<li>All other offenses. This category includes all violations of state and local laws not specifically defined as a Part I or II offense, except traffic violations.
 </div>
 <div class="dao-definition-title-word">
 Patronizing Prostitutes
@@ -806,7 +775,7 @@ Public Drunkenness
 <div class="dao-definition">
 Being in a public place and under the influence of alcohol or any controlled substance to the point where the person is a danger to persons or property or annoys other people.
 </div>
-<p><a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a></p>
+<a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div id="R" class="row dao_definition_block">
@@ -1047,7 +1016,7 @@ Year-to-Date refers to a total number of instances that occurred between the beg
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
