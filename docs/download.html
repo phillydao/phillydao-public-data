@@ -41,13 +41,14 @@
 </script>
 <script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
 <script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
 <script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
+<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -188,8 +189,25 @@ pre code {
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
             <li class="dropdown-submenu">
-                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu">
+                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                    <li><a href="Incidents_Report.html">Incidents</a></li>
+                    <li><a href="Arrest_Report.html">Arrests</a></li>
+                    <li><a href="Charge_Report.html">Charges</a></li>
+                    <li><a href="Bail_Report.html">Bail</a></li>
+                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+                    <li><a href="Case_Length_Report.html">Case Length</a></li>
+                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
                     <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
                     <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
                     <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
@@ -204,22 +222,17 @@ pre code {
                     <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
                 </ul>
               </li>
-              <li><a href="Incidents_Report.html">Incidents</a></li>
-              <li><a href="Arrest_Report.html">Arrests</a></li>
-              <li><a href="Charge_Report.html">Charges</a></li>
-              <li><a href="Bail_Report.html">Bail</a></li>
-              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-              <li><a href="Case_Length_Report.html">Case Length</a></li>
-              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
-              <li><a href="Exonerations.html">Exonerations</a></li>
+              <li class="dropdown-submenu">
+                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                    <li><a href="Exonerations.html">Exonerations</a></li>
+                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+                </ul>
+              </li>
+              <li><a href="Research.html#reports">DAO Publications</a></li>
             </ul>
           </li>
-          <li class="dao-nav-menu"><a href="COVID19_Report.html" class="btn btn-dao-menu">COVID-19 Report</a></li>
+          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
           <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
           <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
           <li class="dropdown dao-nav-menu">
