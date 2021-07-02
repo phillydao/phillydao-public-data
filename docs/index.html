@@ -13,22 +13,12 @@
 
 <title>Philadelphia DAO Data Dashboard</title>
 
-<script src="assets/header-attrs-2.7/header-attrs.js"></script>
 <script src="assets/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -41,29 +31,43 @@
 </script>
 <script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
 <script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
 <script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
-<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
+
+
+
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-
-
-
-
-
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
 
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
@@ -74,6 +78,10 @@
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -90,9 +98,6 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
-pre code {
-  padding: 0;
-}
 </style>
 
 
@@ -105,6 +110,7 @@ pre code {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -189,25 +195,8 @@ pre code {
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
             <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Incidents_Report.html">Incidents</a></li>
-                    <li><a href="Arrest_Report.html">Arrests</a></li>
-                    <li><a href="Charge_Report.html">Charges</a></li>
-                    <li><a href="Bail_Report.html">Bail</a></li>
-                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-                    <li><a href="Case_Length_Report.html">Case Length</a></li>
-                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu">
                     <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
                     <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
                     <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
@@ -222,17 +211,21 @@ pre code {
                     <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
                 </ul>
               </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Exonerations.html">Exonerations</a></li>
-                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
-                </ul>
-              </li>
-              <li><a href="Research.html#reports">DAO Publications</a></li>
+              <li><a href="Incidents_Report.html">Incidents</a></li>
+              <li><a href="Arrest_Report.html">Arrests</a></li>
+              <li><a href="Charge_Report.html">Charges</a></li>
+              <li><a href="Bail_Report.html">Bail</a></li>
+              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+              <li><a href="Case_Length_Report.html">Case Length</a></li>
+              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
             </ul>
           </li>
-          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
+          <li class="dao-nav-menu"><a href="COVID19_Report.html" class="btn btn-dao-menu">COVID-19 Report</a></li>
           <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
           <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
           <li class="dropdown dao-nav-menu">
@@ -252,7 +245,7 @@ pre code {
 </nav>
 <div class="rmd-container-fluid rmd-container">
 
-<div id="header">
+<div class="fluid-row" id="header">
 
 
 
@@ -320,24 +313,24 @@ Key Metrics We’re Tracking
 <div class="row dao_key_numbers">
 <div class="col-print-2 col-xs-6 col-sm-2 col-print-offset-2 col-sm-offset-2" onclick="location.href=&#39;Future_Years_Incarceration_Report.html&#39;;" style="cursor:pointer;">
 <p class="dao_key_number_value dao_metric">
-<span class="down-pointing-triangle"> </span> -22,600
+<span class="down-pointing-triangle"> </span> -12,000
 </p>
 <h4 class="dao_key_number_text">
 <h4 class="dao_key_numbers_emphasis">
 Years of Incarceration
 </h4>
-Imposed Since 2018 (vs. ’14-’17)
+Imposed Since 2018 (vs. ’14-’17)
 </h4>
 </div>
 <div class="col-print-2 col-xs-6 col-sm-2" onclick="location.href=&#39;Future_Years_Supervision_Report.html&#39;;" style="cursor:pointer;">
 <p class="dao_key_number_value dao_metric">
-<span class="down-pointing-triangle"> </span> -92,700
+<span class="down-pointing-triangle"> </span> -53,300
 </p>
 <h4 class="dao_key_number_text">
 <h4 class="dao_key_numbers_emphasis">
 Years of Supervision
 </h4>
-Imposed Since 2018 (vs. ’14-’17)
+Imposed Since 2018 (vs. ’14-’17)
 </h4>
 </div>
 <div class="col-print-2 col-xs-6 col-sm-2">
@@ -352,9 +345,9 @@ Death Penalty Was Sought
 Since 2018
 </h4>
 </div>
-<div class="col-print-2 col-xs-6 col-sm-2" onclick="location.href=&#39;Exonerations.html&#39;;" style="cursor:pointer;">
+<div class="col-print-2 col-xs-6 col-sm-2">
 <p class="dao_key_number_value dao_metric">
-22
+13
 </p>
 <h4 class="dao_key_number_text">
 <h4 class="dao_key_numbers_emphasis">
@@ -370,30 +363,30 @@ Data Stories
 </h1>
 </div>
 <div class="row">
-<a href='https://medium.com/philadelphia-justice/data-snapshot-incidents-arrests-and-charges-may-2021-874390536c9b?source=rss----48f13afb3224--data_stories' target='_blank'>
+<a href='https://medium.com/philadelphia-justice/case-volume-and-the-criminal-justice-system-bb1d44e81578?source=rss----48f13afb3224--data_stories' target='_blank'>
 <div class="col-sm-12 col-md-4 text-sm-center dao_data_story">
 <div class="thumbnail dao_data_story">
-<img src='https://cdn-images-1.medium.com/max/576/1*pig_wjn-JOzqdvcdtVI_lg.png' alt='Story Image'>
+<img src='https://cdn-images-1.medium.com/max/1024/1*aS6xu5josUWzLrafXKTZ0Q.png' alt='Story Image'>
 <div class="caption dao-data-story-caption">
-DATA Snapshot: Incidents, Arrests, and Charges — May 2021
+Case Volume and the Criminal Justice System
 </div>
 </div>
 </div>
-</a><a href='https://medium.com/philadelphia-justice/data-snapshot-incidents-arrests-and-charges-april-2021-c1b434690efe?source=rss----48f13afb3224--data_stories' target='_blank'>
+</a><a href='https://medium.com/philadelphia-justice/outlier-cases-explain-aggravated-assault-not-guilty-rates-in-cases-taken-to-trial-d3cec5f45715?source=rss----48f13afb3224--data_stories' target='_blank'>
 <div class="col-sm-12 col-md-4 text-sm-center dao_data_story">
 <div class="thumbnail dao_data_story">
-<img src='https://cdn-images-1.medium.com/max/576/1*LoI7Im7xMPb7mN3ENd6ojg.png' alt='Story Image'>
+<img src='https://cdn-images-1.medium.com/max/1024/1*CrkKyniBASOLRQqKGeUdxw.png' alt='Story Image'>
 <div class="caption dao-data-story-caption">
-DATA Snapshot: Incidents, Arrests, and Charges — April 2021
+Outlier Cases Explain Aggravated Assault ‘Not Guilty’ Rates in Cases Taken to Trial
 </div>
 </div>
 </div>
-</a><a href='https://medium.com/philadelphia-justice/data-lab-update-friday-april-23-2021-b2b25050bf09?source=rss----48f13afb3224--data_stories' target='_blank'>
+</a><a href='https://medium.com/philadelphia-justice/diversion-is-up-in-philadelphia-a8a3c320d950?source=rss----48f13afb3224--data_stories' target='_blank'>
 <div class="col-sm-12 col-md-4 text-sm-center dao_data_story">
 <div class="thumbnail dao_data_story">
-<img src='https://cdn-images-1.medium.com/max/350/1*Ll3IWgR-bnc8JtIilv_-oA.png' alt='Story Image'>
+<img src='https://cdn-images-1.medium.com/max/1024/1*XIzItv7FPvpTIMPVXtRCgg.png' alt='Story Image'>
 <div class="caption dao-data-story-caption">
-DATA Lab Update: Friday, April 23, 2021
+Diversion is Up in Philadelphia
 </div>
 </div>
 </div>
@@ -499,7 +492,7 @@ Available Reports
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -517,7 +510,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
+    $(this).parent().toggleClass('nav-tabs-open')
   });
 });
 </script>
