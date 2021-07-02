@@ -41,14 +41,13 @@
 </script>
 <script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
 <script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
 <script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
-<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -189,25 +188,8 @@ pre code {
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
             <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Incidents_Report.html">Incidents</a></li>
-                    <li><a href="Arrest_Report.html">Arrests</a></li>
-                    <li><a href="Charge_Report.html">Charges</a></li>
-                    <li><a href="Bail_Report.html">Bail</a></li>
-                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-                    <li><a href="Case_Length_Report.html">Case Length</a></li>
-                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu">
                     <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
                     <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
                     <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
@@ -222,17 +204,22 @@ pre code {
                     <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
                 </ul>
               </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Exonerations.html">Exonerations</a></li>
-                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
-                </ul>
-              </li>
-              <li><a href="Research.html#reports">DAO Publications</a></li>
+              <li><a href="Incidents_Report.html">Incidents</a></li>
+              <li><a href="Arrest_Report.html">Arrests</a></li>
+              <li><a href="Charge_Report.html">Charges</a></li>
+              <li><a href="Bail_Report.html">Bail</a></li>
+              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+              <li><a href="Case_Length_Report.html">Case Length</a></li>
+              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+              <li><a href="Exonerations.html">Exonerations</a></li>
             </ul>
           </li>
-          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
+          <li class="dao-nav-menu"><a href="COVID19_Report.html" class="btn btn-dao-menu">COVID-19 Report</a></li>
           <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
           <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
           <li class="dropdown dao-nav-menu">
@@ -402,8 +389,8 @@ Dismissed/Withdrawn/Etc
 <div class="dao-definition">
 <p>The catchall category in our data for cases that are ‘dropped’ at some point in the process. Some common reasons a case can be dropped include:</p>
 <ul>
-<li><em>Withdrawal/Nolle Prosequi</em>: a voluntary decision by the DAO to end prosecution in an individual case.</li>
-<li><em>Dismissal</em>: a decision by the judge to end prosecution in an individal case.
+<li><p><em>Withdrawal/Nolle Prosequi</em>: a voluntary decision by the DAO to end prosecution in an individual case.</p></li>
+<li><p><em>Dismissal</em>: a decision by the judge to end prosecution in an individal case.</p>
 </div>
 <div class="dao-definition-title-word">
 Disorderly Conduct
@@ -421,14 +408,11 @@ Refers to how a case was completed or resolved. This may include a finding of gu
 Diversion
 </div>
 <div class='dao-definition'>
-Diversion is a procedure by which the DAO removes cases from the usual path through the criminal justice process of incarceration and supervision (probation and parole). The most common form of Diversion allows the accused to participate in a court-sponsored program (often called a problem-solving court). When completed successfully, the diversion program serves the needs of both the participant and the community. Diversion also includes community-based models where the DAO connects participants directly to community organizations to receive services and resources. The programs are designed to be rehabilitative rather than punitive. Their goal is to support individuals who have committed minor offenses to help them avoid future criminal involvement.</li>
-</ul>
-<p>Some of the benefits of diversionary programs are:</p>
-<ul>
-<li>People are able to stay in the community while being held accountable.</li>
-<li>Their specialized nature allows for targeting of specific programs for specific types of people (e.g., drug treatment for people with drug disuse disorders).</li>
-<li>Many allow for the charges to be cleared from the accused’s record after successful program completion. This helps people move on from their contact with the criminal justice system without the lifetime burden a criminal record can pose in finding housing, employment, and other important life activities.</li>
-<li>They allow the accused to quickly move out of the criminal justice system, bringing swift resolution of the case and reducing loads on overburdened agencies and system actors.</li>
+<p>Diversion is a procedure by which the DAO removes cases from the usual path through the criminal justice process of incarceration and probation. Diversion allows the accused to participate in a program that is often court supervised and, if completed successfully, will serve the needs of the criminal justice system. The programs are designed to be rehabilitative rather than punitive and the goal is to redirect individuals who have committed minor crime into a lifestyle that will keep them away from criminal involvement. Some of the benefits of diversionary programs are:</p></li>
+<li><p>People are able to stay in the community while being held accountable.</p></li>
+<li><p>Their specialized nature allows for targeting of specific programs for specific types of people (e.g., drug treatment for people with drug disuse disorders).</p></li>
+<li><p>Many allow for the charges to be cleared from the accused’s record after successful program completion. This helps people move on from their contact with the criminal justice system without the lifetime burden a criminal record can pose in finding housing, employment, and other important life activities.</p></li>
+<li><p>They allow the accused to quickly move out of the criminal justice system, bringing swift resolution of the case and reducing loads on overburdened agencies and system actors.</p></li>
 </ul>
 <p>Some <a href="https://www.phila.gov/districtattorney/diversion/Pages/default.aspx">common diversion programs in Philadelphia include</a>:</p>
 <ul>
