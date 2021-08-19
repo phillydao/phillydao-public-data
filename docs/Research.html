@@ -13,13 +13,22 @@
 
 <title>Research at the DAO - PhilaDAO Data Dashboard</title>
 
-<script src="assets/header-attrs-2.6/header-attrs.js"></script>
+<script src="assets/header-attrs-2.7/header-attrs.js"></script>
 <script src="assets/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -54,32 +63,6 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
@@ -91,10 +74,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -111,6 +90,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -123,7 +105,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -271,7 +252,7 @@ summary {
 </nav>
 <div class="rmd-container-fluid rmd-container">
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -364,7 +345,7 @@ A researchable prosecutorial office in the criminal justice reform era: A partne
 <div class="accordion-nonHidden">
 <p>
 <p><strong>Researchers</strong>: Greg Ridgeway, Aurélie Ouss, David Abrams, Aaron Chalfin, Paul Heaton, Charles Loeffler, Francesca Amaral, Miguel Garza-Casado, Jacob Kaplan, Viet Nguyen, Lee Ozier (University of Pennsylvania). Peter Jones, Jeffrey T. Ward, E. Rely Vîlcică, Caterina G. Roman, Cathryn Rosen, Cheryl Irons, Doris Weiland (Temple University)<br> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/district-attorney-krasner-announces-dao-transparency-accountability-research-collaboration-27b12ad833db' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
-<em>The DATA Lab and DAO are working with independent researchers at the University of Pennsylvania and Temple University to investigate the impacts of ADA discretionary decision-making and prosecutor-led criminal legal reform. Funded by the largest research grant in the history of the DAO, this private-public collaboration with local universities aims to study the short- and long-term impacts of prosecutorial decision-making on individuals, families, and communities in Philadelphia.</em><br><br> <em>$3.5M over 3 years to DAO, $2.2M over 3 years to Penn Criminology and Temple Criminal Justice</em>
+<em>The DATA Lab and DAO are working with independent researchers at the University of Pennsylvania and Temple University to investigate the impacts of ADA discretionary decision-making and prosecutor-led criminal legal reform. Funded by the largest research grant in the history of the DAO, this private-public collaboration with local universities aims to study the short- and long-term impacts of prosecutorial decision-making on individuals, families, and communities in Philadelphia.</em><br><br> <em>$4.5M over 3 years to DAO, $2.2M over 3 years to Penn Criminology and Temple Criminal Justice</em>
 </p>
 </div>
 <div class="accordion-description">
@@ -468,7 +449,7 @@ Ending mass supervision: Evaluating reforms in the Philadelphia District Attorne
 </table>
 </div>
 <div class="accordion-nonHidden">
-<p><a class='link-to-paper' href='https://data.philadao.com' target=_blank'><i class='far fa-file-alt'></i> Report</a> <a class='link-to-paper' href='https://data.philadao.com' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
+<p><a class='link-to-paper' href='https://github.com/phillydao/phillydao-public-data/raw/master/docs/reports/DAO%20Supervision%20Report%20Digital%202021-04-19.pdf' target=_blank'><i class='far fa-file-alt'></i> Report</a> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/da-krasner-reforms-are-safely-shrinking-probation-parole-system-yielding-as-much-as-40m-to-a822b4861d16' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
 <em>An assessment documenting reductions in community supervision lengths under two DAO policies. Racial disparities in sentencing decreased and the reforms were implemented without increases in re-charge rates.</em>
 </p>
 </div>
@@ -494,13 +475,39 @@ Prosecutor-led bail reform: Year one
 </table>
 </div>
 <div class="accordion-nonHidden">
-<p><a class='link-to-paper' href='https://data.philadao.com' target=_blank'><i class='far fa-file-alt'></i> Report</a> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/release-after-one-year-the-reduction-of-cash-bail-in-philadelphia-for-low-level-offenses-found-a-13448516a5bf' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
+<p><a class='link-to-paper' href='https://github.com/phillydao/phillydao-public-data/raw/master/docs/reports/Prosecutor%20Led%20Bail%20Reform_%20Year%20One%20Transparency%20Report%20-%202019-02-20.pdf' target=_blank'><i class='far fa-file-alt'></i> Report</a> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/release-after-one-year-the-reduction-of-cash-bail-in-philadelphia-for-low-level-offenses-found-a-13448516a5bf' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
 <em>A DAO evaluation of bail reform implemented by the DAO in 2018 showing that the policy reduced the use of cash bail without impacting recidivism or court appearance rates. The wide-ranging policy applied to over three in five charges, allowing approximately 1,750 additional Philadelphians to be released without cash bail in 2018, and was implemented at no cost. (See Ouss and Stevenson in Published Studies for more).</em>
 </p>
 </div>
 <div class="accordion-description">
 <p>
 <strong>Abstract:</strong> The use of cash bail and pretrial detention disproportionately impacts people living in poverty and people of color, influencing the trajectory of legal cases, and is a driver of mass incarceration. Fifty days into DA Krasner’s administration, the Philadelphia DAO implemented a new policy targeting 25 charges where an analysis of historical data showed the courts had been setting bail very low—requiring payment of less than $1,000. For these specific charges, a presumption was created to not request cash bail. As a result, the release on recognizance rate for eligible charges increased from 83% pre-policy to 90% post-policy for misdemeanors, and from 24% pre-policy to 32% post-policy for felonies. We observed a continued upward trend in the likelihood that someone would fail to appear in court at least once, but no increase in pre-trial re-arrest rates for either misdemeanors or felonies targeted by the bail policy. Overall the policy and evaluation demonstrate that more people can safely be released during the pretrial period, offering broad social benefits to individuals and communities while reducing unnecessary burdens on the criminal legal system.
+</p>
+<p class="accordion-inner-toggle">
+<i class='fas fa-times-circle'></i> Close
+</p>
+</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-toggle">
+<table class="accordion-title-row">
+<tr>
+<td>
+<div class="accordion-title">
+Overturning Convictions–and an Era: Conviction Integrity Unit Report January 2018 - June 2021
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="accordion-nonHidden">
+<p><a class='link-to-paper' href='https://github.com/phillydao/phillydao-public-data/raw/master/docs/reports/Philadelphia%20CIU%20Report%202018%20-%202021.pdf' target=_blank'><i class='far fa-file-alt'></i> Report</a> <a class='link-to-paper' href='https://medium.com/philadelphia-justice/da-krasner-conviction-integrity-unit-release-report-on-overturning-era-of-wrongful-convictions-in-5270431f8412' target=_blank'><i class='far fa-file-alt'></i> Press Release</a></p>
+<em>A report detailing the work of the Conviction Integrity Unit from January 2018 through June 2021. The report encompasses exonerations, commutations, sentencing adjustments, active investigations, cases declined or closed, and cases awaiting review. It highlights the 20 individuals exonerated in this time period, all but one of the which occurred because of official misconduct committed by prosecutors and/or police, such as withholding exculpatory evidence, coercing false confessions, or committing perjury.</em>
+</p>
+</div>
+<div class="accordion-description">
+<p>
+<strong>Abstract:</strong>Our sworn oath as prosecutors is to seek justice unconditionally, with no limit as to time. When we discover past injustices, we must not only right those wrongs, but implement policies to ensure that they do not occur again in the future. This report describes how an independent Conviction Integrity Unit, with a broad mandate, has worked to change the culture and practices of the District Attorney’s Office. Our oath requires that we never stop trying to fix injustices, even if they turn out to be the product of our administration’s missteps. During court proceedings involving defendants the CIU has determined to be innocent of the crimes for which they were wrongly convicted, the District Attorney’s Office as an institution has apologized to the exonerees. We should. Lost years and decades of a life cannot be returned. But we remain enormously proud of what we have done to date.
 </p>
 <p class="accordion-inner-toggle">
 <i class='fas fa-times-circle'></i> Close
@@ -774,7 +781,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

@@ -13,13 +13,22 @@
 
 <title>Updates - PhilaDAO Data Dashboard</title>
 
-<script src="assets/header-attrs-2.6/header-attrs.js"></script>
+<script src="assets/header-attrs-2.7/header-attrs.js"></script>
 <script src="assets/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -54,32 +63,6 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
@@ -91,10 +74,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -111,6 +90,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -123,7 +105,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -208,8 +189,25 @@ summary {
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
             <li class="dropdown-submenu">
-                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu">
+                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                    <li><a href="Incidents_Report.html">Incidents</a></li>
+                    <li><a href="Arrest_Report.html">Arrests</a></li>
+                    <li><a href="Charge_Report.html">Charges</a></li>
+                    <li><a href="Bail_Report.html">Bail</a></li>
+                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+                    <li><a href="Case_Length_Report.html">Case Length</a></li>
+                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
                     <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
                     <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
                     <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
@@ -224,20 +222,14 @@ summary {
                     <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
                 </ul>
               </li>
-              <li><a href="Incidents_Report.html">Incidents</a></li>
-              <li><a href="Arrest_Report.html">Arrests</a></li>
-              <li><a href="Charge_Report.html">Charges</a></li>
-              <li><a href="Bail_Report.html">Bail</a></li>
-              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-              <li><a href="Case_Length_Report.html">Case Length</a></li>
-              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
-              <li><a href="Exonerations.html">Exonerations</a></li>
-              <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+              <li class="dropdown-submenu">
+                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                    <li><a href="Exonerations.html">Exonerations</a></li>
+                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+                </ul>
+              </li>
+              <li><a href="Research.html#reports">DAO Publications</a></li>
             </ul>
           </li>
           <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
@@ -260,7 +252,7 @@ summary {
 </nav>
 <div class="rmd-container-fluid rmd-container">
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -282,6 +274,27 @@ Updates
 <div class="col-md-10 col-md-offset-1">
 <div class="dao-definition">
 <p>In the course of our work at the District Attorney’s Office, we often discover new and better ways to look at, organize, and interpret the data. We make changes and updates to the Public Data Dashboard to keep it as accurate and informative as possible. We also want to be clear to users of this site about the changes we’ve made. This page is a timeline of updates, fixes, and changes that we’ve implemented.</p>
+</div>
+</div>
+</div>
+<div class="row dao_definition_block">
+<div class="col-md-10 col-md-offset-1">
+<div class="dao-definition-title-word">
+May 07, 2021
+</div>
+<div class="dao-definition">
+We have improved our ability to categorize non-traditional diversion programs in our ‘Diversion’ outcome category. In particular we are now capturing cases where a person charged with a misdemeanor (usually drug possession) pleads to a summary offense in lieu of entering a diversion program. Many people in this program are ineligible for other diversion programs. This change was retroactive, so it restated outcomes for prior years. In 2019, for example, it increased the diversion rate for drug possession cases by approximately 6 percentage points.
+</div>
+</div>
+</div>
+<div class="row dao_definition_block">
+<div class="col-md-10 col-md-offset-1">
+<div class="dao-definition-title-word">
+April 19, 2021
+</div>
+<div class="dao-definition">
+<p>We have added a <a href='Research.html#reports'>DAO Publications</a> section to the Research Page. This section includes reports on internal studies at the District Attorney’s Office.</p>
+We have also reorganized the menu to simplify it and make it more clear which reports are year-to-date and which are year-end.
 </div>
 </div>
 </div>
@@ -520,7 +533,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
