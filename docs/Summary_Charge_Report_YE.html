@@ -13,28 +13,18 @@
 
 <title>Summary Charges - PhilaDAO Data Dashboard</title>
 
-<script src="assets/header-attrs-2.7/header-attrs.js"></script>
 <script src="assets/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
 <script src="assets/navigation-1.1/tabsets.js"></script>
-<script src="assets/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="assets/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <script src="assets/plotly-binding-4.9.2.1/plotly.js"></script>
 <script src="assets/typedarray-0.1/typedarray.min.js"></script>
-<link href="assets/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="assets/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="assets/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="assets/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 <link href="assets/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="assets/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="assets/kePrint-0.0.1/kePrint.js"></script>
@@ -49,29 +39,43 @@
 </script>
 <script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
 <script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
 <script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
 <script src="https://use.fontawesome.com/42c4092025.js"></script>
 <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
-<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
+
+
+
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-
-
-
-
-
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
 
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
@@ -82,6 +86,10 @@
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -98,9 +106,6 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
-pre code {
-  padding: 0;
-}
 </style>
 
 
@@ -113,6 +118,7 @@ pre code {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -197,25 +203,8 @@ pre code {
             <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
             <ul class="dropdown-menu dao_menu">
             <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Incidents_Report.html">Incidents</a></li>
-                    <li><a href="Arrest_Report.html">Arrests</a></li>
-                    <li><a href="Charge_Report.html">Charges</a></li>
-                    <li><a href="Bail_Report.html">Bail</a></li>
-                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-                    <li><a href="Case_Length_Report.html">Case Length</a></li>
-                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
+                <a href="#" class="test">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                  <ul class="dropdown-menu dao_menu">
                     <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
                     <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
                     <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
@@ -230,17 +219,21 @@ pre code {
                     <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
                 </ul>
               </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Exonerations.html">Exonerations</a></li>
-                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
-                </ul>
-              </li>
-              <li><a href="Research.html#reports">DAO Publications</a></li>
+              <li><a href="Incidents_Report.html">Incidents</a></li>
+              <li><a href="Arrest_Report.html">Arrests</a></li>
+              <li><a href="Charge_Report.html">Charges</a></li>
+              <li><a href="Bail_Report.html">Bail</a></li>
+              <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+              <li><a href="Case_Length_Report.html">Case Length</a></li>
+              <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+              <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+              <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+              <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+              <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+              <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
             </ul>
           </li>
-          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
+          <li class="dao-nav-menu"><a href="COVID19_Report.html" class="btn btn-dao-menu">COVID-19 Report</a></li>
           <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
           <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
           <li class="dropdown dao-nav-menu">
@@ -260,7 +253,7 @@ pre code {
 </nav>
 <div class="rmd-container-fluid rmd-container">
 
-<div id="header">
+<div class="fluid-row" id="header">
 
 
 
@@ -275,7 +268,7 @@ pre code {
 Summary Offense Charges
 </h1>
 <h4 class="dao_report_title_text">
-Year End 12/31/2020
+Year End 12/31/2019
 </h4>
 <div>
 <a class="dao_report_body dao_report_body_emphasis" href="definitions.html">Definitions</a> | <a class="dao_report_body dao_report_body_emphasis" href="limitations.html">Limitations</a>
@@ -288,23 +281,12 @@ Year End 12/31/2020
 <div class="row dao_key_numbers">
 <div class="col-print-2 col-xs-6 col-sm-2 col-print-offset-2 col-sm-offset-2">
 <p class="dao_key_number_value dao_metric">
-<span class="down-pointing-triangle"> </span> -65%
+<span class="down-pointing-triangle"> </span> -38%
 </p>
 <h4 class="dao_key_number_text">
-2,019 Cases
+5,691 Cases
 <h4 class="dao_key_numbers_emphasis">
 All Offenses
-</h4>
-</h4>
-</div>
-<div class="col-print-2 col-xs-6 col-sm-2">
-<p class="dao_key_number_value dao_metric">
-<span class="down-pointing-triangle"> </span> -57%
-</p>
-<h4 class="dao_key_number_text">
-1,316 Cases
-<h4 class="dao_key_numbers_emphasis">
-Property Offenses
 </h4>
 </h4>
 </div>
@@ -313,7 +295,18 @@ Property Offenses
 <span class="down-pointing-triangle"> </span> -38%
 </p>
 <h4 class="dao_key_number_text">
-28 Cases
+3,081 Cases
+<h4 class="dao_key_numbers_emphasis">
+Property Offenses
+</h4>
+</h4>
+</div>
+<div class="col-print-2 col-xs-6 col-sm-2">
+<p class="dao_key_number_value dao_metric">
+<span class="down-pointing-triangle"> </span> -48%
+</p>
+<h4 class="dao_key_number_text">
+45 Cases
 <h4 class="dao_key_numbers_emphasis">
 Drug Offenses
 </h4>
@@ -321,10 +314,10 @@ Drug Offenses
 </div>
 <div class="col-print-2 col-xs-6 col-sm-2">
 <p class="dao_key_number_value dao_metric">
-<span class="down-pointing-triangle"> </span> -67%
+<span class="down-pointing-triangle"> </span> -50%
 </p>
 <h4 class="dao_key_number_text">
-189 Cases
+573 Cases
 <h4 class="dao_key_numbers_emphasis">
 Other Offenses
 </h4>
@@ -332,18 +325,13 @@ Other Offenses
 </div>
 </div>
 <div id="section" class="section level1 tabset tabset-fade tab-font">
-<h1 class="tabset tabset-fade tab-font"></h1>
+<h1></h1>
 <div id="all-offenses" class="section level2">
 <h2>All Offenses</h2>
 <div class="row">
-<div class="col-md-8 col-md-offset-2 dao-warning dao_report_body">
-<i class='fa fa-info-circle'></i>The COVID-19 pandemic has had a profound effect on the criminal legal system. Among other changes, overall arrests and cases charged have been lower than prior years and those arrests that have happened tend to be for more serious offenses. Because of this, statistics about arrests, cases charged, and bail should be interpreted with caution.
-</div>
-</div>
-<div class="row">
 <div class="col-print-6 col-sm-6 dao_visuals">
-<div id="htmlwidget-2c54125e69b8c4d036f9" style="width:100%;height:100%;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2c54125e69b8c4d036f9">{"x":{"visdat":{"342a3071fd52":["function () ","plotlyVisDat"]},"cur_data":"342a3071fd52","attrs":{"342a3071fd52":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"342a3071fd52.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2348.8,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2348.8,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2348.8,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2348.8,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2020.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened<\/b>","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2020-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":1,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01"],"y":[2156,1812,2293,2936,2898,2407,2764,2888,2650,2562,2403,1829,2036,1847,2257,2930,2791,2456,2457,2004,1781,1714,1507,1239,1114,1172,1292,1365,1245,1262,840,1006,1012,995,695,680,681,682,750,840,850,832,966,865,892,880,737,628,705,653,724,794,821,788,751,725,934,827,794,658,694,580,566,598,434,335,408,432,499,425,380,342,369,382,186,22,219,71,94,145,162,173,107],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 2156 Cases","February 2014: 1812 Cases","March 2014: 2293 Cases","April 2014: 2936 Cases","May 2014: 2898 Cases","June 2014: 2407 Cases","July 2014: 2764 Cases","August 2014: 2888 Cases","September 2014: 2650 Cases","October 2014: 2562 Cases","November 2014: 2403 Cases","December 2014: 1829 Cases","January 2015: 2036 Cases","February 2015: 1847 Cases","March 2015: 2257 Cases","April 2015: 2930 Cases","May 2015: 2791 Cases","June 2015: 2456 Cases","July 2015: 2457 Cases","August 2015: 2004 Cases","September 2015: 1781 Cases","October 2015: 1714 Cases","November 2015: 1507 Cases","December 2015: 1239 Cases","January 2016: 1114 Cases","February 2016: 1172 Cases","March 2016: 1292 Cases","April 2016: 1365 Cases","May 2016: 1245 Cases","June 2016: 1262 Cases","July 2016: 840 Cases","August 2016: 1006 Cases","September 2016: 1012 Cases","October 2016: 995 Cases","November 2016: 695 Cases","December 2016: 680 Cases","January 2017: 681 Cases","February 2017: 682 Cases","March 2017: 750 Cases","April 2017: 840 Cases","May 2017: 850 Cases","June 2017: 832 Cases","July 2017: 966 Cases","August 2017: 865 Cases","September 2017: 892 Cases","October 2017: 880 Cases","November 2017: 737 Cases","December 2017: 628 Cases","January 2018: 705 Cases","February 2018: 653 Cases","March 2018: 724 Cases","April 2018: 794 Cases","May 2018: 821 Cases","June 2018: 788 Cases","July 2018: 751 Cases","August 2018: 725 Cases","September 2018: 934 Cases","October 2018: 827 Cases","November 2018: 794 Cases","December 2018: 658 Cases","January 2019: 694 Cases","February 2019: 580 Cases","March 2019: 566 Cases","April 2019: 598 Cases","May 2019: 434 Cases","June 2019: 335 Cases","July 2019: 408 Cases","August 2019: 432 Cases","September 2019: 499 Cases","October 2019: 425 Cases","November 2019: 380 Cases","December 2019: 342 Cases","January 2020: 369 Cases","February 2020: 382 Cases","March 2020: 186 Cases","April 2020: 22 Cases","May 2020: 219 Cases","June 2020: 71 Cases","July 2020: 94 Cases","August 2020: 145 Cases","September 2020: 162 Cases","October 2020: 173 Cases","November 2020: 107 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01"],"y":[2361.41166980963,2400.23338652365,2430.10577958939,2456.88507154809,2475.96411605376,2488.03884837051,2492.29943839733,2489.70345068703,2480.47207589554,2465.67577898783,2444.7983728658,2416.55080211398,2377.67313540437,2331.64616935923,2286.19705907162,2234.09838320331,2174.79072695399,2099.2774123407,2018.64771294439,1934.02161157603,1854.66708640882,1774.12769590723,1677.72032479366,1578.25850017092,1475.99979380863,1381.26938407789,1305.73544965415,1228.32397513623,1147.46042629186,1064.99633156012,993.184577322123,934.480144990705,896.879368156122,876.183060801024,863.457121069505,852.291381634289,834.387111834131,814.56196616495,801.964814042843,791.656816078262,783.106395051375,773.376707181722,767.803513943164,770.303792381523,777.580668373462,785.725903072342,791.722822997442,791.777113778569,790.037469659818,790.985153629208,791.797609708076,790.043460518802,783.112857683926,771.451421027579,758.514372473955,743.661984031895,727.527554483236,710.908473198902,692.446710217191,673.047213725302,651.551329932966,628.718795823009,607.062053508948,579.607226890165,548.985208932039,515.664877582897,484.198892392372,454.99986682663,427.424268594803,399.527516209408,370.256352884684,342.271266685422,314.513111904938,287.483268687549,262.065146680687,234.928523139429,208.872181884453,182.339650598163,157.261744564275,131.947950491041,107.046611858871,83.1532812852735,58.4808308375101],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f83f94387298e6efd47a" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f83f94387298e6efd47a">{"x":{"visdat":{"7ea4277ab13":["function () ","plotlyVisDat"]},"cur_data":"7ea4277ab13","attrs":{"7ea4277ab13":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"7ea4277ab13.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened<\/b>","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2019-12-31"}],"annotations":[{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2019.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01"],"y":[2156,1812,2293,2936,2898,2407,2764,2888,2650,2561,2403,1828,2036,1847,2257,2930,2791,2456,2457,2004,1781,1714,1507,1239,1114,1172,1292,1365,1245,1262,840,1006,1012,995,695,680,681,682,750,840,850,832,966,865,892,880,737,628,705,653,724,794,821,788,751,725,934,827,794,658,694,580,566,598,434,334,408,432,499,425,380],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 2156 Cases","February 2014: 1812 Cases","March 2014: 2293 Cases","April 2014: 2936 Cases","May 2014: 2898 Cases","June 2014: 2407 Cases","July 2014: 2764 Cases","August 2014: 2888 Cases","September 2014: 2650 Cases","October 2014: 2561 Cases","November 2014: 2403 Cases","December 2014: 1828 Cases","January 2015: 2036 Cases","February 2015: 1847 Cases","March 2015: 2257 Cases","April 2015: 2930 Cases","May 2015: 2791 Cases","June 2015: 2456 Cases","July 2015: 2457 Cases","August 2015: 2004 Cases","September 2015: 1781 Cases","October 2015: 1714 Cases","November 2015: 1507 Cases","December 2015: 1239 Cases","January 2016: 1114 Cases","February 2016: 1172 Cases","March 2016: 1292 Cases","April 2016: 1365 Cases","May 2016: 1245 Cases","June 2016: 1262 Cases","July 2016: 840 Cases","August 2016: 1006 Cases","September 2016: 1012 Cases","October 2016: 995 Cases","November 2016: 695 Cases","December 2016: 680 Cases","January 2017: 681 Cases","February 2017: 682 Cases","March 2017: 750 Cases","April 2017: 840 Cases","May 2017: 850 Cases","June 2017: 832 Cases","July 2017: 966 Cases","August 2017: 865 Cases","September 2017: 892 Cases","October 2017: 880 Cases","November 2017: 737 Cases","December 2017: 628 Cases","January 2018: 705 Cases","February 2018: 653 Cases","March 2018: 724 Cases","April 2018: 794 Cases","May 2018: 821 Cases","June 2018: 788 Cases","July 2018: 751 Cases","August 2018: 725 Cases","September 2018: 934 Cases","October 2018: 827 Cases","November 2018: 794 Cases","December 2018: 658 Cases","January 2019: 694 Cases","February 2019: 580 Cases","March 2019: 566 Cases","April 2019: 598 Cases","May 2019: 434 Cases","June 2019: 334 Cases","July 2019: 408 Cases","August 2019: 432 Cases","September 2019: 499 Cases","October 2019: 425 Cases","November 2019: 380 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01"],"y":[2277.22657827166,2340.49780390819,2390.18222945302,2436.63049199484,2472.72335289067,2501.00859936133,2520.00235433533,2530.99283558505,2533.22766519777,2525.39497980377,2506.29132429043,2478.74494137675,2442.5864662019,2400.30237188769,2350.30919917361,2278.73903987501,2202.39381698014,2125.95292671641,2049.92484017813,1961.34064759168,1867.95985843867,1778.1559066312,1691.24446643987,1595.22523548649,1475.47720890446,1356.65377822631,1265.84499051887,1187.15054301511,1114.67881202256,1045.72899806509,986.788982713174,936.060080866722,901.200760587693,880.828653506311,864.791920697236,845.707659656788,825.277127561506,811.120867607033,801.651562629626,792.541784107498,782.826717748658,777.442544679517,779.79064666445,784.286621431705,785.051070614519,784.088817625528,785.924625767822,788.440182595891,789.713947064424,787.516840656977,784.75666268237,783.129909408204,780.079050496673,772.296051957009,760.442653671387,746.131119372857,729.883592626507,712.470007914263,692.887715562185,672.672755353293,650.403873440985,626.339376909271,602.729968633345,574.653343637868,545.803384133625,514.130984737464,481.559131572335,445.887564927487,408.271627787721,370.08694481315,328.859311551999],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="col-print-6 col-sm-6 dao_visuals">
 <h2>
@@ -352,13 +340,13 @@ Yearly Summary Cases Opened by Police District
 <div id="allcrime" class="mapframe">
 
 </div>
-<script>generateReportMap('allcrime', [{"dc_district":"01","Year":"2014","count":313},{"dc_district":"01","Year":"2015","count":303},{"dc_district":"01","Year":"2016","count":135},{"dc_district":"01","Year":"2017","count":82},{"dc_district":"01","Year":"2018","count":94},{"dc_district":"01","Year":"2019","count":80},{"dc_district":"01","Year":"2020","count":36},{"dc_district":"02","Year":"2014","count":806},{"dc_district":"02","Year":"2015","count":770},{"dc_district":"02","Year":"2016","count":566},{"dc_district":"02","Year":"2017","count":193},{"dc_district":"02","Year":"2018","count":232},{"dc_district":"02","Year":"2019","count":228},{"dc_district":"02","Year":"2020","count":99},{"dc_district":"03","Year":"2014","count":645},{"dc_district":"03","Year":"2015","count":656},{"dc_district":"03","Year":"2016","count":348},{"dc_district":"03","Year":"2017","count":310},{"dc_district":"03","Year":"2018","count":335},{"dc_district":"03","Year":"2019","count":245},{"dc_district":"03","Year":"2020","count":108},{"dc_district":"05","Year":"2014","count":95},{"dc_district":"05","Year":"2015","count":58},{"dc_district":"05","Year":"2016","count":50},{"dc_district":"05","Year":"2017","count":65},{"dc_district":"05","Year":"2018","count":68},{"dc_district":"05","Year":"2019","count":48},{"dc_district":"05","Year":"2020","count":24},{"dc_district":"06","Year":"2014","count":1894},{"dc_district":"06","Year":"2015","count":2772},{"dc_district":"06","Year":"2016","count":1615},{"dc_district":"06","Year":"2017","count":911},{"dc_district":"06","Year":"2018","count":764},{"dc_district":"06","Year":"2019","count":478},{"dc_district":"06","Year":"2020","count":181},{"dc_district":"07","Year":"2014","count":62},{"dc_district":"07","Year":"2015","count":47},{"dc_district":"07","Year":"2016","count":49},{"dc_district":"07","Year":"2017","count":29},{"dc_district":"07","Year":"2018","count":53},{"dc_district":"07","Year":"2019","count":61},{"dc_district":"07","Year":"2020","count":33},{"dc_district":"08","Year":"2014","count":441},{"dc_district":"08","Year":"2015","count":127},{"dc_district":"08","Year":"2016","count":147},{"dc_district":"08","Year":"2017","count":100},{"dc_district":"08","Year":"2018","count":130},{"dc_district":"08","Year":"2019","count":109},{"dc_district":"08","Year":"2020","count":100},{"dc_district":"09","Year":"2014","count":1475},{"dc_district":"09","Year":"2015","count":2441},{"dc_district":"09","Year":"2016","count":1118},{"dc_district":"09","Year":"2017","count":738},{"dc_district":"09","Year":"2018","count":836},{"dc_district":"09","Year":"2019","count":571},{"dc_district":"09","Year":"2020","count":195},{"dc_district":"12","Year":"2014","count":781},{"dc_district":"12","Year":"2015","count":859},{"dc_district":"12","Year":"2016","count":183},{"dc_district":"12","Year":"2017","count":74},{"dc_district":"12","Year":"2018","count":74},{"dc_district":"12","Year":"2019","count":54},{"dc_district":"12","Year":"2020","count":20},{"dc_district":"14","Year":"2014","count":380},{"dc_district":"14","Year":"2015","count":530},{"dc_district":"14","Year":"2016","count":150},{"dc_district":"14","Year":"2017","count":97},{"dc_district":"14","Year":"2018","count":122},{"dc_district":"14","Year":"2019","count":103},{"dc_district":"14","Year":"2020","count":68},{"dc_district":"15","Year":"2014","count":1136},{"dc_district":"15","Year":"2015","count":1598},{"dc_district":"15","Year":"2016","count":821},{"dc_district":"15","Year":"2017","count":792},{"dc_district":"15","Year":"2018","count":818},{"dc_district":"15","Year":"2019","count":370},{"dc_district":"15","Year":"2020","count":111},{"dc_district":"16","Year":"2014","count":1349},{"dc_district":"16","Year":"2015","count":1055},{"dc_district":"16","Year":"2016","count":309},{"dc_district":"16","Year":"2017","count":78},{"dc_district":"16","Year":"2018","count":131},{"dc_district":"16","Year":"2019","count":64},{"dc_district":"16","Year":"2020","count":73},{"dc_district":"17","Year":"2014","count":448},{"dc_district":"17","Year":"2015","count":426},{"dc_district":"17","Year":"2016","count":150},{"dc_district":"17","Year":"2017","count":123},{"dc_district":"17","Year":"2018","count":248},{"dc_district":"17","Year":"2019","count":124},{"dc_district":"17","Year":"2020","count":61},{"dc_district":"18","Year":"2014","count":933},{"dc_district":"18","Year":"2015","count":1298},{"dc_district":"18","Year":"2016","count":538},{"dc_district":"18","Year":"2017","count":469},{"dc_district":"18","Year":"2018","count":610},{"dc_district":"18","Year":"2019","count":261},{"dc_district":"18","Year":"2020","count":113},{"dc_district":"19","Year":"2014","count":3724},{"dc_district":"19","Year":"2015","count":3562},{"dc_district":"19","Year":"2016","count":327},{"dc_district":"19","Year":"2017","count":139},{"dc_district":"19","Year":"2018","count":241},{"dc_district":"19","Year":"2019","count":208},{"dc_district":"19","Year":"2020","count":101},{"dc_district":"22","Year":"2014","count":772},{"dc_district":"22","Year":"2015","count":1158},{"dc_district":"22","Year":"2016","count":892},{"dc_district":"22","Year":"2017","count":541},{"dc_district":"22","Year":"2018","count":538},{"dc_district":"22","Year":"2019","count":275},{"dc_district":"22","Year":"2020","count":88},{"dc_district":"24","Year":"2014","count":2285},{"dc_district":"24","Year":"2015","count":2618},{"dc_district":"24","Year":"2016","count":1514},{"dc_district":"24","Year":"2017","count":1400},{"dc_district":"24","Year":"2018","count":919},{"dc_district":"24","Year":"2019","count":375},{"dc_district":"24","Year":"2020","count":102},{"dc_district":"25","Year":"2014","count":761},{"dc_district":"25","Year":"2015","count":516},{"dc_district":"25","Year":"2016","count":735},{"dc_district":"25","Year":"2017","count":798},{"dc_district":"25","Year":"2018","count":197},{"dc_district":"25","Year":"2019","count":137},{"dc_district":"25","Year":"2020","count":45},{"dc_district":"26","Year":"2014","count":1008},{"dc_district":"26","Year":"2015","count":1151},{"dc_district":"26","Year":"2016","count":698},{"dc_district":"26","Year":"2017","count":676},{"dc_district":"26","Year":"2018","count":657},{"dc_district":"26","Year":"2019","count":395},{"dc_district":"26","Year":"2020","count":145},{"dc_district":"35","Year":"2014","count":741},{"dc_district":"35","Year":"2015","count":1341},{"dc_district":"35","Year":"2016","count":890},{"dc_district":"35","Year":"2017","count":413},{"dc_district":"35","Year":"2018","count":473},{"dc_district":"35","Year":"2019","count":200},{"dc_district":"35","Year":"2020","count":53},{"dc_district":"39","Year":"2014","count":430},{"dc_district":"39","Year":"2015","count":521},{"dc_district":"39","Year":"2016","count":368},{"dc_district":"39","Year":"2017","count":362},{"dc_district":"39","Year":"2018","count":441},{"dc_district":"39","Year":"2019","count":196},{"dc_district":"39","Year":"2020","count":44},{"dc_district":"77","Year":"2014","count":19},{"dc_district":"77","Year":"2015","count":12},{"dc_district":"77","Year":"2016","count":21},{"dc_district":"77","Year":"2017","count":31},{"dc_district":"77","Year":"2018","count":34},{"dc_district":"77","Year":"2019","count":20},{"dc_district":"77","Year":"2020","count":20}], 'All Offenses', 'Summary Cases Opened')</script>
+<script>generateReportMap('allcrime', [{"Year":"2014","dc_district":"01","count":313},{"Year":"2014","dc_district":"02","count":806},{"Year":"2014","dc_district":"03","count":645},{"Year":"2014","dc_district":"05","count":95},{"Year":"2014","dc_district":"06","count":1894},{"Year":"2014","dc_district":"07","count":62},{"Year":"2014","dc_district":"08","count":441},{"Year":"2014","dc_district":"09","count":1475},{"Year":"2014","dc_district":"12","count":781},{"Year":"2014","dc_district":"14","count":380},{"Year":"2014","dc_district":"15","count":1136},{"Year":"2014","dc_district":"16","count":1349},{"Year":"2014","dc_district":"17","count":448},{"Year":"2014","dc_district":"18","count":933},{"Year":"2014","dc_district":"19","count":3724},{"Year":"2014","dc_district":"22","count":771},{"Year":"2014","dc_district":"24","count":2285},{"Year":"2014","dc_district":"25","count":761},{"Year":"2014","dc_district":"26","count":1008},{"Year":"2014","dc_district":"35","count":740},{"Year":"2014","dc_district":"39","count":430},{"Year":"2014","dc_district":"77","count":19},{"Year":"2015","dc_district":"01","count":303},{"Year":"2015","dc_district":"02","count":770},{"Year":"2015","dc_district":"03","count":656},{"Year":"2015","dc_district":"05","count":58},{"Year":"2015","dc_district":"06","count":2772},{"Year":"2015","dc_district":"07","count":47},{"Year":"2015","dc_district":"08","count":127},{"Year":"2015","dc_district":"09","count":2441},{"Year":"2015","dc_district":"12","count":859},{"Year":"2015","dc_district":"14","count":530},{"Year":"2015","dc_district":"15","count":1598},{"Year":"2015","dc_district":"16","count":1055},{"Year":"2015","dc_district":"17","count":426},{"Year":"2015","dc_district":"18","count":1298},{"Year":"2015","dc_district":"19","count":3562},{"Year":"2015","dc_district":"22","count":1158},{"Year":"2015","dc_district":"24","count":2618},{"Year":"2015","dc_district":"25","count":516},{"Year":"2015","dc_district":"26","count":1151},{"Year":"2015","dc_district":"35","count":1341},{"Year":"2015","dc_district":"39","count":521},{"Year":"2015","dc_district":"77","count":12},{"Year":"2016","dc_district":"01","count":135},{"Year":"2016","dc_district":"02","count":566},{"Year":"2016","dc_district":"03","count":348},{"Year":"2016","dc_district":"05","count":50},{"Year":"2016","dc_district":"06","count":1615},{"Year":"2016","dc_district":"07","count":49},{"Year":"2016","dc_district":"08","count":147},{"Year":"2016","dc_district":"09","count":1118},{"Year":"2016","dc_district":"12","count":183},{"Year":"2016","dc_district":"14","count":150},{"Year":"2016","dc_district":"15","count":821},{"Year":"2016","dc_district":"16","count":309},{"Year":"2016","dc_district":"17","count":150},{"Year":"2016","dc_district":"18","count":538},{"Year":"2016","dc_district":"19","count":327},{"Year":"2016","dc_district":"22","count":892},{"Year":"2016","dc_district":"24","count":1514},{"Year":"2016","dc_district":"25","count":735},{"Year":"2016","dc_district":"26","count":698},{"Year":"2016","dc_district":"35","count":890},{"Year":"2016","dc_district":"39","count":368},{"Year":"2016","dc_district":"77","count":21},{"Year":"2017","dc_district":"01","count":82},{"Year":"2017","dc_district":"02","count":193},{"Year":"2017","dc_district":"03","count":310},{"Year":"2017","dc_district":"05","count":65},{"Year":"2017","dc_district":"06","count":911},{"Year":"2017","dc_district":"07","count":29},{"Year":"2017","dc_district":"08","count":100},{"Year":"2017","dc_district":"09","count":738},{"Year":"2017","dc_district":"12","count":74},{"Year":"2017","dc_district":"14","count":97},{"Year":"2017","dc_district":"15","count":792},{"Year":"2017","dc_district":"16","count":78},{"Year":"2017","dc_district":"17","count":123},{"Year":"2017","dc_district":"18","count":469},{"Year":"2017","dc_district":"19","count":139},{"Year":"2017","dc_district":"22","count":541},{"Year":"2017","dc_district":"24","count":1400},{"Year":"2017","dc_district":"25","count":798},{"Year":"2017","dc_district":"26","count":676},{"Year":"2017","dc_district":"35","count":413},{"Year":"2017","dc_district":"39","count":362},{"Year":"2017","dc_district":"77","count":31},{"Year":"2018","dc_district":"01","count":94},{"Year":"2018","dc_district":"02","count":232},{"Year":"2018","dc_district":"03","count":335},{"Year":"2018","dc_district":"05","count":68},{"Year":"2018","dc_district":"06","count":764},{"Year":"2018","dc_district":"07","count":53},{"Year":"2018","dc_district":"08","count":130},{"Year":"2018","dc_district":"09","count":836},{"Year":"2018","dc_district":"12","count":74},{"Year":"2018","dc_district":"14","count":122},{"Year":"2018","dc_district":"15","count":818},{"Year":"2018","dc_district":"16","count":131},{"Year":"2018","dc_district":"17","count":248},{"Year":"2018","dc_district":"18","count":610},{"Year":"2018","dc_district":"19","count":241},{"Year":"2018","dc_district":"22","count":538},{"Year":"2018","dc_district":"24","count":919},{"Year":"2018","dc_district":"25","count":197},{"Year":"2018","dc_district":"26","count":657},{"Year":"2018","dc_district":"35","count":473},{"Year":"2018","dc_district":"39","count":441},{"Year":"2018","dc_district":"77","count":34},{"Year":"2019","dc_district":"01","count":80},{"Year":"2019","dc_district":"02","count":228},{"Year":"2019","dc_district":"03","count":245},{"Year":"2019","dc_district":"05","count":48},{"Year":"2019","dc_district":"06","count":478},{"Year":"2019","dc_district":"07","count":61},{"Year":"2019","dc_district":"08","count":109},{"Year":"2019","dc_district":"09","count":571},{"Year":"2019","dc_district":"12","count":53},{"Year":"2019","dc_district":"14","count":103},{"Year":"2019","dc_district":"15","count":370},{"Year":"2019","dc_district":"16","count":64},{"Year":"2019","dc_district":"17","count":124},{"Year":"2019","dc_district":"18","count":261},{"Year":"2019","dc_district":"19","count":208},{"Year":"2019","dc_district":"22","count":275},{"Year":"2019","dc_district":"24","count":374},{"Year":"2019","dc_district":"25","count":137},{"Year":"2019","dc_district":"26","count":395},{"Year":"2019","dc_district":"35","count":200},{"Year":"2019","dc_district":"39","count":196},{"Year":"2019","dc_district":"77","count":20}], 'All Offenses', 'Summary Cases Opened')</script>
 </div>
 </div>
 <h2 class="dao_table_header">
 Data: Year End Count of Summary Cases Opened by Offense Category
 </h2>
-<div class="table-wrapper">
+<div class='table-wrapper'>
 <table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -383,9 +371,6 @@ Offense Category
 <th style="text-align:center;color: #4D7DBF !important;">
 2019
 </th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2020
-</th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;">
 Yr-Yr<br>Change
 </th>
@@ -393,10 +378,10 @@ Yr-Yr<br>Change
 ’14-’17<br>Avg
 </th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-’18-’20<br>Avg
+’18-’19<br>Avg
 </th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-’14-’17 Avg<br>Compared to<br>’18-’20 Avg
+’14-’17 Avg<br>Compared to<br>’18-’19 Avg
 </th>
 </tr>
 </thead>
@@ -406,37 +391,34 @@ Yr-Yr<br>Change
 All Property Offenses
 </td>
 <td style="text-align:center;">
-5667
+5,669
 </td>
 <td style="text-align:center;">
-4,091
+4,098
 </td>
 <td style="text-align:center;">
-3,902
+3,912
 </td>
 <td style="text-align:center;">
-3,724
+3,726
 </td>
 <td style="text-align:center;">
-4,933
+4,935
 </td>
 <td style="text-align:center;">
 3,081
 </td>
-<td style="text-align:center;">
-1,316
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--57%
+-38%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-4,346
+4,351
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-3,110
+4,008
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--28%
+-8%
 </td>
 </tr>
 <tr>
@@ -444,7 +426,7 @@ All Property Offenses
 All Drug Offenses
 </td>
 <td style="text-align:center;">
-584
+585
 </td>
 <td style="text-align:center;">
 497
@@ -461,20 +443,17 @@ All Drug Offenses
 <td style="text-align:center;">
 45
 </td>
-<td style="text-align:center;">
-28
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--38%
+-48%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-412
+413
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-53
+66
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--87%
+-84%
 </td>
 </tr>
 <tr>
@@ -482,37 +461,34 @@ All Drug Offenses
 All Other Offenses
 </td>
 <td style="text-align:center;">
-13376
+13,425
 </td>
 <td style="text-align:center;">
-11,582
+11,605
 </td>
 <td style="text-align:center;">
-3,950
+3,977
 </td>
 <td style="text-align:center;">
-2,105
+2,117
 </td>
 <td style="text-align:center;">
-1,136
+1,139
 </td>
 <td style="text-align:center;">
-570
-</td>
-<td style="text-align:center;">
-189
+573
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--67%
+-50%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-7,753
+7,781
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-632
+856
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--92%
+-89%
 </td>
 </tr>
 <tr>
@@ -520,37 +496,34 @@ All Other Offenses
 Uncategorized Offenses
 </td>
 <td style="text-align:center;">
-9971
+9,917
 </td>
 <td style="text-align:center;">
-8,849
+8,819
 </td>
 <td style="text-align:center;">
-4,444
+4,407
 </td>
 <td style="text-align:center;">
-3,587
+3,573
 </td>
 <td style="text-align:center;">
-3,018
+3,013
 </td>
 <td style="text-align:center;">
-1,997
-</td>
-<td style="text-align:center;">
-486
+1,992
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--76%
+-34%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-6,713
+6,679
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-1,834
+2,502
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--73%
+-63%
 </td>
 </tr>
 <tr>
@@ -558,7 +531,7 @@ Uncategorized Offenses
 All Offenses
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-29598
+29,596
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
 25,019
@@ -573,22 +546,19 @@ All Offenses
 9,174
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-5,693
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-2,019
+5,691
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;">
--65%
+-38%
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
 19,224
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-5,629
+7,432
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--71%
+-61%
 </td>
 </tr>
 </tbody>
@@ -598,14 +568,9 @@ All Offenses
 <div id="property" class="section level2">
 <h2>Property</h2>
 <div class="row">
-<div class="col-md-8 col-md-offset-2 dao-warning dao_report_body">
-<i class='fa fa-info-circle'></i>The COVID-19 pandemic has had a profound effect on the criminal legal system. Among other changes, overall arrests and cases charged have been lower than prior years and those arrests that have happened tend to be for more serious offenses. Because of this, statistics about arrests, cases charged, and bail should be interpreted with caution.
-</div>
-</div>
-<div class="row">
 <div class="col-print-6 col-sm-6 dao_visuals">
-<div id="htmlwidget-3a8a6027930d2897b0e3" style="width:100%;height:100%;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3a8a6027930d2897b0e3">{"x":{"visdat":{"342a5ab59ea2":["function () ","plotlyVisDat"]},"cur_data":"342a5ab59ea2","attrs":{"342a5ab59ea2":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"342a5ab59ea2.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":428.8,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":428.8,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":428.8,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":428.8,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2020.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Property<\/b>","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2020-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":1,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01"],"y":[489,362,473,417,475,447,536,509,486,531,489,453,484,338,370,379,390,331,371,300,299,267,312,250,318,347,338,294,318,362,333,314,338,383,268,289,319,261,255,247,290,283,350,306,384,388,356,285,350,335,373,451,452,451,443,374,445,418,445,396,421,354,271,306,244,167,230,211,232,211,217,217,260,263,114,6,186,49,62,78,86,79,64],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 489 Cases","February 2014: 362 Cases","March 2014: 473 Cases","April 2014: 417 Cases","May 2014: 475 Cases","June 2014: 447 Cases","July 2014: 536 Cases","August 2014: 509 Cases","September 2014: 486 Cases","October 2014: 531 Cases","November 2014: 489 Cases","December 2014: 453 Cases","January 2015: 484 Cases","February 2015: 338 Cases","March 2015: 370 Cases","April 2015: 379 Cases","May 2015: 390 Cases","June 2015: 331 Cases","July 2015: 371 Cases","August 2015: 300 Cases","September 2015: 299 Cases","October 2015: 267 Cases","November 2015: 312 Cases","December 2015: 250 Cases","January 2016: 318 Cases","February 2016: 347 Cases","March 2016: 338 Cases","April 2016: 294 Cases","May 2016: 318 Cases","June 2016: 362 Cases","July 2016: 333 Cases","August 2016: 314 Cases","September 2016: 338 Cases","October 2016: 383 Cases","November 2016: 268 Cases","December 2016: 289 Cases","January 2017: 319 Cases","February 2017: 261 Cases","March 2017: 255 Cases","April 2017: 247 Cases","May 2017: 290 Cases","June 2017: 283 Cases","July 2017: 350 Cases","August 2017: 306 Cases","September 2017: 384 Cases","October 2017: 388 Cases","November 2017: 356 Cases","December 2017: 285 Cases","January 2018: 350 Cases","February 2018: 335 Cases","March 2018: 373 Cases","April 2018: 451 Cases","May 2018: 452 Cases","June 2018: 451 Cases","July 2018: 443 Cases","August 2018: 374 Cases","September 2018: 445 Cases","October 2018: 418 Cases","November 2018: 445 Cases","December 2018: 396 Cases","January 2019: 421 Cases","February 2019: 354 Cases","March 2019: 271 Cases","April 2019: 306 Cases","May 2019: 244 Cases","June 2019: 167 Cases","July 2019: 230 Cases","August 2019: 211 Cases","September 2019: 232 Cases","October 2019: 211 Cases","November 2019: 217 Cases","December 2019: 217 Cases","January 2020: 260 Cases","February 2020: 263 Cases","March 2020: 114 Cases","April 2020: 6 Cases","May 2020: 186 Cases","June 2020: 49 Cases","July 2020: 62 Cases","August 2020: 78 Cases","September 2020: 86 Cases","October 2020: 79 Cases","November 2020: 64 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01"],"y":[487.177422429381,482.006145715751,477.265319864128,471.78573963421,466.100291721363,459.667912725825,452.893509563734,445.528517301947,437.950375709896,430.563805896892,423.031434098523,415.41725188775,406.927575277362,398.221038106086,390.519636038367,382.559420821079,373.328654956433,360.997523220613,348.226908056876,336.114119549099,327.083237465666,321.76254665794,318.446442818352,316.61086224063,315.362446513816,313.989384866652,311.890354503318,309.748290895005,308.816961032979,308.553175685319,308.513432725694,308.213982049009,307.112517541366,305.485298039103,303.85847189623,302.944477740427,303.317012282132,303.97440671131,304.00230708513,304.187935282123,305.295383715908,308.224157798062,314.30476741973,323.96937165378,335.491872729042,346.908377545036,357.426609560963,364.881045100872,373.655131440829,386.137486659728,397.833941888862,408.189335519715,412.585829567045,412.025790636971,409.477964943724,405.176391716413,399.589156266006,393.348897965322,384.226049487388,371.943364968374,357.370473223492,342.602118897578,330.537960406957,316.9802539217,301.96350909497,285.590756044293,269.975215786721,255.179998744391,240.908917013278,226.363842894245,211.001543022229,196.221330012759,181.464294574742,166.999929058626,153.318594504217,138.621995026182,124.415304452047,109.842666482901,95.9413625327015,81.7641169204986,67.6828110537237,54.0570468510591,39.8853972261697],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c8ab513d880f2916522c" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c8ab513d880f2916522c">{"x":{"visdat":{"7ea4458064e4":["function () ","plotlyVisDat"]},"cur_data":"7ea4458064e4","attrs":{"7ea4458064e4":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"7ea4458064e4.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Property<\/b>","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2019-12-31"}],"annotations":[{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2019.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01"],"y":[490,362,473,418,475,447,536,509,486,531,489,453,484,338,371,379,391,331,372,301,300,267,312,252,318,347,338,297,318,362,334,315,339,386,268,290,319,261,255,247,290,283,352,306,384,388,356,285,350,335,373,452,453,451,443,374,445,418,445,396,421,354,271,306,244,167,230,211,232,211,217],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 490 Cases","February 2014: 362 Cases","March 2014: 473 Cases","April 2014: 418 Cases","May 2014: 475 Cases","June 2014: 447 Cases","July 2014: 536 Cases","August 2014: 509 Cases","September 2014: 486 Cases","October 2014: 531 Cases","November 2014: 489 Cases","December 2014: 453 Cases","January 2015: 484 Cases","February 2015: 338 Cases","March 2015: 371 Cases","April 2015: 379 Cases","May 2015: 391 Cases","June 2015: 331 Cases","July 2015: 372 Cases","August 2015: 301 Cases","September 2015: 300 Cases","October 2015: 267 Cases","November 2015: 312 Cases","December 2015: 252 Cases","January 2016: 318 Cases","February 2016: 347 Cases","March 2016: 338 Cases","April 2016: 297 Cases","May 2016: 318 Cases","June 2016: 362 Cases","July 2016: 334 Cases","August 2016: 315 Cases","September 2016: 339 Cases","October 2016: 386 Cases","November 2016: 268 Cases","December 2016: 290 Cases","January 2017: 319 Cases","February 2017: 261 Cases","March 2017: 255 Cases","April 2017: 247 Cases","May 2017: 290 Cases","June 2017: 283 Cases","July 2017: 352 Cases","August 2017: 306 Cases","September 2017: 384 Cases","October 2017: 388 Cases","November 2017: 356 Cases","December 2017: 285 Cases","January 2018: 350 Cases","February 2018: 335 Cases","March 2018: 373 Cases","April 2018: 452 Cases","May 2018: 453 Cases","June 2018: 451 Cases","July 2018: 443 Cases","August 2018: 374 Cases","September 2018: 445 Cases","October 2018: 418 Cases","November 2018: 445 Cases","December 2018: 396 Cases","January 2019: 421 Cases","February 2019: 354 Cases","March 2019: 271 Cases","April 2019: 306 Cases","May 2019: 244 Cases","June 2019: 167 Cases","July 2019: 230 Cases","August 2019: 211 Cases","September 2019: 232 Cases","October 2019: 211 Cases","November 2019: 217 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01"],"y":[465.469498434165,467.162406691017,468.05620212598,468.006141612223,466.584791608766,463.635753390388,459.706574183488,454.838167313362,449.456078838832,443.223054549323,435.321342940708,426.809962231577,417.69526177518,408.838895678906,398.010998661455,381.416943762194,364.79316403406,351.350561178374,341.553447036514,331.726834206211,322.765762974834,315.454491510429,309.860111182971,308.776254165118,311.932983599252,315.733999714343,316.557566425129,315.571183488695,315.54828076078,315.937980319754,316.189288775567,315.769608952171,313.364791655926,309.456506730644,305.637603059309,303.928579794261,302.755656497998,300.410641762986,298.370334522689,297.399006567173,298.936079693751,303.711301305139,310.430524848084,318.318255696018,325.92250457831,335.725826444555,350.182130488555,365.543755390805,379.894014555361,389.706875046485,397.598947012293,408.53838927815,417.652341017639,421.622252202539,419.853121186477,415.022745303631,407.857682073665,399.383309561193,389.739912332046,379.260328688851,366.537343846767,352.017291861658,337.465470428776,319.728722933602,300.842295328965,279.558057936585,257.259683786806,232.555098541744,206.201445181457,179.06468161079,149.270491504694],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="col-print-6 col-sm-6 dao_visuals">
 <h2>
@@ -614,13 +579,13 @@ Yearly Summary Cases Opened by Police District
 <div id="category2crime" class="mapframe">
 
 </div>
-<script>generateReportMap('category2crime', [{"dc_district":"01","Year":"2014","count":75},{"dc_district":"01","Year":"2015","count":121},{"dc_district":"01","Year":"2016","count":78},{"dc_district":"01","Year":"2017","count":60},{"dc_district":"01","Year":"2018","count":76},{"dc_district":"01","Year":"2019","count":69},{"dc_district":"01","Year":"2020","count":28},{"dc_district":"02","Year":"2014","count":245},{"dc_district":"02","Year":"2015","count":259},{"dc_district":"02","Year":"2016","count":273},{"dc_district":"02","Year":"2017","count":108},{"dc_district":"02","Year":"2018","count":180},{"dc_district":"02","Year":"2019","count":196},{"dc_district":"02","Year":"2020","count":80},{"dc_district":"03","Year":"2014","count":177},{"dc_district":"03","Year":"2015","count":179},{"dc_district":"03","Year":"2016","count":147},{"dc_district":"03","Year":"2017","count":182},{"dc_district":"03","Year":"2018","count":224},{"dc_district":"03","Year":"2019","count":129},{"dc_district":"03","Year":"2020","count":67},{"dc_district":"05","Year":"2014","count":28},{"dc_district":"05","Year":"2015","count":9},{"dc_district":"05","Year":"2016","count":15},{"dc_district":"05","Year":"2017","count":20},{"dc_district":"05","Year":"2018","count":35},{"dc_district":"05","Year":"2019","count":19},{"dc_district":"05","Year":"2020","count":14},{"dc_district":"06","Year":"2014","count":348},{"dc_district":"06","Year":"2015","count":517},{"dc_district":"06","Year":"2016","count":374},{"dc_district":"06","Year":"2017","count":404},{"dc_district":"06","Year":"2018","count":451},{"dc_district":"06","Year":"2019","count":333},{"dc_district":"06","Year":"2020","count":146},{"dc_district":"07","Year":"2014","count":39},{"dc_district":"07","Year":"2015","count":24},{"dc_district":"07","Year":"2016","count":31},{"dc_district":"07","Year":"2017","count":20},{"dc_district":"07","Year":"2018","count":45},{"dc_district":"07","Year":"2019","count":60},{"dc_district":"07","Year":"2020","count":32},{"dc_district":"08","Year":"2014","count":167},{"dc_district":"08","Year":"2015","count":77},{"dc_district":"08","Year":"2016","count":74},{"dc_district":"08","Year":"2017","count":34},{"dc_district":"08","Year":"2018","count":108},{"dc_district":"08","Year":"2019","count":78},{"dc_district":"08","Year":"2020","count":58},{"dc_district":"09","Year":"2014","count":178},{"dc_district":"09","Year":"2015","count":356},{"dc_district":"09","Year":"2016","count":340},{"dc_district":"09","Year":"2017","count":316},{"dc_district":"09","Year":"2018","count":449},{"dc_district":"09","Year":"2019","count":420},{"dc_district":"09","Year":"2020","count":174},{"dc_district":"12","Year":"2014","count":51},{"dc_district":"12","Year":"2015","count":89},{"dc_district":"12","Year":"2016","count":35},{"dc_district":"12","Year":"2017","count":37},{"dc_district":"12","Year":"2018","count":47},{"dc_district":"12","Year":"2019","count":37},{"dc_district":"12","Year":"2020","count":16},{"dc_district":"14","Year":"2014","count":79},{"dc_district":"14","Year":"2015","count":75},{"dc_district":"14","Year":"2016","count":58},{"dc_district":"14","Year":"2017","count":58},{"dc_district":"14","Year":"2018","count":105},{"dc_district":"14","Year":"2019","count":93},{"dc_district":"14","Year":"2020","count":57},{"dc_district":"15","Year":"2014","count":317},{"dc_district":"15","Year":"2015","count":315},{"dc_district":"15","Year":"2016","count":221},{"dc_district":"15","Year":"2017","count":269},{"dc_district":"15","Year":"2018","count":389},{"dc_district":"15","Year":"2019","count":274},{"dc_district":"15","Year":"2020","count":87},{"dc_district":"16","Year":"2014","count":37},{"dc_district":"16","Year":"2015","count":42},{"dc_district":"16","Year":"2016","count":25},{"dc_district":"16","Year":"2017","count":43},{"dc_district":"16","Year":"2018","count":65},{"dc_district":"16","Year":"2019","count":21},{"dc_district":"16","Year":"2020","count":30},{"dc_district":"17","Year":"2014","count":43},{"dc_district":"17","Year":"2015","count":34},{"dc_district":"17","Year":"2016","count":15},{"dc_district":"17","Year":"2017","count":25},{"dc_district":"17","Year":"2018","count":68},{"dc_district":"17","Year":"2019","count":62},{"dc_district":"17","Year":"2020","count":55},{"dc_district":"18","Year":"2014","count":271},{"dc_district":"18","Year":"2015","count":377},{"dc_district":"18","Year":"2016","count":282},{"dc_district":"18","Year":"2017","count":283},{"dc_district":"18","Year":"2018","count":414},{"dc_district":"18","Year":"2019","count":150},{"dc_district":"18","Year":"2020","count":84},{"dc_district":"19","Year":"2014","count":113},{"dc_district":"19","Year":"2015","count":141},{"dc_district":"19","Year":"2016","count":127},{"dc_district":"19","Year":"2017","count":106},{"dc_district":"19","Year":"2018","count":195},{"dc_district":"19","Year":"2019","count":162},{"dc_district":"19","Year":"2020","count":93},{"dc_district":"22","Year":"2014","count":217},{"dc_district":"22","Year":"2015","count":330},{"dc_district":"22","Year":"2016","count":466},{"dc_district":"22","Year":"2017","count":364},{"dc_district":"22","Year":"2018","count":426},{"dc_district":"22","Year":"2019","count":198},{"dc_district":"22","Year":"2020","count":70},{"dc_district":"24","Year":"2014","count":363},{"dc_district":"24","Year":"2015","count":367},{"dc_district":"24","Year":"2016","count":339},{"dc_district":"24","Year":"2017","count":418},{"dc_district":"24","Year":"2018","count":559},{"dc_district":"24","Year":"2019","count":262},{"dc_district":"24","Year":"2020","count":88},{"dc_district":"25","Year":"2014","count":83},{"dc_district":"25","Year":"2015","count":110},{"dc_district":"25","Year":"2016","count":147},{"dc_district":"25","Year":"2017","count":120},{"dc_district":"25","Year":"2018","count":132},{"dc_district":"25","Year":"2019","count":87},{"dc_district":"25","Year":"2020","count":33},{"dc_district":"26","Year":"2014","count":105},{"dc_district":"26","Year":"2015","count":144},{"dc_district":"26","Year":"2016","count":139},{"dc_district":"26","Year":"2017","count":197},{"dc_district":"26","Year":"2018","count":255},{"dc_district":"26","Year":"2019","count":104},{"dc_district":"26","Year":"2020","count":17},{"dc_district":"35","Year":"2014","count":153},{"dc_district":"35","Year":"2015","count":212},{"dc_district":"35","Year":"2016","count":349},{"dc_district":"35","Year":"2017","count":250},{"dc_district":"35","Year":"2018","count":353},{"dc_district":"35","Year":"2019","count":155},{"dc_district":"35","Year":"2020","count":43},{"dc_district":"39","Year":"2014","count":209},{"dc_district":"39","Year":"2015","count":211},{"dc_district":"39","Year":"2016","count":231},{"dc_district":"39","Year":"2017","count":272},{"dc_district":"39","Year":"2018","count":326},{"dc_district":"39","Year":"2019","count":164},{"dc_district":"39","Year":"2020","count":41},{"dc_district":"77","Year":"2014","count":3},{"dc_district":"77","Year":"2015","count":1},{"dc_district":"77","Year":"2016","count":1},{"dc_district":"77","Year":"2017","count":2},{"dc_district":"77","Year":"2018","count":6},{"dc_district":"77","Year":"2019","count":7},{"dc_district":"77","Year":"2020","count":3}], 'All Property Offenses', 'Summary Cases Opened')</script>
+<script>generateReportMap('category2crime', [{"Year":"2014","dc_district":"01","count":75},{"Year":"2014","dc_district":"02","count":245},{"Year":"2014","dc_district":"03","count":177},{"Year":"2014","dc_district":"05","count":28},{"Year":"2014","dc_district":"06","count":348},{"Year":"2014","dc_district":"07","count":39},{"Year":"2014","dc_district":"08","count":167},{"Year":"2014","dc_district":"09","count":178},{"Year":"2014","dc_district":"12","count":51},{"Year":"2014","dc_district":"14","count":79},{"Year":"2014","dc_district":"15","count":317},{"Year":"2014","dc_district":"16","count":37},{"Year":"2014","dc_district":"17","count":43},{"Year":"2014","dc_district":"18","count":271},{"Year":"2014","dc_district":"19","count":113},{"Year":"2014","dc_district":"22","count":217},{"Year":"2014","dc_district":"24","count":363},{"Year":"2014","dc_district":"25","count":83},{"Year":"2014","dc_district":"26","count":105},{"Year":"2014","dc_district":"35","count":152},{"Year":"2014","dc_district":"39","count":210},{"Year":"2014","dc_district":"77","count":3},{"Year":"2015","dc_district":"01","count":121},{"Year":"2015","dc_district":"02","count":259},{"Year":"2015","dc_district":"03","count":180},{"Year":"2015","dc_district":"05","count":9},{"Year":"2015","dc_district":"06","count":518},{"Year":"2015","dc_district":"07","count":24},{"Year":"2015","dc_district":"08","count":77},{"Year":"2015","dc_district":"09","count":356},{"Year":"2015","dc_district":"12","count":89},{"Year":"2015","dc_district":"14","count":75},{"Year":"2015","dc_district":"15","count":316},{"Year":"2015","dc_district":"16","count":42},{"Year":"2015","dc_district":"17","count":34},{"Year":"2015","dc_district":"18","count":377},{"Year":"2015","dc_district":"19","count":141},{"Year":"2015","dc_district":"22","count":330},{"Year":"2015","dc_district":"24","count":367},{"Year":"2015","dc_district":"25","count":111},{"Year":"2015","dc_district":"26","count":146},{"Year":"2015","dc_district":"35","count":213},{"Year":"2015","dc_district":"39","count":211},{"Year":"2015","dc_district":"77","count":1},{"Year":"2016","dc_district":"01","count":78},{"Year":"2016","dc_district":"02","count":273},{"Year":"2016","dc_district":"03","count":148},{"Year":"2016","dc_district":"05","count":15},{"Year":"2016","dc_district":"06","count":374},{"Year":"2016","dc_district":"07","count":31},{"Year":"2016","dc_district":"08","count":74},{"Year":"2016","dc_district":"09","count":340},{"Year":"2016","dc_district":"12","count":35},{"Year":"2016","dc_district":"14","count":58},{"Year":"2016","dc_district":"15","count":225},{"Year":"2016","dc_district":"16","count":25},{"Year":"2016","dc_district":"17","count":15},{"Year":"2016","dc_district":"18","count":282},{"Year":"2016","dc_district":"19","count":127},{"Year":"2016","dc_district":"22","count":467},{"Year":"2016","dc_district":"24","count":340},{"Year":"2016","dc_district":"25","count":147},{"Year":"2016","dc_district":"26","count":139},{"Year":"2016","dc_district":"35","count":350},{"Year":"2016","dc_district":"39","count":233},{"Year":"2016","dc_district":"77","count":1},{"Year":"2017","dc_district":"01","count":60},{"Year":"2017","dc_district":"02","count":108},{"Year":"2017","dc_district":"03","count":182},{"Year":"2017","dc_district":"05","count":20},{"Year":"2017","dc_district":"06","count":404},{"Year":"2017","dc_district":"07","count":20},{"Year":"2017","dc_district":"08","count":34},{"Year":"2017","dc_district":"09","count":317},{"Year":"2017","dc_district":"12","count":37},{"Year":"2017","dc_district":"14","count":58},{"Year":"2017","dc_district":"15","count":269},{"Year":"2017","dc_district":"16","count":43},{"Year":"2017","dc_district":"17","count":25},{"Year":"2017","dc_district":"18","count":283},{"Year":"2017","dc_district":"19","count":106},{"Year":"2017","dc_district":"22","count":364},{"Year":"2017","dc_district":"24","count":419},{"Year":"2017","dc_district":"25","count":120},{"Year":"2017","dc_district":"26","count":197},{"Year":"2017","dc_district":"35","count":250},{"Year":"2017","dc_district":"39","count":272},{"Year":"2017","dc_district":"77","count":2},{"Year":"2018","dc_district":"01","count":76},{"Year":"2018","dc_district":"02","count":180},{"Year":"2018","dc_district":"03","count":225},{"Year":"2018","dc_district":"05","count":35},{"Year":"2018","dc_district":"06","count":451},{"Year":"2018","dc_district":"07","count":45},{"Year":"2018","dc_district":"08","count":108},{"Year":"2018","dc_district":"09","count":449},{"Year":"2018","dc_district":"12","count":47},{"Year":"2018","dc_district":"14","count":105},{"Year":"2018","dc_district":"15","count":389},{"Year":"2018","dc_district":"16","count":65},{"Year":"2018","dc_district":"17","count":68},{"Year":"2018","dc_district":"18","count":414},{"Year":"2018","dc_district":"19","count":195},{"Year":"2018","dc_district":"22","count":426},{"Year":"2018","dc_district":"24","count":559},{"Year":"2018","dc_district":"25","count":133},{"Year":"2018","dc_district":"26","count":255},{"Year":"2018","dc_district":"35","count":353},{"Year":"2018","dc_district":"39","count":326},{"Year":"2018","dc_district":"77","count":6},{"Year":"2019","dc_district":"01","count":69},{"Year":"2019","dc_district":"02","count":196},{"Year":"2019","dc_district":"03","count":129},{"Year":"2019","dc_district":"05","count":19},{"Year":"2019","dc_district":"06","count":333},{"Year":"2019","dc_district":"07","count":60},{"Year":"2019","dc_district":"08","count":78},{"Year":"2019","dc_district":"09","count":420},{"Year":"2019","dc_district":"12","count":37},{"Year":"2019","dc_district":"14","count":93},{"Year":"2019","dc_district":"15","count":274},{"Year":"2019","dc_district":"16","count":21},{"Year":"2019","dc_district":"17","count":62},{"Year":"2019","dc_district":"18","count":150},{"Year":"2019","dc_district":"19","count":162},{"Year":"2019","dc_district":"22","count":198},{"Year":"2019","dc_district":"24","count":262},{"Year":"2019","dc_district":"25","count":87},{"Year":"2019","dc_district":"26","count":104},{"Year":"2019","dc_district":"35","count":155},{"Year":"2019","dc_district":"39","count":164},{"Year":"2019","dc_district":"77","count":7}], 'All Property Offenses', 'Summary Cases Opened')</script>
 </div>
 </div>
 <h2 class="dao_table_header">
 Data: Year End Count of Summary Cases Opened by Offense Category
 </h2>
-<div class="table-wrapper">
+<div class='table-wrapper'>
 <table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -645,9 +610,6 @@ Offense Category
 <th style="text-align:center;color: #4D7DBF !important;">
 2019
 </th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2020
-</th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;">
 Yr-Yr<br>Change
 </th>
@@ -655,10 +617,10 @@ Yr-Yr<br>Change
 ’14-’17<br>Avg
 </th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-’18-’20<br>Avg
+’18-’19<br>Avg
 </th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-’14-’17 Avg<br>Compared to<br>’18-’20 Avg
+’14-’17 Avg<br>Compared to<br>’18-’19 Avg
 </th>
 </tr>
 </thead>
@@ -668,7 +630,7 @@ Yr-Yr<br>Change
 Retail Theft
 </td>
 <td style="text-align:center;">
-1939
+1,938
 </td>
 <td style="text-align:center;">
 1,742
@@ -685,20 +647,17 @@ Retail Theft
 <td style="text-align:center;">
 2,328
 </td>
-<td style="text-align:center;">
-1,236
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--47%
+4%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
 1,665
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-1,934
+2,284
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-16%
+37%
 </td>
 </tr>
 <tr>
@@ -723,20 +682,17 @@ Theft
 <td style="text-align:center;">
 27
 </td>
-<td style="text-align:center;">
-12
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--56%
+12%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
 12
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-21
+26
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-75%
+117%
 </td>
 </tr>
 <tr>
@@ -744,37 +700,34 @@ Theft
 Fraud/Theft of Services
 </td>
 <td style="text-align:center;">
-3542
+3,545
 </td>
 <td style="text-align:center;">
-2,195
+2,199
 </td>
 <td style="text-align:center;">
-2,117
+2,126
 </td>
 <td style="text-align:center;">
-2,311
+2,313
 </td>
 <td style="text-align:center;">
-2,579
+2,581
 </td>
 <td style="text-align:center;">
 667
 </td>
-<td style="text-align:center;">
-24
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--96%
+-74%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-2,541
+2,546
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-1,090
+1,624
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--57%
+-36%
 </td>
 </tr>
 <tr>
@@ -785,10 +738,10 @@ Vandalism
 173
 </td>
 <td style="text-align:center;">
-141
+144
 </td>
 <td style="text-align:center;">
-131
+132
 </td>
 <td style="text-align:center;">
 65
@@ -799,20 +752,17 @@ Vandalism
 <td style="text-align:center;">
 59
 </td>
-<td style="text-align:center;">
-44
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--25%
+-35%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
 128
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-65
+75
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--49%
+-41%
 </td>
 </tr>
 <tr>
@@ -820,37 +770,34 @@ Vandalism
 All Property Offenses
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-5667
+5,669
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-4,091
+4,098
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-3,902
+3,912
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-3,724
+3,726
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-4,933
+4,935
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
 3,081
 </td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-1,316
-</td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;">
--57%
+-38%
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-4,346
+4,351
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-3,110
+4,008
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--28%
+-8%
 </td>
 </tr>
 </tbody>
@@ -860,14 +807,9 @@ All Property Offenses
 <div id="drugs" class="section level2">
 <h2>Drugs</h2>
 <div class="row">
-<div class="col-md-8 col-md-offset-2 dao-warning dao_report_body">
-<i class='fa fa-info-circle'></i>The COVID-19 pandemic has had a profound effect on the criminal legal system. Among other changes, overall arrests and cases charged have been lower than prior years and those arrests that have happened tend to be for more serious offenses. Because of this, statistics about arrests, cases charged, and bail should be interpreted with caution.
-</div>
-</div>
-<div class="row">
 <div class="col-print-6 col-sm-6 dao_visuals">
-<div id="htmlwidget-cb88c56438937f2cdb03" style="width:100%;height:100%;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cb88c56438937f2cdb03">{"x":{"visdat":{"342a258fb101":["function () ","plotlyVisDat"]},"cur_data":"342a258fb101","attrs":{"342a258fb101":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"342a258fb101.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":55.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":55.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":55.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":55.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2020.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Drugs<\/b>","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2020-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":1,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01"],"y":[20,36,58,56,53,50,59,51,62,36,63,40,35,50,62,69,47,31,40,35,26,33,33,36,36,57,63,53,43,28,14,22,22,16,13,15,9,18,30,34,15,12,2,14,21,11,11,10,6,10,10,7,9,8,5,11,7,3,5,6,3,4,1,12,18,1,2,2,0,0,1,1,4,15,6,0,2,0,0,0,0,1,0],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 20 Cases","February 2014: 36 Cases","March 2014: 58 Cases","April 2014: 56 Cases","May 2014: 53 Cases","June 2014: 50 Cases","July 2014: 59 Cases","August 2014: 51 Cases","September 2014: 62 Cases","October 2014: 36 Cases","November 2014: 63 Cases","December 2014: 40 Cases","January 2015: 35 Cases","February 2015: 50 Cases","March 2015: 62 Cases","April 2015: 69 Cases","May 2015: 47 Cases","June 2015: 31 Cases","July 2015: 40 Cases","August 2015: 35 Cases","September 2015: 26 Cases","October 2015: 33 Cases","November 2015: 33 Cases","December 2015: 36 Cases","January 2016: 36 Cases","February 2016: 57 Cases","March 2016: 63 Cases","April 2016: 53 Cases","May 2016: 43 Cases","June 2016: 28 Cases","July 2016: 14 Cases","August 2016: 22 Cases","September 2016: 22 Cases","October 2016: 16 Cases","November 2016: 13 Cases","December 2016: 15 Cases","January 2017: 9 Cases","February 2017: 18 Cases","March 2017: 30 Cases","April 2017: 34 Cases","May 2017: 15 Cases","June 2017: 12 Cases","July 2017: 2 Cases","August 2017: 14 Cases","September 2017: 21 Cases","October 2017: 11 Cases","November 2017: 11 Cases","December 2017: 10 Cases","January 2018: 6 Cases","February 2018: 10 Cases","March 2018: 10 Cases","April 2018: 7 Cases","May 2018: 9 Cases","June 2018: 8 Cases","July 2018: 5 Cases","August 2018: 11 Cases","September 2018: 7 Cases","October 2018: 3 Cases","November 2018: 5 Cases","December 2018: 6 Cases","January 2019: 3 Cases","February 2019: 4 Cases","March 2019: 1 Cases","April 2019: 12 Cases","May 2019: 18 Cases","June 2019: 1 Cases","July 2019: 2 Cases","August 2019: 2 Cases","September 2019: 0 Cases","October 2019: 0 Cases","November 2019: 1 Cases","December 2019: 1 Cases","January 2020: 4 Cases","February 2020: 15 Cases","March 2020: 6 Cases","April 2020: 0 Cases","May 2020: 2 Cases","June 2020: 0 Cases","July 2020: 0 Cases","August 2020: 0 Cases","September 2020: 0 Cases","October 2020: 1 Cases","November 2020: 0 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01"],"y":[43.3120715554311,44.5023098947903,45.4746522761088,46.4287399030475,47.2209235477109,47.8948017559735,48.4119165650564,48.8208027414611,49.1058293237182,49.2672183473196,49.319333014728,49.2293865455023,48.977405436638,48.5943027744254,48.1612368113584,47.6138214347967,46.9444652971195,46.058387185793,45.0794646103043,44.0121284775524,42.9589299783323,41.8944842689442,40.6641279704021,39.3869278057103,38.0191996375437,36.6448729167788,35.3909757047019,34.0094488718586,32.5771092359033,31.0588131144157,29.6102793177363,28.1952845527301,26.6133621533967,24.7815542684082,22.7879227026514,20.9622802087587,19.3930996176902,18.06884462194,16.9104848664851,15.6962515916454,14.6156324818472,13.6245418312002,12.9003315980251,12.4238929966731,12.1122704502923,11.8614132990324,11.5448434913846,11.0779256015132,10.4080875240899,9.65028127302335,8.95504733055812,8.24520160147257,7.68920013014885,7.29182468672367,7.02964130431824,6.82104560769168,6.6106220786761,6.34318914643333,6.02916917562543,5.75124530250711,5.48488399702044,5.23358709059775,5.01442518485144,4.8087506192601,4.65511797353191,4.51127784351413,4.35587218296161,4.14653338673333,3.90473196627491,3.67380369213824,3.43394710950385,3.19641908563695,2.9409781824027,2.67859256159617,2.43150147383125,2.16409171286168,1.90059262187829,1.62186327782663,1.34389963943292,1.04816650740029,0.745381558284531,0.447165042524048,0.135201819996012],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3ccfbf6eb6f3e4561007" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3ccfbf6eb6f3e4561007">{"x":{"visdat":{"7ea44d12957":["function () ","plotlyVisDat"]},"cur_data":"7ea44d12957","attrs":{"7ea44d12957":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"7ea44d12957.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Drugs<\/b>","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2019-12-31"}],"annotations":[{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2019.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-11-01"],"y":[20,36,58,57,53,50,59,51,62,36,63,40,35,50,62,69,47,31,40,35,26,33,33,36,36,57,63,53,43,28,14,22,22,16,13,15,9,18,30,34,15,12,2,14,21,11,11,10,6,10,10,7,9,8,5,11,7,3,5,6,3,4,1,12,18,1,2,2,1],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 20 Cases","February 2014: 36 Cases","March 2014: 58 Cases","April 2014: 57 Cases","May 2014: 53 Cases","June 2014: 50 Cases","July 2014: 59 Cases","August 2014: 51 Cases","September 2014: 62 Cases","October 2014: 36 Cases","November 2014: 63 Cases","December 2014: 40 Cases","January 2015: 35 Cases","February 2015: 50 Cases","March 2015: 62 Cases","April 2015: 69 Cases","May 2015: 47 Cases","June 2015: 31 Cases","July 2015: 40 Cases","August 2015: 35 Cases","September 2015: 26 Cases","October 2015: 33 Cases","November 2015: 33 Cases","December 2015: 36 Cases","January 2016: 36 Cases","February 2016: 57 Cases","March 2016: 63 Cases","April 2016: 53 Cases","May 2016: 43 Cases","June 2016: 28 Cases","July 2016: 14 Cases","August 2016: 22 Cases","September 2016: 22 Cases","October 2016: 16 Cases","November 2016: 13 Cases","December 2016: 15 Cases","January 2017: 9 Cases","February 2017: 18 Cases","March 2017: 30 Cases","April 2017: 34 Cases","May 2017: 15 Cases","June 2017: 12 Cases","July 2017: 2 Cases","August 2017: 14 Cases","September 2017: 21 Cases","October 2017: 11 Cases","November 2017: 11 Cases","December 2017: 10 Cases","January 2018: 6 Cases","February 2018: 10 Cases","March 2018: 10 Cases","April 2018: 7 Cases","May 2018: 9 Cases","June 2018: 8 Cases","July 2018: 5 Cases","August 2018: 11 Cases","September 2018: 7 Cases","October 2018: 3 Cases","November 2018: 5 Cases","December 2018: 6 Cases","January 2019: 3 Cases","February 2019: 4 Cases","March 2019: 1 Cases","April 2019: 12 Cases","May 2019: 18 Cases","June 2019: 1 Cases","July 2019: 2 Cases","August 2019: 2 Cases","November 2019: 1 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-11-01"],"y":[41.9021965967463,43.6465126231714,45.0743099776807,46.4431022290995,47.5077096561582,48.3344664031905,48.9218198629961,49.3468599313087,49.625581176869,49.6260382005865,49.2743421986574,48.7249376737134,48.0788400226813,47.4929766150372,46.7081776404029,45.3547639513771,43.9747110924566,42.9187659466833,42.4977463765602,42.4414933078621,42.4669093269984,42.2804440570035,41.5712178372645,40.4329243671502,39.1008832055046,37.695620166528,36.3909682149766,34.9591446768793,33.485778263832,31.9386358220267,30.4807013579753,28.541368890179,26.0257795196327,23.5687025297864,21.5499050389319,20.053039766733,18.5773009010116,17.2061866631892,16.0849633924824,15.0035667159469,14.4311973161377,14.3573924423568,14.373237902418,14.0476276526728,13.3110523681466,12.491208280608,11.6383339520886,10.9078612811598,10.1341563564767,9.25738309987488,8.50108072278519,7.84070406665146,7.42492371871939,7.13499960277294,6.92599956881112,6.71750950133282,6.44904800715733,6.17294069111064,5.93690926912492,5.7219277870569,5.47787960292918,5.2190711330595,4.99777021482799,4.76313448171361,4.54306473159582,4.31657170656542,4.09669019691433,3.87202534645776,3.25299595650027],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="col-print-6 col-sm-6 dao_visuals">
 <h2>
@@ -876,13 +818,13 @@ Yearly Summary Cases Opened by Police District
 <div id="category3crime" class="mapframe">
 
 </div>
-<script>generateReportMap('category3crime', [{"dc_district":"01","Year":"2014","count":12},{"dc_district":"01","Year":"2015","count":6},{"dc_district":"01","Year":"2016","count":0},{"dc_district":"01","Year":"2017","count":0},{"dc_district":"01","Year":"2018","count":1},{"dc_district":"01","Year":"2019","count":0},{"dc_district":"01","Year":"2020","count":0},{"dc_district":"02","Year":"2014","count":4},{"dc_district":"02","Year":"2015","count":4},{"dc_district":"02","Year":"2016","count":0},{"dc_district":"02","Year":"2017","count":1},{"dc_district":"02","Year":"2018","count":0},{"dc_district":"02","Year":"2019","count":0},{"dc_district":"02","Year":"2020","count":0},{"dc_district":"03","Year":"2014","count":48},{"dc_district":"03","Year":"2015","count":27},{"dc_district":"03","Year":"2016","count":27},{"dc_district":"03","Year":"2017","count":29},{"dc_district":"03","Year":"2018","count":12},{"dc_district":"03","Year":"2019","count":25},{"dc_district":"03","Year":"2020","count":0},{"dc_district":"05","Year":"2014","count":10},{"dc_district":"05","Year":"2015","count":19},{"dc_district":"05","Year":"2016","count":8},{"dc_district":"05","Year":"2017","count":10},{"dc_district":"05","Year":"2018","count":10},{"dc_district":"05","Year":"2019","count":2},{"dc_district":"05","Year":"2020","count":0},{"dc_district":"06","Year":"2014","count":131},{"dc_district":"06","Year":"2015","count":219},{"dc_district":"06","Year":"2016","count":133},{"dc_district":"06","Year":"2017","count":35},{"dc_district":"06","Year":"2018","count":24},{"dc_district":"06","Year":"2019","count":6},{"dc_district":"06","Year":"2020","count":0},{"dc_district":"07","Year":"2014","count":0},{"dc_district":"07","Year":"2015","count":1},{"dc_district":"07","Year":"2016","count":0},{"dc_district":"07","Year":"2017","count":0},{"dc_district":"07","Year":"2018","count":0},{"dc_district":"07","Year":"2019","count":0},{"dc_district":"07","Year":"2020","count":0},{"dc_district":"08","Year":"2014","count":61},{"dc_district":"08","Year":"2015","count":9},{"dc_district":"08","Year":"2016","count":23},{"dc_district":"08","Year":"2017","count":29},{"dc_district":"08","Year":"2018","count":7},{"dc_district":"08","Year":"2019","count":2},{"dc_district":"08","Year":"2020","count":19},{"dc_district":"09","Year":"2014","count":26},{"dc_district":"09","Year":"2015","count":41},{"dc_district":"09","Year":"2016","count":36},{"dc_district":"09","Year":"2017","count":31},{"dc_district":"09","Year":"2018","count":7},{"dc_district":"09","Year":"2019","count":0},{"dc_district":"09","Year":"2020","count":0},{"dc_district":"12","Year":"2014","count":3},{"dc_district":"12","Year":"2015","count":9},{"dc_district":"12","Year":"2016","count":3},{"dc_district":"12","Year":"2017","count":0},{"dc_district":"12","Year":"2018","count":1},{"dc_district":"12","Year":"2019","count":0},{"dc_district":"12","Year":"2020","count":0},{"dc_district":"14","Year":"2014","count":4},{"dc_district":"14","Year":"2015","count":5},{"dc_district":"14","Year":"2016","count":1},{"dc_district":"14","Year":"2017","count":0},{"dc_district":"14","Year":"2018","count":0},{"dc_district":"14","Year":"2019","count":0},{"dc_district":"14","Year":"2020","count":0},{"dc_district":"15","Year":"2014","count":36},{"dc_district":"15","Year":"2015","count":22},{"dc_district":"15","Year":"2016","count":20},{"dc_district":"15","Year":"2017","count":13},{"dc_district":"15","Year":"2018","count":2},{"dc_district":"15","Year":"2019","count":0},{"dc_district":"15","Year":"2020","count":3},{"dc_district":"16","Year":"2014","count":9},{"dc_district":"16","Year":"2015","count":4},{"dc_district":"16","Year":"2016","count":8},{"dc_district":"16","Year":"2017","count":1},{"dc_district":"16","Year":"2018","count":1},{"dc_district":"16","Year":"2019","count":1},{"dc_district":"16","Year":"2020","count":1},{"dc_district":"17","Year":"2014","count":1},{"dc_district":"17","Year":"2015","count":2},{"dc_district":"17","Year":"2016","count":1},{"dc_district":"17","Year":"2017","count":0},{"dc_district":"17","Year":"2018","count":0},{"dc_district":"17","Year":"2019","count":0},{"dc_district":"17","Year":"2020","count":0},{"dc_district":"18","Year":"2014","count":22},{"dc_district":"18","Year":"2015","count":18},{"dc_district":"18","Year":"2016","count":20},{"dc_district":"18","Year":"2017","count":6},{"dc_district":"18","Year":"2018","count":9},{"dc_district":"18","Year":"2019","count":4},{"dc_district":"18","Year":"2020","count":1},{"dc_district":"19","Year":"2014","count":17},{"dc_district":"19","Year":"2015","count":10},{"dc_district":"19","Year":"2016","count":11},{"dc_district":"19","Year":"2017","count":2},{"dc_district":"19","Year":"2018","count":0},{"dc_district":"19","Year":"2019","count":0},{"dc_district":"19","Year":"2020","count":0},{"dc_district":"22","Year":"2014","count":57},{"dc_district":"22","Year":"2015","count":34},{"dc_district":"22","Year":"2016","count":31},{"dc_district":"22","Year":"2017","count":12},{"dc_district":"22","Year":"2018","count":2},{"dc_district":"22","Year":"2019","count":2},{"dc_district":"22","Year":"2020","count":4},{"dc_district":"24","Year":"2014","count":32},{"dc_district":"24","Year":"2015","count":18},{"dc_district":"24","Year":"2016","count":8},{"dc_district":"24","Year":"2017","count":2},{"dc_district":"24","Year":"2018","count":3},{"dc_district":"24","Year":"2019","count":0},{"dc_district":"24","Year":"2020","count":0},{"dc_district":"25","Year":"2014","count":12},{"dc_district":"25","Year":"2015","count":5},{"dc_district":"25","Year":"2016","count":11},{"dc_district":"25","Year":"2017","count":2},{"dc_district":"25","Year":"2018","count":0},{"dc_district":"25","Year":"2019","count":1},{"dc_district":"25","Year":"2020","count":0},{"dc_district":"26","Year":"2014","count":40},{"dc_district":"26","Year":"2015","count":33},{"dc_district":"26","Year":"2016","count":14},{"dc_district":"26","Year":"2017","count":1},{"dc_district":"26","Year":"2018","count":3},{"dc_district":"26","Year":"2019","count":0},{"dc_district":"26","Year":"2020","count":0},{"dc_district":"35","Year":"2014","count":9},{"dc_district":"35","Year":"2015","count":8},{"dc_district":"35","Year":"2016","count":15},{"dc_district":"35","Year":"2017","count":11},{"dc_district":"35","Year":"2018","count":3},{"dc_district":"35","Year":"2019","count":1},{"dc_district":"35","Year":"2020","count":0},{"dc_district":"39","Year":"2014","count":2},{"dc_district":"39","Year":"2015","count":3},{"dc_district":"39","Year":"2016","count":10},{"dc_district":"39","Year":"2017","count":1},{"dc_district":"39","Year":"2018","count":0},{"dc_district":"39","Year":"2019","count":0},{"dc_district":"39","Year":"2020","count":0},{"dc_district":"77","Year":"2014","count":0},{"dc_district":"77","Year":"2015","count":0},{"dc_district":"77","Year":"2016","count":2},{"dc_district":"77","Year":"2017","count":1},{"dc_district":"77","Year":"2018","count":2},{"dc_district":"77","Year":"2019","count":1},{"dc_district":"77","Year":"2020","count":0}], 'All Drug Offenses', 'Summary Cases Opened')</script>
+<script>generateReportMap('category3crime', [{"Year":"2014","dc_district":"01","count":12},{"Year":"2014","dc_district":"02","count":4},{"Year":"2014","dc_district":"03","count":48},{"Year":"2014","dc_district":"05","count":10},{"Year":"2014","dc_district":"06","count":131},{"Year":"2014","dc_district":"07","count":0},{"Year":"2014","dc_district":"08","count":61},{"Year":"2014","dc_district":"09","count":26},{"Year":"2014","dc_district":"12","count":3},{"Year":"2014","dc_district":"14","count":4},{"Year":"2014","dc_district":"15","count":36},{"Year":"2014","dc_district":"16","count":9},{"Year":"2014","dc_district":"17","count":1},{"Year":"2014","dc_district":"18","count":22},{"Year":"2014","dc_district":"19","count":17},{"Year":"2014","dc_district":"22","count":58},{"Year":"2014","dc_district":"24","count":32},{"Year":"2014","dc_district":"25","count":12},{"Year":"2014","dc_district":"26","count":40},{"Year":"2014","dc_district":"35","count":9},{"Year":"2014","dc_district":"39","count":2},{"Year":"2014","dc_district":"77","count":0},{"Year":"2015","dc_district":"01","count":6},{"Year":"2015","dc_district":"02","count":4},{"Year":"2015","dc_district":"03","count":27},{"Year":"2015","dc_district":"05","count":19},{"Year":"2015","dc_district":"06","count":219},{"Year":"2015","dc_district":"07","count":1},{"Year":"2015","dc_district":"08","count":9},{"Year":"2015","dc_district":"09","count":41},{"Year":"2015","dc_district":"12","count":9},{"Year":"2015","dc_district":"14","count":5},{"Year":"2015","dc_district":"15","count":22},{"Year":"2015","dc_district":"16","count":4},{"Year":"2015","dc_district":"17","count":2},{"Year":"2015","dc_district":"18","count":18},{"Year":"2015","dc_district":"19","count":10},{"Year":"2015","dc_district":"22","count":34},{"Year":"2015","dc_district":"24","count":18},{"Year":"2015","dc_district":"25","count":5},{"Year":"2015","dc_district":"26","count":33},{"Year":"2015","dc_district":"35","count":8},{"Year":"2015","dc_district":"39","count":3},{"Year":"2015","dc_district":"77","count":0},{"Year":"2016","dc_district":"01","count":0},{"Year":"2016","dc_district":"02","count":0},{"Year":"2016","dc_district":"03","count":27},{"Year":"2016","dc_district":"05","count":8},{"Year":"2016","dc_district":"06","count":133},{"Year":"2016","dc_district":"07","count":0},{"Year":"2016","dc_district":"08","count":23},{"Year":"2016","dc_district":"09","count":36},{"Year":"2016","dc_district":"12","count":3},{"Year":"2016","dc_district":"14","count":1},{"Year":"2016","dc_district":"15","count":20},{"Year":"2016","dc_district":"16","count":8},{"Year":"2016","dc_district":"17","count":1},{"Year":"2016","dc_district":"18","count":20},{"Year":"2016","dc_district":"19","count":11},{"Year":"2016","dc_district":"22","count":31},{"Year":"2016","dc_district":"24","count":8},{"Year":"2016","dc_district":"25","count":11},{"Year":"2016","dc_district":"26","count":14},{"Year":"2016","dc_district":"35","count":15},{"Year":"2016","dc_district":"39","count":10},{"Year":"2016","dc_district":"77","count":2},{"Year":"2017","dc_district":"01","count":0},{"Year":"2017","dc_district":"02","count":1},{"Year":"2017","dc_district":"03","count":29},{"Year":"2017","dc_district":"05","count":10},{"Year":"2017","dc_district":"06","count":35},{"Year":"2017","dc_district":"07","count":0},{"Year":"2017","dc_district":"08","count":29},{"Year":"2017","dc_district":"09","count":31},{"Year":"2017","dc_district":"12","count":0},{"Year":"2017","dc_district":"14","count":0},{"Year":"2017","dc_district":"15","count":13},{"Year":"2017","dc_district":"16","count":1},{"Year":"2017","dc_district":"17","count":0},{"Year":"2017","dc_district":"18","count":6},{"Year":"2017","dc_district":"19","count":2},{"Year":"2017","dc_district":"22","count":12},{"Year":"2017","dc_district":"24","count":2},{"Year":"2017","dc_district":"25","count":2},{"Year":"2017","dc_district":"26","count":1},{"Year":"2017","dc_district":"35","count":11},{"Year":"2017","dc_district":"39","count":1},{"Year":"2017","dc_district":"77","count":1},{"Year":"2018","dc_district":"01","count":1},{"Year":"2018","dc_district":"02","count":0},{"Year":"2018","dc_district":"03","count":12},{"Year":"2018","dc_district":"05","count":10},{"Year":"2018","dc_district":"06","count":24},{"Year":"2018","dc_district":"07","count":0},{"Year":"2018","dc_district":"08","count":7},{"Year":"2018","dc_district":"09","count":7},{"Year":"2018","dc_district":"12","count":1},{"Year":"2018","dc_district":"14","count":0},{"Year":"2018","dc_district":"15","count":2},{"Year":"2018","dc_district":"16","count":1},{"Year":"2018","dc_district":"17","count":0},{"Year":"2018","dc_district":"18","count":9},{"Year":"2018","dc_district":"19","count":0},{"Year":"2018","dc_district":"22","count":2},{"Year":"2018","dc_district":"24","count":3},{"Year":"2018","dc_district":"25","count":0},{"Year":"2018","dc_district":"26","count":3},{"Year":"2018","dc_district":"35","count":3},{"Year":"2018","dc_district":"39","count":0},{"Year":"2018","dc_district":"77","count":2},{"Year":"2019","dc_district":"01","count":0},{"Year":"2019","dc_district":"02","count":0},{"Year":"2019","dc_district":"03","count":25},{"Year":"2019","dc_district":"05","count":2},{"Year":"2019","dc_district":"06","count":6},{"Year":"2019","dc_district":"07","count":0},{"Year":"2019","dc_district":"08","count":2},{"Year":"2019","dc_district":"09","count":0},{"Year":"2019","dc_district":"12","count":0},{"Year":"2019","dc_district":"14","count":0},{"Year":"2019","dc_district":"15","count":0},{"Year":"2019","dc_district":"16","count":1},{"Year":"2019","dc_district":"17","count":0},{"Year":"2019","dc_district":"18","count":4},{"Year":"2019","dc_district":"19","count":0},{"Year":"2019","dc_district":"22","count":2},{"Year":"2019","dc_district":"24","count":0},{"Year":"2019","dc_district":"25","count":1},{"Year":"2019","dc_district":"26","count":0},{"Year":"2019","dc_district":"35","count":1},{"Year":"2019","dc_district":"39","count":0},{"Year":"2019","dc_district":"77","count":1}], 'All Drug Offenses', 'Summary Cases Opened')</script>
 </div>
 </div>
 <h2 class="dao_table_header">
 Data: Year End Count of Summary Cases Opened by Offense Category
 </h2>
-<div class="table-wrapper">
+<div class='table-wrapper'>
 <table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -907,9 +849,6 @@ Offense Category
 <th style="text-align:center;color: #4D7DBF !important;">
 2019
 </th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2020
-</th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;">
 Yr-Yr<br>Change
 </th>
@@ -917,10 +856,10 @@ Yr-Yr<br>Change
 ’14-’17<br>Avg
 </th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-’18-’20<br>Avg
+’18-’19<br>Avg
 </th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-’14-’17 Avg<br>Compared to<br>’18-’20 Avg
+’14-’17 Avg<br>Compared to<br>’18-’19 Avg
 </th>
 </tr>
 </thead>
@@ -947,20 +886,17 @@ Alcohol Possession by Minor
 <td style="text-align:center;">
 33
 </td>
-<td style="text-align:center;">
-27
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--18%
+-20%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
 162
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-34
+37
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--79%
+-77%
 </td>
 </tr>
 <tr>
@@ -968,7 +904,7 @@ Alcohol Possession by Minor
 Public Drunkenness
 </td>
 <td style="text-align:center;">
-328
+329
 </td>
 <td style="text-align:center;">
 335
@@ -985,20 +921,17 @@ Public Drunkenness
 <td style="text-align:center;">
 12
 </td>
-<td style="text-align:center;">
-1
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--92%
+-74%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-250
+251
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-20
+29
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--92%
+-88%
 </td>
 </tr>
 <tr>
@@ -1006,7 +939,7 @@ Public Drunkenness
 All Drug Offenses
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-584
+585
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
 497
@@ -1023,20 +956,17 @@ All Drug Offenses
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
 45
 </td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-28
-</td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;">
--38%
+-48%
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-412
+413
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-53
+66
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--87%
+-84%
 </td>
 </tr>
 </tbody>
@@ -1046,14 +976,9 @@ All Drug Offenses
 <div id="other" class="section level2">
 <h2>Other</h2>
 <div class="row">
-<div class="col-md-8 col-md-offset-2 dao-warning dao_report_body">
-<i class='fa fa-info-circle'></i>The COVID-19 pandemic has had a profound effect on the criminal legal system. Among other changes, overall arrests and cases charged have been lower than prior years and those arrests that have happened tend to be for more serious offenses. Because of this, statistics about arrests, cases charged, and bail should be interpreted with caution.
-</div>
-</div>
-<div class="row">
 <div class="col-print-6 col-sm-6 dao_visuals">
-<div id="htmlwidget-c5458f7955d2008020ce" style="width:100%;height:100%;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c5458f7955d2008020ce">{"x":{"visdat":{"342a21187505":["function () ","plotlyVisDat"]},"cur_data":"342a21187505","attrs":{"342a21187505":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"342a21187505.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":1135.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":1135.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":1135.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":1135.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2020.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Other<\/b>","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2020-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":1,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01"],"y":[945,787,1000,1297,1419,1179,1264,1325,1203,1173,1037,747,878,802,986,1360,1296,1180,1214,1000,793,799,693,581,398,401,461,479,490,411,175,319,239,259,178,140,121,174,177,235,227,193,280,143,145,136,152,122,112,115,116,73,105,74,71,106,91,105,92,76,45,55,58,86,39,38,40,29,72,38,35,35,26,46,30,5,18,8,8,10,12,14,5],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 945 Cases","February 2014: 787 Cases","March 2014: 1000 Cases","April 2014: 1297 Cases","May 2014: 1419 Cases","June 2014: 1179 Cases","July 2014: 1264 Cases","August 2014: 1325 Cases","September 2014: 1203 Cases","October 2014: 1173 Cases","November 2014: 1037 Cases","December 2014: 747 Cases","January 2015: 878 Cases","February 2015: 802 Cases","March 2015: 986 Cases","April 2015: 1360 Cases","May 2015: 1296 Cases","June 2015: 1180 Cases","July 2015: 1214 Cases","August 2015: 1000 Cases","September 2015: 793 Cases","October 2015: 799 Cases","November 2015: 693 Cases","December 2015: 581 Cases","January 2016: 398 Cases","February 2016: 401 Cases","March 2016: 461 Cases","April 2016: 479 Cases","May 2016: 490 Cases","June 2016: 411 Cases","July 2016: 175 Cases","August 2016: 319 Cases","September 2016: 239 Cases","October 2016: 259 Cases","November 2016: 178 Cases","December 2016: 140 Cases","January 2017: 121 Cases","February 2017: 174 Cases","March 2017: 177 Cases","April 2017: 235 Cases","May 2017: 227 Cases","June 2017: 193 Cases","July 2017: 280 Cases","August 2017: 143 Cases","September 2017: 145 Cases","October 2017: 136 Cases","November 2017: 152 Cases","December 2017: 122 Cases","January 2018: 112 Cases","February 2018: 115 Cases","March 2018: 116 Cases","April 2018: 73 Cases","May 2018: 105 Cases","June 2018: 74 Cases","July 2018: 71 Cases","August 2018: 106 Cases","September 2018: 91 Cases","October 2018: 105 Cases","November 2018: 92 Cases","December 2018: 76 Cases","January 2019: 45 Cases","February 2019: 55 Cases","March 2019: 58 Cases","April 2019: 86 Cases","May 2019: 39 Cases","June 2019: 38 Cases","July 2019: 40 Cases","August 2019: 29 Cases","September 2019: 72 Cases","October 2019: 38 Cases","November 2019: 35 Cases","December 2019: 35 Cases","January 2020: 26 Cases","February 2020: 46 Cases","March 2020: 30 Cases","April 2020: 5 Cases","May 2020: 18 Cases","June 2020: 8 Cases","July 2020: 8 Cases","August 2020: 10 Cases","September 2020: 12 Cases","October 2020: 14 Cases","November 2020: 5 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01"],"y":[1039.54603315653,1065.9608911088,1086.70194805336,1106.02255016396,1120.88605914954,1132.08133723764,1138.88873444815,1141.99559801951,1141.25210544893,1137.00124776686,1129.09882771715,1116.83983174168,1098.83210592946,1076.65015971258,1054.08094172816,1027.45503071164,997.216580367691,959.228692030839,918.425536678025,874.68122049901,831.96677605324,786.213606998291,729.792743583966,670.662084566193,609.390387616196,552.530636727315,507.438912507125,460.269129401156,409.308391722713,356.388064038271,309.927438009085,272.057885644915,247.320467573001,232.457797030641,222.17361282934,213.01016703332,200.051146770508,187.432874910147,180.676813836178,175.822936104885,171.26737393121,164.051238990035,156.519561697481,151.317433599592,147.697603577033,144.710299528926,141.132539886279,136.215116173518,129.527021993634,122.129430123057,115.283795785232,108.016861204457,101.785120744201,96.0169693924868,90.6442030484811,85.3552024295992,80.3806973971151,75.911164995313,72.1372529883158,69.3989261148613,66.9959056623782,64.5002515137671,61.7240345654956,58.239788809049,54.9053330425428,51.5087589556629,48.2791447021022,45.0115714057429,41.7973513951366,38.725700994528,35.6096081344386,32.6671157705105,29.7198223690437,26.8608706602708,24.2496204379754,21.5258534462628,18.9563849515783,16.369869967499,13.9352836083934,11.4915015943794,9.11917556316691,6.88981138151388,4.6531310138647],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e983f7892eca4325b747" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e983f7892eca4325b747">{"x":{"visdat":{"7ea43c2e5f37":["function () ","plotlyVisDat"]},"cur_data":"7ea43c2e5f37","attrs":{"7ea43c2e5f37":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#1B75F3"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"7ea43c2e5f37.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Other<\/b>","font":{"family":"nimbus-sans","size":"1.8rem","color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":"1.264rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":1,"yref":"paper","layer":"below","x1":"2019-12-31"}],"annotations":[{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2019.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01"],"y":[946,792,1003,1309,1426,1183,1267,1329,1205,1178,1040,747,881,804,988,1362,1298,1185,1216,1003,793,799,694,582,399,405,461,480,493,415,179,321,241,262,180,141,122,174,180,235,227,193,281,145,146,137,153,124,113,115,116,73,105,75,71,107,91,105,92,76,45,55,58,88,40,38,40,29,72,38,35],"mode":"markers","marker":{"color":"#1B75F3","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2014: 946 Cases","February 2014: 792 Cases","March 2014: 1003 Cases","April 2014: 1309 Cases","May 2014: 1426 Cases","June 2014: 1183 Cases","July 2014: 1267 Cases","August 2014: 1329 Cases","September 2014: 1205 Cases","October 2014: 1178 Cases","November 2014: 1040 Cases","December 2014: 747 Cases","January 2015: 881 Cases","February 2015: 804 Cases","March 2015: 988 Cases","April 2015: 1362 Cases","May 2015: 1298 Cases","June 2015: 1185 Cases","July 2015: 1216 Cases","August 2015: 1003 Cases","September 2015: 793 Cases","October 2015: 799 Cases","November 2015: 694 Cases","December 2015: 582 Cases","January 2016: 399 Cases","February 2016: 405 Cases","March 2016: 461 Cases","April 2016: 480 Cases","May 2016: 493 Cases","June 2016: 415 Cases","July 2016: 179 Cases","August 2016: 321 Cases","September 2016: 241 Cases","October 2016: 262 Cases","November 2016: 180 Cases","December 2016: 141 Cases","January 2017: 122 Cases","February 2017: 174 Cases","March 2017: 180 Cases","April 2017: 235 Cases","May 2017: 227 Cases","June 2017: 193 Cases","July 2017: 281 Cases","August 2017: 145 Cases","September 2017: 146 Cases","October 2017: 137 Cases","November 2017: 153 Cases","December 2017: 124 Cases","January 2018: 113 Cases","February 2018: 115 Cases","March 2018: 116 Cases","April 2018: 73 Cases","May 2018: 105 Cases","June 2018: 75 Cases","July 2018: 71 Cases","August 2018: 107 Cases","September 2018: 91 Cases","October 2018: 105 Cases","November 2018: 92 Cases","December 2018: 76 Cases","January 2019: 45 Cases","February 2019: 55 Cases","March 2019: 58 Cases","April 2019: 88 Cases","May 2019: 40 Cases","June 2019: 38 Cases","July 2019: 40 Cases","August 2019: 29 Cases","September 2019: 72 Cases","October 2019: 38 Cases","November 2019: 35 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01"],"y":[1013.73348773753,1048.61192113906,1076.13656814459,1102.27982652149,1123.32040253985,1140.80284153612,1153.54941986887,1162.20118821692,1166.04702439076,1164.6873460032,1157.94978445503,1146.72054964124,1130.72273260928,1110.73804349961,1087.36514694444,1054.80663935781,1019.44302934095,981.939273549414,942.94431992183,897.32609495308,848.487891650384,800.245133442475,751.537032802878,693.186066871403,617.09718569248,540.939947121032,483.94681919515,434.543939688734,386.954332346674,340.477898655293,300.479892258747,266.76632137306,244.826030900417,232.906134491097,223.746923979704,211.750823135197,199.008591924911,191.306659569723,186.602148520626,181.5839023913,174.639256242313,168.451923189413,165.959066334503,164.001612779458,159.630850985207,152.560266461332,144.254091382048,135.870809236766,127.501958980345,120.092888094606,113.589848956011,105.854482514108,98.5935063600934,92.1354385738722,87.1185471008401,82.6892878869996,78.7222346323399,75.0328025217831,71.0749184640211,67.334990696517,63.9011974825314,60.7292332848535,57.9412668710666,55.0032504709062,52.4290510706116,49.9939798075971,47.8043328979876,45.6586473828623,43.6501237285758,41.8910392284429,40.3199750138432],"type":"scatter","mode":"lines","line":{"color":"#1B75F3","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div class="col-print-6 col-sm-6 dao_visuals">
 <h2>
@@ -1062,13 +987,13 @@ Yearly Summary Cases Opened by Police District
 <div id="category5crime" class="mapframe">
 
 </div>
-<script>generateReportMap('category5crime', [{"dc_district":"01","Year":"2014","count":136},{"dc_district":"01","Year":"2015","count":99},{"dc_district":"01","Year":"2016","count":32},{"dc_district":"01","Year":"2017","count":9},{"dc_district":"01","Year":"2018","count":10},{"dc_district":"01","Year":"2019","count":6},{"dc_district":"01","Year":"2020","count":2},{"dc_district":"02","Year":"2014","count":440},{"dc_district":"02","Year":"2015","count":389},{"dc_district":"02","Year":"2016","count":197},{"dc_district":"02","Year":"2017","count":55},{"dc_district":"02","Year":"2018","count":33},{"dc_district":"02","Year":"2019","count":17},{"dc_district":"02","Year":"2020","count":6},{"dc_district":"03","Year":"2014","count":299},{"dc_district":"03","Year":"2015","count":332},{"dc_district":"03","Year":"2016","count":126},{"dc_district":"03","Year":"2017","count":60},{"dc_district":"03","Year":"2018","count":50},{"dc_district":"03","Year":"2019","count":46},{"dc_district":"03","Year":"2020","count":25},{"dc_district":"05","Year":"2014","count":37},{"dc_district":"05","Year":"2015","count":21},{"dc_district":"05","Year":"2016","count":19},{"dc_district":"05","Year":"2017","count":25},{"dc_district":"05","Year":"2018","count":19},{"dc_district":"05","Year":"2019","count":13},{"dc_district":"05","Year":"2020","count":9},{"dc_district":"06","Year":"2014","count":979},{"dc_district":"06","Year":"2015","count":1150},{"dc_district":"06","Year":"2016","count":733},{"dc_district":"06","Year":"2017","count":246},{"dc_district":"06","Year":"2018","count":122},{"dc_district":"06","Year":"2019","count":74},{"dc_district":"06","Year":"2020","count":17},{"dc_district":"07","Year":"2014","count":15},{"dc_district":"07","Year":"2015","count":14},{"dc_district":"07","Year":"2016","count":12},{"dc_district":"07","Year":"2017","count":4},{"dc_district":"07","Year":"2018","count":3},{"dc_district":"07","Year":"2019","count":0},{"dc_district":"07","Year":"2020","count":0},{"dc_district":"08","Year":"2014","count":157},{"dc_district":"08","Year":"2015","count":24},{"dc_district":"08","Year":"2016","count":28},{"dc_district":"08","Year":"2017","count":14},{"dc_district":"08","Year":"2018","count":0},{"dc_district":"08","Year":"2019","count":21},{"dc_district":"08","Year":"2020","count":11},{"dc_district":"09","Year":"2014","count":768},{"dc_district":"09","Year":"2015","count":1193},{"dc_district":"09","Year":"2016","count":429},{"dc_district":"09","Year":"2017","count":201},{"dc_district":"09","Year":"2018","count":220},{"dc_district":"09","Year":"2019","count":91},{"dc_district":"09","Year":"2020","count":14},{"dc_district":"12","Year":"2014","count":492},{"dc_district":"12","Year":"2015","count":482},{"dc_district":"12","Year":"2016","count":85},{"dc_district":"12","Year":"2017","count":25},{"dc_district":"12","Year":"2018","count":14},{"dc_district":"12","Year":"2019","count":8},{"dc_district":"12","Year":"2020","count":3},{"dc_district":"14","Year":"2014","count":179},{"dc_district":"14","Year":"2015","count":282},{"dc_district":"14","Year":"2016","count":58},{"dc_district":"14","Year":"2017","count":25},{"dc_district":"14","Year":"2018","count":8},{"dc_district":"14","Year":"2019","count":2},{"dc_district":"14","Year":"2020","count":2},{"dc_district":"15","Year":"2014","count":466},{"dc_district":"15","Year":"2015","count":650},{"dc_district":"15","Year":"2016","count":250},{"dc_district":"15","Year":"2017","count":232},{"dc_district":"15","Year":"2018","count":193},{"dc_district":"15","Year":"2019","count":36},{"dc_district":"15","Year":"2020","count":9},{"dc_district":"16","Year":"2014","count":797},{"dc_district":"16","Year":"2015","count":666},{"dc_district":"16","Year":"2016","count":167},{"dc_district":"16","Year":"2017","count":12},{"dc_district":"16","Year":"2018","count":18},{"dc_district":"16","Year":"2019","count":20},{"dc_district":"16","Year":"2020","count":27},{"dc_district":"17","Year":"2014","count":278},{"dc_district":"17","Year":"2015","count":280},{"dc_district":"17","Year":"2016","count":94},{"dc_district":"17","Year":"2017","count":67},{"dc_district":"17","Year":"2018","count":105},{"dc_district":"17","Year":"2019","count":35},{"dc_district":"17","Year":"2020","count":1},{"dc_district":"18","Year":"2014","count":374},{"dc_district":"18","Year":"2015","count":481},{"dc_district":"18","Year":"2016","count":100},{"dc_district":"18","Year":"2017","count":74},{"dc_district":"18","Year":"2018","count":64},{"dc_district":"18","Year":"2019","count":47},{"dc_district":"18","Year":"2020","count":20},{"dc_district":"19","Year":"2014","count":2558},{"dc_district":"19","Year":"2015","count":2508},{"dc_district":"19","Year":"2016","count":134},{"dc_district":"19","Year":"2017","count":10},{"dc_district":"19","Year":"2018","count":6},{"dc_district":"19","Year":"2019","count":7},{"dc_district":"19","Year":"2020","count":2},{"dc_district":"22","Year":"2014","count":293},{"dc_district":"22","Year":"2015","count":417},{"dc_district":"22","Year":"2016","count":157},{"dc_district":"22","Year":"2017","count":55},{"dc_district":"22","Year":"2018","count":22},{"dc_district":"22","Year":"2019","count":28},{"dc_district":"22","Year":"2020","count":3},{"dc_district":"24","Year":"2014","count":1013},{"dc_district":"24","Year":"2015","count":1189},{"dc_district":"24","Year":"2016","count":578},{"dc_district":"24","Year":"2017","count":472},{"dc_district":"24","Year":"2018","count":107},{"dc_district":"24","Year":"2019","count":41},{"dc_district":"24","Year":"2020","count":5},{"dc_district":"25","Year":"2014","count":332},{"dc_district":"25","Year":"2015","count":210},{"dc_district":"25","Year":"2016","count":297},{"dc_district":"25","Year":"2017","count":394},{"dc_district":"25","Year":"2018","count":24},{"dc_district":"25","Year":"2019","count":24},{"dc_district":"25","Year":"2020","count":5},{"dc_district":"26","Year":"2014","count":387},{"dc_district":"26","Year":"2015","count":397},{"dc_district":"26","Year":"2016","count":100},{"dc_district":"26","Year":"2017","count":35},{"dc_district":"26","Year":"2018","count":23},{"dc_district":"26","Year":"2019","count":10},{"dc_district":"26","Year":"2020","count":3},{"dc_district":"35","Year":"2014","count":320},{"dc_district":"35","Year":"2015","count":630},{"dc_district":"35","Year":"2016","count":292},{"dc_district":"35","Year":"2017","count":55},{"dc_district":"35","Year":"2018","count":34},{"dc_district":"35","Year":"2019","count":16},{"dc_district":"35","Year":"2020","count":7},{"dc_district":"39","Year":"2014","count":105},{"dc_district":"39","Year":"2015","count":158},{"dc_district":"39","Year":"2016","count":45},{"dc_district":"39","Year":"2017","count":8},{"dc_district":"39","Year":"2018","count":38},{"dc_district":"39","Year":"2019","count":16},{"dc_district":"39","Year":"2020","count":3},{"dc_district":"77","Year":"2014","count":15},{"dc_district":"77","Year":"2015","count":10},{"dc_district":"77","Year":"2016","count":17},{"dc_district":"77","Year":"2017","count":27},{"dc_district":"77","Year":"2018","count":23},{"dc_district":"77","Year":"2019","count":12},{"dc_district":"77","Year":"2020","count":15}], 'All Other Offenses', 'Summary Cases Opened')</script>
+<script>generateReportMap('category5crime', [{"Year":"2014","dc_district":"01","count":136},{"Year":"2014","dc_district":"02","count":441},{"Year":"2014","dc_district":"03","count":299},{"Year":"2014","dc_district":"05","count":37},{"Year":"2014","dc_district":"06","count":980},{"Year":"2014","dc_district":"07","count":15},{"Year":"2014","dc_district":"08","count":157},{"Year":"2014","dc_district":"09","count":773},{"Year":"2014","dc_district":"12","count":492},{"Year":"2014","dc_district":"14","count":180},{"Year":"2014","dc_district":"15","count":467},{"Year":"2014","dc_district":"16","count":801},{"Year":"2014","dc_district":"17","count":278},{"Year":"2014","dc_district":"18","count":374},{"Year":"2014","dc_district":"19","count":2562},{"Year":"2014","dc_district":"22","count":293},{"Year":"2014","dc_district":"24","count":1030},{"Year":"2014","dc_district":"25","count":335},{"Year":"2014","dc_district":"26","count":388},{"Year":"2014","dc_district":"35","count":322},{"Year":"2014","dc_district":"39","count":105},{"Year":"2014","dc_district":"77","count":15},{"Year":"2015","dc_district":"01","count":100},{"Year":"2015","dc_district":"02","count":389},{"Year":"2015","dc_district":"03","count":334},{"Year":"2015","dc_district":"05","count":21},{"Year":"2015","dc_district":"06","count":1153},{"Year":"2015","dc_district":"07","count":14},{"Year":"2015","dc_district":"08","count":24},{"Year":"2015","dc_district":"09","count":1193},{"Year":"2015","dc_district":"12","count":485},{"Year":"2015","dc_district":"14","count":282},{"Year":"2015","dc_district":"15","count":653},{"Year":"2015","dc_district":"16","count":666},{"Year":"2015","dc_district":"17","count":281},{"Year":"2015","dc_district":"18","count":481},{"Year":"2015","dc_district":"19","count":2511},{"Year":"2015","dc_district":"22","count":417},{"Year":"2015","dc_district":"24","count":1192},{"Year":"2015","dc_district":"25","count":210},{"Year":"2015","dc_district":"26","count":401},{"Year":"2015","dc_district":"35","count":630},{"Year":"2015","dc_district":"39","count":158},{"Year":"2015","dc_district":"77","count":10},{"Year":"2016","dc_district":"01","count":32},{"Year":"2016","dc_district":"02","count":197},{"Year":"2016","dc_district":"03","count":127},{"Year":"2016","dc_district":"05","count":19},{"Year":"2016","dc_district":"06","count":740},{"Year":"2016","dc_district":"07","count":12},{"Year":"2016","dc_district":"08","count":28},{"Year":"2016","dc_district":"09","count":430},{"Year":"2016","dc_district":"12","count":85},{"Year":"2016","dc_district":"14","count":59},{"Year":"2016","dc_district":"15","count":251},{"Year":"2016","dc_district":"16","count":168},{"Year":"2016","dc_district":"17","count":95},{"Year":"2016","dc_district":"18","count":100},{"Year":"2016","dc_district":"19","count":134},{"Year":"2016","dc_district":"22","count":157},{"Year":"2016","dc_district":"24","count":588},{"Year":"2016","dc_district":"25","count":299},{"Year":"2016","dc_district":"26","count":100},{"Year":"2016","dc_district":"35","count":294},{"Year":"2016","dc_district":"39","count":45},{"Year":"2016","dc_district":"77","count":17},{"Year":"2017","dc_district":"01","count":9},{"Year":"2017","dc_district":"02","count":55},{"Year":"2017","dc_district":"03","count":60},{"Year":"2017","dc_district":"05","count":25},{"Year":"2017","dc_district":"06","count":247},{"Year":"2017","dc_district":"07","count":4},{"Year":"2017","dc_district":"08","count":14},{"Year":"2017","dc_district":"09","count":202},{"Year":"2017","dc_district":"12","count":25},{"Year":"2017","dc_district":"14","count":25},{"Year":"2017","dc_district":"15","count":233},{"Year":"2017","dc_district":"16","count":12},{"Year":"2017","dc_district":"17","count":71},{"Year":"2017","dc_district":"18","count":76},{"Year":"2017","dc_district":"19","count":10},{"Year":"2017","dc_district":"22","count":56},{"Year":"2017","dc_district":"24","count":474},{"Year":"2017","dc_district":"25","count":394},{"Year":"2017","dc_district":"26","count":35},{"Year":"2017","dc_district":"35","count":55},{"Year":"2017","dc_district":"39","count":8},{"Year":"2017","dc_district":"77","count":27},{"Year":"2018","dc_district":"01","count":10},{"Year":"2018","dc_district":"02","count":33},{"Year":"2018","dc_district":"03","count":50},{"Year":"2018","dc_district":"05","count":19},{"Year":"2018","dc_district":"06","count":122},{"Year":"2018","dc_district":"07","count":3},{"Year":"2018","dc_district":"08","count":0},{"Year":"2018","dc_district":"09","count":220},{"Year":"2018","dc_district":"12","count":14},{"Year":"2018","dc_district":"14","count":8},{"Year":"2018","dc_district":"15","count":193},{"Year":"2018","dc_district":"16","count":18},{"Year":"2018","dc_district":"17","count":107},{"Year":"2018","dc_district":"18","count":65},{"Year":"2018","dc_district":"19","count":6},{"Year":"2018","dc_district":"22","count":22},{"Year":"2018","dc_district":"24","count":107},{"Year":"2018","dc_district":"25","count":24},{"Year":"2018","dc_district":"26","count":23},{"Year":"2018","dc_district":"35","count":34},{"Year":"2018","dc_district":"39","count":38},{"Year":"2018","dc_district":"77","count":23},{"Year":"2019","dc_district":"01","count":6},{"Year":"2019","dc_district":"02","count":17},{"Year":"2019","dc_district":"03","count":47},{"Year":"2019","dc_district":"05","count":13},{"Year":"2019","dc_district":"06","count":74},{"Year":"2019","dc_district":"07","count":0},{"Year":"2019","dc_district":"08","count":21},{"Year":"2019","dc_district":"09","count":91},{"Year":"2019","dc_district":"12","count":8},{"Year":"2019","dc_district":"14","count":2},{"Year":"2019","dc_district":"15","count":36},{"Year":"2019","dc_district":"16","count":20},{"Year":"2019","dc_district":"17","count":35},{"Year":"2019","dc_district":"18","count":47},{"Year":"2019","dc_district":"19","count":7},{"Year":"2019","dc_district":"22","count":28},{"Year":"2019","dc_district":"24","count":41},{"Year":"2019","dc_district":"25","count":25},{"Year":"2019","dc_district":"26","count":10},{"Year":"2019","dc_district":"35","count":16},{"Year":"2019","dc_district":"39","count":17},{"Year":"2019","dc_district":"77","count":12}], 'All Other Offenses', 'Summary Cases Opened')</script>
 </div>
 </div>
 <h2 class="dao_table_header">
 Data: Year End Count of Summary Cases Opened by Offense Category
 </h2>
-<div class="table-wrapper">
+<div class='table-wrapper'>
 <table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1093,9 +1018,6 @@ Offense Category
 <th style="text-align:center;color: #4D7DBF !important;">
 2019
 </th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2020
-</th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;">
 Yr-Yr<br>Change
 </th>
@@ -1103,10 +1025,10 @@ Yr-Yr<br>Change
 ’14-’17<br>Avg
 </th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-’18-’20<br>Avg
+’18-’19<br>Avg
 </th>
 <th style="text-align:center;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-’14-’17 Avg<br>Compared to<br>’18-’20 Avg
+’14-’17 Avg<br>Compared to<br>’18-’19 Avg
 </th>
 </tr>
 </thead>
@@ -1116,37 +1038,34 @@ Yr-Yr<br>Change
 Trespass
 </td>
 <td style="text-align:center;">
-1391
+1,405
 </td>
 <td style="text-align:center;">
-1,389
+1,392
 </td>
 <td style="text-align:center;">
-1,428
+1,442
 </td>
 <td style="text-align:center;">
-1,158
+1,163
 </td>
 <td style="text-align:center;">
-459
+460
 </td>
 <td style="text-align:center;">
-184
-</td>
-<td style="text-align:center;">
-80
+187
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--57%
+-59%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-1,342
+1,350
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-241
+324
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--82%
+-76%
 </td>
 </tr>
 <tr>
@@ -1154,16 +1073,16 @@ Trespass
 Disorderly Conduct
 </td>
 <td style="text-align:center;">
-2414
+2,415
 </td>
 <td style="text-align:center;">
-1,852
+1,853
 </td>
 <td style="text-align:center;">
-998
+1,000
 </td>
 <td style="text-align:center;">
-536
+538
 </td>
 <td style="text-align:center;">
 395
@@ -1171,20 +1090,17 @@ Disorderly Conduct
 <td style="text-align:center;">
 248
 </td>
-<td style="text-align:center;">
-74
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--70%
+-37%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-1,450
+1,452
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-239
+322
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--84%
+-78%
 </td>
 </tr>
 <tr>
@@ -1192,37 +1108,34 @@ Disorderly Conduct
 Minor Violations (Open Container, Public Urination, Smoking Violation)
 </td>
 <td style="text-align:center;">
-9571
+9,605
 </td>
 <td style="text-align:center;">
-8,341
+8,360
 </td>
 <td style="text-align:center;">
-1,524
+1,535
 </td>
 <td style="text-align:center;">
-411
+416
 </td>
 <td style="text-align:center;">
-282
+284
 </td>
 <td style="text-align:center;">
 138
 </td>
-<td style="text-align:center;">
-35
-</td>
 <td style="text-align:center;background-color: #D3E8FC !important;">
--75%
+-51%
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-4,962
+4,979
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-152
+211
 </td>
 <td style="text-align:center;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--97%
+-96%
 </td>
 </tr>
 <tr>
@@ -1230,37 +1143,34 @@ Minor Violations (Open Container, Public Urination, Smoking Violation)
 All Other Offenses
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-13376
+13,425
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-11,582
+11,605
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-3,950
+3,977
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-2,105
+2,117
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-1,136
+1,139
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-570
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-189
+573
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;">
--67%
+-50%
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-7,753
+7,781
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
-632
+856
 </td>
 <td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #D3E8FC !important;background-color: #D3E8FC !important;">
--92%
+-89%
 </td>
 </tr>
 </tbody>
@@ -1322,7 +1232,7 @@ All Other Offenses
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -1340,7 +1250,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
+    $(this).parent().toggleClass('nav-tabs-open')
   });
 });
 </script>
