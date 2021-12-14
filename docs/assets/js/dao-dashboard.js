@@ -1,6 +1,6 @@
 // submenu dropdown
 $(document).ready(function(){
-  $('.dropdown-submenu a.drop-menu-head').on("click", function(e){
+  $('a.drop-menu-head').on("click", function(e){
     $(this).parent().parent().find('.dropdown-menu').hide();
     $(this).next('ul').toggle();
     e.stopPropagation();
@@ -75,12 +75,15 @@ $('.dropdown-toggle.btn.btn-dao-menu').on("click", function(e){
 // handle tag switching for collapsible table icons
 $(function(){
   $('tr').on('click', function(e){
-    var trow = $(e.currentTarget);
-    if(trow.attr('aria-expanded') === 'true') {
-      $(this).attr('aria-expanded', 'false');
-    } else {
-      $(this).attr('aria-expanded', 'true')
-    }
+    // delay the function by a tenth of a second to allow transition to happen
+    setTimeout(function(){
+      var trow = $(e.currentTarget);
+      if(trow.attr('aria-expanded') === 'true') {
+		    $(this).attr('aria-expanded', 'false');
+		    } else {
+			    $(this).attr('aria-expanded', 'true')
+		    }
+    }, 10)
   })
 });
 

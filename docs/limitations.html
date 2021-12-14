@@ -14,21 +14,13 @@
 <title>Data Limitations - PhilaDAO Data Dashboard</title>
 
 <script src="assets/header-attrs-2.7/header-attrs.js"></script>
-<script src="assets/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
-<script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
+<script src="assets/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="assets/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
+<script src="assets/bs3compat-0.3.1/transition.js"></script>
+<script src="assets/bs3compat-0.3.1/tabs.js"></script>
+<script src="assets/bs3compat-0.3.1/bs3compat.js"></script>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -41,7 +33,6 @@
 </script>
 <script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
 <script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
@@ -65,7 +56,6 @@
 
 
 
-<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
 
 
@@ -167,89 +157,86 @@ pre code {
 
 
 
-<nav class="navbar row" role="navigation">
-  <div class="container-fluid">
-    <div class="row dao_header vertical-align">
-      <div class="col-sm-12 col-md-3 text-sm-center "><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
-      <div class="col-sm-12 col-md-6 col-md-offset-3 text-md-right text-sm-center dao_header_title">Public Data Dashboard</div>
-    </div>
-    <div class="dao_navbar">
-      <div class="navbar-header navbar-default dao-hamburger">
-        <button type="button" class="navbar-toggle dao-hamburger collapsed" data-toggle="collapse" data-target="#dao-collapse-navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <div class="mx-n3">
+    <div class="container-fluid px-0">
+      <div class="row dao_header vertical-align pb-2">
+        <div class="col-sm-12 col-md-3 text-sm-center float-start"><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
+        <div class="col-sm-12 col-md-6 offset-md-3 text-md-end text-sm-center dao_header_title float-end">Public Data Dashboard</div>
       </div>
-      <div class="collapse navbar-collapse dao-menu" id="dao-collapse-navbar">
-        <ul class="dao-nav-menu nav navbar-nav dao-menu btn-group">
-          <li class="dao-nav-menu"><a href="index.html" class="btn btn-dao-menu">Home</a></li>
-          <li class="dropdown dao-nav-menu">
-            <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
-            <ul class="dropdown-menu dao_menu">
-            <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Incidents_Report.html">Incidents</a></li>
-                    <li><a href="Arrest_Report.html">Arrests</a></li>
-                    <li><a href="Charge_Report.html">Charges</a></li>
-                    <li><a href="Bail_Report.html">Bail</a></li>
-                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-                    <li><a href="Case_Length_Report.html">Case Length</a></li>
-                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
-                </ul>
+      <div class = "dao_navbar border border-1 border-transparent">
+        <nav class = "navbar navbar-expand-lg navbar-dark bg-dark justify-content-center mb-0">
+        <div class="container-fluid">
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse order-last" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-fill w-100">
+              <li class="nav-item active"><a href="index.html" class="nav-link btn-dao-menu">Home</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle btn-dao-menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+                <div class="dropdown-menu btn-dao-menu dropdown-submenu bg-dark" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                    <ul class="dropdown-menu dao_menu drop-menu-item">
+                      <li><a href="Incidents_Report.html">Incidents</a></li>
+                      <li><a href="Arrest_Report.html">Arrests</a></li>
+                      <li><a href="Charge_Report.html">Charges</a></li>
+                      <li><a href="Bail_Report.html">Bail</a></li>
+                      <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+                      <li><a href="Case_Length_Report.html">Case Length</a></li>
+                      <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+                      <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+                      <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+                      <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+                      <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+                      <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                    <ul class="dropdown-menu dao_menu drop-menu-item">
+                        <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
+                        <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
+                        <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
+                        <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
+                        <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
+                        <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
+                        <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
+                        <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
+                        <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
+                        <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
+                        <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
+                        <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
+                    </ul>
+                  </div>  
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                      <ul class="dropdown-menu dao_menu drop-menu-item">
+                        <li><a href="Exonerations.html">Exonerations</a></li>
+                        <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+                      </ul>
+                  </div>
+                  <a href="Research.html#reports" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">DAO Publications</a>
+                </div>
               </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
-                    <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
-                    <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
-                    <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
-                    <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
-                    <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
-                    <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
-                    <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
-                    <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
-                    <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
-                    <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
-                    <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
-                </ul>
+              <li class="nav-item"><a href="Research.html" class="nav-link btn-dao-menu">Research</a></li>
+              <li class="nav-item"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="nav-link btn-dao-menu">Data Stories</a></li>
+              <li class="nav-item"><a href="download.html" class="nav-link btn-dao-menu">Downloads</a></li>
+              <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle btn-dao-menu" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <div class="dropdown-menu btn-dao-menu dropdown-submenu bg-dark" aria-labelledby="navbarDropdown">
+                  <!--<div class="dropdown-item btn-dao-menu px-6 py-7">-->
+                  <a href="about.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">About</a>
+                  <a href="definitions.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Definitions</a>
+                  <a href="limitations.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Limitations</a>
+                  <a href="howto.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">How to Use This Site</a>
+                  <a href="updates.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Updates</a>
+                </div> 
               </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Exonerations.html">Exonerations</a></li>
-                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
-                </ul>
-              </li>
-              <li><a href="Research.html#reports">DAO Publications</a></li>
             </ul>
-          </li>
-          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
-          <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
-          <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
-          <li class="dropdown dao-nav-menu">
-            <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-            <ul class="dropdown-menu dao_menu">
-              <li><a href="about.html">About</a></li>
-              <li><a href="definitions.html">Definitions</a></li>
-              <li><a href="limitations.html">Limitations</a></li>
-              <li><a href="howto.html">How to Use This Site</a></li>
-              <li><a href="updates.html">Updates</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </nav>
     </div>
   </div>
-</nav>
+</div>  
 <div class="rmd-container-fluid rmd-container">
 
 <div id="header">
@@ -261,8 +248,8 @@ pre code {
 </div>
 
 
-<div class="row dao_page_header col-11">
-<div class="col-md-2 col-md-offset-1 h1">
+<div class="row dao_page_header">
+<div class="col-md-2 offset-md-1 h1">
 Limitations
 </h1>
 </div>
@@ -271,7 +258,7 @@ Limitations
  
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Adult Cases Only
 </div>
@@ -281,7 +268,7 @@ This website currently only catalogs cases that were handled in adult court, not
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Human Error
 </div>
@@ -291,7 +278,7 @@ Nearly all of the data used to construct this website are subject to human error
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 We can only measure and report on things that we have data on
 </div>
@@ -301,7 +288,7 @@ Our data systems are far from perfect, and we do not always have analyzable data
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Year to Date Reports Are Subject to Large Fluctuations Early in the Year
 </div>
@@ -310,21 +297,23 @@ Unless otherwise noted, our reports are ‘year to date’ reports. These allow 
 </div>
 </div>
 </div>
-<div class='row dao_definition_block'>
-<div class='col-md-10 col-md-offset-1'>
+<div class="row dao_definition_block">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
-Offense Categorizations Happen Early in the Process
+Offense Categorizations Change Between Incident, Arrest, and Case Data
 </div>
-<div class='dao-definition'>
-<p>Categorization of events in the criminal justice system happen very early in the process, often before the District Attorney’s Office charges a case. Initial classifications can change over time as the case evolves and more information becomes available. The data in this dashboard adhere to the original classification of a case rather that the classification of a case as it moves through the system. This has both strengths and limitations. The advantage in using this system is that if an incident is classified as, for example, drug sales, the arrest, charging, case outcomes, and future years of incarceration reports will all report on that case as a drug sale, even if the case is ultimately only charged as possession. By maintaining the original classification, a case can be “tracked” through the system, and in turn it becomes possible to know the outcomes for all cases that began in a particular category.</p>
-<ul>
-<li><p>First, it is possible that the District Attorney’s Office charged the case differently than it was originally classified. As an example, an assault may initially be classified as “aggravated” because of the presence of a weapon. The District Attorney’s Office may not have found enough evidence that the weapon was used and may have only charged the case as a simple assault. The classification of aggravated assault, then, does not accurately reflect the incident as it moves through the courts, although it accurately reflects the assault at the time of the incident and arrest.</p></li>
-<li><p>Second, the classification system that is used for offenses only allows for a single classification for each incident. This can lead to distortions when a person is ultimately charged with multiple cases from a single arrest. For example, if an individual shoots (non-fatally) three people in the course of a robbery, under this system all four offenses (the robbery and the three shootings) may be classified as “Robbery/Gun” even though three of the four cases that come from the incident would be for the shooting itself and not the robbery. This is because robbery with a gun is classified as “more serious” than an aggravated assault with a gun.</p>
+<div class="dao-definition">
+<p>The method used to categorize an event in the criminal legal system is different for an incident, an arrest, and a case within the court system.</p>
+<p>Incidents receive an intial classification by the Philadelpiha Police Department at the time of reporting, which may or may not reflect the reality of the event. When an arrest is made, the police recommend a set of charges that they believe the arrestee should be charged with. Ultimately, the District Attorney’s Office determines whether to charge an arrestee and what to charge that person with. The Dashboard uses incident classification to categorize incidents, police recommended charges to categorize arrests, and the actual charges brought in court to categorize the case from the time of charging and beyond.</p>
+<p>The advantage of this system is that it allows users of the Dashboard to view incidents, arrests, and cases as they actually moved through the system. If an incident is originaly classified as an Aggravated Assault and the police recommended charges for Aggravated assault, the dashboard will reflect that even if the DAO ultimately disagreed and charged the case as a Simple Assault. Similarly, the dashboard will count that case as a simple assault for the purpos of court-related activity, like bail, case outcomes, and sentencing, rather than keep the original police category of Aggravated Assault. This system also allows for a more granular look at the system, breaking incidents categorized as, for example, Illegal Firearm Possession into its component offenses of Firearm Possession by a Prohibited Person and Firearm Possession Without a License.</p>
+<p>The disadvantage of this system is that it limits the ability to track a set of incidents through the entire system. For example, an incident that was initially called a “Robbery/Gun” on the Incidents page could become an “Aggravated Assault” on the Arrests page, which could then become an “Attempted Homicide” on the Charges page. That means that it isn’t possible to use the dashboard to know, for example, what percentage of Robbery/Gun incidents lead to an arrest, and what the case outcomes for the subsequent cases are.</p>
+<p>For the first two years of the Dashboard’s existence, we did the opposite: we used the original police classification of each incident to classify that case as it moved through the system. While there were advantages to this system, it distorted outcomes in the court system in a way that we believe was inaccurate.</p>
+We feel that it is important to show the most accurate picture of the criminal legal system that can be understood at each stage of the process. We also feel it is the responsibility of the District Attorney’s Office to show the decisions we have made. We cannot go ‘back in time’ and reclassify incidents and arrests after a charging decision has been made without distorting history and presenting a false view of these stages. Given the constraints of our data, and for these reasons, we feel that categorizing each event at each stage allows for the most complete representation of the system available. For more information about this change, please read <a href="https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d">this data story</a>.
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Offenses May Be Recategorized Over Time
 </div>
@@ -334,27 +323,17 @@ Over time, offenses may be recategorized if underlying facts change. For example
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
-Violent and Property Offenses Only Include UCR Part I Offenses
+Fatal and Non-Fatal Shooting Information Only for Shootings Since 2015
 </div>
 <div class="dao-definition">
-Offenses classified on this website as “violent” or “property” only include violent and property offenses classified as “Part I” by the FBI Uniform Crime Reporting system. As a practical matter, that means that simple assaults, basic weapon possession offenses, and sexual offenses other than rape are not specifically enumerated in our reports.
+Information about Fatal and Non-Fatal Shootings is based on the <a href="https://www.opendataphilly.org/dataset/shooting-victims">Open Data Philly Shooting Victims dataset</a> which only includes shooting victims since 2015. That means that all information about shooting victims (arrests, cases charged, outcomes, etc…) only reflects shooting incidents since 1/1/2015. As an example, the <a href="https://data.philadao.com/Case_Outcomes_Report.html">Case Outcomes report</a> shows very few cases resolved in 2015 and a very high rate of non-convictions. The reason for this is that very few shooting incidents that occured in 2015 were also resolved in 2015; those that were resolved that quickly were often quickly dismissed.
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
-<div class="dao-definition-title-word">
-Non-Fatal Shooting Information Only for Shootings Since 2015
-</div>
-<div class="dao-definition">
-Information about Non-Fatal Shootings is based on the <a href="https://www.opendataphilly.org/dataset/shooting-victims">Open Data Philly Shooting Victims dataset</a> which only includes shooting victims since 2015. That means that all information about shooting victims (arrests, cases charged, outcomes, etc…) only reflects shooting incidents since 1/1/2015. As an example, the <a href="https://data.philadao.com/Case_Outcomes_Report.html">Case Outcomes report</a> shows very few cases resolved in 2015 and a very high rate of non-convictions. The reason for this is that very few shooting incidents that occured in 2015 were also resolved in 2015; those that were resolved that quickly were often quickly dismissed.
-</div>
-</div>
-</div>
-<div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Not All of the Reports Can Be Recreated Using the Available CSV Files
 </div>
@@ -364,7 +343,7 @@ We have made <a href="download.html">daily-summary CSV files</a> available to th
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Where are Race and Gender?
 </div>
@@ -374,7 +353,7 @@ There are numerous features that we would like to make available in the future, 
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Reports Generated Automatically
 </div>
@@ -384,7 +363,7 @@ The reports on this website are generated automatically. Sometimes errors will a
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Arrests Prior to 2012
 </div>
@@ -394,7 +373,7 @@ The data used to create this dashboard includes all arrests that took place sinc
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Exonerations not Categorized as Such
 </div>
@@ -404,7 +383,7 @@ Cases that are overturned after appeal are often overturned years after the arre
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Arresting Agency Generally the Philadelphia Police Department
 </div>
@@ -414,7 +393,7 @@ Generally the Philadelphia Police is the arresting agency, but our data includes
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Declination Rate Cannot Be Calculated
 </div>
@@ -424,7 +403,7 @@ The DAO’s declination rate (the rate at which we decline to charge arrests) ca
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Life in Prison and Death Sentences
 </div>
@@ -434,7 +413,7 @@ When calculating future years of incarceration, we assume that person a sentence
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Diversion Outcomes Only Reflect People Who Have Completed Diversion
 </div>
@@ -444,21 +423,22 @@ We made a decision to only include people who have completed their diversion pro
 </div>
 </div>
 <div class='row dao_definition_block'>
-<div class='col-md-10 col-md-offset-1'>
+<div class='col-md-10 offset-md-1'>
 <div class="dao-definition-title-word">
 Incident Reporting is Preliminary and is not Authoritative
 </div>
 <div class='dao-definition'>
-<p>The District Attorney’s Office does not have data on crime incidents in the City other than what is available to the public through the City of Philadelphia’s open data program. We use <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly’s Parts I &amp; II Crime Incidents</a> dataset to study crime events, many of which do not lead to arrests. This leads to a number of limitations:</p></li>
-<li><p>This database only records crimes classified as Part I or Part II crimes by the FBI, and does not include all violations. This means that not all crimes that happen within the City are shown in our Incident report.</p></li>
-<li><p>The incidents recorded in this dataset are given a generalized of the <a href="https://www.fbi.gov/file-repository/ucr/ucr-srs-user-manual-v1.pdf/view">FBI Uniform Crime Reporting (UCR)</a> code. We cannot determine the specific nature offenses from the data available. For example, all Thefts are recorded as “Theft” in the Incident Report, while we can separate “Theft” from “Retail Theft” in all other reports. Another example of this is that all drug violations are recorded as simply Drug Offenses, and we cannot separate them into possession and sales as we do in all other reports.</p></li>
-<li><p>This dataset is intended to allow members of the public, community groups, researchers, and other departments to access up-to-date and actionable data on crime incidents in Philadelphia. It is not intended to be an authoritative crime reporting database. The statistics generated from this database may not reflect the official reporting by the Philadelphia Police Department (PPD).</p></li>
-<li><p>As a result of the point above, it is possible to derive three different numbers for Homicides from Police sources. We have summarized the <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly Incidents</a> and derived the total number of incidents that have been classified in that data as Homicides. This is often different than the number reported on the front page of the Police <a href="https://www.phillypolice.com/crime-maps-stats/">Crime Maps &amp; Stats page</a>. Another number for homicides can be found in the Police’s weekly <a href="https://drive.google.com/drive/folders/0B23Pg6Sgxll1M0o4Xy1vb2xOZ1U">Crime Stats Reports</a>; this number is also often different than those found in the Incident Data and Crime Maps &amp; Stats page. <br><br> We have decided to include the Incident Report to help those who view the dashboard get as complete a view of the criminal justice system as possible, starting from the incident to the future years of supervision or incarceration generated.</p>
+<p>The District Attorney’s Office does not have data on crime incidents in the City other than what is available to the public through the City of Philadelphia’s open data program. We use <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly’s Parts I &amp; II Crime Incidents</a> dataset to study crime events, many of which do not lead to arrests. This leads to a number of limitations:</p>
+<ul>
+<li>This database only records crimes classified as Part I or Part II crimes by the FBI, and does not include all violations. This means that not all crimes that happen within the City are shown in our Incident report.</li>
+<li>The incidents recorded in this dataset are given a generalized of the <a href="https://www.fbi.gov/file-repository/ucr/ucr-srs-user-manual-v1.pdf/view">FBI Uniform Crime Reporting (UCR)</a> code. We cannot determine the specific nature offenses from the data available. For example, all Thefts are recorded as “Theft” in the Incident Report, while we can separate “Theft” from “Retail Theft” in all other reports. Another example of this is that all drug violations are recorded as simply Drug Offenses, and we cannot separate them into possession and sales as we do in all other reports.</li>
+<li>This dataset is intended to allow members of the public, community groups, researchers, and other departments to access up-to-date and actionable data on crime incidents in Philadelphia. It is not intended to be an authoritative crime reporting database. The statistics generated from this database may not reflect the official reporting by the Philadelphia Police Department (PPD).</li>
+<li>As a result of the point above, it is possible to derive three different numbers for Homicides from Police sources. We have summarized the <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly Incidents</a> and derived the total number of incidents that have been classified in that data as Homicides. This is often different than the number reported on the front page of the Police <a href="https://www.phillypolice.com/crime-maps-stats/">Crime Maps &amp; Stats page</a>. Another number for homicides can be found in the Police’s weekly <a href="https://drive.google.com/drive/folders/0B23Pg6Sgxll1M0o4Xy1vb2xOZ1U">Crime Stats Reports</a>; this number is also often different than those found in the Incident Data and Crime Maps &amp; Stats page. <br><br> We have decided to include the Incident Report to help those who view the dashboard get as complete a view of the criminal justice system as possible, starting from the incident to the future years of supervision or incarceration generated.
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Released on Cash Bail
 </div>
@@ -468,7 +448,7 @@ We currently only report the amount of bail initial assigned to a case, not whet
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 SOB and Cash Bail
 </div>
@@ -478,7 +458,7 @@ On a modest number of older cases, we know the amount of bail that was set, but 
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 offset-md-1">
 <div class="dao-definition-title-word">
 Geographic Information is Limited
 </div>
@@ -488,12 +468,12 @@ Due to the quality of the data available, our ability to locate incidents and as
 </div>
 </div>
 <div class='row dao_definition_block'>
-<div class='col-md-10 col-md-offset-1'>
+<div class='col-md-10 offset-md-1'>
 <div class="dao-definition-title-word">
 Downloadable ZIP Code data is by ZIP Code Tabulation Area (ZCTA)
 </div>
 <div class='dao-definition'>
-<p>The data by ZIP code available for download is actually by ZIP Code Tabulation Area, a geography defined by the United States Census Bureau using the majority ZIP Code for addresses in Census blocks. In densely populated cities like Philadelphia, ZCTAs and postal ZIP codes are functionally identical. For more information, visit the <a href="https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html">U.S. Census Bureau’s page on ZIP Code Tabulation Areas</a>.</p></li>
+The data by ZIP code available for download is actually by ZIP Code Tabulation Area, a geography defined by the United States Census Bureau using the majority ZIP Code for addresses in Census blocks. In densely populated cities like Philadelphia, ZCTAs and postal ZIP codes are functionally identical. For more information, visit the <a href="https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html">U.S. Census Bureau’s page on ZIP Code Tabulation Areas</a>.</li>
 </ul>
 <p>We use ZCTAs in the downloadable sets for two reasons:</p>
 <ul>
@@ -510,7 +490,7 @@ Downloadable ZIP Code data is by ZIP Code Tabulation Area (ZCTA)
 <div class="row text-center">
 	<div class="col-md-4">
     <h2 class="connectext">Office</h2>
-		<hr class="light">
+		<hr class="light mx-auto">
 		<p>
 		  Three South Penn Square<br/>
 		  Philadelphia, PA 19107-3499<br/>
@@ -520,7 +500,7 @@ Downloadable ZIP Code data is by ZIP Code Tabulation Area (ZCTA)
 	<div class="col-md-4">
 		<div class="col-12">
 			<h2 class="connectext">Connect</h2>
-		<hr class="light">
+		<hr class="light mx-auto">
 			</div>
 			<div class="col-12 social padding">
 				<a href="https://www.facebook.com/philaDAO/" target="_blank"><i class="fa fa-facebook social-circle-icon" title="facebook"></i></a>
@@ -532,7 +512,7 @@ Downloadable ZIP Code data is by ZIP Code Tabulation Area (ZCTA)
 	<div class="col-md-4">
 	  <div class="col-12">
 	    <h2 class="connectext">More</h2>
-		<hr class="light">
+		<hr class="light mx-auto">
       <ul>
         <li><a href="https://medium.com/philadelphia-justice" target="_blank">The Justice Wire</a></li>
         <li><a href="https://www.phila.gov/districtattorney/pages/default.aspx" target="_blank">Office of the District Attorney</a></li>

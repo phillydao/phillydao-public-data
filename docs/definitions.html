@@ -14,21 +14,13 @@
 <title>Data Definitions - PhilaDAO Data Dashboard</title>
 
 <script src="assets/header-attrs-2.7/header-attrs.js"></script>
-<script src="assets/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="assets/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
-<script src="assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="assets/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="assets/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
+<script src="assets/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="assets/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
+<script src="assets/bs3compat-0.3.1/transition.js"></script>
+<script src="assets/bs3compat-0.3.1/tabs.js"></script>
+<script src="assets/bs3compat-0.3.1/bs3compat.js"></script>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -41,7 +33,6 @@
 </script>
 <script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
 <script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
@@ -65,7 +56,6 @@
 
 
 
-<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
 
 
@@ -167,89 +157,86 @@ pre code {
 
 
 
-<nav class="navbar row" role="navigation">
-  <div class="container-fluid">
-    <div class="row dao_header vertical-align">
-      <div class="col-sm-12 col-md-3 text-sm-center "><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
-      <div class="col-sm-12 col-md-6 col-md-offset-3 text-md-right text-sm-center dao_header_title">Public Data Dashboard</div>
-    </div>
-    <div class="dao_navbar">
-      <div class="navbar-header navbar-default dao-hamburger">
-        <button type="button" class="navbar-toggle dao-hamburger collapsed" data-toggle="collapse" data-target="#dao-collapse-navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <div class="mx-n3">
+    <div class="container-fluid px-0">
+      <div class="row dao_header vertical-align pb-2">
+        <div class="col-sm-12 col-md-3 text-sm-center float-start"><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
+        <div class="col-sm-12 col-md-6 offset-md-3 text-md-end text-sm-center dao_header_title float-end">Public Data Dashboard</div>
       </div>
-      <div class="collapse navbar-collapse dao-menu" id="dao-collapse-navbar">
-        <ul class="dao-nav-menu nav navbar-nav dao-menu btn-group">
-          <li class="dao-nav-menu"><a href="index.html" class="btn btn-dao-menu">Home</a></li>
-          <li class="dropdown dao-nav-menu">
-            <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
-            <ul class="dropdown-menu dao_menu">
-            <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Incidents_Report.html">Incidents</a></li>
-                    <li><a href="Arrest_Report.html">Arrests</a></li>
-                    <li><a href="Charge_Report.html">Charges</a></li>
-                    <li><a href="Bail_Report.html">Bail</a></li>
-                    <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
-                    <li><a href="Case_Length_Report.html">Case Length</a></li>
-                    <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
-                    <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
-                    <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
-                    <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
-                    <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
-                    <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
-                </ul>
+      <div class = "dao_navbar border border-1 border-transparent">
+        <nav class = "navbar navbar-expand-lg navbar-dark bg-dark justify-content-center mb-0">
+        <div class="container-fluid">
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse order-last" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-fill w-100">
+              <li class="nav-item active"><a href="index.html" class="nav-link btn-dao-menu">Home</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle btn-dao-menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+                <div class="dropdown-menu btn-dao-menu dropdown-submenu bg-dark" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                    <ul class="dropdown-menu dao_menu drop-menu-item">
+                      <li><a href="Incidents_Report.html">Incidents</a></li>
+                      <li><a href="Arrest_Report.html">Arrests</a></li>
+                      <li><a href="Charge_Report.html">Charges</a></li>
+                      <li><a href="Bail_Report.html">Bail</a></li>
+                      <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+                      <li><a href="Case_Length_Report.html">Case Length</a></li>
+                      <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+                      <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+                      <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+                      <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+                      <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+                      <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                    <ul class="dropdown-menu dao_menu drop-menu-item">
+                        <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
+                        <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
+                        <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
+                        <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
+                        <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
+                        <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
+                        <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
+                        <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
+                        <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
+                        <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
+                        <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
+                        <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
+                    </ul>
+                  </div>  
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                      <ul class="dropdown-menu dao_menu drop-menu-item">
+                        <li><a href="Exonerations.html">Exonerations</a></li>
+                        <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+                      </ul>
+                  </div>
+                  <a href="Research.html#reports" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">DAO Publications</a>
+                </div>
               </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
-                    <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
-                    <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
-                    <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
-                    <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
-                    <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
-                    <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
-                    <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
-                    <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
-                    <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
-                    <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
-                    <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
-                </ul>
+              <li class="nav-item"><a href="Research.html" class="nav-link btn-dao-menu">Research</a></li>
+              <li class="nav-item"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="nav-link btn-dao-menu">Data Stories</a></li>
+              <li class="nav-item"><a href="download.html" class="nav-link btn-dao-menu">Downloads</a></li>
+              <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle btn-dao-menu" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <div class="dropdown-menu btn-dao-menu dropdown-submenu bg-dark" aria-labelledby="navbarDropdown">
+                  <!--<div class="dropdown-item btn-dao-menu px-6 py-7">-->
+                  <a href="about.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">About</a>
+                  <a href="definitions.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Definitions</a>
+                  <a href="limitations.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Limitations</a>
+                  <a href="howto.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">How to Use This Site</a>
+                  <a href="updates.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Updates</a>
+                </div> 
               </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="drop-menu-head">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
-                  <ul class="dropdown-menu dao_menu drop-menu-item">
-                    <li><a href="Exonerations.html">Exonerations</a></li>
-                    <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
-                </ul>
-              </li>
-              <li><a href="Research.html#reports">DAO Publications</a></li>
             </ul>
-          </li>
-          <li class="dao-nav-menu"><a href="Research.html" class="btn btn-dao-menu">Research</a></li>
-          <li class="dao-nav-menu"><a href="https://medium.com/philadelphia-justice/tagged/data-stories" class="btn btn-dao-menu">Data Stories</a></li>
-          <li class="dao-nav-menu"><a href="download.html" class="btn btn-dao-menu">Downloads</a></li>
-          <li class="dropdown dao-nav-menu">
-            <a href="#" class="dropdown-toggle btn btn-dao-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-            <ul class="dropdown-menu dao_menu">
-              <li><a href="about.html">About</a></li>
-              <li><a href="definitions.html">Definitions</a></li>
-              <li><a href="limitations.html">Limitations</a></li>
-              <li><a href="howto.html">How to Use This Site</a></li>
-              <li><a href="updates.html">Updates</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </nav>
     </div>
   </div>
-</nav>
+</div>  
 <div class="rmd-container-fluid rmd-container">
 
 <div id="header">
@@ -261,8 +248,8 @@ pre code {
 </div>
 
 
-<div class="row dao_page_header col-12">
-<div class="col-md-2 col-md-offset-1 h1">
+<div class="row dao_page_header">
+<div class="col-md-2 offset-md-1 h1">
 Definitions
 </h1>
 </div>
@@ -274,129 +261,201 @@ Definitions
  
 </div>
 <div id="A" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 A
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="aggravatedassault" class="dao-definition-title-word">
 Aggravated Assault
 </div>
 <div class="dao-definition">
-An attack by one person on another with the purpose of inflicting severe or grievous injury. Generally a weapon is involved, although it is possible to have an aggravated assault that does not include a weapon. Attempted murder (e.g. a shooting that does not result in death) is classified as Aggravated Assault by the police.
+<p>An attack by one person on another with the purpose of inflicting severe or grievous injury. Generally a weapon is involved, although it is possible to have an aggravated assault that does not include a weapon. Attempted homicide (e.g. a shooting that does not result in death) is classified as Aggravated Assault by the police in incident and arrest data.</p>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was any of the following:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=26&amp;sctn=6&amp;subsctn=0">18 Pa.C.S. § 2606</a> (Aggravated Assault of Unborn Child)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 2702</a> (Aggravated Assault)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=75&amp;div=0&amp;chpt=37&amp;sctn=32&amp;subsctn=1">75 Pa.C.S. § 3732.1</a> (Aggravated Assault with a Vehicle)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=75&amp;div=0&amp;chpt=37&amp;sctn=35&amp;subsctn=1">75 Pa.C.S. § 3735.1</a> (Aggravated Assault with a Vehicle While DUI)
 </div>
-<div class="dao-definition-title-word">
+<div id="aggravatedassaultgun" class="dao-definition-title-word">
 Aggravated Assault/Gun
 </div>
 <div class="dao-definition">
-Aggravated assault where a gun is used. The gun does not have to be fired for the offense to be classified as an aggravated assault/gun.
+Aggravated assault where a gun is used. The gun does not have to be fired for the offense to be classified as an aggravated assault/gun. This classification is only found in the <a href="https://data.philadao.com/Incidents_Report.html">Incidents Report</a>
 </div>
-<div class="dao-definition-title-word">
+<div id="aggravatedassaultother" class="dao-definition-title-word">
 Aggravated Assault/Other
 </div>
 <div class="dao-definition">
-Any aggravated assault that does not involve a gun.
+Any aggravated assault that does not involve a gun. This classification is only found in the <a href="https://data.philadao.com/Incidents_Report.html">Incidents Report</a>
 </div>
-<div class="dao-definition-title-word">
+<div id="alcoholoffenses" class="dao-definition-title-word">
+Alcohol Offenses
+</div>
+<div class='dao-definition'>
+Offenses regarding the sale or consumption of alcohol, such as the sale of liquor without a license.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=73&amp;sctn=27&amp;subsctn=0">18 Pa.C.S. § 7327</a> (Unlicensed Business)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=75&amp;sctn=13&amp;subsctn=0">18 Pa.C.S. § 7513</a> (Repealed)
+</div>
+<div id="alcoholpossessionbyminor" class="dao-definition-title-word">
 Alcohol Possession by Minor
 </div>
-<div class="dao-definition">
-A person under 21 years old in possession of alcohol.
+<div class='dao-definition'>
+A person under 21 years old in possession of alcohol.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=63&amp;sctn=7&amp;subsctn=0">18 Pa.C.S. § 6307</a> (Misrepresentation of Age)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=63&amp;sctn=8&amp;subsctn=0">18 Pa.C.S. § 6308</a> (Underage Purchase)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=63&amp;sctn=10&amp;subsctn=1">18 Pa.C.S. § 6310.1</a> (Selling Alcohol to Minors)
 </div>
-<div class="dao-definition-title-word">
+<div id="alloffenses" class="dao-definition-title-word">
 All Offenses
 </div>
 <div class="dao-definition">
 All Offenses is a summary category for offenses of any crime category.
 </div>
-<div class="dao-definition-title-word">
+<div id="alteredfirearmserialnumber" class="dao-definition-title-word">
+Altered Firearm Serial Number
+</div>
+<div class='dao-definition'>
+Illegally altering or destroying the serial number on a firearm or possessing a firearm with an altered or destroyed serial number.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=61&amp;sctn=10&amp;subsctn=2">18 Pa.C.S. § 6110.2</a> (Possession of a Firearm with an Altered Serial Number)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=61&amp;sctn=17&amp;subsctn=0">18 Pa.C.S. § 6117</a> (Altering the Serial Number of a Firearm)
+</div>
+<div id="arrest" class="dao-definition-title-word">
 Arrest
 </div>
 <div class="dao-definition">
 An arrest is an action by the Philadelphia Police Department (PPD) in which a person is apprehended and taken into custody on the suspicion of the commission of a crime.
 </div>
-<div class="dao-definition-title-word">
-Auto Theft
+<div id="arson" class="dao-definition-title-word">
+Arson
 </div>
 <div class="dao-definition">
-The theft of an automobile. This does not include armed theft of a vehicle, which would be classified as Robbery.
+Starting or aiding in the starting of a fire or explosion. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was: <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=33&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 3301</a>.
+</div>
+<div id="attemptedmurder" class="dao-definition-title-word">
+Attempted Murder
+</div>
+<div class='dao-definition'>
+An unsuccessful attempt by one person to kill another. On the Dashboard, only cases are classified as attempted homicide because the police, tend to classify these incidents aggravated assaults when aresting a person.</li>
+</ul>
+<p>Attempted Murder are cases that are charged under one of the below homicide statutes, with an additional charge for attempt. The attempt charge is generaly refered to as an <a href="https://www.law.cornell.edu/wex/inchoate_offense">inchoate offense</a> of Criminal Attempt (<a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=9&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 901</a>).</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 2501</a> (Criminal Homicide)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 2502</a> (Murder)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25&amp;sctn=7&amp;subsctn=0">18 Pa.C.S. § 2507</a> (Criminal Homicide of a Law Enforcement Officer)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=09&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 901</a> (Attempt)
+</div>
+<div id="autotheft" class="dao-definition-title-word">
+Auto Theft
+</div>
+<div class='dao-definition'>
+The theft of an automobile. This does not include armed theft of an automobile, which is classified as Carjacking.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was any of the following:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=21&amp;subsctn=0">18 Pa.C.S. § 3921</a> (Theft by Unlawful Taking) charged alongside <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=28&amp;subsctn=0">18 Pa.C.S. § 3928</a></li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=25&amp;subsctn=0">18 Pa.C.S. § 3925</a> (Receiving Stolen Property) charged alongside <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=28&amp;subsctn=0">18 Pa.C.S. § 3928</a></li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=28&amp;subsctn=0">18 Pa.C.S. § 3928</a> (Unauthorized Use of Automobile)
 </div>
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
-<div id="B" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class='row dao_definition_block' id='B'>
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 B
 </div>
 </div>
-<div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div class='col-md-8 dao-definition'>
+<div id="bail" class="dao-definition-title-word">
 Bail
 </div>
-<div class="dao-definition">
-<p>A set of pre-trial conditions placed upon the accused to allow them to be released from custody while awaiting trial. <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=00&amp;div=0&amp;chpt=1&amp;sctn=14&amp;subsctn=0">The purpose of the conditions are to reasonably ensure public safety</a>.</p>
+<div class='dao-definition'>
+A set of pre-trial conditions placed upon the accused to allow them to be released from custody while awaiting trial. <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=00&amp;div=0&amp;chpt=1&amp;sctn=14&amp;subsctn=0">The purpose of the conditions are to reasonably ensure public safety</a>.</li>
+</ul>
 In Philadelphia, people often receive monetary bail conditions (e.g., $10,000), meaning they must pay the Commonwealth some set amount of money to be released from custody while awaiting trial. When the accused successfully completes their trial without missing any appearances or otherwise violating their bail conditions, their money is returned. If they fail to meet their bail conditions, they may lose their bail money. When a person is given cash bail, they can often pay 10% of the full amount (also called “bond”), but will owe the full amount if they violate their bail conditions.
 </div>
-<div class="dao-definition-title-word">
+<div id="burglary" class="dao-definition-title-word">
 Burglary
 </div>
 <div class="dao-definition">
-The unlawful entering of a building with the intention of committing a crime.
+The unlawful entering of a building with the intention of committing a crime. Burglary is generally broken down as residential burglary (for homes) and commercial burglary (for non-residential properties).
 </div>
-<div class="dao-definition-title-word">
+<div id="burglarycommercial" class="dao-definition-title-word">
 Burglary/Commercial
 </div>
 <div class="dao-definition">
-Burglary of a commercial building.
+Burglary of a commercial building. On the dashboard, this includes arrests where the most serious recommended charge was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=33&amp;sctn=4&amp;subsctn=0">18 Pa.C.S. § 3502</a> and the associated incident was identified by the police as a commercial burglary. It includes cases where the most serious charge was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=33&amp;sctn=4&amp;subsctn=0">18 Pa.C.S. § 3502</a> and the charge was graded as a second degree felony.
 </div>
-<div class="dao-definition-title-word">
+<div id="burglaryresidential" class="dao-definition-title-word">
 Burglary/Residential
 </div>
 <div class="dao-definition">
-Burglary of a residential building.
+Burglary of a residential building. On the Dashboard, this includes arrests where the most serious recommended charge was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=33&amp;sctn=4&amp;subsctn=0">18 Pa.C.S. § 3502</a> and the associated incident was identified by the police as a residential burglary. It includes cases where the most serious charge was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=33&amp;sctn=4&amp;subsctn=0">18 Pa.C.S. § 3502</a> and the charge was graded as a first degree felony.
 </div>
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div id="C" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 C
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="carjacking" class="dao-definition-title-word">
+Carjacking
+</div>
+<div class="dao-definition">
+Robbery of a motor vehicle from a victim. This is different than Auto Theft because the victim is present. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=37&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 3702</a>.
+</div>
+<div id="caselength" class="dao-definition-title-word">
 Case Length
 </div>
 <div class="dao-definition">
 Refers to the total number of days between the date of arrest and the date of resolution whether through withdrawal, dismissal, diversion, plea or verdict. It does not include the time to sentence or to the pending resolution of any post-trial proceedings such as direct appeals or collateral attacks on a sentence. If a person wins an appeal or collateral attack and a new resolution is entered on the case, the time to that new disposition is measured in lieu of the time between their arrest and intial resolution.
 </div>
-<div class="dao-definition-title-word">
+<div id="charges" class="dao-definition-title-word">
 Charges
 </div>
 <div class="dao-definition">
 <p>A charge is an accusation by the Commonwealth that a person has committed a crime. Although a case often involves more than one charge, our <a href="Charge_Report.html">Charge Report</a> only looks at the most serious offense charged in each criminal case.</p>
 In Philadelphia, the DAO, not the police, is responsible for deciding whether to charge an individual. Generally speaking, police investigate a case and present their investigation to the DAO. The DAO then determines whether there is enough evidence to file criminal charges and what charges should be filed. It is common that a person is charged with multiple offenses in a single criminal case. For example, Simple Assault is often charged at the same time as Recklessly Endangering Another Person.
 </div>
+<div id="criminalmischief" class="dao-definition-title-word">
+Criminal Mischief
+</div>
+<div class="dao-definition">
+Tampering with the property of another person. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=33&amp;sctn=4&amp;subsctn=0">18 Pa.C.S. § 3304</a>.
+</div>
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div id="D" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 D
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="dao" class="dao-definition-title-word">
 DAO
 </div>
 <div class="dao-definition">
 <a href="https://www.phila.gov/districtattorney/aboutus/Pages/default.aspx">The Philadelphia District Attorney’s Office</a>
 </div>
-<div class="dao-definition-title-word">
+<div id="dismissedwithdrawnetc" class="dao-definition-title-word">
 Dismissed/Withdrawn/Etc
 </div>
 <div class="dao-definition">
@@ -405,19 +464,24 @@ Dismissed/Withdrawn/Etc
 <li><em>Withdrawal/Nolle Prosequi</em>: a voluntary decision by the DAO to end prosecution in an individual case.</li>
 <li><em>Dismissal</em>: a decision by the judge to end prosecution in an individal case.
 </div>
-<div class="dao-definition-title-word">
+<div id="disorderlyconduct" class="dao-definition-title-word">
 Disorderly Conduct
 </div>
-<div class="dao-definition">
-A catchall offense where a person, with the intent to inconvenience, annoy, or alarm members of the public: fights, makes threats, makes loud noises, uses obscene language, or creates a public hazard while serving no purpose to the actor.
+<div class='dao-definition'>
+A catchall offense where a person, with the intent to inconvenience, annoy, or alarm members of the public: fights, makes threats, makes loud noises, uses obscene language, or creates a public hazard while serving no purpose to the actor.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=55&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 5502</a> (Failure of a Disorderly Person to Disperse)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=55&amp;sctn=3&amp;subsctn=0">18 Pa.C.S. § 5503</a> (Disorderly Conduct)
 </div>
-<div class="dao-definition-title-word">
+<div id="disposition" class="dao-definition-title-word">
 Disposition
 </div>
 <div class="dao-definition">
 Refers to how a case was completed or resolved. This may include a finding of guilt, a guilty plea, diversion, a finding of not guilty, or that the case was dismissed or withdrawn.
 </div>
-<div class="dao-definition-title-word">
+<div id="diversion" class="dao-definition-title-word">
 Diversion
 </div>
 <div class='dao-definition'>
@@ -430,7 +494,7 @@ Diversion is a procedure by which the DAO removes cases from the usual path thro
 <li>Many allow for the charges to be cleared from the accused’s record after successful program completion. This helps people move on from their contact with the criminal justice system without the lifetime burden a criminal record can pose in finding housing, employment, and other important life activities.</li>
 <li>They allow the accused to quickly move out of the criminal justice system, bringing swift resolution of the case and reducing loads on overburdened agencies and system actors.</li>
 </ul>
-<p>Some <a href="https://www.phila.gov/districtattorney/diversion/Pages/default.aspx">common diversion programs in Philadelphia include</a>:</p>
+<p>Some <a href="https://phillyda.org/safety-and-justice/alternatives-to-prosecution-incarceration/">common diversion programs in Philadelphia include</a>:</p>
 <ul>
 <li>AMP I and AMP II (Accelerated Misdemeanor Program)</li>
 <li>Domestic Violence Diversion</li>
@@ -438,47 +502,65 @@ Diversion is a procedure by which the DAO removes cases from the usual path thro
 <li>ARD (Accelerated Misdemeanor Program)</li>
 <li>Mental Health Court
 </div>
-<div class="dao-definition-title-word">
+<div id="drugoffenses" class="dao-definition-title-word">
 Drug Offenses
 </div>
 <div class="dao-definition">
 Drug Offenses is a summary category for offenses categorized as drug crimes.
 </div>
-<div class="dao-definition-title-word">
+<div id="drugpossession" class="dao-definition-title-word">
 Drug Possession
 </div>
 <div class="dao-definition">
-Possession of a drug for personal use and not for the purpose of selling the drug to someone else.
+Possession of a drug for personal use and not for the purpose of selling the drug to someone else. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was for <a href="https://www.legis.state.pa.us/cfdocs/legis/li/uconsCheck.cfm?txtType=HTM&amp;yr=1972&amp;sessInd=0&amp;act=0064.&amp;chpt=000.&amp;subchpt=000.&amp;sctn=013.&amp;subsctn=000.">35 P.S. § 780-113 A16, A19, or A32</a>.
 </div>
-<div class="dao-definition-title-word">
+<div id="drugpossessioninjails" class="dao-definition-title-word">
+Drug Possession in Jails
+</div>
+<div class="dao-definition">
+Giving or selling contraband drugs to inmates in city jails. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=51&amp;sctn=23&amp;subsctn=0">18 Pa.C.S. § 5123</a>.
+</div>
+<div id="drugsales" class="dao-definition-title-word">
 Drug Sales
 </div>
 <div class="dao-definition">
-Possession of a drug with the intention of selling the drug or the actual sale of the drug. “Intention to sell” can be inferred from the amount possessed when a person possesses more than a user would have for personal use. “Intention to sell” can also be inferred from the possession of other objects associated with sales, such as scales for weighing drugs.
+Possession of a drug with the intention of selling the drug or the actual sale of the drug. “Intention to sell” can be inferred from the amount possessed when a person possesses more than a user would have for personal use. “Intention to sell” can also be inferred from the possession of other objects associated with sales, such as scales for weighing drugs. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/li/uconsCheck.cfm?txtType=HTM&amp;yr=1972&amp;sessInd=0&amp;act=0064.&amp;chpt=000.&amp;subchpt=000.&amp;sctn=013.&amp;subsctn=000.">35 P.S. § 780-113 A13, A15, A17, A30, A33, A35, or A36</a>. A30 is the most common subsection under which people are charged for Drug Sales in Pennsylvania.
 </div>
-<div class="dao-definition-title-word">
+<div id="drugsaleswithafirearm" class="dao-definition-title-word">
+Drug Sales with a Firearm
+</div>
+<div class="dao-definition">
+Similar to “Drug Sales”, but where the individual illegally possesses a firearm during the incident, whether or not the firearm is used. These cases are generally treated more severely than drug sales cases, and are given their own category. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/li/uconsCheck.cfm?txtType=HTM&amp;yr=1972&amp;sessInd=0&amp;act=0064.&amp;chpt=000.&amp;subchpt=000.&amp;sctn=013.&amp;subsctn=000.">35 P.S. § 780-113 A30</a> combined with a charge (or police reocmmnended charge) for illegal possession of a firearm. It also includes cases where illegal possession of a firearm is the most serious charge combined with a charge for Drug Sales.
+</div>
+<div id="dui" class="dao-definition-title-word">
 DUI
 </div>
 <div class="dao-definition">
-Driving a vehicle under the influence of drugs or alcohol.
+Driving a vehicle under the influence of drugs or alcohol. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=75&amp;div=0&amp;chpt=38&amp;sctn=2&amp;subsctn=0">75 Pa.C.S. § 3802</a>.
 </div>
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div class='row dao_definition_block' id='E'>
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 E
 </div>
 </div>
 <div class='col-md-8 dao-definition'>
-<div class="dao-definition-title-word">
+<div id="embezzlement" class="dao-definition-title-word">
 Embezzlement
 </div>
 <div class="dao-definition">
-The use of money or property belonging to another for a person’s own personal gain. The Philadelphia DAO generally charges offenses classified at arrest as ‘embezzlement’ as ‘theft’ under the criminal code.
+The use of money or property belonging to another for personal gain. It is common that when the police recommend that a person be charged with embezzlement, the Philadelphia District Attorney’s Office charges theft. This only appears in incident data.
 </div>
-<div class="dao-definition-title-word">
+<div id="ethnicintimidation" class="dao-definition-title-word">
+Ethnic Intimidation
+</div>
+<div class="dao-definition">
+Targeting the race, color, religion, or national origin of an individual during the commission of an assault, property destruction (e.g. arson), or trespass. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=10&amp;subsctn=0">18 Pa.C.S. § 2710</a>.
+</div>
+<div id="exoneration" class="dao-definition-title-word">
 Exoneration
 </div>
 <div class='dao-definition'>
@@ -505,41 +587,64 @@ The evidence of innocence need not be an explicit basis for the official action 
 </div>
 </div>
 <div id="F" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 F
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="felonyoffense" class="dao-definition-title-word">
 Felony Offense
 </div>
 <div class="dao-definition">
 Offenses in Pennsylvania are classified as homicides, felonies, misdemeanors, and summaries. Felony offenses are the most serious non-homicide offenses and may lead to imprisonment of more than ten years.
 </div>
-<div class="dao-definition-title-word">
+<div id="firearmpossessionbyaprohibitedperson" class="dao-definition-title-word">
+Firearm Possession by a Prohibited Person
+</div>
+<div class="dao-definition">
+Possession of a firearm by a person who has been prohibited from carrying a firearm because of a previous conviction for certain offenses (mainly felonies). On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=61&amp;sctn=5&amp;subsctn=0">18 Pa.C.S. § 6105</a> and the person was not simultaneously charged with Drug Sales (which is categorized as Drug Sales with a Firearm).
+</div>
+<div id="firearmpossessionwithoutalicense" class="dao-definition-title-word">
+Firearm Possession without a License
+</div>
+<div class="dao-definition">
+Possession of a firearm without a license. Generally a person charged with this offense is eligible to obtain a license but has not done so. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=61&amp;sctn=6&amp;subsctn=0">18 Pa.C.S. § 6106</a> and the person was not simultaneously charged with Drug Sales (which is categorized as Drug Sales with a Firearm).
+</div>
+<div id="firstjudicialdistrictfjd" class="dao-definition-title-word">
 First Judicial District (FJD)
 </div>
 <div class="dao-definition">
 The Pennsylvania court system is divided into “judicial districts.” The judicial district that operates in Philadelphia is called the First Judicial District (“FJD”). The Courts that comprise the FJD are the Municipal Court (which includes Traffic Court) and the Court of Common Pleas (which includes both the criminal and family courts). Because Philadelphia is large, the FJD covers just Philadelphia. Other Judicial Districts can cover more than one county.
 </div>
-<div class="dao-definition-title-word">
+<div id="fraud" class="dao-definition-title-word">
 Fraud
 </div>
 <div class="dao-definition">
-Intentionally lying or manipulating the truth in order to gain something of value. The Philadelphia DAO generally charges offense classified at arrest as ‘fraud’ as ‘theft’ under the criminal code.
+<p>Intentionally lying or manipulating the truth in order to gain something of value. It is common that when the police recommend that a person be charged with fraud, the Philadelphia District Attorney’s Office charges theft, which is more specific.</p>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=41&amp;sctn=01&amp;subsctn=0">18 Pa.C.S. § 4101</a> (Forgery)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=41&amp;sctn=04&amp;subsctn=0">18 Pa.C.S. § 4104</a> (Tampering with Records)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=41&amp;sctn=05&amp;subsctn=0">18 Pa.C.S. § 4105</a> (Bad Checks)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=41&amp;sctn=06&amp;subsctn=0">18 Pa.C.S. § 4106</a> (Access Device Fraud)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=41&amp;sctn=07&amp;subsctn=0">18 Pa.C.S. § 4107</a> (Deceptive Business Practices)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=41&amp;sctn=17&amp;subsctn=0">18 Pa.C.S. § 4117</a> (Insurance Fraud)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=41&amp;sctn=20&amp;subsctn=0">18 Pa.C.S. § 4119</a> (Trademark Counterfeiting)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=49&amp;sctn=11&amp;subsctn=0">18 Pa.C.S. § 4911</a> (Tampering with Public Records)
 </div>
-<div class="dao-definition-title-word">
+<div id="fraudtheftofservices" class="dao-definition-title-word">
 Fraud/Theft of Services
 </div>
 <div class="dao-definition">
-Fraud is intentionally lying or manipulating the truth in order to gain something of value. Theft of services, similarly, occurs when a person gets the benefit of a service known to cost money (e.g. turnstile jumping). The Philadelphia DAO generally charges offense classified at arrest as ‘fraud’ as ‘theft’ under the criminal code.
+Fraud is intentionally lying or manipulating the truth in order to gain something of value. Theft of services, similarly, occurs when a person gets the benefit of a service known to cost money (e.g. turnstile jumping). The Philadelphia DAO generally charges offense classified at arrest as ‘fraud’ as ‘theft’ under the criminal code. This combined classification is only available in incident data.
 </div>
-<div class="dao-definition-title-word">
+<div id="futureyearsofincarceration" class="dao-definition-title-word">
 Future Years of Incarceration
 </div>
-<div class="dao-definition">
-<p>All of the years of incarceration imposed on defendants in all cases that ended in a given time period. For example, the future years of incarceration imposed in Philadelphia on a particular day can be calculated by adding up all of the carceral sentences imposed on all defendants in Philadelphia that day.</p>
+<div class='dao-definition'>
+All of the years of incarceration imposed on defendants in all cases that ended in a given time period. For example, the future years of incarceration imposed in Philadelphia on a particular day can be calculated by adding up all of the carceral sentences imposed on all defendants in Philadelphia that day.</li>
+</ul>
 <p>To calculate future years of incarceration, we make a few assumptions:</p>
 <ol style="list-style-type: decimal">
 <li>We only track the jail/prison time that we assume a person will serve.</li>
@@ -550,7 +655,7 @@ Future Years of Incarceration
 </ol>
 One of the goals of DA Larry Krasner’s policies is to reduce the number of years of future incarceration and future supervision. Overly long prison sentences and terms of parole and probation cost millions in public dollars without improving public safety. In fact, research show that mass incarceration and over-supervision actually have a negative effect on people and communities. By making plea offers and sentencing recommendations below the low end of the Pennsylvania Sentencing Guidelines, DA Krasner has espoused a different approach to sentencing policy. This will save millions of dollars that could be used to improve education, repair infrastructure and improve living conditions for all Philadelphians, while at the same time insuring that criminal behavior is punished appropriately.
 </div>
-<div class="dao-definition-title-word">
+<div id="futureyearsofsupervision" class="dao-definition-title-word">
 Future Years of Supervision
 </div>
 <div class="dao-definition">
@@ -568,67 +673,94 @@ One of the goals of DA Krasner’s policies is to reduce the number of years of 
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
-<div class='row dao_definition_block' id='G'>
-<div class="col-md-1 col-md-offset-1">
+<div id="G" class="row dao_definition_block">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 G
 </div>
 </div>
-<div class='col-md-8 dao-definition'>
-<div class="dao-definition-title-word">
+<div class="col-md-8 dao-definition">
+<div id="guilty" class="dao-definition-title-word">
 Guilty
 </div>
 <div class="dao-definition">
 A finding of guilt by a Judge or Jury after trial.
 </div>
-<div class="dao-definition-title-word">
+<div id="guiltypleanolo" class="dao-definition-title-word">
 Guilty Plea/Nolo
 </div>
-<div class='dao-definition'>
+<div class="dao-definition">
 <p>Instead of going to trial, an accused person may choose to admit guilt and go directly to sentence. A guilty plea can be open or negotiated.</p>
 <ul>
-<li><p>A <strong>negotiated</strong> plea is an agreement between the DAO and the accused on the charges that the accused will admit guilt to, the charges that will be dropped, and the sentence that will be recommended to the judge for the case. The agreement is sometimes called a plea bargain.</p></li>
-<li><p>An <strong>open plea</strong> is one where the accused admits guilt and then the judge sets the sentence without a recommendation from the DAO.</p>
+<li>A <strong>negotiated</strong> plea is an agreement between the DAO and the accused on the charges that the accused will admit guilt to, the charges that will be dropped, and the sentence that will be recommended to the judge for the case. The agreement is sometimes called a plea bargain.</li>
+<li>An <strong>open plea</strong> is one where the accused admits guilt and then the judge sets the sentence without a recommendation from the DAO.
 </div>
-<p><a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a></p>
+<a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
-<div id="H" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class='row dao_definition_block' id='H'>
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 H
 </div>
 </div>
-<div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div class='col-md-8 dao-definition'>
+<div id="harassment" class="dao-definition-title-word">
 Harassment
 </div>
 <div class="dao-definition">
 Engaging in a number of different activities designed to annoy, harass, or alarm another person, including touching, following, repeatedly calling or otherwise communicated with, or using lewd or harsh language.
 </div>
-<div class="dao-definition-title-word">
+<div id="heldwithoutbail" class="dao-definition-title-word">
 Held without Bail
 </div>
 <div class="dao-definition">
 In some cases, an accused person can be held without bail pending trial. A person charged with 1st degree murder must be held without bail in Pennsylvania, however, individuals charged with a less lesser crime can also be held without bail, depending on a number of factors.
 </div>
-<div class="dao-definition-title-word">
+<div id="homicide" class="dao-definition-title-word">
 Homicide
 </div>
+<div class='dao-definition'>
+The killing of one person by another. <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25">There are many different types of homicide in Pennsylvania</a>, ranging from intentional homicide to negligent homicide to felony homicide.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was any of the following:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 2501</a> (Criminal Homicide)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 2502</a> (Murder)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25&amp;sctn=4&amp;subsctn=0">18 Pa.C.S. § 2504</a> (Involuntary Manslaughter)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25&amp;sctn=7&amp;subsctn=0">18 Pa.C.S. § 2507</a> (Criminal Homicide of Law Enforcement Officer)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=75&amp;div=0&amp;chpt=37&amp;sctn=32&amp;subsctn=0">75 Pa.C.S. § 3732</a> (Homicide by Vehicle)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=75&amp;div=0&amp;chpt=37&amp;sctn=35&amp;subsctn=0">75 Pa.C.S. § 3735</a> (Homicide by Vehicle While DUI)
+</div>
+<div id="homicideother" class="dao-definition-title-word">
+Homicide: Other
+</div>
 <div class="dao-definition">
-The killing of one person by another. <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=25">There are many different types of homicide in Pennsylvania</a>, ranging from intentional homicide to negligent homicide to felony homicide.
+A homicide that cannot be identified as a fatal shooting, though this may include cases in which a shooting took place before 2015.
+</div>
+<div id="homicideshooting" class="dao-definition-title-word">
+Homicide: Shooting
+</div>
+<div class="dao-definition">
+A homicide that can be identified as a fatal shooting. Note: because of limitations in data availability, shooting homicides that occurred before 2015 appear as Homicide: Other. This effect is largely seen in 2015, 2016, and 2017 numbers.
 </div>
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div id="I" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 I
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="illegalfirearmpossession" class="dao-definition-title-word">
+Illegal Firearm Possession
+</div>
+<div class="dao-definition">
+A general category for illegal possession of a firearm incidents. This may include being in a car where a firearm is found, even if the person charged isn’t directly holding it. This appears only in incident data; arrest and case data has categories for different types of illegal firearm possession.
+</div>
+<div id="incarceration" class="dao-definition-title-word">
 Incarceration
 </div>
 <div class="dao-definition">
@@ -638,19 +770,19 @@ Imprisoning a person. In Pennsylvania, sentences to periods of incarceration inc
 </div>
 </div>
 <div id="M" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 M
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="minorviolationsopencontainerpublicurinationsmokingviolation" class="dao-definition-title-word">
 Minor Violations (Open Container, Public Urination, Smoking Violation)
 </div>
 <div class="dao-definition">
 A catchall for multiple minor offenses.
 </div>
-<div class="dao-definition-title-word">
+<div id="misdemeanoroffense" class="dao-definition-title-word">
 Misdemeanor Offense
 </div>
 <div class="dao-definition">
@@ -659,20 +791,23 @@ Offenses in Pennsylvania are classified as homicides, felonies, misdemeanors, an
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
-<div id="N" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class='row dao_definition_block' id='N'>
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 N
 </div>
 </div>
-<div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div class='col-md-8 dao-definition'>
+<div id="nonfatalshooting" class="dao-definition-title-word">
 Non-Fatal Shooting
 </div>
-<div class="dao-definition">
-An offense is labeled as a non-fatal shooting if there is a shooting, at least one person is hit, and nobody dies. If a person dies, the case would be classified as a homicide. If nobody is hit, it would likely be classified as an Aggravated Assault/Gun. In order to identify non-fatal shooting cases, we link incidents to the <a href="https://www.opendataphilly.org/dataset/shooting-victims">Open Data Philly Shooting Victims Data Set</a>. Information about Non-Fatal Shootings only includes shooting victims since 2015. That means that only shooting incidents since 2015 are reflected in the reports (arrests, cases charged, outcomes, etc…). As an example, the <a href="https://data.philadao.com/Case_Outcomes_Report.html">Case Outcomes report</a> shows very few cases resolved in 2015 and a very high rate of non-convictions. The reason for this is that very few shooting incidents that occured in 2015 were also resolved in 2015; those that were resolved that quickly were often quickly dismissed.
+<div class='dao-definition'>
+An offense is labeled as a non-fatal shooting if there is a shooting, at least one person is hit, and nobody dies. If a person dies, the case would be classified as a homicide. If nobody is hit, it would likely be classified as an Aggravated Assault/Gun (on the incidents Dashboard page) or Aggravated Assault (on the Dashboard pages relating to arrests and cases). In order to identify non-fatal shooting cases, we link incidents to the <a href="https://www.opendataphilly.org/dataset/shooting-victims">Open Data Philly Shooting Victims Data Set</a>.</li>
+</ul>
+<p>On the Dashboard, we only classify an arrest or case as a non-fatal shooting if the incident itself appears in the Shooting Victims data set and the most serious charge (or police recommended charge) was one of: “Attempted Homicide”, “Assault”, “Aggravated Assault”, or “Robbery”.</p>
+Information about Non-Fatal Shootings only includes shooting victims since 2015. That means that only shooting incidents since 2015 are reflected in the reports (arrests, cases charged, outcomes, etc…). As an example, the <a href="https://data.philadao.com/Case_Outcomes_Report.html">Case Outcomes report</a> shows very few cases resolved in 2015 and a very high rate of non-convictions. The reason for this is that very few shooting incidents that occured in 2015 were also resolved in 2015; those that were resolved that quickly were often quickly dismissed.
 </div>
-<div class="dao-definition-title-word">
+<div id="notguiltyacquittal" class="dao-definition-title-word">
 Not Guilty/Acquittal
 </div>
 <div class="dao-definition">
@@ -682,189 +817,296 @@ A finding by either jury or judge that the prosecution has failed to prove guilt
 </div>
 </div>
 <div class='row dao_definition_block' id='O'>
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 O
 </div>
 </div>
 <div class='col-md-8 dao-definition'>
-<div class="dao-definition-title-word">
+<div id="offense" class="dao-definition-title-word">
 Offense
 </div>
 <div class="dao-definition">
 Another word for a crime.
 </div>
-<div class="dao-definition-title-word">
+<div id="offensecategory" class="dao-definition-title-word">
 Offense Category
 </div>
 <div class="dao-definition">
 The general classification of an offense. See the <a href="limitations.html">limitations page</a> for more information about some problems that come with using this classification system.
 </div>
-<div class="dao-definition-title-word">
+<div id="otherassaults" class="dao-definition-title-word">
 Other Assaults
 </div>
-<div class="dao-definition">
-A broad category that includes simple assault, stalking, and resisting arrest. Simple assault makes up the bulk of ‘other assaults.’
+<div class='dao-definition'>
+<p>A broad category that includes stalking, and resisting arrest.</p>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=3&amp;subsctn=0">18 Pa.C.S. § 2703</a> (Assault by a Prisoner)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=5&amp;subsctn=0">18 Pa.C.S. § 2705</a> (Reckless Endangerment of Another Person)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=7&amp;subsctn=1">18 Pa.C.S. § 2707.1</a> (Discharge of a Firearm into an Unoccupied Structure
 </div>
-<div class="dao-definition-title-word">
+<div id="otherdrugoffenses" class="dao-definition-title-word">
+Other Drug Offenses
+</div>
+<div class="dao-definition">
+A general category for other crimes identified as drug offenses, but that do not occur enough to be classified individually. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/li/uconsCheck.cfm?txtType=HTM&amp;yr=1972&amp;sessInd=0&amp;act=0064.&amp;chpt=000.&amp;subchpt=000.&amp;sctn=013.&amp;subsctn=000.">35 P.S. § 780-113 A5, A12, or A14</a>.
+</div>
+<div id="otherfirearmoffenses" class="dao-definition-title-word">
+Other Firearm Offenses
+</div>
+<div class='dao-definition'>
+A general category for other crimes identified as firearms offenses, but that do not occur enough to be classified individually.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=61&amp;sctn=8&amp;subsctn=0">18 Pa.C.S. § 6108</a> (Possession of a Firearm on the Streets of Philadelphia)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=61&amp;sctn=9&amp;subsctn=0">18 Pa.C.S. § 6109</a> (Firearm Licensing)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=61&amp;sctn=10&amp;subsctn=1">18 Pa.C.S. § 6110.1</a> (Possession of a Firearm by a Minor)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=61&amp;sctn=11&amp;subsctn=0">18 Pa.C.S. § 6111</a> (Illegal Sale of a Firearm)
+</div>
+<div id="otheroffenses" class="dao-definition-title-word">
 Other Offenses
 </div>
 <div class="dao-definition">
 Other Offenses is a summary category for offenses that do not fall into the categorizations of violent, property, or drug, or for which the categorization is unknown.
 </div>
-<div class="dao-definition-title-word">
+<div id="otherpropertycrimes" class="dao-definition-title-word">
+Other Property Crimes
+</div>
+<div class='dao-definition'>
+A general category for other crimes identified as property offenses, but that do not occur enough to be classified individually.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=33&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 3302</a> (Causing Catastrophe)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=33&amp;sctn=7&amp;subsctn=0">18 Pa.C.S. § 3307</a> (Institutional Vandalism)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=35&amp;sctn=3&amp;subsctn=0">18 Pa.C.S. § 3503</a> (Criminal Trespass)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=51&amp;sctn=11&amp;subsctn=0">18 Pa.C.S. § 5111</a> (Dealing in Proceeds of Unlawful Activity)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=55&amp;sctn=12&amp;subsctn=0">18 Pa.C.S. § 5512</a> (Illegal Lottery)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=55&amp;sctn=13&amp;subsctn=0">18 Pa.C.S. § 5513</a> (Unlicensed Gambling)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=67&amp;sctn=12&amp;subsctn=0">18 Pa.C.S. § 6712</a> (Illegal Use of Shopping Carts)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=69&amp;sctn=10&amp;subsctn=0">18 Pa.C.S. § 6910</a> (Unauthorized Sale of Tickets)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=77&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 7702</a> (Chop Shop)
+</div>
+<div id="otherviolentcrimes" class="dao-definition-title-word">
+Other Violent Crimes
+</div>
+<div class='dao-definition'>
+A general category for other crimes identified as violent offenses, but that do not occur enough to be classified individually.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=2&amp;subsctn=1">18 Pa.C.S. § 2702.1</a> (Assault of a Law Enforcement Officer)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=7&amp;subsctn=0">18 Pa.C.S. § 2707</a> (Propulsion of Objects into an Occupied Vehicle or Roadway)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=29&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 2901</a> (Kidnapping)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=29&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 2902</a> (Unlawful Restraint)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=29&amp;sctn=10&amp;subsctn=0">18 Pa.C.S. § 2910</a> (Luring a Child into a Motor Vehicle)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=49&amp;sctn=52&amp;subsctn=0">18 Pa.C.S. § 4952</a> (Intimidation of Witnesses)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=49&amp;sctn=53&amp;subsctn=0">18 Pa.C.S. § 4953</a> (Retaliation Against Witnesses)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=55&amp;sctn=33&amp;subsctn=0">18 Pa.C.S. § 5533</a> (Cruelty to Animals)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=55&amp;sctn=34&amp;subsctn=0">18 Pa.C.S. § 5534</a> (Aggravated Cruelty to Animals)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=9&amp;sctn=7&amp;subsctn=0">18 Pa.C.S. § 907</a> (Possession of an Instrument of Crime)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=9&amp;sctn=8&amp;subsctn=0">18 Pa.C.S. § 908</a> (Prohibited Weapons)
+</div>
+<div id="outcomes" class="dao-definition-title-word">
 Outcomes
 </div>
 <div class='dao-definition'>
-<p>The various ways that a criminal case can end. We have created 5 high level outcome groupings that capture all of the ways a case can end. These are all defined elsewhere on this page:</p></li>
-<li><p>Dismissed/Withdrawn/Etc</p></li>
-<li><p>Diversion</p></li>
-<li><p>Not Guilty/Acquittal</p></li>
-<li><p>Guilty</p></li>
-<li><p>Guilty Plea/Nolo</p>
+The various ways that a criminal case can end. We have created 5 high level outcome groupings that capture all of the ways a case can end.</li>
+</ul>
+<p>These are all defined elsewhere on this page:</p>
+<ul>
+<li>Dismissed/Withdrawn/Etc</li>
+<li>Diversion</li>
+<li>Not Guilty/Acquittal</li>
+<li>Guilty</li>
+<li>Guilty Plea/Nolo
 </div>
-<p><a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a></p>
+<a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div class='row dao_definition_block' id='P'>
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 P
 </div>
 </div>
 <div class='col-md-8 dao-definition'>
-<div class="dao-definition-title-word">
+<div id="parole" class="dao-definition-title-word">
 Parole
 </div>
 <div class="dao-definition">
 The period of community supervision that occurs when a person has been sentenced to prison but is released before serving their maximum incarceration sentence. Parole is served until the person has reached their maximum sentence date.
 </div>
-<div class="dao-definition-title-word">
+<div id="partsiiioffenses" class="dao-definition-title-word">
 Parts I &amp; II Offenses
 </div>
 <div class='dao-definition'>
-<p>As part of the FBI’s Uniform Crime Reporting (UCR) Program, offense types are divided into three categories:</p></li>
-<li><p>Part I Crimes, considered the most serious. These include: criminal homicide, forcible rape, robbery, aggravated assault, burglary, larceny, auto theft, and arson.</p></li>
-<li><p>Part II Crimes. These include: other assaults, forgery and counterfeiting, fraud, embezzlement, stolen property, vandalism, weapons violations, prostitution and commercialized vice, sex offenses, drug violations, gambling, offenses against family and children, driving under the influence, liquor law violations, public drunkenness, disorderly conduct, and vagrancy.</p></li>
-<li><p>All other offenses. This category includes all violations of state and local laws not specifically defined as a Part I or II offense, except traffic violations.</p>
+The Philadelpia Police Department uses the FBI’s Uniform Crime Reporting (UCR) Program to categorize and incidents on the <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly Crime Incidents</a> data release.</li>
+</ul>
+<p>As part of the UCR program, offense types are divided into three categories:</p>
+<ul>
+<li>Part I Crimes, considered the most serious. These include: criminal homicide, forcible rape, robbery, aggravated assault, burglary, larceny, auto theft, and arson.</li>
+<li>Part II Crimes. These include: other assaults, forgery and counterfeiting, fraud, embezzlement, stolen property, vandalism, weapons violations, prostitution and commercialized vice, sex offenses, drug violations, gambling, offenses against family and children, driving under the influence, liquor law violations, public drunkenness, disorderly conduct, and vagrancy.</li>
+<li>All other offenses. This category includes all violations of state and local laws not specifically defined as a Part I or II offense, except traffic violations.
 </div>
-<div class="dao-definition-title-word">
+<div id="patronizingprostitutes" class="dao-definition-title-word">
 Patronizing Prostitutes
 </div>
 <div class="dao-definition">
-Hiring a prostitute/sex worker.
+Hiring a prostitute/sex worker. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=59&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 5902 E</a>.
 </div>
-<div class="dao-definition-title-word">
+<div id="policedistrict" class="dao-definition-title-word">
 Police District
 </div>
 <div class="dao-definition">
 In Philadelphia, a Police District is a mid-level geographic management area maintained by the Philadelphia Police Department. There are 21 Police Districts in Philadelphia.
 </div>
-<div class="dao-definition-title-word">
-Possession of Firearms
-</div>
-<div class="dao-definition">
-Illegally possessing a firearm. This may include being in a car where a firearm is found, even if the person charged isn’t directly holding it. Possession may be illegal either because the individual does not have a permit to carry or because the person has a previous conviction that forbids them from possessing a firearm.
-</div>
-<div class="dao-definition-title-word">
+<div id="probation" class="dao-definition-title-word">
 Probation
 </div>
 <div class="dao-definition">
 Community supervision that is directly ordered by a judge. This is distinguished from parole, which is supervised released from prison. A person may be sentenced to just probation or may receive a sentence of incarceration followed by a period of probation. The latter is often referred to as a “probation tail.”
 </div>
-<div class="dao-definition-title-word">
+<div id="promotingprostitution" class="dao-definition-title-word">
+Promoting Prostitution
+</div>
+<div class="dao-definition">
+Aiding in the business of prostitution/sex work, or owning or managing a house of prostitution as a business. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of: <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=59&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 5902 B</a>.
+</div>
+<div id="propertyoffenses" class="dao-definition-title-word">
 Property Offenses
 </div>
 <div class="dao-definition">
 Property Arrests is a summary category for offenses categorized as property crimes.
 </div>
-<div class="dao-definition-title-word">
+<div id="prostitutionsexwork" class="dao-definition-title-word">
 Prostitution/Sex Work
 </div>
 <div class="dao-definition">
-Engaging in sexual activity as a business.
+Engaging in sexual activity as a business. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=59&amp;sctn=2&amp;subsctn=0">18 Pa.C.S. § 5902</a> A or A1 or without a subsection specified.
 </div>
-<div class="dao-definition-title-word">
+<div id="publicdrunkenness" class="dao-definition-title-word">
 Public Drunkenness
 </div>
 <div class="dao-definition">
-Being in a public place and under the influence of alcohol or any controlled substance to the point where the person is a danger to persons or property or annoys other people.
+Being in a public place and under the influence of alcohol or any controlled substance to the point where the person is a danger to persons or property or annoys other people. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=55&amp;sctn=5&amp;subsctn=0">18 Pa.C.S. § 5505</a>.
 </div>
-<p><a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a></p>
+<a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
-<div id="R" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class='row dao_definition_block' id='R'>
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 R
 </div>
 </div>
-<div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div class='col-md-8 dao-definition'>
+<div id="rape" class="dao-definition-title-word">
 Rape
 </div>
-<div class="dao-definition">
-Engaging in sexual intercourse through force, the threat of force, with an unconscious or seriously impaired individual, or with an individual who suffers from a mental disability that makes them incapable of consent. <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=21&amp;subsctn=0">See 18 Pa.C.S. 3121</a>. Rape, as used in our website, does not refer to other types of rape or sexual assault.
+<div class='dao-definition'>
+Engaging in sexual intercourse through force, the threat of force, with an unconscious or seriously impaired individual, or with an individual who suffers from a mental disability that makes them incapable of consent. Rape, as used in our website, does not refer to other types of rape or sexual assault.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was any of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=21&amp;subsctn=0">18 Pa.C.S. § 3121</a> (Rape)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=23&amp;subsctn=0">18 Pa.C.S. § 3123</a> (Involuntary Deviate Sexual Intercourse)
 </div>
-<div class="dao-definition-title-word">
+<div id="releaseonrecognizanceror" class="dao-definition-title-word">
 Release on Recognizance (ROR)
 </div>
 <div class="dao-definition">
 A bail condition that allows a person to be released from custody without having to pay any money to be released. The person signs a paper stating that they will return for future court listings but is not required to pay any money to be released.
 </div>
-<div class="dao-definition-title-word">
+<div id="retailtheft" class="dao-definition-title-word">
 Retail Theft
 </div>
-<div class="dao-definition">
-Theft of merchandise from a store. This includes altering prices or labels to pay less than the actual price of the merchandise.
+<div class='dao-definition'>
+Theft of merchandise from a store. This includes altering prices or labels to pay less than the actual price of the merchandise.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was any of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=29&amp;subsctn=0">18 Pa.C.S. § 3929</a> (Retail Theft)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=29&amp;subsctn=3">18 Pa.C.S. § 3929.3</a> (Organized Retail Theft)
 </div>
-<div class="dao-definition-title-word">
+<div id="robbery" class="dao-definition-title-word">
 Robbery
 </div>
 <div class="dao-definition">
-A robbery is a theft from a person involving the use of force or threat of force.
+A robbery is a theft from a person involving the use of force or threat of force. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=37&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 3701</a> and the charge was not graded as a first degree felony.
 </div>
-<div class="dao-definition-title-word">
+<div id="robberywithadeadlyweapon" class="dao-definition-title-word">
+Robbery with a Deadly Weapon
+</div>
+<div class="dao-definition">
+A robbery where the force or threat of force involves a deadly weapon. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=37&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 3701</a> and the charge was graded as a first degree felony.
+</div>
+<div id="robberygun" class="dao-definition-title-word">
 Robbery/Gun
 </div>
 <div class="dao-definition">
-A robbery where the force or threat of force involves a gun.
+A robbery where the force or threat of force involves a gun. This classification is only available in incident data.
 </div>
-<div class="dao-definition-title-word">
+<div id="robberyother" class="dao-definition-title-word">
 Robbery/Other
 </div>
 <div class="dao-definition">
-A robbery where the force or threat of force does not involve a gun.
+A robbery where the force or threat of force does not involve a gun. This classification is only available in incident data.
 </div>
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
-<div id="S" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class='row dao_definition_block' id='S'>
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 S
 </div>
 </div>
-<div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div class='col-md-8 dao-definition'>
+<div id="sexualassaultandothersexoffenses" class="dao-definition-title-word">
 Sexual Assault and Other Sex Offenses
 </div>
-<div class="dao-definition">
-A variety of sexual offenses that do not rise to the level of rape, ranging from improper touching to non-consensual penetration.
+<div class='dao-definition'>
+A variety of sexual offenses that do not rise to the level of rape, ranging from improper touching to non-consensual penetration.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was one of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=22&amp;subsctn=1">18 Pa.C.S. § 3122.1</a> (Statutory Sexual Assault)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=24&amp;subsctn=1">18 Pa.C.S. § 3124.1</a> (Sexual Assault)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=24&amp;subsctn=2">18 Pa.C.S. § 3124.2</a> (Institutional Sexual Assault)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=25&amp;subsctn=0">18 Pa.C.S. § 3125</a> (Aggravated Indecent Assault)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=26&amp;subsctn=0">18 Pa.C.S. § 3126</a> (Indecent Assault)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=31&amp;sctn=27&amp;subsctn=0">18 Pa.C.S. § 3127</a> (Indecent Exposure)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=63&amp;sctn=12&amp;subsctn=0">18 Pa.C.S. § 6312</a> (Sexual Abuse of Children)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=63&amp;sctn=18&amp;subsctn=0">18 Pa.C.S. § 6318</a> (Unlawful Contact with a Minor)
 </div>
-<div class="dao-definition-title-word">
+<div id="simpleassault" class="dao-definition-title-word">
+Simple Assault
+</div>
+<div class="dao-definition">
+An attack by one person on another to cause injury or an attempt to cause fear of serious bodily injury. On the dashboard, this includes arrests and cases where where the most serious charge (or police recommended charge was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=1&amp;subsctn=0">18 Pa.C.S. § 2701</a>.
+</div>
+<div id="strangulation" class="dao-definition-title-word">
+Strangulation
+</div>
+<div class="dao-definition">
+Impeding a person’s breathing by applying pressure to the throat or neck, or blocking the nose and mouth. This law went into effect in late December 2016. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=18&amp;subsctn=0">18 Pa.C.S. § 2718</a>.
+</div>
+<div id="summaryoffense" class="dao-definition-title-word">
 Summary Offense
 </div>
 <div class="dao-definition">
 Offenses in Pennsylvania are classified as homicides, felonies, misdemeanors, and summaries. A summary offense is the most minor type of criminal offense in Pennsylvania, and is often called a non-traffic citation. Summary offenses can include disorderly conduct, loitering, harassment, and low-level retail theft, among others. A conviction for a summary offense usually results in a fine.
 </div>
-<div class="dao-definition-title-word">
+<div id="supervision" class="dao-definition-title-word">
 Supervision
 </div>
 <div class="dao-definition">
 For the purposes of this webpage, it refers to supervision over parole and probation.
 </div>
-<div class="dao-definition-title-word">
+<div id="unsecuredcashbailsob" class="dao-definition-title-word">
 Unsecured Cash Bail (SOB)
 </div>
 <div class="dao-definition">
@@ -873,60 +1115,76 @@ A bail condition that allows a person to be released from custody without having
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
-<div id="T" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class='row dao_definition_block' id='T'>
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 T
 </div>
 </div>
-<div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div class='col-md-8 dao-definition'>
+<div id="theft" class="dao-definition-title-word">
 Theft
 </div>
-<div class="dao-definition">
-Illegally taking someone else’s property with the intent of not giving it back. Theft usually does not refer to theft directly from a person, as that would be considered robbery.
+<div class='dao-definition'>
+Illegally taking someone else’s property with the intent of not giving it back. Theft usually does not refer to theft directly from a person, which is considered robbery.</li>
+</ul>
+<p>On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was any of:</p>
+<ul>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=21&amp;subsctn=0">18 Pa.C.S. § 3921</a> (Theft by Unlawful Taking)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=22&amp;subsctn=0">18 Pa.C.S. § 3922</a> (Theft by Deception)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=23&amp;subsctn=0">18 Pa.C.S. § 3923</a> (Theft by Extortion)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=24&amp;subsctn=0">18 Pa.C.S. § 3924</a> (Theft of Lost Property)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=25&amp;subsctn=0">18 Pa.C.S. § 3925</a> (Receiving Stolen Property)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=27&amp;subsctn=0">18 Pa.C.S. § 3927</a> (Theft by Failure to Make Disposition of Funds Received)</li>
+<li><a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=32&amp;subsctn=0">18 Pa.C.S. § 3932</a> (Theft of Leased Property)
 </div>
-<div class="dao-definition-title-word">
+<div id="theftfromauto" class="dao-definition-title-word">
 Theft from Auto
 </div>
 <div class="dao-definition">
 The theft of property from a motor vehicle, but not theft of the vehicle itself or the taking of parts of the vehicle.
 </div>
-<div class="dao-definition-title-word">
+<div id="theftfromperson" class="dao-definition-title-word">
 Theft from Person
 </div>
 <div class="dao-definition">
 Theft of property from a person, not involving force or the threat of force. Pickpocketing is a common example.
 </div>
-<div class="dao-definition-title-word">
+<div id="theftofmotorvehicletag" class="dao-definition-title-word">
 Theft of Motor Vehicle Tag
 </div>
 <div class="dao-definition">
-The theft of license plates from a motor vehicle.
+The theft of license plates from a motor vehicle. This classification is only available in incident data.
 </div>
-<div class="dao-definition-title-word">
+<div id="theftofservices" class="dao-definition-title-word">
+Theft of Services
+</div>
+<div class="dao-definition">
+Obtaining the benefit of a service known to cost money, without paying that cost (e.g. turnstile jumping). On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=39&amp;sctn=26&amp;subsctn=0">18 Pa.C.S. § 3926</a>.
+</div>
+<div id="threatsofviolence" class="dao-definition-title-word">
 Threats of Violence
 </div>
 <div class="dao-definition">
-Making threats to commit a violent crime with the intent to terrorize (make frightened) another person.
+Threatening to commit a violent crime for the purpose of frightening another person. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=27&amp;sctn=6&amp;subsctn=0">18 Pa.C.S. § 2706</a>.
 </div>
-<div class="dao-definition-title-word">
+<div id="trespass" class="dao-definition-title-word">
 Trespass
 </div>
 <div class="dao-definition">
-Entering or remaining in a place without permission.
+Entering or remaining in a place without permission. On the Dashboard, this includes arrests and cases where the most serious charge (or police recommended charge) was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=18&amp;div=0&amp;chpt=35&amp;sctn=3&amp;subsctn=0">18 Pa.C.S. § 3503</a>.
 </div>
 <a href='#top' class='dao-definitions-top-link dao_report_body_emphasis'>▲ Return to the Top</a>
 </div>
 </div>
 <div id="U" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 U
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="unknownbail" class="dao-definition-title-word">
 Unknown Bail
 </div>
 <div class="dao-definition">
@@ -936,19 +1194,25 @@ A categorization of bail amount for cases for which we do not have sufficient ba
 </div>
 </div>
 <div id="V" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 V
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="vandalism" class="dao-definition-title-word">
 Vandalism
 </div>
 <div class="dao-definition">
 Destroying or defacing property without permission to do so (e.g. graffiti).
 </div>
-<div class="dao-definition-title-word">
+<div id="violationofprotectionorder" class="dao-definition-title-word">
+Violation of Protection Order
+</div>
+<div class="dao-definition">
+A person found in violation of a court order to stay away from another person. This includes where the most serious charge was <a href="https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&amp;ttl=23&amp;div=0&amp;chpt=61&amp;sctn=14&amp;subsctn=0">23 Pa.C.S. § 6114</a>
+</div>
+<div id="violentoffenses" class="dao-definition-title-word">
 Violent Offenses
 </div>
 <div class="dao-definition">
@@ -958,19 +1222,19 @@ Violent Offenses is a summary category for offenses categorized as violent crime
 </div>
 </div>
 <div id="Y" class="row dao_definition_block">
-<div class="col-md-1 col-md-offset-1">
+<div class="col-md-1 offset-md-1">
 <div class="dao-definition-letter">
 Y
 </div>
 </div>
 <div class="col-md-8 dao-definition">
-<div class="dao-definition-title-word">
+<div id="yryrchange" class="dao-definition-title-word">
 Yr-Yr Change
 </div>
 <div class="dao-definition">
 Year-over-Year Change refers to the percent change from a prior time period to the current time period.
 </div>
-<div class="dao-definition-title-word">
+<div id="ytd" class="dao-definition-title-word">
 YTD
 </div>
 <div class="dao-definition">
@@ -987,7 +1251,7 @@ Year-to-Date refers to a total number of instances that occurred between the beg
 <div class="row text-center">
 	<div class="col-md-4">
     <h2 class="connectext">Office</h2>
-		<hr class="light">
+		<hr class="light mx-auto">
 		<p>
 		  Three South Penn Square<br/>
 		  Philadelphia, PA 19107-3499<br/>
@@ -997,7 +1261,7 @@ Year-to-Date refers to a total number of instances that occurred between the beg
 	<div class="col-md-4">
 		<div class="col-12">
 			<h2 class="connectext">Connect</h2>
-		<hr class="light">
+		<hr class="light mx-auto">
 			</div>
 			<div class="col-12 social padding">
 				<a href="https://www.facebook.com/philaDAO/" target="_blank"><i class="fa fa-facebook social-circle-icon" title="facebook"></i></a>
@@ -1009,7 +1273,7 @@ Year-to-Date refers to a total number of instances that occurred between the beg
 	<div class="col-md-4">
 	  <div class="col-12">
 	    <h2 class="connectext">More</h2>
-		<hr class="light">
+		<hr class="light mx-auto">
       <ul>
         <li><a href="https://medium.com/philadelphia-justice" target="_blank">The Justice Wire</a></li>
         <li><a href="https://www.phila.gov/districtattorney/pages/default.aspx" target="_blank">Office of the District Attorney</a></li>
