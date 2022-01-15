@@ -11,6 +11,15 @@ $(document).click(function(){
   $(".drop-menu-item").hide();
 });
 
+
+/* allows clickable links in the collapsable dashboard tables.
+Without this, you cannot click on links as the tr takes the click action and expands the row but doesn't
+go to the definitions page. */
+$('.dao_table_link').click(function(e) { 
+  window.open($(this).attr("href"))
+  e.stopPropagation();
+})
+
 /* Clicks within the dropdown won't make
    it past the dropdown itself */
 $(".drop-menu-item").click(function(e){
@@ -117,3 +126,11 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+
+$(document).ready(function(){
+  if (!sessionStorage.getItem('shown-modal')){
+   $('#notices').modal('toggle'); 
+   sessionStorage.setItem('shown-modal', 'true');
+  }
+});
