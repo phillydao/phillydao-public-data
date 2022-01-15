@@ -7,6 +7,11 @@ $(document).ready(function(){
     e.preventDefault();
   });
   
+  if (!sessionStorage.getItem('shown-modal')){
+   $('#notices').modal('toggle'); 
+   sessionStorage.setItem('shown-modal', 'true');
+  }
+  
 $(document).click(function(){
   $(".drop-menu-item").hide();
 });
@@ -128,9 +133,3 @@ for (i = 0; i < coll.length; i++) {
 }
 
 
-$(document).ready(function(){
-  if (!sessionStorage.getItem('shown-modal')){
-   $('#notices').modal('toggle'); 
-   sessionStorage.setItem('shown-modal', 'true');
-  }
-});
