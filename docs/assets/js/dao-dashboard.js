@@ -51,7 +51,7 @@ document.body.appendChild( style );
 		}
 	});
 
-	$(".accordion-inner-toggle").click(function() {
+	$(".toggle_btn").click(function() {
 		$(this).parents(".accordion-description").slideUp("fast");
 		$(this).parents(".accordion-description").prevAll(".accordion-toggle").removeClass("opened").addClass("closed");
      });
@@ -85,6 +85,19 @@ document.body.appendChild( style );
 $('.dropdown-toggle.btn.btn-dao-menu').on("click", function(e){
     $('.dropdown-submenu a.test').next('ul').hide();
 });
+
+// function to copy text for COPY LINK button
+async function copy_link(text_var) {
+  const url_text = location.protocol+'//'+location.host+location.pathname.concat("#", text_var)
+  
+  try {
+    await navigator.clipboard.writeText(url_text);
+    alert("Copied url: ".concat(url_text))
+  } catch (err) {
+    console.error("Failed to copy", err)
+  }
+
+}
 
 // handle tag switching for collapsible table icons
 $(function(){
@@ -131,5 +144,3 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-
-
