@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>100 Shooting Review Report - PhilaDAO Data Dashboard</title>
+
+<script src="assets/header-attrs-2.7/header-attrs.js"></script>
+<script src="assets/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="assets/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
+<script src="assets/bs3compat-0.3.1/transition.js"></script>
+<script src="assets/bs3compat-0.3.1/tabs.js"></script>
+<script src="assets/bs3compat-0.3.1/bs3compat.js"></script>
+<script src="assets/navigation-1.1/tabsets.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141263577-1');
+</script>
+<script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
+<script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+<script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
+<script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
+<script src="https://use.fontawesome.com/42c4092025.js"></script>
+<link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
+<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+  <div class="mx-n3">
+    <div class="container-fluid px-0">
+      <div class="row dao_header vertical-align pb-2">
+        <div class="col-sm-12 col-md-3 text-sm-center float-start"><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
+        <div class="col-sm-12 col-md-6 offset-md-3 text-md-end text-sm-center dao_header_title float-end">Public Data Dashboard</div>
+      </div>
+      <div class = "dao_navbar border border-1 border-transparent">
+        <nav class = "navbar navbar-expand-lg navbar-dark bg-dark justify-content-center mb-0">
+        <div class="container-fluid">
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse order-last" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-fill w-100">
+              <li class="nav-item active"><a href="index.html" class="nav-link btn-dao-menu">Home</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle btn-dao-menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+                <div class="dropdown-menu btn-dao-menu dropdown-submenu bg-dark" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                    <ul class="dropdown-menu dao_menu drop-menu-item">
+                      <li><a href="Incidents_Report.html">Incidents</a></li>
+                      <li><a href="Arrest_Report.html">Arrests</a></li>
+                      <li><a href="Charge_Report.html">Charges</a></li>
+                      <li><a href="Bail_Report.html">Bail</a></li>
+                      <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+                      <li><a href="Case_Length_Report.html">Case Length</a></li>
+                      <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+                      <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+                      <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+                      <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+                      <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+                      <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                    <ul class="dropdown-menu dao_menu drop-menu-item">
+                        <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
+                        <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
+                        <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
+                        <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
+                        <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
+                        <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
+                        <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
+                        <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
+                        <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
+                        <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
+                        <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
+                        <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
+                    </ul>
+                  </div>  
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                      <ul class="dropdown-menu dao_menu drop-menu-item">
+                        <li><a href="Exonerations.html">Exonerations</a></li>
+                        <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+                        <li><a href="2020_Civil_Unrest.html">2020 Civil Unrest Cases</a></li>
+                      </ul>
+                  </div>
+                  <a href="Research.html#reports" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">DAO Publications</a>
+                </div>
+              </li>
+              <li class="nav-item"><a href="Research.html" class="nav-link btn-dao-menu">Research</a></li>
+              <li class="nav-item"><a href="https://phillyda.org/tag/datastories/" class="nav-link btn-dao-menu">Data Stories</a></li>
+              <li class="nav-item"><a href="download.html" class="nav-link btn-dao-menu">Downloads</a></li>
+              <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle btn-dao-menu" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <div class="dropdown-menu btn-dao-menu dropdown-submenu bg-dark" aria-labelledby="navbarDropdown">
+                  <!--<div class="dropdown-item btn-dao-menu px-6 py-7">-->
+                  <a href="about.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">About</a>
+                  <a href="definitions.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Definitions</a>
+                  <a href="limitations.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Limitations</a>
+                  <a href="howto.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">How to Use This Site</a>
+                  <a href="updates.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Updates</a>
+                </div> 
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+  </div>
+</div>  
+<div class="rmd-container-fluid rmd-container">
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">100 Shooting Review Report - PhilaDAO Data Dashboard</h1>
+
+</div>
+
+
+<div class="row dao_page_header">
+<div class="offset-md-1 h1">
+100 Shooting Review Committee Report
+</h1>
+</div>
+<p class="col-md-10 offset-md-1">
+In September of 2020, Philadelphia City Council passed two resolutions to authorize the Committee on Public Safety and the Special Committee on Gun Violence to hold hearings and request information about gun violence in Philadelphia. An interagency group consisting of the Philadelphia District Attorney’s Office, the Philadelphia Police Department, the Department of Public Health, the Defender Association, the First Judicial District, the City Controller’s Office, and the Managing Director’s Office was formed to explore the issue. In January of 2022, a report was released co-authored by several agencies responsive to Council’s request for information. The Executive Summary, Establishment of Committee, and Goals and Policy Considerations sections were co-written by the interagency working group. The Last 100 Shooting Data Analysis, Recommendations, and Appendix sections are excerpts from the larger 100 Shooting Review Committee report that were authored by the Philadelphia District Attorney’s Office. The full report, including parts authored by other agencies, is available on the <a href="Research.html#100-shooting-review-committee-report" target = "_blank">Research portal</a>, or as PDF via <a href="https://github.com/phillydao/phillydao-public-data/raw/main/docs/reports/100%20Shooting%20Review%20Committee%20Report.pdf" target="_blank">direct download</a>.
+</p>
+</div>
+<div>
+ 
+</div>
+<div id="report-toc" class="row dao-toc">
+<h1>
+Table of Contents
+</h1>
+<ul>
+<li><a href='#1-executive-summary'>1. Executive Summary</a>
+<ul>
+<li><a href='#key-findings'>Key Findings</a></li>
+<li><a href='#recommendations'>Recommendations</a></li>
+</ul></li>
+<li><a href='#2-establishment-committee'>2. Establishment of Committee</a></li>
+<li><a href='#3-last-100-shooting-data'>3. Last 100 Shooting Data Analysis</a>
+<ul>
+<li><a href='#analysis-result-by-dao'>Analysis Result by DAO</a>
+<ul>
+<li><a href='#improving-shooting-clearance-rates'>Improving shooting clearance rates</a></li>
+<li><a href='#improving-gun-case-outcomes'>Improving gun case outcomes</a></li>
+<li><a href='#deterrence-illegal-firearm-possession'>Deterrence of illegal firearm possession</a></li>
+<li><a href='#improving-victim-witness-appearance-rates'>Improving victim and witness appearance rates</a></li>
+</ul></li>
+</ul></li>
+<li><a href='#5-goals-policy-considerations'>5. Goals and Policy Considerations</a></li>
+<li><a href='#6-recommendations'>6. Recommendations</a>
+<ul>
+<li><a href='#recommendations-by-dao'>Recommendations by the DAO</a>
+<ul>
+<li><a href='#recimproving-shooting-clearance-rates'>Improving shooting clearance rates</a></li>
+<li><a href='#recimproving-gun-case-outcomes'>Improving gun case outcomes</a></li>
+<li><a href='#recimproving-victim-witness-appearance-rates'>Improving victim and witness appearance rates</a></li>
+<li><a href='#recpreventing-gun-violence-community'>Preventing gun violence in the community</a></li>
+</ul></li>
+</ul></li>
+<li><a href='#appendix-7-dao-supplemental-materials'>Appendix 7: DAO Supplemental Materials</a>
+<ul>
+<li><a href='#dao-1-maps-structural-racism'>DAO 1. Maps of Structural Racism in Philadelphia</a></li>
+<li><a href='#dao-2-data-sharing-data'>DAO 2. Data Sharing and Data Limitations</a>
+<ul>
+<li><a href='#data-sharing'>Data Sharing</a></li>
+<li><a href='#data-limitations'>Data Limitations</a></li>
+</ul></li>
+<li><a href='#dao-3-arrest-rates-shooting'>DAO 3. Arrest Rates in Shooting Cases</a></li>
+<li><a href='#dao-4-review-100-people'>DAO 4. Review of 100 People Most Recently Arrested for Shootings and All Shooting Arrestees Since 2015</a></li>
+<li><a href='#dao-5-unpredictive-nature-prior'>DAO 5. The (un)Predictive Nature of Prior Arrests and Demographics on Future Shootings</a></li>
+<li><a href='#dao-6-analysis-factors-influencing'>DAO 6. Analysis of Factors Influencing Fatal and Non-Fatal Shooting Clearance Rates</a></li>
+<li><a href='#dao-7-arrest-rates-shootings'>DAO 7. Arrest Rates and Shootings Per Month</a></li>
+<li><a href='#dao-8-time-to-arrest-cleared-fatal'>DAO 8. Time-to-Arrest in Cleared Fatal and Non-Fatal Shootings and Replication of Cook et al. (2019)</a></li>
+<li><a href='#dao-9-poster-gun-cases'>DAO 9. Poster on Gun Cases by Amaral, Loeffler, Ridgeway (2021)</a></li>
+<li><a href='#dao-10-dao-analysis-388'>DAO 10. DAO Analysis of 388 Dismissed or Withdrawn Illegal Gun Possession Cases</a></li>
+<li><a href='#dao-11-police-vehicle-pedestrian'>DAO 11. Police Vehicle and Pedestrian Stops</a></li>
+<li><a href='#dao-12-conviction-rates-open'>DAO 12. Conviction Rates and Open Shooting, Non-Fatal Shooting, and Illegal Gun Possession Cases During COVID-19</a></li>
+<li><a href='#dao-13-preliminary-hearing-case'>DAO 13. Preliminary Hearing and Case Outcomes for Weekly VUFA/NFS Case Review</a></li>
+<li><a href='#dao-14-examples-recent-gun'>DAO 14. Examples of Recent Gun Violence Task Force (GVTF) Investigations</a></li>
+<li><a href='#dao-15-gun-possession-arrests'>DAO 15. Gun Possession Arrests and Re-arrests for a Future Shooting</a></li>
+<li><a href='#dao-16-data-gun-sales'>DAO 16. Data on Gun Sales and “Crime Guns” Seized</a></li>
+<li><a href='#dao-17-enforcement-illegal-gun'>DAO 17. Enforcement of Illegal Gun Possession</a></li>
+<li><a href='#dao-18-poster-court-actor'>DAO 18. Poster on Court Actor Failures to Appear by Graef and Ouss (2021)</a></li>
+</ul></li>
+<li><a href='#footnotes'>Footnotes</a></li>
+</ul>
+</div>
+<div>
+ 
+</div>
+<h1 id='1-executive-summary'>
+<ol style="list-style-type: decimal">
+<li>Executive Summary
+</h1></li>
+</ol>
+<p>On September 10, 2020, City Council passed Resolution #200436, authorizing the Committee on Public Safety and the Special Committee on Gun Violence Prevention to hold hearings on the current state of gun violence in Philadelphia and to receive actionable recommendations to address the gun violence crisis. Specifically, the resolution along with subsequent Resolution #210703 and committee discussions sought information on and examination of (1) the circumstances shared by those accused of committing the last 100 shootings, (2) the source of firearms used to commit violent crime in the city, (3) any prior contacts the arrestee had with the criminal justice system, and (4) the trend of gun case disposition, bail and recidivism.</p>
+<p>This report reflects joint efforts by numerous city agencies to respond to the resolution, specifically by reviewing available data, studies, and evidence-based practices throughout the United States. The inter-agency collaboration has been collectively referred to as the Philadelphia Interagency Research and Public Safety Collaborative (PIRPSC) and includes the following organizations (those with a * were directly responsible for this report):</p>
+<ul>
+<li>Controller’s Office</li>
+<li>Defender Association of Philadelphia (“Defender Association”) *</li>
+<li>Department of Public Health (“DPH” or “PDPH”) *</li>
+<li>District Attorney’s Office (“DAO”) *</li>
+<li>First Judicial District (“FJD”)</li>
+<li>Managing Director’s Office (“MDO”) *</li>
+<li>PA Attorney General</li>
+<li>Police Department (“PPD”) *</li>
+</ul>
+<p>Firearm violence in Philadelphia is a public health crisis. In 2021, Philadelphia suffered a record number of fatal criminal shooting victims (501) and non-fatal criminal shooting victims (1,850)<a href='#footnote-1' id='foot-loc-1'><sup>1</sup></a>. Philadelphia has also experienced extraordinary recent increases in arrests for illegal firearm possession and crime guns recovered, while the Commonwealth has recorded record gun sales in 2020. Despite this crisis in gun violence, shooting arrest rates remain low, conviction rates in illegal gun possession cases have been declining since 2015, and conviction rates in shooting cases declined between 2015 and 2019 and increased modestly in 2020 and 2021.</p>
+<p>Firearm violence in Philadelphia is a racial justice crisis. Shootings disproportionately impact Black communities: in Philadelphia over 80% of shooting victims and 79% of arrestees have been Black since 2015. Both victims and arrestees overwhelmingly come from disadvantaged neighborhoods that are majority non-white, have high rates of poverty and unemployment, and less likely to have a high school degree or diploma. Endemic violence in these communities means that the vast majority of those arrested for gun violence have themselves been previously traumatized, often as a witness to previous violent acts; over 80% have previously accessed or been screened for behavioral health services through the City.</p>
+<p>Because the causes of gun violence are complex and varied, so are the solutions. Addressing the gun violence crisis requires a comprehensive strategy with elements of enforcement, intervention, and prevention to achieve both short-term and long-term reductions in gun crimes. Collaboration among city agencies, including law enforcement and non-law enforcement agencies is critical to successfully implement such a comprehensive strategy.</p>
+<p>Reviews of evidence-based practices, along with data analysis of local data, have helped us to come to key findings related to gun violence in Philadelphia and have informed recommendations to stem that violence. Readers are encouraged to read both the summary, below, as well as the report in its entirety to understand the context of our recommendations as well as the limitations in both our data and data analyses.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="key-findings">
+Key Findings
+</h2>
+<p><strong>General Findings on Shootings</strong></p>
+<ul>
+<li>Victims and arrestees for shootings tend to be male, people of color, 18-35 years old, and have a prior criminal history. Most arrestees have used non-criminal city services, with the most common being behavioral health services, and have previously witnessed violence.</li>
+<li>Arrestee contacts with city agencies (both criminal and non-criminal) often occur several years prior to being arrested in a shooting incident, with many contacts happening before the age of 18.</li>
+<li>Arguments were the most commonly identified shooting motive (50% of shootings). Drug trafficking/transactions was the second most common motivation (18%).</li>
+<li>When crime-guns are recovered, they tend to be semi-automatic pistols that were first purchased in Pennsylvania more than 3 years ago. Because guns may change ownership both legally and illegally, it is not possible to know where the most recent sale was made. Approximately 1 in 4 crime guns were originally purchased outside of Pennsylvania.</li>
+<li>Gun sales have skyrocketed in Pennsylvania in recent years. In 2000, fewer than 400,000 guns were sold in Pennsylvania; in 2020, over 1 million were sold.</li>
+</ul>
+<p><strong>Arrest</strong></p>
+<ul>
+<li>Clearance rates in shooting cases are low. For example, only 37% of fatal shootings and 18% of non-fatal shootings in 2020 have been cleared<a href='#footnote-2' id='foot-loc-2'><sup>2</sup></a>. Out of 9,042 shooting victims between 2015 and 2020 in Philadelphia, 6,910 have not been cleared.</li>
+<li>Arrests for non-fatal and fatal shootings tend to happen within the first few months. 75% of non-fatal shooting arrests occur within 61 days; 75% of fatal shooting arrests occur within 125 days of the shooting.</li>
+<li>Non-fatal shootings are more likely to be solved in months with fewer shootings, when the investigation is done by a PPD unit with more detectives, and where PPD’s Special Investigations Unit (SIU) investigated the incident.</li>
+<li>There has been a marked increase in the number of people arrested in Philadelphia for illegal gun possession (without the accusation of any additional offense)<a href='#footnote-3' id='foot-loc-3'><sup>3</sup></a>. That increase is largely due to a doubling in arrests for illegal possession of a firearm without a license since 2018. Arrests for possession of a firearm by a prohibited person have also increased during that time period, but more modestly.</li>
+<li>There is a large disparate impact in illegal gun possession arrests: approximately 4 in 5 people arrested for both primary types of illegal gun possession are Black. Additionally, much of the increase in illegal gun possession arrests have been of young people carrying firearms without a license.</li>
+</ul>
+<p><strong>Case Processing</strong></p>
+<ul>
+<li>Both the initial and final bail amount set by courts in illegal possession of firearms cases declined between 2015 and 2019, but increased in 2020 and 2021. As bail decreased along with the increase in the use of unsecured bail, the proportion of cases where bail was posted increased for both types of illegal firearm possession. In 2021, the median initial bail for illegal gun possession by a prohibited person was $150,000 and was $50,000 for illegal possession without a license<a href='#footnote-4' id='foot-loc-4'><sup>4</sup></a>.</li>
+<li>The rearrest rate for a new gun crime after being released from jail during the pendency of their original illegal possession of firearm case is relatively small, but rearrests may nonetheless be concerning. At the time of September 2021 when the analysis was conducted, the rearrest rate increased slightly from 8% in 2015 to 11% in 2019, but returned to 8% in 2020. The rearrest rate for a new violent gun crime remained steady at around 2-4% during the study period, while the rearrest rate for a new illegal gun possession offense rose from 3-4% in 2015-2018 to 6% in 2019-2020. 1% or fewer of the re-arrests were for shootings during the pendency of their original case.</li>
+<li>Conviction rates in shooting cases have fallen steadily since 2015, although had begun to rebound just before the pandemic. Between 2016 and 2020, the fatal shooting conviction rate dropped from 96% to 80%. It dropped less sharply, from 69% to 64%, in non-fatal shootings.</li>
+<li>Conviction rates in both types of illegal gun possession cases have fallen steadily since 2015 (from about 65% in 2015 to about 45% in 2020); notably, this declining trend is a long-term trend predating the pandemic, and the court closure alone will not explain this.</li>
+<li>The courts have had very limited capacity to try cases during the COVID-19 pandemic, especially cases needing civilian witnesses and juries. This has resulted in a large backlog of open cases in 2020 and 2021. For example, at the end of 2019 there were 1,685 pending cases involving fatal or non-fatal shootings or possession of a firearm by a prohibited person or without a license. In mid-December 2021, there were 4,571 open cases for those offenses, an increase of 171%.</li>
+<li>A review of nearly 400 dismissed and withdrawn illegal gun possession cases conducted by the DAO showed an increase in “constructive possession” cases among dismissed and withdrawn illegal gun possession cases in recent years. Constructive possession cases arise when no one physically possesses a gun illegally (e.g. the gun may be under a seat in a car full of people), making the cases harder to prove.</li>
+<li>Approximately half of illegal gun possession cases were dismissed because of the failure of the victim, witness, or police officer to appear for court proceedings. Improving victim, witness, and police officer court appearances is within the control of system actors.</li>
+<li>The DAO and PPD instituted a project to collaboratively review each new non-fatal shooting and gun possession by a prohibited person case in December 2020. Of the cases involved in that collaboration that received a preliminary hearing in its first year, 81% successfully passed the preliminary hearing stage, a significant improvement over rates prior to the collaboration<a href='#footnote-5' id='foot-loc-5'><sup>5</sup></a>.</li>
+</ul>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="recommendations">
+Recommendations
+</h2>
+<p>Based on the key findings, additional data analyses, and reviews of evidence-based practices, the agencies make the following recommendations. We note at the outset that all of these recommendations are not unanimous. Even among those with broader support, they will require continued collaboration between system and community stakeholders to ensure implementation in a manner that promotes public safety and fairness. Agencies outline their specific positions on how best to implement these recommendations in the full report. We encourage readers to review each agencies’ sections as there is diversity of opinion between stakeholders as to implementation strategies. Note that endorsement and support are different from prioritization. Many of the recommendations will require funding, and discussions on prioritization under budgetary constraints also need to be held.</p>
+<p><strong>Enforcement</strong><a href='#footnote-6' id='foot-loc-6'><sup>6</sup></a></p>
+<ol style="list-style-type: decimal">
+<li>Incorporate the voices of people with lived experience in developing effective enforcement strategies tailored to their neighborhoods.</li>
+<li>Improve arrest rates in shooting cases by creating a centralized non-fatal shooting investigation team within the PPD and further investing in better forensic technology (e.g., expanding the staffing and space available to PPD’s office of forensic services, investments in technology to test ballistic evidence for DNA, and investment in equipment to conduct forensic cell phone analysis).</li>
+<li>Continue the weekly collaborative review of non-fatal and illegal firearm possession cases by the PPD and DAO; consider expanding it and including other local, state, and federal justice system actors to monitor the trend of gun violence and case dispositions throughout the lifecycle of the cases. Continuous monitoring along with collaborative reviews help address investigative shortcomings and improve the overall law enforcement practices</li>
+<li>Establish dedicated courtrooms for illegal gun possession cases at the Common Pleas Courts so as to streamline the overall process, minimize the risk of re-arrests, improve case processing time, increase education on gun safety, and strengthen individualized case assessment. Having dedicated resources among stakeholders (courts, defenses, and prosecution) will help thoroughly assess individual cases and their risk to determine the best treatment that may range from diversion to incarceration, while simultaneously reducing the time from arrest to disposition. Notably, dedicated courtrooms for illegal gun possession cases already exist at the Municipal Court level.</li>
+<li>Reduce failures of victims and witnesses to appear in criminal cases by providing more support to victims and witnesses (transportation, better follow up), investing in technology to allow for both court-reminder texting to victims and witnesses and provision of transportation vouchers, establishing stronger accountability for police officer failures to appear, and striving to build trust in the overall criminal justice system.</li>
+<li>Invest in victim and witness relocation, by providing more funds for relocation, expanding eligibility for relocation, and improving relocation outcomes by allowing people to be moved further from their homes and into neighborhoods with less violence.</li>
+<li>Advocate for legislation to increase the amount of information that needs to be collected from gun purchasers, to further deter “straw purchasing.”. And request state and federal law enforcement partners increase inspections of federally licensed gun dealers who have been found to be the original source of guns ultimately used in crimes.</li>
+<li>Implement Data-Driven Approaches to Crime and Traffic Safety (DDACTS) that can reduce not only violent crimes but also traffic crashes, when/where these two types of hotspots overlap, through data analysis, high visibility patrols, and publicity strategies. Operational guides of DDACTS emphasize its preventive focus and community partnerships, and DDACTS can support the city’s Vision Zero project.</li>
+</ol>
+<p><strong>Intervention</strong></p>
+<ol style="list-style-type: decimal">
+<li>Include community voices in continued collaboration between city and community stakeholders to develop and implement strategies that build trust and public confidence in local government.</li>
+<li>Prioritize 311 responses and other city services in crime hot spots. Research suggests that addressing environmental factors (e.g., cleaning up trash, fixing and improving street lighting) will result in a significant reduction in violent crimes. City departments’ efforts can be tied to performance-based budgeting for environmental improvements.</li>
+<li>Invest in interventions focused on those of highest vulnerability, such as Cure Violence, the READI model, or Advance Peace. Although each program is different, they all hold the potential to lift those most vulnerable from the cycle of violence and connect them to necessary trauma healing, employment, and support. Collectively, they actively engage at-risk communities and individuals through credible messengers, provision of support services such as cognitive behavioral therapy and job training/placement, paid mentoring, and healing of trauma.</li>
+<li>Develop more victim-centered systems and invest in robust, community-based, culturally competent victim services.</li>
+<li>Advocate on the state level to expand availability of state and federal funding for Hospital-Based Violence Intervention Programs (HVIP), which have been proven to significantly lower the risk of violent reinjury or future violence perpetration after hospital discharge.</li>
+<li>Invest in technologies that can help to coordinate services for victims and witnesses through community-based organizations, help victims to fill out paperwork to receive victim compensation money.</li>
+</ol>
+<p><strong>Prevention</strong></p>
+<ol style="list-style-type: decimal">
+<li>Incorporate the voices of those with lived experience in any prevention efforts.</li>
+<li>Increase positive interactions between community members and police officers; this may range from positive interactions during officers’ day-to-day patrols (e.g., mere encounters and business checks) to formalized home visits as well as community outreach/meetings.</li>
+<li>Dedicate investment of resources in neighborhoods where chronic disinvestment has crippled community supports, health, and public safety, such as in historically “red-lined” communities and those facing the most violence. These investments should be focused on improving neighborhoods and can include such evidence-based strategies as greening vacant lots, improving street lighting, planting trees, better street cleaning and trash pickup, repairing occupied homes, and remediating abandoned houses. It should also include prioritization of 311 responses to these neighborhoods.</li>
+<li>Expand foot patrols with emphasis on community engagement and positive interactions, correct the current officer shortage through increased hiring, and invest in cell phones for police officers. Research in Philadelphia found that the foot patrols resulted in a significant reduction in violent crimes, when implemented properly with the right amount of resources.</li>
+<li>Prioritize justice system involved people residing in communities with high levels of violence for directed city support services such as eviction protection, homeownership supports (repairs, improvements, purchasing), housing, substance abuse or mental health treatment, and workforce development.</li>
+<li>Create a fund modeled on the Chicago Fund for Safe and Peaceful Communities, to increase private and institutional funding supporting Philadelphia-based community organizations that work to prevent and intervene in gun violence.</li>
+<li>Commit resources to transparently evaluate all violence prevention and intervention efforts and outline plans to expand and scale those that work and end those that do not.</li>
+<li>Increase trust between law enforcement and community members by increasing non-enforcement interactions with police (perhaps through increased community-based policing and foot patrols), reducing law enforcement responses to minor events that currently lead to misdemeanor arrests/charges, and reducing traffic stops for minor code enforcement (e.g., broken tail lights).</li>
+<li>Invest in and expand the DAO’s collaborative intelligence, investigative, community-centered, and victim-centered efforts, all of which are aimed at effective prosecution of gun violence, intervention in communities that suffer from gun violence, and prevention in underserved and traumatized communities.</li>
+<li>Continue commitment to interagency collaboration bridging law enforcement, public health, and other key stakeholders to identify innovative opportunities for intervention and prevention.</li>
+<li>Direct all relevant city and court-related agencies to collaborate with PIRPSC both by participating in meetings and sharing data. The ability to identify at-risk individuals and neighborhoods to provide supportive services in order to prevent future violence is greatly enhanced with additional relevant data.</li>
+<li>Support PIRPSC in expanding its review of gun violence information to include a large-scale longitudinal study, with expanded data sources including qualitative interviews, comparing victims and perpetrators of gun violence and their interaction with city services to other similarly situated residents of Philadelphia.</li>
+<li>Prioritize evidence-based strategies and tactics that reduce gun-violence. Pilot and rigorously evaluate innovative programs, expanding those that work and ending those that do not.</li>
+</ol>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h1 id='2-establishment-committee'>
+<ol start="2" style="list-style-type: decimal">
+<li>Establishment of Committee
+</h1></li>
+</ol>
+<p>In September 2020, Councilmember Jones, joined by Council President Clarke, and Councilmembers Johnson and Gauthier, sponsored Resolution #200436 to address increased gun violence, homicide, and access to firearms in the city of Philadelphia. The resolution, along with subsequent Resolution #210703 authorized the Committee on Public Safety and the Special Committee on Gun Violence to hold hearings to (1) review and examine the circumstances shared by those accused of committing the last 100 shootings, (2) explore the source of firearms used to commit violent crime in the city, (3) evaluate any prior contacts the arrestee had with the criminal justice system, and (4) the trend of gun case disposition, bail and recidivism. The resolutions also recognized the need for criminal justice system stakeholders and community stakeholders to collaborate closely to stem the increases in gun violence.</p>
+<p>In response to Council’s call for increased collaboration, a group composed of the Mayor’s Managing Director’s, Controller’s and District Attorney’s Offices, the Department of Public Health, Philadelphia Police Department, First Judicial District, and the Defender Association of Philadelphia was created. We now work together as the Philadelphia Interagency Research and Public Safety Collaborative (PIRPSC), helping our agencies share data, emergent research, and associated ideas. PIRPSC would like to thank the Controller’s Office and First Judicial District for their analysis and discussion during the preparation of this report.</p>
+<p>The working group met consistently since September 2020 to explore and report its findings related to the research questions initially posed by City Council. Following initial reports, team members expanded the research agenda to investigate gun case outcomes, shooting incident clearance rates, and witness appearance rates. While focusing on criminal case process improvement, the working group also analyzed arrestees’ prior contacts with city services to identify missed intervention opportunities, researched national best practices and potential partnerships with academics, and worked closely with those with lived experience to recommend short and long term strategies to reduce gun violence in the city.</p>
+<p>The group prepared and presented materials to City Council at several special hearings and worked collaboratively to summarize the findings and recommendations from the last two years in December 2021.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h1 id='3-last-100-shooting-data'>
+<ol start="3" style="list-style-type: decimal">
+<li>Last 100 Shooting Data Analysis
+</h1></li>
+</ol>
+<h2 id="analysis-result-by-dao">
+Analysis Result by DAO
+</h2>
+<p>The urgency of Philadelphia’s crisis of fatal and non-fatal shootings will not be met by looking away from shootings. As noted above, City Council has led a valuable “100 Shooter Review,” a title that makes clear what we already know: that shootings are the primary issue. Our efforts must be focused on preventing shootings and holding people who commit shootings accountable, and we should not accept arrests for gun possession as a substitute.<a href='#footnote-14' id='foot-loc-14'><sup>14</sup></a></p>
+<p>Above all else, real solutions require that prevention be addressed. The pandemic itself proves, both locally and nationally, that when society shuts down and the moderate prevention that currently exists is stripped away from young people–e.g., no organized sports, closed classrooms, closed houses of faith and associated youth programming, closed recreation centers and swimming pools, closed summer camps and job programs, all leading to increased isolation and disrespectful use of social media–gun violence can increase. The pandemic also proves that when law enforcement and courts are significantly curtailed, intelligent enforcement may suffer and gun violence can increase. Intelligent, modern enforcement primarily directed at fatal and non-fatal shootings and secondarily directed at illegal gun possession by people who appear to be driving gun violence is also essential.</p>
+<p>Technology can lighten the burden of investigating and prosecuting fatal and non-fatal shootings. All of government must work together to meaningfully invest in the preventative pro-social resources that atrophied during the pandemic, and in forensic science (both DNA and cell phone forensics) capable of solving massive numbers of new and old cases that remain unsolved. Other improvements in investigation and collaboration among governmental actors are also essential, as the recommendations below indicate.</p>
+<p>Gun possession arrests that involve no violent acts present a secondary and important frontier in curbing gun violence, but must be targeted to distinguish between drivers of gun violence who possess firearms illegally and otherwise law-abiding people who are not involved in gun violence. On the one hand, the cases of people charged with 6105 (prohibited person in possession of a firearm) are carefully scrutinized to do individual justice, which will usually look like vigorous prosecution. On the other hand, another criminal charge that applies to people who have no felony conviction (carrying a gun in Philadelphia without having obtained a permit in Philadelphia) is only a felony in Philadelphia. The exact same offense in every other county in Pennsylvania (carrying a firearm without a permit to carry) is only a misdemeanor offense. In an equitable system, a permit to carry would be required everywhere in the Commonwealth of Pennsylvania or would be required nowhere. But the legislature’s decision to more punitively criminalize and subject to more collateral consequences only the residents of its most diverse city is inequitable and obviously racist. That kind of selective prosecution against Pennsylvania’s most diverse city has its purpose—the money and power upstate legislatures’ jurisdictions obtain from incarcerating Philadelphians in their prisons (Remster and Kramer, 2019).<a href='#footnote-15' id='foot-loc-15'><sup>15</sup></a> Justice and common sense gun regulation do not look like a commerce in the bodies of Philadelphians held in upstate prisons for doing what is not even a crime in the jurisdictions where they are held.</p>
+<p>The role of the District Attorney’s Office is to vigorously, justly, and accurately prosecute people who commit serious and violent crimes. Gun violence has been the most urgent public safety crisis in Philadelphia for decades; as such, the DAO considers the most serious, violent offenses such as homicides, rape, and gun violence our top prosecutorial priority. However, local law enforcement faces numerous challenges in our efforts to reduce shootings: namely, a lack of success in identifying shooters and removing them from communities and decades-long lack of sufficient PPD crime scene personnel and the capacity for widespread use of forensic science to solve crimes.</p>
+<p>As part of our role in the 100 Shooting Review Committee, we identify a need to more intensely focus law enforcement efforts on accurately identifying and removing shooters from the streets, and conclude that the current intense focus on illegal gun possession without a license is having no effect on the gun violence crisis and distracts from successfully investigating shootings.<a href='#footnote-16' id='foot-loc-16'><sup>16</sup></a> To reduce and solve shootings we must invest heavily in areas that have historically been neglected in Philadelphia, including through preventative pro-social programming; for shootings that are not prevented, we must invest in forensic science so we have more evidence that can be used to solve shootings and to build overwhelming cases that will result in successful prosecutions; more effective alternatives to criminogenic jails for people who come into contact with the system; and scaling up resources and amenities in communities that have experienced disinvestment for so long, and in community-based organizations working in the places and with the people most impacted by gun violence and our systemic failure to address it adequately or holistically.</p>
+<p>The DAO conducted a range of analyses and research to answer the central question posed by City Council’s Special Committee on Gun Violence Prevention: “How can we use the data available to the city to reduce shootings?” Below we present findings relevant to improving shooting incident clearance rates and improving the strength of cases when a shooting results in arrest; improving gun case outcomes; deterrence of illegal firearm possession; and improving witness appearance rates. These results are used to inform the Goals and Policy Considerations and Recommendations in subsequent sections. In addition, the DAO makes recommendations regarding short-term investments in community-driven solutions for prevention, and upstream, long-term investments in communities most impacted by gun violence for sustainable reduction. Please <a href="#dao-2-data-sharing-data">see Appendix 7: DAO 2</a> for an overview of Data Sharing and Limitations, and we encourage reviewing the supplemental material referenced throughout the DAO analysis.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h3 id="improving-shooting-clearance-rates">
+Improving shooting clearance rates
+</h3>
+<p>When there is a shooting, we must find those responsible and hold them accountable. If we are unable to do this, we will be unable to stem the tide of gun violence. Unfortunately, the arrest rate in shootings has been very low in recent years in Philadelphia, with a marked drop as the number of shootings has increased. This focus on arrest clearance rates in homicide and non-fatal shootings is both local<a href='#footnote-17' id='foot-loc-17'><sup>17</sup></a> and national.<a href='#footnote-18' id='foot-loc-18'><sup>18</sup></a> Briefly, clearance rates are defined by the Federal Bureau of Investigations (FBI) as the number of resolved cases in a year divided by the number of incidents in the same year (or month, quarter, etc). In this analysis the DAO uses arrest rates: the proportion of incidents where an arrest has been made, regardless of when the arrest was made (See DATA Story on “Clearing up clearance rates” for more details).<a href='#footnote-19' id='foot-loc-19'><sup>19</sup></a></p>
+<p>In recent years, four out of five non-fatal shootings in Philadelphia went unsolved (<a href="#dao-3-arrest-rates-shooting">see Appendix 7: DAO 3</a>). Out of 11,306 shootings in Philadelphia since 2015, 8,918 did not result in arrest, including 7,483 shootings in which the victim or survivor was Black (see graphic below). Police make arrests more frequently in fatal shootings, but improvement in fatal shooting investigations is needed as well: two thirds of fatal shootings in Philadelphia are not followed by an arrest (<a href="#dao-3-arrest-rates-shooting">see Appendix 7: DAO 3</a>). It is imperative that we improve the clearance rate in both fatal and non-fatal shootings; this should be our first priority as a city. As 2021 draws to a close, there have been arrests made in only 17% of non-fatal shootings and 28% of fatal shootings that occurred this year.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/gv_arrest_rates.jpg" alt="" />
+<p class="caption">Chart showing that gun violence and low shooting arrest rates disproportionately affect communities of color</p>
+</div>
+<p>Throughout this collaboration the PPD and DAO have jointly reviewed information about shootings and arrests to consider factors that impact clearance rates in Philadelphia. We began by systematically reviewing the criminal histories of 100 people most recently arrested for shootings in Philadelphia, as of September 2020. We later expanded our review to all shooting arrestees since 2015. We found the groups were comparable across basic demographic and criminal legal factors, so we focused much of our analysis on the larger group. As of December 4, 2021, 2,249 people had been arrested for shootings in Philadelphia since 2015: 93% were male, 70% were under the age of 30, 76% had prior arrests, 51% had 3 or more prior arrests, 52% had a prior felony charge, 40% had a prior felony conviction, and 20% had pending court cases at the time of arrest. The most frequent prior charges include drug sales and drug possession, assaults, theft, robbery, and firearm possession without a license (<a href="#dao-4-review-100-people">see Appendix 7: DAO 4</a>). For context, the prior charge histories of the 2,249 people arrested for shootings in Philadelphia since 2015 reflect the most common offenses people are arrested for in Philadelphia more broadly, including those never arrested for a shooting.</p>
+<p>Although it may be appealing to consider building a predictive model to forecast future shooters and using it to incapacitate people who fit that model, the evidence does not support the idea that prior arrest patterns of people arrested for shootings in Philadelphia can be used to accurately forecast future shooters. There are several problems with such a model. First, due to very low arrest rates, any model would be based only on the small number of people who are actually arrested for shootings. This means that the model reflects on a small subset of people who may be completely different from the majority of shooting perpetrators. For example, it may be that law enforcement can more easily clear a case against a shooter who has a prior criminal record due to the availability of arrest photographs, contact information, and knowledge of specific prior crimes. If so, shooters who have no prior criminal record are likely under-represented among this group. Second, it would cast a very broad net: thousands of people arrested each year for a number of crimes match the most common characteristics of shooting arrestees (<a href="#dao-5-unpredictive-nature-prior">see Appendix 7: DAO 5</a>). Although we could potentially prevent dozens of future shootings by jailing thousands of people, holding so many people who would never engage in a shooting to prevent the actions of a few raises grave moral and constitutional concerns. It would also require funding a massive increase in mass incarceration that would drain funding for prevention or smart enforcement (e.g., forensics) that is likely far more effective in reducing future gun violence than additional incarceration, but has never been attempted in Philadelphia. By contrast, such models could help identify a broad group of people who might benefit from additional support that would help prevent future system contact. Third, recent high-quality Gun Violence Task Force (GVTF) investigations have produced strong cases against individuals who had no prior record or had not been arrested for several years—highlighting the limitations of a predictive model based on who is arrested and reinforcing the importance of robust investigative work and investment in forensics to improve clearance rates and strengthen cases when there is an arrest.</p>
+<p>We also researched the social and system factors that impact shooting clearance rates. Using logistic regression, we considered how victim, incident, and police characteristics relate to clearance rates in fatal and non-fatal shootings. For non-fatal shootings, we found that investigations by units with more detectives were significantly more likely (α = 0.05) to be cleared than shootings investigated by units with fewer detectives; that shootings where the PPD Special Investigations Unit (SIU) responded were significantly more likely to be cleared than shootings where line detectives responded; and shootings with female victims were significantly more likely to be cleared than shootings with male victims. For fatal shootings, we found that shootings with white victims were significantly more likely to be cleared than shootings with Black or Latinx victims; that shootings with child victims (13 or younger) were significantly more likely to be cleared than shootings with older victims; and that shootings that occurred when it was light outside were significantly more likely to be cleared than shootings that occurred when it was dark outside (<a href="#dao-6-analysis-factors-influencing">see Appendix 7: DAO 6</a>).</p>
+<p>We also found that the number of non-fatal shootings that lead to arrest remained relatively flat regardless of the number of shootings in a month: in months with fewer shootings, the arrest rate was higher, and in months with high numbers of shootings, the arrest rate was lower (<a href="#dao-7-arrest-rates-shootings">see Appendix 7: DAO 7</a>). This suggests that capacity constraints in investigating non-fatal shootings hinder arrests: if there is a maximum number of shooting cases that can be investigated by the PPD at any point in time, as shootings rise, the arrest rate falls.</p>
+<p>Finally, we used Philadelphia data to replicate an analysis done in Boston on how long it takes to solve shooting cases (Cook, Braga, Turchan, Barao, 2019).<a href='#footnote-20' id='foot-loc-20'><sup>20</sup></a> We found that the majority of arrests happen within the first few months following a shooting; for non-fatal shootings, 75% of arrests occur within 61 days, while for fatal shootings, 75% of arrests occur within 125 days (<a href="#dao-8-time-to-arrest-cleared-fatal">see Appendix 7: DAO 8</a>). In Boston, researchers found that the difference in clearance rates between fatal and non-fatal shootings to be “primarily a result of sustained investigative effort in homicide cases made after the first 2 days” (Cook, Braga, Turchan, Barao, 2019).</p>
+<p>Together, these findings suggest organizational changes within the PPD could improve clearance rates. By increasing the number of specialized investigators available to handle non-fatal shooting cases and equipping them with greater crime scene and modern forensic capacity, the police will be able to solve more shootings (see Recommendations).</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h3 id="improving-gun-case-outcomes">
+Improving gun case outcomes
+</h3>
+<p>After an arrest is made, DAO prosecutors fully vet incident information about defendants, victims, witnesses, and evidence from police, and seek a conviction where the evidence is sufficient to show beyond a reasonable doubt that the individual arrested perpetrated a specific shooting. Although the DAO has consistently charged nearly every individual arrested by the police for a shooting,<a href='#footnote-21' id='foot-loc-21'><sup>21</sup></a> in recent years, the withdrawal and dismissal rates in a broad range of gun cases has increased while the conviction rate has decreased (Amaral, Loeffler, Ridgeway, 2021; <a href="#dao-9-poster-gun-cases">see Appendix 7: DAO 9</a>).<a href='#footnote-22' id='foot-loc-22'><sup>22</sup></a> In response, the DAO undertook a number of efforts to improve outcomes in gun and shooting cases, including combining the Homicide and Non-Fatal Shootings Units<a href='#footnote-23' id='foot-loc-23'><sup>23</sup></a> and working with the courts to prioritize prosecutions for non-fatal shootings.<a href='#footnote-24' id='foot-loc-24'><sup>24</sup></a> By the first quarter of 2020, which was immediately before the COVID pandemic effectively shut down the Philadelphia courts, the DAO’s conviction rate improved to 87% for fatal shooting cases and 78% for non-fatal shooting cases.</p>
+<p>Following a DAO preliminary data analysis document the increase in withdrawals and dismissals in cases involving gun possession (but excluding shooting cases), the DAO undertook an intensive case file review of 400 randomly selected dismissed and withdrawn gun possession cases in summer 2020 to identify common reasons for those outcomes, and to find ways to improve gun possession cases. One of our main findings was an increase in “constructive possession” cases among dismissed and withdrawn cases. These are cases in which a recovered firearm was not actually physically possessed by the defendant at time of arrest (<a href="#dao-10-dao-analysis-388">see Appendix 7: DAO 10</a>). A constructive possession case might involve a gun found in the trunk of a car occupied by multiple passengers or a gun found under a car seat within reach of multiple passengers, none of whom own the car. It is the prosecutor’s burden to prove beyond a reasonable doubt that anyone charged both knew where the gun was and intended to exercise control over it. Merely proximity to a gun or knowing of its existence is legally insufficient to obtain a conviction. Constructive possession cases are far more challenging to prosecute than cases where a firearm is recovered from someone’s body.</p>
+<p>Such evidentiary issues present challenges in the legal system, and cases often stem from car stops—where legal standards for searches of private property apply. If police illegally search a person or place for a gun, the gun recovered will be excluded at trial, rendering a conviction for the gun impossible in nearly every case. It is much easier to prove who possessed a gun when that gun is found on someone’s person during a pedestrian stop, as compared to a gun recovered from the trunk of a car stopped with multiple occupants. The increase in car stops, where the person connected to the recovered gun is less clear, can be seen in data released as part of the city’s “stop and frisk” litigation (<em>Bailey, et al. v. City of Philadelphia, et al.</em>, 2011).<a href='#footnote-25' id='foot-loc-25'><sup>25</sup></a> That data shows that while the number of pedestrian stops conducted by police has steadily decreased from 175,000 in 2014 to 75,000 in 2019 (i.e.,pre-COVID), the number of vehicle stops has sharply increased, from 193,000 in 2014 to 389,000 in 2019. Overall, since 2014, Philadelphia Police have conducted 791,000 pedestrian stops and 1,929,000 vehicle stops (<a href="#dao-11-police-vehicle-pedestrian">see Appendix 7: DAO 11</a>).</p>
+<p>Three recent court rulings have also changed both the policing and prosecution of gun possession cases, making them more challenging: <em>Commonwealth v. Hicks</em> (2019)<a href='#footnote-26' id='foot-loc-26'><sup>26</sup></a> found that the police were not allowed to stop individuals merely because they possessed a concealed firearm and showed it to another person while police watched; <em>Commonwealth v. Perfetto</em> (2019)<a href='#footnote-27' id='foot-loc-27'><sup>27</sup></a> required that traffic cases and criminal cases stemming from those traffic cases must be tried together or risk the criminal case being dismissed; and <em>Alexander v. Commonwealth</em> (2020)<a href='#footnote-28' id='foot-loc-28'><sup>28</sup></a> required that the police seek a warrant to search a car during a car stop, rather than be allowed to search with mere suspicion of contraband. All three of these opinions apply retroactively and impact the growing backlog of active cases, and have resulted in a higher proportion of cases that have not resolved with a conviction. Responsive changes in police and prosecutor practice are needed and are being implemented in order to ensure cases are opened with evidence that will be admissible at trial.</p>
+<p>In addition, unavoidable court closures due to COVID have very significantly hampered our ability to prosecute cases in a timely fashion. As a result, few cases have been resolved overall, and only cases that could be resolved quickly and without need for witnesses were resolved—leading to an unusually high number of dismissals as compared to convictions. To illustrate this, at the end of 2019, there were 182 pending fatal shooting cases and 261 non-fatal shooting cases open in the courts. As of mid-December 2021, there were 460 fatal shooting and 650 non-fatal shooting cases open. Firearm possession by a prohibited person increased from 615 to 1,177 over the same time period, while firearm possession without a license cases more than tripled, from 628 to 2,284 (<a href="#dao-12-conviction-rates-open">see Appendix 7: DAO 12</a>). With these limitations, less serious firearm possession cases are disposed of more quickly and efficiently, while more serious cases awaiting trial or plea negotiation with defense counsel take longer to complete. As courts resume, the percentage of cases resolved with a conviction should return to pre-COVID levels as the case backlog is addressed. Perhaps most importantly, the unavoidable reduction in available trial rooms for jury trials and bench trials have disincentivized defendants, especially those who are out of custody or face potentially lengthy sentences, to resolve their cases in the near future.</p>
+<p>In Summer 2020 the DAO established a DAO Intelligence Unit to improve the collection and dissemination of information with DAO Investigative and Trial Units, the PPD, and other local, state, and federal law enforcement partners. The Intelligence Unit expanded in January 2021, and now has an Intelligence Analyst stationed at the Delaware Valley Information Center (DVIC), helping the Intelligence Unit function as a centralized point-of-contact for receiving intelligence from the PPD, improving collaboration and communication. The Intelligence Unit maintains, organizes, and disseminates intelligence information collected by the DAO and law enforcement partners to ADAs, and also works closely with the PPD to identify drivers of violence crime and to prioritize these drivers of violence crime for arrest, charging, and prosecution.</p>
+<p>To strengthen cases in light of the increase in firearms recovered from vehicle stops and higher legal standards to search, in December 2020 the DAO and PPD began meeting weekly to review VUFA (or gun possession) and non-fatal shooting arrests made the previous week. Led by the Deputy Commissioner of Investigations in the PPD and the Director of Intelligence in the DAO, this collaboration includes PPD Detectives, Assistant District Attorneys (ADAs) who have reviewed the cases, ADAs from the Law Division who provide guidance on changing legal standards, and data personnel to track progress. The weekly VUFA and non-fatal shooting case review proactively focuses on improving cases at an early stage by creating a dialogue among members of the DAO and PPD, helping to identify evidentiary issues sooner to bring the strongest cases possible. Individual cases as well as case trends are improved through systematizing discussions of evidentiary needs and by offering guidance on the implications of changes in the law for police practice, training, and policy. Over 2,300 cases were reviewed between December 2020 and 2021, and the proportion of cases that passed the preliminary hearing improved following the implementation of the collaborative review process: of the 1615 cases that received a preliminary hearing, 81% were successfully held for trial and are awaiting final disposition (<a href="#dao-13-preliminary-hearing-case">see Appendix 7: DAO 13</a>). We reduce harm to the community and enhance system efficiency by identifying and correcting evidentiary issues early and strengthening the cases we do bring so they are more likely to result in conviction.</p>
+<p>Just as the weekly VUFA/non-fatal shooting review shows that outcomes are improved through collaboration, the Gun Violence Task Force (GVTF) in the Philadelphia DAO shows the importance of conducting high-quality, often longer-term and collaborative investigations that generate strong cases. One strategy the GVTF uses is to identify group conflicts, and then find cold cases associated with those conflicts. Utilizing social media, electronic forensic evidence, and the Grand Jury process to facilitate witness participation, the GVTF engages in targeted prosecution of people who are driving gun violence, often seeking high bail or no bail eligibility following an arrest. See, for example, recent investigations that produced strong cases, including against individuals who had no prior record or had not been arrested for several years (<a href="#dao-14-examples-recent-gun">see Appendix 7: DAO 14</a>).</p>
+<p>Taken together, a range of factors have produced a long-term trend where more gun cases, particularly those involving charges of gun possession, are being withdrawn or dismissed. We have been working to address this by implementing institutional changes in the DAO and developing collaborative processes and practices with our partners, especially the PPD. These include combining the DAO’s Homicide Unit with Non-Fatal Shootings, creating the DAO Intelligence Unit, expanding the GVTF in the DAO, and developing the non-fatal shooting track in partnership with the courts and the VUFA/NFS review process with the PPD, among other initiatives.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h3 id="deterrence-illegal-firearm-possession">
+Deterrence of illegal firearm possession
+</h3>
+<p>One frequently cited way to reduce shootings is to enhance enforcement against illegal possession of firearms<a href='#footnote-29' id='foot-loc-29'><sup>29</sup></a>—in spite of little research supporting the approach (Peterson and Bushway, 2020).<a href='#footnote-30' id='foot-loc-30'><sup>30</sup></a> Because of the ease in accessing guns and the relative threat that some feel if they do not carry a gun, we do not believe that arresting people and convicting them for illegal gun possession is a viable strategy to reduce shootings. Some people who illegally possess firearms in Philadelphia present a real danger to the community and merit vigorous prosecution to conviction and incarceration. Others are basically law-abiding people who have not obtained a license. There is a huge difference between these two groups and public safety requires that they be held accountable in different ways. It is at best ineffective and at worst counterproductive for the police to treat these groups the same and focus on enforcement of firearm possession laws rather than focus on shootings. More resources are needed to deter shootings through police presence in communities, through a higher capacity in forensics, and more detectives to investigate and solve shootings when they occur. Our analysis of the data also finds that—contrary to recent statements from some city officials and in spite of the obvious point that guns are used in shootings—very few people arrested for illegal gun possession are later arrested for committing a shooting (<a href="#dao-15-gun-possession-arrests">see Appendix 7: DAO 15</a>).</p>
+<p>To deter someone from an act through enforcement, one has to ensure that the punishment for that act is 1) certain and 2) swift. Our experience in Pennsylvania and the U.S.—a state that has outpaced national incarceration rates and has among the most severe sentences in a country with the highest incarceration rate and longest sentences in the world—is that severe punishment has not been successful in deterring people from carrying guns or shooting people. With respect to gun possession, deterrence requires that the state sanctions for illegal gun possession are more certain and swift than the risk of not carrying a gun.<a href='#footnote-31' id='foot-loc-31'><sup>31</sup></a> In Philadelphia, this presents a challenge: we are a City and Commonwealth awash in guns<a href='#footnote-32' id='foot-loc-32'><sup>32</sup></a> and with a high number of shootings and low clearance rates, people do not feel protected by the police or other government agencies or local resources. These two factors create a situation where some people view the risk of being caught by police with an illegal gun as outweighed by the risk of being caught on the street without one (Sierra-Arévalo, 2016; Fontaine, La Vigne, Leitson, Erondu, Okeke, Dwivedi, 2018).<a href='#footnote-33' id='foot-loc-33'><sup>33</sup></a></p>
+<p>The number of guns in the U.S., Pennsylvania, and Philadelphia is overwhelming, in great part because of weak state and federal regulations that make it impossible to know exactly how many guns are in a community and who is in possession of them. There were more than 12.9 million guns legally sold or transferred in Pennsylvania between 1999 and 2020, an average of over 1,600 per day; 266,186 were sold in Philadelphia (33 per day), and 1,824,614 in Philadelphia, Bucks, Montgomery, Chester, and Delaware counties combined (227 per day) (Pennsylvania State Police, n.d.).<a href='#footnote-34' id='foot-loc-34'><sup>34</sup></a> From 1999 through 2019, only 165,717 guns were seized by law enforcement in Pennsylvania, fewer than 22 per day, with the PPD accounting for more than half (97,905, or 12 per day) (Attorney General’s Office, n.d.).<a href='#footnote-35' id='foot-loc-35'><sup>35</sup></a> That means that, each day in Philadelphia over the last 20 years, for every 3 guns legally bought or sold (i.e., in circulation that we know about), roughly 1 “crime gun” was seized (i.e., removed from circulation). Compounding the problem, in Philadelphia, only 1 in 4 recovered “crime guns” were purchased in Philadelphia (Attorney General’s Office, n.d.), and only half of crime guns seized by law enforcement statewide were purchased in Pennsylvania; the rest were purchased out of state or have no known origin (<a href="#dao-16-data-gun-sales">see Appendix 7: DAO 16</a>).</p>
+<p>With so many guns available, a law enforcement strategy prioritizing seizing guns locally does little to reduce the supply of guns, and, if it entails increasing numbers of car and pedestrian stops, has the potential to be counterproductive by alienating the very communities that it is designed to help. People of color are disproportionately stopped in Philadelphia and arrested for illegal gun possession in Philadelphia and statewide. As the use of vehicle stops has increased, the proportion of PPD vehicle stops where a person of color was driving increased sharply during the same time period, regularly approaching 80% in recent years (<a href="#dao-11-police-vehicle-pedestrian">see Appendix 7: DAO 11</a>). In Philadelphia, approximately 80% of people arrested for illegal gun possession are Black; statewide, approximately 66% are Black (<a href="#dao-17-enforcement-illegal-gun">see Appendix 7: DAO 17</a>). Focusing so many resources on removing guns from the street while a constant supply of new guns is available is unlikely to stop gun violence, but it does erode trust and the perceived legitimacy of the system. This in turn decreases the likelihood that people will cooperate and participate in the criminal legal system and associated processes, reducing clearance, conviction, and witness appearance rates.</p>
+<p>It is again worth noting the inequity perpetuated by our state legislature, which made it a felony to carry a firearm without a license in only one county, Philadelphia, which is also its most diverse county. All state prisons in Pennsylvania are located in counties other than Philadelphia.<a href='#footnote-36' id='foot-loc-36'><sup>36</sup></a> And many of those counties have lost their steel and coal industries, only to replace them with a state prison industry that brings tremendous financial and political benefit to those counties (Remster and Kramer, 2019). Those financial and political benefits only flow fully if those state prisons cells are occupied. It does not appear that our state legislature’s primary interest is incarcerating people who carry firearms without a license. Our legislature’s primary interest is incarcerating Philadelphians, most of them Black and brown, in their far less diverse counties for the money and the power it brings them. Philadelphia should recognize this commerce in Philadelphians’ bodies for what it is—referred to in scholarship as “prison gerrymandering” (see Remster and Kramer, 2019 for a study of prison gerrymandering in Pennsylvania).</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h3 id="improving-victim-witness-appearance-rates">
+Improving victim and witness appearance rates
+</h3>
+<p>Prosecution in the criminal legal system relies on the participation of civilian witnesses and other actors, such as arresting officers, to present and authenticate evidence necessary to prove every element of a crime beyond a reasonable doubt. A DAO analysis found that victim and witness Failure to Appear (FTA) in court is the cause of approximately half of all gun possession cases being dismissed or withdrawn in Municipal Court (<a href="#dao-18-poster-court-actor">see Appendix 7: DAO 18</a>). This is an obvious problem that needs to be remedied.</p>
+<p>While there is often attention placed on defendants failing to appear, a preliminary analysis of misdemeanor cases in Philadelphia found that it is more likely that at least one non-defendant will fail to appear for at least one hearing (e.g., victim, witness, law enforcement officer, or attorney) than it is for a defendant to fail to appear (Graef and Ouss, 2021). When witnesses or court actors (e.g., law enforcement, attorneys) do not appear, at best cases require multiple listings to resolve, and in some instances cases may be dismissed due to a lack of key testimonial evidence.</p>
+<p>In a study of Philadelphia misdemeanor cases, witnesses and victims were most likely to miss at least one hearing in cases involving violent crime. Police, by contrast, were likelier to miss appearing to testify in less serious incidents (e.g., traffic, drug, public order, property); defense attorneys also sometimes did not appear in these less serious cases. Reasons given for law enforcement failing to appear included being sick (30%), injured on duty (IOD) (12%), on vacation/out of town (10%), or no reason given (26%) (Graef and Ouss, 2021, <a href="#dao-18-poster-court-actor">see Appendix 7: DAO 18</a>).</p>
+<p>The DAO has received grant funding and continues to seek additional funding to develop the technological capabilities necessary to maintain communications with victims and manage the Victim Witness Services (VWS) Unit caseload.</p>
+<ul>
+<li>The $4.6M grant the DAO received to create the District Attorney’s Transparency Analytics (DATA) Lab also supported the hiring of developers for the DAO’s Information Technology (IT) Unit to create a custom-built case management system, “DA-Work Station” (DAWS). This will help us to better manage our cases, including allowing VWS to better track their contacts with victims and witnesses.</li>
+<li>The DAO has applied for grant funding to offer text messaging services that the DAO IT Unit would integrate with DAWS. Well-crafted text message reminders help increase witness appearance rates in court (Cooke et al, 2018).<a href='#footnote-37' id='foot-loc-37'><sup>37</sup></a></li>
+</ul>
+<p>New technologies will be critical going forward, including DAWS and solutions like text messaging that help DAO Victim Witness Coordinators communicate with victims and witnesses. These technologies and tools will be especially needed as arrest clearance rates improve, allowing the DAO VWS Unit to provide support to more victims and witnesses (state funding only allows the DAO VWS to work with victims after an arrest is made).</p>
+<p>Beyond improving technological systems, the analysis by Graef and Ouss (2021) also suggests that systemic change could improve witness appearance rates: reducing the volume of non-violent misdemeanor arrests would reduce the number of cases where police are required to but often do not appear. This would improve both system efficiency, and perhaps the experiences of victims and witnesses in misdemeanor cases. When a court case fails to advance because of a court actor’s FTA, causing further hardship in terms of travel, missed work or school, or with childcare or other logistical issues among those who do appear to testify, public confidence and trust in the system erodes. Improving officer appearance rates in misdemeanor cases is not a viable strategy, as that would remove officers from the streets of the communities where they are needed to deter gun violence with their physical presence. Furthermore, for many cases misdemeanor enforcement has been shown to be criminogenic (Agan, Doleac, Harvey, 2021). Notable progress has been made in Philadelphia since 2015 and during COVID to reduce arrests for property and drug offenses; there were over 20,000 property and drug arrests in 2017, and fewer than 10,000 property and drug arrests in 2021 (Palmer &amp; Orso, 2021).<a href='#footnote-38' id='foot-loc-38'><sup>38</sup></a> Therefore, criminal justice partners must continue to collaborate to reduce prioritizations of arrests and prosecutions for low-level offenses, particularly against people who are in crisis due to poverty, homelessness, mental illness, or substance use disorder (Shefner, Sloan, Sandler, &amp; Anderson, 2018).<a href='#footnote-39' id='foot-loc-39'><sup>39</sup></a></p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h1 id='5-goals-policy-considerations'>
+<ol start="5" style="list-style-type: decimal">
+<li>Goals and Policy Considerations
+</h1></li>
+</ol>
+<p>In order to guide the analysis and to support the development of policy recommendations, the Committee has set the below policy-oriented goals that go beyond the original resolution’s descriptive goal of analyzing 100 shooter characteristics.</p>
+<ul>
+<li>Reducing gun violence through Deterrence of illegal firearm possession; Improving gun case outcomes; Improving shooting incident clearance rates; Improving witness appearance rates.</li>
+</ul>
+<p>Additionally, given the importance of the long-term, sustainable solution to prevent gun violence, the data-sub committee took the liberty of adding the below two goals:</p>
+<ul>
+<li>Reducing gun violence through short term investments in community driven solutions for prevention</li>
+<li>Reducing gun violence through upstream, long-term investments in communities most impacted by gun violence for sustainable reduction</li>
+</ul>
+<p>The next section, 6. Recommendation, discusses specific, actionable programs and practices to accomplish these goals.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h1 id='6-recommendations-by-dao'>
+<ol start="6" style="list-style-type: decimal">
+<li>Recommendations by the DAO
+</h1></li>
+</ol>
+<h2 id="recommendations-by-dao">
+Recommendations by the DAO
+</h2>
+<h3 id="recimproving-shooting-clearance-rates">
+Improving shooting clearance rates
+</h3>
+<p><strong id='support-ppds-creation-non-fatal-shooting'>Support the PPD’s Creation of a Non-Fatal Shooting Investigation Unit</strong></p>
+<p>As our analysis shows, the PPD is most effective at solving shootings when the investigation is undertaken by a unit trained in and dedicated to solving shootings. (see Appendix 7: <a href="#dao-6-analysis-factors-influencing">DAO 6</a>, <a href="#dao-8-time-to-arrest-cleared-fatal">DAO 8</a>). We support the PPD’s research-informed decision to create a dedicated Non-Fatal Shooting Investigation Unit (Cook, Braga, Turchan, Barao, 2019).</p>
+<p><strong id='invest-forensic-technology'>Invest in Forensic Technology</strong></p>
+<p>One of the clear lessons of the DAO’s Conviction Integrity Unit work—which has, to date, exonerated over 20 people nearly all of whom were innocent and spent decades in jail)<a href='#footnote-103' id='foot-loc-103'><sup>103</sup></a>—is that Philadelphia has long lagged peer cities in investing in forensic DNA technologies to improve fatal and non-fatal shooting clearance rates and gun case outcomes. This technical forensic obsolescence leads to weak investigations, cases that fail in court for want of strong evidence, and, at worst, wrongful convictions of innocent people. This is no reflection upon Police Commissioner Outlaw or the excellent director of the PPD’s Office of Forensic Science (OFS), Dr. Michael Garvey, both of whom inherited a PPD culture in Philadelphia that they did not make.</p>
+<p>Enhancing the capabilities and capacity of the OFS to test certain kinds of ballistic evidence taken from all or nearly all gun violence crime scenes for DNA could massively increase clearance rates for these crimes, and the addition of robust DNA evidence would strengthen cases, improving just outcomes and helping prevent wrongful convictions. In addition to improving cases going forward, forensic technologies could help bring accountability and closure in some of the nearly 9,000 shootings since 2015 for which there have been no arrests by identifying incidents with the same DNA to provide new leads and spur additional investigations. Serious investment in forensic cell phone analysis technology is also necessary, as cell phones provide many kinds of compelling evidence to solve and prosecute gun violence. The DAO’s Gun Violence Task Force has invested in a small amount of cell phone forensic technology that, in collaboration with PPD, has proven very successful as an investigative tool. That success should be expanded.</p>
+<p>Ideally, a great city like Philadelphia would not only have a great director of the PPD’s OFS and a Police Commissioner increasingly supportive of forensics as an investigative tool (as Philadelphia does now), but it would have the space, staffing and funding necessary to make a huge difference in gun violence. OFS space would triple to about 150,000 square feet. Staffing would increase significantly after a period of hiring and training. Capacity to process evidence would massively increase with an increase in staffing for PPD crime scene personnel. The one-time price tag for this massive improvement would be approximately 5% of the PPD’s annual budget, which is quickly approaching $1 Billion. Serious improvement in forensics could be made for less than 5% in one-time expense. Either way, some annual expenses would also increase. However, every dollar invested would come back to the city, with dividends, in avoiding future litigation brought by innocent and wrongfully convicted people, in saving the cost of incarcerating the innocent, and in all the economic improvements and tax base improvements that accompany effective reduction of violent crime.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h3 id="recimproving-gun-case-outcomes">
+Improving gun case outcomes
+</h3>
+<p><strong id='institutionalize-interagency-collaborations-processes'>Institutionalize Interagency Collaborations and Processes</strong></p>
+<p>Changes in gun case outcomes are part of a long-term trend reflecting shifts in the law and law enforcement practices, among other factors. We have been working to address this trend by implementing institutional changes in the DAO and developing collaborative processes and practices with our partners. These include combining the Homicide and Non-Fatal Shooting Units, creating the Intelligence Unit, and expanding the work of the GVTF in the DAO (including to handle preliminary hearings in gun cases), and developing the non-fatal shooting track in partnership with the courts and the VUFA/NFS review process with the PPD. The DAO recommends continuing to support these new initiatives, and looks forward to incorporating the PPD’s new Non-Fatal Investigations Unit into these collaborations and processes.</p>
+<p><strong id='invest-expand-dao-collaborative-intelligence'>Invest in and Expand DAO Collaborative Intelligence, Investigations, Community-Centered, and Victim-Centered Efforts</strong></p>
+<p>Invest in the DAO’s recent expansion of its collaborative intelligence, investigative, community-centered, and victim-centered efforts, all of which are aimed at effective prosecution of gun violence, intervention in communities that suffer from gun violence, and prevention in underserved and traumatized communities. These investments would support competitive salaries, new positions (e.g., analysts in the Delaware Valley Information Center (DVIC), social media analysts, personnel to support 57 Blocks Initiative), and new initiatives (e.g., Intelligence Unit; Gun Crime Strategies; expanding Crisis Assistance, Response, and Engagement for Survivors (CARES); diversion expansion; 57 Blocks Initiative), including new efforts undertaken in the last few years without additional funding that were supported by both the PPD and DAO.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h3 id="recimproving-victim-witness-appearance-rates">
+Improving victim and witness appearance rates
+</h3>
+<p><strong id='prioritize-building-trust-between-communities'>Prioritize Building Trust Between Communities and Law Enforcement</strong></p>
+<p>Building trust should improve clearance rates, witness appearance rates, and gun case outcomes, and therefore should be a top priority of all agencies. Trust can be developed in many ways, including by increasing positive interactions with law enforcement and elevating community engagement. Research in New Haven, Conn., found that “a single non-enforcement interaction can, in fact, improve the public’s attitudes toward police” (Sierra-Arévalo, 2019). In the study, half the residents who received a baseline survey were then randomly selected to receive a “non-enforcement interaction with a uniformed officer in which the officer introduced themselves, asked about neighborhood issues, and then gave the resident a business card with the officer’s hand-written work phone number” (Sierra-Arévalo, 2019). Results found “that one non-enforcement community policing interaction markedly increased residents’ perceptions of police legitimacy and willingness to cooperate with police [… and] the results were strongest among Black residents and those with more negative attitudes about police” (Sierra-Arévalo, 2019).</p>
+<p><strong id='reduce-counterproductive-misdemeanor-arrests-cases'>Reduce Counterproductive Misdemeanor Arrests and Cases</strong></p>
+<p>Meanwhile, police should engage in less misdemeanor enforcement to build trust, improve appearance rates, and so that they can spend a higher proportion of their time deterring or working on more serious cases. This would require additional support for non-law enforcement responses to many events police are currently called to respond to (Ratcliffe, 2021)<a href='#footnote-104' id='foot-loc-104'><sup>104</sup></a>, but would also reduce the burden to other system actors from prosecuting and processing these cases in the court system. According to August Vollmer, the “Father of American Policing,” the enforcement for crimes of morality, such as substance use and sex work, should “not [be] a police problem; [drug addiction] never has been and never can be solved by policemen” (Vollmer, 1936, 117-8)<a href='#footnote-105' id='foot-loc-105'><sup>105</sup></a>. Involvement in such enforcement “engenders disrespect both for law and for the agents of law enforcement” (Vollmer, 1936, 237). Problems with misdemeanor enforcement—which research has found to be criminogenic (Agan, Doleac, Harvey, 2021)<a href='#footnote-106' id='foot-loc-106'><sup>106</sup></a>—are exacerbated when witnesses, including law enforcement, do not appear in court to testify in those misdemeanor cases. When a court case fails to advance because of a court actor’s FTA, causing further hardship in terms of travel, missed work or school, or with childcare or other logistical issues among those who do appear to testify, public confidence and trust in the system erodes. Improving officer appearance rates in misdemeanor cases is not a viable strategy, as that would remove officers from the streets of the communities where they are needed to deter gun violence with their physical presence, e.g., on foot patrols. More low-level offenses and misdemeanors could be handled with citations, like the city did with cannabis (PPD Directive 3.23, 2021).<a href='#footnote-107' id='foot-loc-107'><sup>107</sup></a> Therefore, criminal justice partners must continue to collaborate to reduce arrests and prosecutions for low-level offenses, particularly of people who are in crisis due to poverty, homelessness, mental illness, or substance use disorder.</p>
+<p><strong id='invest-communication-technology-transportation-relocation'>Invest in Communication Technology, Transportation, Relocation, and Trauma Support for Victims and Witnesses</strong></p>
+<p>The DAO has been investing and continues to seek funding to improve its technological infrastructure, which has not kept pace with advancements and changes in how people communicate, among other issues. Correspondence sent through the mail is slow and ineffective, and busy schedules can make it hard to find time to connect on the phone, so communicating via text messages and cell phone applications offers a promising way to improve victim and witness experiences with the criminal legal system and appearance rates. To begin to improve its technological infrastructure, the DAO received funding to build a new custom case management system in-house, including a new module for the Victim Witness Services (VWS) Unit. In addition, the DAO is seeking external partnerships and funding to utilize text messaging tools to quicken and improve our ability to communicate with victims and witnesses via text messages and phone apps.</p>
+<ul>
+<li>Text messaging services are used by the Defender Association of Philadelphia, and in hundreds of jurisdictions across the U.S.</li>
+<li>In addition to facilitating communication, text messaging can be used to coordinate services for victims and witnesses with community-based organizations, make it easier for victims to file paperwork to receive compensation and send Victim Impact Statements, and provide transportation vouchers (see below)</li>
+<li>Since 2010, there have been over 2,500 cases where either intimidation or retaliation were charged in Philadelphia, and there would likely be more but for the lack of additional technologically-mediated reporting mechanisms.</li>
+</ul>
+<p>Therefore, the DAO recommends increasing local investment in technology to facilitate communication with victims and witnesses.</p>
+<p>Due to funding limitations, the DAO is only able to offer free transportation to court in the form of van rides or ride-share vouchers to people who are elderly and/or disabled. Among low-income clients, reasons frequently cited for not appearing in court include a lack of transportation or a lack of childcare. Expanding our free court transportation program would allow us to also send ride vouchers to those who simply lack transportation or live in areas of the city where public transit is not as easily accessible. We also supply a discounted parking voucher to aid victims willing to drive to court. However, the discount is so small that many victims on low or fixed incomes are still unable to afford the parking cost. This is also a problem for victims dealing with mobility issues, as the only parking garage that supplies vouchers is several blocks away from both courthouses. Transportation logistics could be organized through a mobile app, which would allow people to sign up for transportation vouchers and let the DAO send ride-share vouchers through messaging on the app. Therefore, the DAO recommends vastly increasing its capacity beyond only providing transportation to those who are elderly and/or disabled to instead provide free rides to court for every victim or witness who has a need.</p>
+<p>Beyond staying in touch and helping with transportation to court, sometimes people need to relocate from their home and community to feel safe participating in the criminal legal process. The Witness Relocation Program is intended to quickly assist in the relocation of witnesses from areas where they are victims of real or potential intimidation, harassment, or harm because of their witness status. Assistance may include, but is not limited to, reasonable moving expenses, security deposits, rental expenses, storage unit rental, P.O. Box fees, and utility startup costs. The aim is to help victims and witnesses relocate without financial loss or reduction in their standard of living. This assistance includes facilitating moves within Philadelphia Housing Authority (PHA), which can take time; the DAO advocates on behalf of victims/witnesses to substantially reduce the PHA waitlist timeline and to assist with relocation costs.</p>
+<p>Relocation may include multiple family members. Currently, victim service staff regularly shift families from one impoverished neighborhood to another with similar crime rates, neighborhoods that may only be blocks away from the location where the underlying crime occurred. The need to relocate families is extremely high and, as a result of the crime oftentimes occurring within feet of the family residence or victim’s home, there is an enormous amount of trauma and fear for family members (especially children). Most families are unable to move from the area of danger due to financial barriers. Furthermore, some victims/witnesses may not qualify for certain relocation assistance programs (such as the PAAG’s Witness Relocation Program) due to criminal history, lack of cooperation with law enforcement, or other factors.</p>
+<p>Depending on the family size, financial barriers to relocation, and the need to utilize temporary lodging accommodations, relocation expenses can be substantial; current funding levels do not meet the level of need, which is certainly substantial, with over 550 homicides and numerous shootings. Given that the DAO has seen an increase in the amount relocation referrals not qualified for State assistance (50% of relocation referrals received in 2021 do not qualify for the PAAG program, compared to only 15% in 2018), it will be necessary to increase our office’s relocation budget in order to assist community members who may not meet State requirements. Currently, the budget for 2022 is $260,000, though the allocation tends to vary year-to-year; e.g., it was $165,000 in 2018. The DAO recommends increasing the budget of the Witness Relocation Program to at least $1 million dollars to improve the ability of the legal system to achieve justice by relocating more people so they can feel safe and participate as witnesses. Combined with strong safety planning, hard work by victim advocates on a case-by-case basis, and other relocation dollars, more resources would create a greater impact for those in most need of this type of support, and improve witness appearance rates. This is, in effect, an effort to be more inclusive when it comes to assisting community members who are directly and indirectly affected by violent crime.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h3 id="recpreventing-gun-violence-community">
+Preventing gun violence in the community
+</h3>
+<p><strong id='invest-community--place-based-non-law-enforcement'>Invest in Community- and Place-Based Non-Law Enforcement Solutions in Historically Traumatized and Under-Resourced Communities at Risk of Gun Violence</strong></p>
+<p>Structural racism has caused disinvestment and poverty in specific areas of Philadelphia, which has, in turn, created the conditions in which shootings occur (<a href="#dao-1-maps-structural-racism">see Appendix 7: DAO 1</a>). Law enforcement cannot solve systemic divestment. Philadelphia needs to proactively work to end the de facto redlining of poor Black communities, expand new investment and living-wage jobs in Black communities through monies from the American Relief Act and the recent Infrastructure legislation, use new techniques like the proposed Philadelphia public bank to invest in Black communities, and sanction or prosecute institutions that discriminate. We must see the availability of affordable housing throughout Philadelphia and the fair and full funding of our schools as central to our crime prevention strategy.</p>
+<p>The DAO recommends making coordinated and targeted investments of money and resources in parts of Philadelphia harmed by structural racism, including financial investments in community-based violence prevention efforts and city services that do not involve law enforcement. Some of the most rigorous evidence we have that non-law enforcement strategies can reduce violence is based on research conducted in Philadelphia (South, 2021). There is evidence that the following strategies lead to reductions in violence in Philadelphia, while improving other positive outcomes:</p>
+<ul>
+<li>Greening vacant lots (Branas et al, 2018)<a href='#footnote-108' id='foot-loc-108'><sup>108</sup></a></li>
+<li>Planting trees (Branas et al, 2018)</li>
+<li>Picking up trash (Branas et al, 2018)</li>
+<li>Structurally repairing occupied homes (South, MacDonald, Reina, 2021)<a href='#footnote-109' id='foot-loc-109'><sup>109</sup></a></li>
+<li>Remediating abandoned houses (MacDonald, n.d.)<a href='#footnote-110' id='foot-loc-110'><sup>110</sup></a></li>
+</ul>
+<p>In addition to the above Philadelphia-based research, there is evidence from Chicago that improving street lighting can reduce crime (Chalfin, Hansen, Lerner, Parker, 2021).<a href='#footnote-111' id='foot-loc-111'><sup>111</sup></a> Recent reporting on issues with repairing lighting in Philadelphia underscore the need to include such non-law enforcement responses in any broader violence prevention strategy (Marin and Briggs, 2021).<a href='#footnote-112' id='foot-loc-112'><sup>112</sup></a> In addition to prioritizing responding to 311 calls in areas most impacted by gun violence, the DAO recommends developing and implementing a place-based non-law enforcement violence-prevention plan that proactively targets areas most impacted by gun violence, redlining, and mass incarceration and supervision for positive improvements, such as greening vacant lots, planting trees, picking up trash, repairing occupied and abandoned homes, and improving lighting. The DAO is working to create such a plan: the “57 Blocks Initiative.”</p>
+<p><strong id='create-fund-modeled-chicago-fund'>Create Fund Modeled on The Chicago Fund for Safe and Peaceful Communities to Increase Private and Institutional Funding for Philadelphia-Based Community Gun Violence Prevention Organizations</strong></p>
+<p>Philadelphia should create a fund for prevention and intervention modeled on the Chicago Fund for Safe and Peaceful Communities<a href='#footnote-113' id='foot-loc-113'><sup>113</sup></a> to help increase funding of grassroots community-based organizations in Philadelphia. “The Chicago Fund for Safe and Peaceful Communities seeks to work with individuals, organizations and institutions to empower communities, strengthen relationships and build trust across Chicago.” It is “supported by institutional and individual donors” – including academic and private contributors – and “offers rapid-response grant opportunities designed to support community-based actions and activities that make neighborhoods safer.” The strategies pursued through the funding align with those recommended in this report: Street Outreach, Support Services and Jobs; Police Reform and Community Relations; Gun Policy; Community Safety &amp; Peace.<a href='#footnote-114' id='foot-loc-114'><sup>114</sup></a> Accordingly, committing to this recommendation would support the long-term success of the other recommendations, such as investing in historically redlined communities, Cure Violence models, and community-based organizations. Research shows that “every ten additional organizations formed to address violence and build stronger communities led to a 9% drop in the murder rate.”<a href='#footnote-115' id='foot-loc-115'><sup>115</sup></a></p>
+<p><strong id='request-that-state-federal-law'>Request that State and Federal Law Enforcement Partners Collaborate to Increase Random Inspections of Federally Licensed Gun Sellers</strong></p>
+<p>Given that relatively few guns are seized by local law enforcement compared to the number of guns legally bought and sold each day, and that enforcement efforts to date have produced racial disparities in gun possession offenses, the DAO recommends going further upstream to increase inspections of federally licensed gun sellers. This is in some ways analogous to efforts to use data to identify potentially problematic opioid prescribing practices.</p>
+<p>Information presented in Appendix 7: DAO 16 supports this recommendation to expand collaborations around inspections and investigations of gun sellers. Specifically, a preliminary analysis of national data found that as the percentage of gun dealers that are inspected increased, the number of gun dealers decreased (David Johnson, personal correspondence). Extrapolating these findings to Philadelphia and Pennsylvania, increasing inspections of gun dealers in and around Philadelphia would reduce the number of gun dealers, and hence the flow of guns into Philadelphia. While Philadelphia has relatively few gun sellers compared to neighboring counties, many guns sold in other guns are recovered by law enforcement in Philadelphia, requiring cross-county collaborations to address. However, 4 gun sellers in Philadelphia are among the top 10 in the state in terms of selling guns later recovered by law enforcement, suggesting local efforts would also be beneficial. In addition to proactive policing strategies and inspections, other efforts could be made to collect more information at the point of sale that could deter straw purchases and make them easier to investigate. For example, legislation could require that more information be collected from buyers, such as vehicle information, and missing information could trigger a suspension of operations until an inspection has been completed. We recommend beginning with random inspections of the highest-volume dealers and those with the most guns recovered by law enforcement in parts of the city and state with the highest concentrations of gun violence. Historically, such strategies have been supported and often led by community and religious groups, and law enforcement can use data available from the local, state, and federal partners to support these efforts. To date, the DAO negotiated with the Pennsylvania Attorney General’s Office to more than double funding for the Philadelphia GVTF to support increased staffing and expand capacity for investigation and prosecution of cases involving guns.</p>
+<p><strong id='convene-all-stakeholders-who-play'>Convene All Stakeholders Who Play a Role in Gun Violence Prevention at the PIRPSC Data Table</strong></p>
+<p>The DAO recommends expanding PIRPSC to include representatives and data from additional agencies involved in preventing gun violence, including the Philadelphia Sheriff’s Office, the Philadelphia Adult Probation and Parole Department (APPD), and the Philadelphia Department of Prisons (PDP). Sharing data will promote transparency and accountability in Philadelphia.</p>
+<p>For example, the Philadelphia Sheriff’s Office is responsible for working with the PPD to remove guns from homes following a Protection From Abuse (PFA) order,<a href='#footnote-116' id='foot-loc-116'><sup>116</sup></a> a stated priority of Sheriff Bilal.<a href='#footnote-117' id='foot-loc-117'><sup>117</sup></a> Based on research conducted in Philadelphia on domestic calls for assistance in 2013 (Sorenson, 2017),<a href='#footnote-118' id='foot-loc-118'><sup>118</sup></a> we recommend more regular efforts to</p>
+<ul>
+<li>ensure guns are taken from homes of abusers as the law allows (Sorenson, 2017),</li>
+<li>document enforcement of this state law (Sorenson, 2017)</li>
+</ul>
+<p>Enforcing the state law to seize guns in such cases should help mitigate fear of retaliation following arrest and trauma associated with being threatened with a gun (Sorenson, 2018),<a href='#footnote-119' id='foot-loc-119'><sup>119</sup></a> but we do not have data available to us on that process. In addition, we recommend having our law enforcement partners conduct regular welfare checks on homes where guns were seized following a PFA; engaging in less low-level misdemeanor enforcement would make it possible to instead spend time performing regular welfare checks on survivors of domestic violence, among other preventative law enforcement.</p>
+<p>APPD, meanwhile, is responsible for supervising and providing services to people during the pretrial period between arrest and adjudication, and often as part of a sentence. An analysis of homicides in Philadelphia between 1996-1999 found that 25% of people arrested for committing a murder were on probation or parole at the time of the murder, while 29% were awaiting trial or sentencing (Tierney, McClanahan, Hangley Jr., 2001).<a href='#footnote-120' id='foot-loc-120'><sup>120</sup></a> While these findings should be considered in light of what we know of wrongful convictions during that era (e.g., 3 of the people exonerated by the DAO in the last 4 years were originally convicted between 1996-1999),<a href='#footnote-121' id='foot-loc-121'><sup>121</sup></a> without incorporating APPD data and work into our analysis, we are not able to replicate the 2001 analysis 20 years later. More generally, without regular access to APPD data, we do not have an efficient data-driven way of knowing who is being supervised, their level of supervision, whether they violated their probation or parole, and whether and when they may have had a detainer issued to hold them in jail. We include this recommendation in the hopes that the APPD, which has previously hesitated to share data, will join PIRPSC (<a href="#dao-2-data-sharing-data">see Appendix 7: DAO 2</a>).</p>
+<p>Lastly, the PDP would be a valuable addition to PIRPSC. Historically, the PDP has refused requests by the DAO to share data that would improve our ability to identify who is in custody each day, including people arrested for gun crimes (<a href="#dao-2-data-sharing-data">see Appendix 7: DAO 2</a>)). This information is critical as, based on the analysis by DPH, we know that over half of those arrested for shootings had previously been in PDP custody (see DPH Analysis). Access to PDP data would also help the DATA Lab improve our analyses and research by more precisely accounting for incapacitation while incarcerated.</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h1 id="appendix-7-dao-supplemental-materials">
+Appendix 7: DAO Supplemental Materials
+</h1>
+<h2 id="dao-1-maps-structural-racism">
+DAO 1. Maps of Structural Racism in Philadelphia
+</h2>
+<p>As the maps below demonstrate, shootings are far more associated with systemic racism and the disinvestment and poverty that it has caused in Philadelphia than they are any particular criminal profile of a person. Each of the smaller maps towards the right illuminates the concentration of different measures of disinvestment and poverty in Philadelphia. This is compared to broad racial segregation in Philadelphia (top left) and the homes of people arrested for shootings (bottom left). What is striking about these maps is how similar they look: structural racism has caused disinvestment and poverty, which has, in turn, created the conditions in which shootings happen. Positive investment in the communities harmed by structural racism is the best long-term solution to ending gun violence.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_1_1.jpg" alt="" />
+<p class="caption">Map showing the geographic distribution of race and systemic disinvestment in Philadelphia</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-2-data-sharing-data">
+DAO 2. Data Sharing and Data Limitations
+</h2>
+<h3 id="data-sharing">
+Data Sharing
+</h3>
+<p>Much of the analyses contained herein were only possible due to data sharing among agencies. In particular, the PPD and courts have always been good data partners. The PPD and DAO have increasingly been sharing data and information to support research and analytics, both in the context of the “100 Shooter Review” that led to the creation of the Philadelphia Interagency Research and Public Safety Collaborative (PIRPSC), and more broadly.</p>
+<p>In contrast to the PPD and courts, the Philadelphia Department of Prisons (PDP), Pennsylvania Department of Corrections (DOC), and Philadelphia Adult Probation and Parole Department (APPD) have not been as willing to share data. In particular, we have made numerous requests to both the PDP and DOC to receive daily rosters of all incarcerated individuals as well as historic information on the same topic. The PDP has outright denied us this data; the DOC has promised us data but has not given it to us. Because of this, we are unable to accurately account for who is incarcerated at any given time. Similarly, without regular access to APPD data, we do not have an easy data-driven way of knowing who is being supervised, their level of supervision, whether they violated their probation or parole, and whether and when they may have had a detainer issued to hold them in jail. We believe such data sharing could save lives, allowing the DATA Lab to do better analytical work and research while helping the DAO Intelligence Unit better monitor the incarceration status of those known to be involved in group violence who may be released to the community.<a href='#footnote-135' id='foot-loc-135'><sup>135</sup></a> We hope to be able to incorporate such data soon.</p>
+<h3 id="data-limitations">
+Data Limitations
+</h3>
+<p>Analyses are always limited by the data upon which they are based. The analyses below are no different. In general, there are two types of problems that our data may have:</p>
+<ul>
+<li><strong>Data accuracy.</strong> Not all data is recorded accurately. On one end of the spectrum, typos or poor record keeping can create inaccurate records. An example of this would be a court clerk incorrectly recording the disposition of a case. On the other end of the spectrum, data collection practices can systematically create inaccurate data. An example of this is that the race of individuals in police and court data is determined by police and court personnel, not self-reported by the individual. This can be seen in our data in that the same individual is frequently reported to have one race by the police and a different race by the court. Other individuals rearrested by the police on multiple occasions have different races assigned to them.</li>
+<li><strong>Data completeness.</strong> We know that data is rarely complete. For example, only about one in five shootings results in an arrest and not all of those cases result in a conviction. That means that as a city, we have data about fewer than 20% of individuals who have shot someone in Philadelphia since 2015. This sample is not only incomplete, but it is biased: there are likely certain characteristics that made it easier for the police to arrest these 20% of individuals, which means that any analysis of associated data will outweigh those characteristics. For example, the police may be better at solving shootings involving individuals with prior arrest histories, because the police already have a lot of information about this particular group. Any analysis of people arrested for shootings, then, will make it appear that most shooters have a prior arrest history. The 80% of people who have not been arrested, however, may have no arrest history or different system contacts, which could help explain why their shooting was not solved. Those who are arrested for shootings may have different characteristics and practices than those who are not, meaning the available data may do little to help identify people who are better able to avoid being arrested for their involvement in shootings.<a href='#footnote-136' id='foot-loc-136'><sup>136</sup></a><br><br>Similarly, any data about the criminal justice system in general is incomplete and systematically biased. “Crime data” measures how the police choose to enforce the laws rather than who is actually violating the law (Kitsuse and Cirourel, 1963; 132).<a href='#footnote-137' id='foot-loc-137'><sup>137</sup></a> This is not to say that crime data does not reflect crime that is occurring, rather that it systematically excludes some criminal behavior (e.g., drug use, possession, and sales by students and faculty on college and university campuses, where there is little to no enforcement) (Gur, 2015)<a href='#footnote-138' id='foot-loc-138'><sup>138</sup></a> and over-includes other behavior (e.g., drug possession by Black drivers, who the police systematically stop and search more frequently than other drivers) (Davis, Whyde, Langton, 2018).<a href='#footnote-139' id='foot-loc-139'><sup>139</sup></a> This means that any use of past criminal history in an analysis will reflect the problems caused by lack of completeness. Similar to the problem of drawing conclusions about 100% of shooters from a biased sample of the 20% arrested, we need to be equally careful about our use of prior criminal history to draw conclusions about the population at large.</li>
+</ul>
+<p>Finally, our data is limited. In general, we have data about the criminal legal system in Philadelphia. We lack other data that would be useful in any larger scale analysis: data about poverty, employment, schooling, past victimization and co-victimization, prior trauma, and physical and mental health are not accessible to the District Attorney’s Office. Because of this, our analysis provides a small window into the lives of people already involved in the criminal legal system.</p>
+<p>We are able to conduct valid data analysis using the data at our disposal, but need to be thoughtful and careful about the conclusions that we draw and the actions that we take based on that data. In particular, looking at a limited set of data about a limited number of shooting arrestees means that we cannot make a meaningful “profile” of shooters that could be used to identify future shooters. Such a profile, which would use biased data to further penalize people, would double down on past systematic bias. On the other hand, we could use the conclusions from that same data to uplift people and communities in need could help to heal past harms that have disproportionately impacted Philadelphians of color, which would in turn reduce shootings.</p>
+<p>Several specific limitations also appear in our data:</p>
+<ul>
+<li>We are only able to identify shooting incidents from January 1, 2015, forward. The police make this data available on OpenDataPhilly; they do not identify incidents before then.</li>
+<li>We categorize an arrest as a “shooting” arrest and a case as a “shooting case” if:
+<ul>
+<li>the arrestee/defendant was arrested in an incident with a DC Number that matches one of shooting incidents in the Philadelphia Police Department’s OpenDataPhilly shooting victims dataset,</li>
+<li>and that person was charged with—or in the case of arrests, that the police recommended that they be charged with—either a homicide, an aggravated assault, or a robbery.</li>
+</ul></li>
+<li>Any information relating to arrests only relates to arrests from 1/1/2008 forward. Any information relating to cases charged only relates to cases charged since 1/1/2010.</li>
+<li>All arrest and case information are for Philadelphia only, unless indicated otherwise.</li>
+<li>We are unable to accurately account for incarceration (either pre- or post-trial) because we do not receive regularly data updates from the PDP or DOC. Where relevant, we account for pre-trial incarceration by evaluating when a person may have posted bail; we account for post-trial incarceration by evaluating court sentences and making assumptions about when parole may start. Both methods are reasonable proxies, but are not always correct.</li>
+</ul>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-3-arrest-rates-shooting">
+DAO 3. Arrest Rates in Shooting Cases
+</h2>
+<p>Arrest rates in shooting cases are low, particularly in non-fatal shootings. As the tables below show, since 2015, Philly’s arrest rate for fatal shootings peaked in 2019 at 38%; the current arrest rate for 2021 fatal shootings is 26% as of December 6, 2021. The trend in non-fatal shootings is similar: the arrest rate peaked in 2017 at 22%; the current arrest rate for 2021 non-fatal shootings is just 14% as of December 6, 2021.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_3_1.jpg" alt="" />
+<p class="caption">Table of Annual Fatal Shooting Arrest Rate and Shooting Trends</p>
+</div>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_3_2.jpg" alt="" />
+<p class="caption">Table of Annual Non-Fatal Shooting Arrest Rate and Shooting Trends</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-4-review-100-people">
+DAO 4. Review of 100 People Most Recently Arrested for Shootings and All Shooting Arrestees Since 2015
+</h2>
+<p>The first goal set out by City Council was to systematically review the criminal histories of the 100 most recently arrested shooters at that time (September 2020). We reviewed those arrestees as well as all shooting arrestees since 2015 and found that the groups were very similar. The table below summarizes “Basic Attributes of Shooting Arrestees,” including demographic and criminal legal information. To avoid double counting, we have removed duplicate defendants, keeping only the most recent incident they were arrested for.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_4_1.jpg" alt="" />
+<p class="caption">Table of Basic Attributes of Shooting Arrestees</p>
+</div>
+<p>The next table summarizes the Philadelphia-based criminal histories of individuals arrested for shootings. The charges below are among those most commonly charged in Philadelphia, so this table largely reflects charging patterns in Philadelphia more generally:</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_4_2.jpg" alt="" />
+<p class="caption">Table of Shooting Arrestees detailed past charging information</p>
+</div>
+<p>We also identified the most recent charge the shooting arrestee had on their record, to understand whether there was a strong connection between an arrest for one event and then a later arrest for a shooting. Overall, we found that there is no single charge that is commonly the most recent charge among people arrested for shootings. We also found that the most recent criminal offense prior to the shooting arrest tends to have happened several years prior to the shooting, with important implications for incapacitation further investigated in the next section:</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_4_3.jpg" alt="" />
+<p class="caption">Table of Shooting Arrestees most recent charge information</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-5-unpredictive-nature-prior">
+DAO 5. The (un)Predictive Nature of Prior Arrests and Demographics on Future Shootings
+</h2>
+<p>The District Attorney’s Office does not believe that prior arrest patterns can be used to predict future shootings. If such predictions were possible, we could prevent future shootings by matching new arrestees to a profile, incapacitating those who are certain to commit a shooting by holding them in jail. The grave moral and constitutional danger of this path is that we would jail large numbers of people who would never engage in a shooting in an effort to stop a small number of people who may engage in a shooting. This is anathema to both our constitution and our values as an office. Based on the data we analyzed, focusing on prior arrest histories to predict who will commit future shootings is not a solution to gun violence.</p>
+<p>The table below shows why it is not possible to create a “predictive” model which captures a reasonable proportion of future perpetrators of gun violence but that also does not unnecessarily incapacitate innocent people. The first two columns of table 4 shows a series of attributes that are common among people arrested for shootings and the proportion of shooting arrestees who had that attribute. For example, 37% (839) of shooting arrestees since 2015 were male, under 30, and had at least one past felony charge on their record. The idea in a predictive model is that one could apply that model to any new arrestees (for any offense) to hopefully predict which ones would later engage in a shooting and then intervene in their lives. In the criminal legal system, we tend to have one tool (especially when we are talking about serious crime): incarceration.</p>
+<p>The third column shows what would happen if we had applied the “model” from the first column to arrestees in 2017: of 31,416 arrestees, we would have identified 5,078 who were male, under 30, and had at least one prior felony charge. If we used our model to assume that these people might engage in a shooting in the future, we would have to use the tools of the legal system to incarcerate them. By doing so, we may have prevented 138 shootings over the next 4 years (2018-21), but we would have also incarcerated 4,940 people who would likely never have engaged in a shooting. Stated another way, 97% of the people we incarcerated to prevent a shooting were incarcerated unnecessarily. This analysis also assumes that incarcerating 4,940 people unnecessarily would create more distrust of the legal system and potentially spawn more shootings because of our legal system’s perceived lack of legitimacy.</p>
+<p>We can create a model that identifies fewer people: male, under 30, at least one prior felony charge, at least three past arrests, a prior drug sales arrest, and a conviction in their most recent case (which is necessary for incarceration). This identifies only 1,383 people from 2017, 38 of whom would have later been arrested for a shooting. But the tradeoff is unfathomable: in order to incapacitate these 38 people, we still unnecessarily incarcerate 1,345 people. As well, this model only matches about one in five people arrested for a shooting (who are in turn about one in five people who perpetrate shootings). Unnecessarily incapacitating 1,345 young men in order to attempt to prevent 38 shootings over 4 years would cause immense harm to those individuals, their families, and communities.</p>
+<p>Of 31,416 individuals charged in Philadelphia in 2017, since then, 31,101 (99.0%) have not been arrested in a shooting and 315 have (1.0%); those 315 arrests comprise 14% of all shooting arrests in Philadelphia since 2015. Identifying that 1.0% before they commit a shooting is challenging, and our chances might improve with a more focused approach.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_5_1.jpg" alt="" />
+<p class="caption">Table: A Comparison of Attributes of Shooting Arrestees to their Prevalence Among All Arrestees in 2017</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-6-analysis-factors-influencing">
+DAO 6. Analysis of Factors Influencing Fatal and Non-Fatal Shooting Clearance Rates
+</h2>
+<p><strong>Methods</strong></p>
+<ul>
+<li>Modeled binary outcomes (cleared/not cleared) for shooting incidents that occurred from January 2015 to February 2020 using logistic regression. Independent variables included:
+<ul>
+<li>Victim characteristics: race, sex, age, previous arrests</li>
+<li>Motive (fatal shootings only): commercial robbery, domestic, drugs, highway robbery, residential robbery, retaliation, other, unknown</li>
+<li>Characteristics of incident: occurring indoors/outdoors, day of week, time of day (and light/dark), month-year</li>
+<li>Police characteristics (non-fatal shootings only):
+<ul>
+<li>Capacity: number of shootings in the previous 30 (and 3) days, detective capacity of unit, squad type (line detectives vs Special Investigations Unit)</li>
+<li>Experience level: squad type (line detectives vs Special Investigations Unit), number of violent crime arrests detective had prior to incident, length of time employed by PPD</li>
+</ul></li>
+<li>Non-fatal shootings and fatal shootings were modeled separately. This separation was due to differences in data availability and the fact that fatal shootings are investigated by the homicide unit while non-fatal shootings are investigated by detectives in each police division</li>
+</ul></li>
+</ul>
+<p><strong>Findings</strong></p>
+<p>Below are statistically significant (α = 0.05) factors that our models found relevant to shooting clearance rates. The variables are ordered from most influential to clearance to least influential to clearance: Neither the fatal shooting logistic regression nor the non-fatal shooting logistic regression predicted clearance particularly well. The McFadden pseudo-R2 was 0.32 for the fatal shooting model and 0.14 for the non-fatal shooting model.</p>
+<ul>
+<li>Non-Fatal Shootings:
+<ul>
+<li>Indoor/outdoor shootings: Shootings that occurred indoors were more likely to be cleared</li>
+<li>Police squad type: Shootings where the Special Investigations Unit (SIU) responded were more likely to be cleared than shootings where line detectives responded</li>
+<li>Victim sex: Shootings with female victims were more likely to be cleared than shootings with male victims.</li>
+<li>Light/dark outside: Shootings that occurred when it was light outside were more likely to be cleared than shootings that occurred when it was dark outside (this is related to police squad type, as squad schedules are night/day dependent)</li>
+<li>Day of week: Shootings that occurred on Mondays were more likely to be cleared than shootings that occurred on other days</li>
+<li>Number of detectives: When units with more detectives investigated shootings, they were more likely to be cleared than shootings when units with fewer detectives investigated.</li>
+</ul></li>
+<li>Fatal Shootings:
+<ul>
+<li>Race: Shootings with white victims were more likely to be cleared than shootings with Black or Latinx victims.</li>
+<li>Motive: Shootings with unknown motive were much less likely to be cleared than shootings with known motive. Shootings with drugs, retaliation, and “other” as suspected motives were less likely to be cleared, and shootings with “domestic” as the suspected motive were more likely to be cleared than shootings with “argument” as the motive.</li>
+<li>Victim age: Shootings with child victims (13 or younger) were more likely to be cleared than shootings with older victims.</li>
+<li>Light/dark outside: Shootings that occurred when it was light outside were more likely to be cleared than shootings that occurred when it was dark outside.</li>
+</ul></li>
+<li>Additionally, we used a subset of data (cleared cases only) to explore how the same factors might influence “time-to-arrest.” The only statistically significant variable was “number of shootings in a police division during the past 30 days,” which was negatively correlated with time-to-arrest. Most of the findings from our analysis are in line with trends seen in the literature, e.g.:
+<ul>
+<li><a href="https://www.researchgate.net/profile/Charles_Wellford/publication/237288665_Clearing_Up_Homicide_Clearance_Rates/links/58b5db93aca27261e5165f87/Clearing-Up-Homicide-Clearance-Rates.pdf">Clearing Up Homicide Clearance Rates: Wellford and Cronin, 2000</a></li>
+<li><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/1745-9133.12451">Why do gun murders have a higher clearance rate than gunshot assaults? Cook et al. 2019</a></li>
+<li><a href="https://www.jrsa.org/pubs/reports/homicides_report.pdf">An Analysis of Variables Affecting the Clearance of Homicides: A Multistate Study, 1999</a></li>
+</ul></li>
+</ul>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-7-arrest-rates-shootings">
+DAO 7. Arrest Rates and Shootings Per Month
+</h2>
+<p>One trend that we noticed was that the arrest rate tends to increase as shootings decrease; as shootings increase, the arrest rate decreases. This suggests that the police have observable resource constraints that prevent them from solving more shootings as more shootings occur. The below graphic overlays the number of shootings per month since 2015 (blue) and the percent of those shootings that led to an arrest (red). A potential solution to this problem is for the police to focus resources on shooting cases rather than other, less important cases. There may also be other ways that the police can improve arrest rates, including better training and improved availability of modern forensic tools.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_7_1.jpg" alt="" />
+<p class="caption">Line chart showing the arrest rate for shootings compared to the total number of shootings per month</p>
+</div>
+<p>The next figure is similar to the previous graphic above, but instead of showing each month on a timeline, it compares arrest rates to the number of shootings in a month. Seeing the data in this way shows two things very clearly: 1. that the police’s ability to make arrests in shootings is directly related to the number of shootings that occur in a month; and 2. Almost every month in 2020 and 2021 has had more shootings than any month between 2015 and 2019.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_7_2.jpg" alt="" />
+<p class="caption">Scatterplot chart showing the arrest rate for shootings compared to the total number of shootings per month</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-8-time-to-arrest-cleared-fatal">
+DAO 8. Time-to-Arrest in Cleared Fatal and Non-Fatal Shootings and Replication of Cook et al. (2019)
+</h2>
+<p>Looking at the time to make an arrest, we can see that more fatal shootings are solved quickly, as compared to non-fatal shootings, and that fatal shootings continue to be solved over a long period of time. In contrast, non-fatal shootings tend to be solved quickly or not at all, as illustrated in these supplemental materials. Of particular note is how quickly most fatal and non-fatal shootings are solved: within the first two months, most shooting arrests that will take place have already taken place. For non-fatal shootings, 75% of arrests occur within 61 days. After that time, few additional arrests are made in non-fatal shootings, while a small but noticeable percentage of fatal shootings continue to be solved for several years. Still, for fatal shootings, 75% of arrests occur within 125 days.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_8_1.jpg" alt="" />
+<p class="caption">Line chart showing days between shooting and arrest and arrest rate</p>
+</div>
+<p>Zooming in on the first 50 days after a shooting, it is more apparent how quickly the arrest rate for non-fatal shootings level offs as compared to fatal shootings:</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_8_2.jpg" alt="" />
+<p class="caption">Line chart showing days between shooting and arrest and arrest rate in first 50 days after incident</p>
+</div>
+<p>The next graphic is Figure 2 from Cook et al. (2019), which used data from Boston, which is followed by a graphic that uses Philadelphia data to replicate the methods used by Cook et al. (2019). Compared to Boston, the non-fatal shooting clearance rate in Philadelphia is lower than the fatal shooting clearance rate at each step.</p>
+<p><strong>Figure 2 from Cook et al. (2019) (top) and replication using Philadelphia data (bottom).</strong></p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_8_3.jpg" alt="" />
+<p class="caption">Line chart showing the time to arrest for shootings by time period, from Cook et al. (2019)</p>
+</div>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_8_4.jpg" alt="" />
+<p class="caption">Replication of the Cook et al chart using Philadelphia data</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-9-poster-gun-cases">
+DAO 9. Poster on Gun Cases by Amaral, Loeffler, Ridgeway (2021)
+</h2>
+<p>This poster was presented at the 2021 American Society of Criminology Conference.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_9_1.jpg" alt="" />
+<p class="caption">Poster from Amaral et al showing that gun case progression does not seeem to be affected by progressive prosecution, but there is an immediate change for other offenses targeted by the proescutor</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-10-dao-analysis-388">
+DAO 10. DAO Analysis of 388 Dismissed or Withdrawn Illegal Gun Possession Cases
+</h2>
+<p><strong>Methods</strong></p>
+<ul>
+<li>This study attempts to understand the reasons gun cases were dismissed or withdrawn, by reviewing physical case files. ADA reviewers considered only cases that were dismissed or withdrawn in municipal court (MC), either before or at a preliminary hearing.</li>
+<li>“Gun cases” are cases with a lead charge of illegal possession (18 PaCS 6106, 6016, or 6108), robbery (3701) plus illegal possession, or aggravated assault (2702) plus illegal possession. This does not include homicide cases.</li>
+<li>Extracting data from physical case files added details that our administrative data lacks. This includes facts such as who observed the defendant with the gun and opinions such as why an experienced ADA believes the case to have been dismissed or withdrawn.</li>
+<li>Senior ADAs reviewed 388 case files using a form developed by the DATA Lab created in consultation with experienced ADAs. It consisted of multi-choice questions and also freeform questions that allowed the ADAs to describe all relevant details of the case.</li>
+</ul>
+<p><strong>Findings</strong></p>
+<ul>
+<li>People not appearing in court, especially victims and witnesses, are the cause of approximately half of all gun possession cases dismissed or withdrawn in Municipal Court.
+<ul>
+<li>Failure to appear (FTA) is the most common reason for a case being dismissed or withdrawn, with 52% of all analyzed cases dismissed or withdrawn due to FTA.</li>
+<li>The high frequency of FTA’s among dismissals and withdrawals suggests that improving FTA rates has the greatest potential to impact the overall dismissal and withdrawal rate.</li>
+</ul></li>
+<li>People not appearing in court is not the only reason for the rise in proportion of cases that were dismissed or withdrawn from 2016-17 to 2018-19.
+<ul>
+<li>Although FTAs are important, the rate at which cases with FTAs and without FTA were dismissed or withdrawn increased by about the same amount from 2016-17 to Era 2018-19.</li>
+<li>This means there is something else going on that is also driving the increase in dismissed and withdrawn cases.</li>
+</ul></li>
+<li>Findings indicate that higher rates of constructive possession cases can partially explain the increase in dismissals and withdrawals.
+<ul>
+<li>These are cases that rely on a witness to link the defendant to the gun rather than other forms of evidence like DNA or camera footage.</li>
+<li>These types of cases are generally harder to hold for court than others.</li>
+<li>In 2016-17, the defendant was not seen with a gun in 28% of dismissals and withdrawals. In 2018-19 that rate was 35%.</li>
+</ul></li>
+<li>The rise in constructive possession cases could be driven by an increase in PPD vehicle stops.
+<ul>
+<li>There has been a documented several year increase in PPD vehicle stops (see next section, Appendix 7: DAO 11).</li>
+<li>Constructive possession cases are more common in cases where a gun is recovered from a vehicle, since it is difficult to argue possession when the gun is found in a spot in the vehicle that is neutral to the occupants.</li>
+<li>In 2016-17, the gun was recovered from a vehicle in 55% of dismissals and withdrawals. In 2018-19 that rate was 67%.</li>
+</ul></li>
+</ul>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-11-police-vehicle-pedestrian">
+DAO 11. Police Vehicle and Pedestrian Stops
+</h2>
+<p>Since 2014, the Philadelphia Police have kept and reported data on the number of stops that they have made, both of pedestrians and vehicles. Since they started reporting, the police have shifted from an equal number of stops of each type to heavy reliance on vehicle stops. In 2019, the last full year before the pandemic, the police recorded their most stops ever: almost half a million stops.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_11_1.jpg" alt="" />
+<p class="caption">Table: Annual pedestrian and vehicle stops by Philadelphia Police</p>
+</div>
+<p>People of color have become a higher proportion of those stopped by the PPD. While the source of this trend is unclear, it is worth considering the implications of this increasing disparity.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_11_2.jpg" alt="" />
+<p class="caption">Chart showing that the proportion of vehicle stops where a person of color was driving has increased over last 8 years</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-12-conviction-rates-open">
+DAO 12. Conviction Rates and Open Shooting, Non-Fatal Shooting, and Illegal Gun Possession Cases During COVID-19
+</h2>
+<p>Conviction rates in fatal and non-fatal shooting cases have dropped in recent years. Although they were increasing at the end of 2019 and in early 2020, the COVID-19 pandemic has created factors that have distorted case outcomes. A similar trend can be seen in non-fatal shootings. In particular, the courts shut down completely and then reopened very slowly during the pandemic. During this time, hearings that required non-police witnesses were halted, as were jury trials. The outcome of this was two-fold: first, only cases that could be resolved quickly and without need for witnesses were resolved—this led to an unusually high number of dismissals as compared to convictions. Second, few cases have been resolved overall. Whereas at the end of 2018, there were 112 pending fatal shooting cases open in the courts, there were 460 open cases as of December 8, 2021.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_12_1.jpg" alt="" />
+<p class="caption">Table: Philadelphia Fatal Shooting Case Outcomes By Year of Case Disposition</p>
+</div>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_12_2.jpg" alt="" />
+<p class="caption">Table: Philadelphia Non-Fatal Shooting Case Outcomes By Year of Case Disposition</p>
+</div>
+<p>A similar trend can be seen in illegal gun possession cases. In cases of gun possession by a prohibited person, in December 2021 there were 1,177 cases pending, whereas there were fewer than half that amount, 504, at the end of 2018. This reflects a more modest increase in the number of new 6106 cases that were started in that time period, relative to the more than quadrupling of pending 6106 cases from 2018 (466) to 2021 (2,284); in fact, the number of open 6106 cases doubled from 2020 to 2021. More than 2,000 people currently have open cases for possessing a firearm without a license.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_12_3.jpg" alt="" />
+<p class="caption">Table: Philadelphia Firearm Possession by a Prohibited Person (6105) Case Outcomes By Year of Case Disposition</p>
+</div>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_12_4.jpg" alt="" />
+<p class="caption">Table: Philadelphia Firearm Possession Without a License (6106) Case Outcomes By Year of Case Disposition</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-13-preliminary-hearing-case">
+DAO 13. Preliminary Hearing and Case Outcomes for Weekly VUFA/NFS Case Review
+</h2>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_12_1.jpg" alt="" />
+<p class="caption">Table: Preliminary outcomes of Weekly VUFA/NFS Case Reviews</p>
+</div>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_12_2.jpg" alt="" />
+<p class="caption">Table: Status of Weekly VUFA/NFS Case Reviews held for court</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-14-examples-recent-gun">
+DAO 14. Examples of Recent Gun Violence Task Force (GVTF) Investigations
+</h2>
+<ul>
+<li>In 2017, 9 people were arrested as a result of a Grand Jury Investigation into an on-going group conflict in South Philadelphia; 7 entered into guilty pleas on the lead charges, and 2 are awaiting trial for their role in a connected but separate homicide. All received $1,000,000 bail. Two of the arrestees had no prior record, one had a 2013 possession of marijuana arrest, another a misdemeanor theft, and four had juvenile system contact 3-4 years prior.</li>
+<li>Following a Grand Jury investigation in 2019, four individuals were arrested for nine shooting incidents in West/Southwest Philadelphia. The cases are currently open.
+<ul>
+<li>Defendant #1 prior record: 2012 Robbery (adjudicated delinquent), 2015 Theft</li>
+<li>Defendant #2 prior record: No record</li>
+<li>Defendant #3 prior record: 2016 Aggravated Assault (adjudicated delinquent)</li>
+<li>Defendant #4 prior record: 2013 Robbery (adjudicated delinquent), 2016 Fleeing (adjudicated delinquent).</li>
+</ul></li>
+<li>A 2020 Grand Jury investigation into shootings in South Philadelphia led to the arrests of 15 individuals, including 11 for shootings and homicides, for 19 separate shootings, including 2 homicides. Of the 15 people arrested, all appeared either on social media or in music videos with the individuals arrested in the 2017 Grand Jury Investigation, and two were defendants in 2017 GJ cases. Two of the individuals arrested for shootings had no prior arrest records; some had been arrested as kids or adults for firearm possession up to 6 years prior.</li>
+</ul>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-15-gun-possession-arrests">
+DAO 15. Gun Possession Arrests and Re-arrests for a Future Shooting
+</h2>
+<p>Despite the intuitive connection between gun possession and shootings (people who shoot people have guns), there is not strong evidence to suggest that arresting and detaining people for illegal gun possession will reduce shootings. As the tables below show, it is exceedingly uncommon for a person arrested for gun possession to be arrested for a shooting within two years of their arrest or an ultimate conviction. It is equally rare for a person charged with illegal gun possession to be arrested for a shooting while out on bail awaiting trial. This is true whether the person was charged with Possession Without a License ((<a href='https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=18&div=0&chpt=61&sctn=6&subsctn=0' target='_blank'>6106</a>)) or Possession by a Prohibited Person ((<a href='https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=18&div=0&chpt=61&sctn=5&subsctn=0' target='_blank'>6105</a>)).</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_15_1.jpg" alt="" />
+<p class="caption">Table: Frequency of Rearrest for a Shooting by Gun Possession by a Prohibited Person (6105) Arrestees</p>
+</div>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_15_2.jpg" alt="" />
+<p class="caption">Table: Frequency of Rearrest for a Shooting by Gun Possession Without a License (6106) Arrestees</p>
+</div>
+<p>A common argument made to support arrests for gun possession is to get guns off the street. Unfortunately, there are so many guns legally bought and sold in this country—in addition to guns that are purchased illegally or “ghost guns” which are bought in pieces and assembled—that several thousand gun possession arrests per year hardly impacts the volume of available guns (<a href="#dao-16-data-gun-sales">see Appendix 7: DAO 16</a>).</p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-16-data-gun-sales">
+DAO 16. Data on Gun Sales and “Crime Guns” Seized
+</h2>
+<p>Most of the data points presented below were generated using public data from data.philadao.com, OpenDataPhilly (via the Philadelphia Police Department), the Pennsylvania State Police (PSP), and the Office of the Pennsylvania Attorney General (OAG). These data were supplemented with local arrest and statewide court data, and analysis provided by Dr. David Johnson, Associate Professor of Economics, Central Missouri University.</p>
+<ul>
+<li>There were 12,948,979 guns legally sold or transferred in Pennsylvania over a 22-year period (1999-2020), an average of over 1,600 each day across the Commonwealth (Pennsylvania State Police, organized by Dr. David Johnson, personal correspondence).</li>
+<li>There were 165,717 guns seized by law enforcement statewide in Pennsylvania over a 21-year period (1999-2019), an average of fewer than 22 each day across the state (Attorney General’s Office, n.d.). During this time period the Philadelphia Police Department reported seizing 97,905 “crime guns,” an average of 12 each day (Attorney General’s Office, n.d.)<a href='#footnote-140' id='foot-loc-140'><sup>140</sup></a>.</li>
+<li>While half the guns recovered in Philadelphia originated in Pennsylvania, more than a quarter originated outside of the Commonwealth (Attorney General’s Office). Philadelphia is the primary county where guns legally sold in 13 Pennsylvania counties were recovered by law enforcement (Johnson, personal correspondence).</li>
+<li>Over the last 5 years (January 1, 2017-October 10, 2021), the Philadelphia Police Department conducted over 1,500,000 pedestrian and vehicle stops,<a href='#footnote-141' id='foot-loc-141'><sup>141</sup></a> while recovering 21,178 “crime guns.”<a href='#footnote-142' id='foot-loc-142'><sup>142</sup></a>
+<ul>
+<li>Of the 1.5M stops, 19% were of pedestrians, 81% were of vehicles. Pedestrian stops had a hit rate of 4.6%, vehicle stops had a hit rate of 0.8%.</li>
+<li>This equates to an average of over 700 vehicle stops, 166 pedestrian stops, and 12 guns recovered each day (Philadelphia Police Department PPT).</li>
+</ul></li>
+<li>In spite of the 11,757 arrests for gun possession in Philadelphia over the last 8 years, people continue to carry guns. In spite of decades of such enforcement – and an increase in arrests for gun possession starting in mid-2019, with massive increases during COVID – evidence from Philadelphia and other large jurisdictions suggests that a higher proportion of arrests have been for offenses where weapons were recovered since the onset of COVID19 and protests for racial justice (Arthur and Asher, 2021; Ludwig, 2021).</li>
+<li>Despite the intuitive connection between gun possession and shootings (people who shoot people have guns), we do not find strong evidence to suggest that arresting and detaining people for illegal gun possession will reduce shootings (<a href="#dao-15-gun-possession-arrests">see Appendix 7: DAO 15</a>). It is rare for a person charged with illegal gun possession to be arrested for a shooting while out on bail, awaiting trial; This is true whether the person was arrested for carrying a firearm while prohibited from doing so (1%) or carrying a firearm without a license (0.8%).</li>
+<li>There is not clear research suggesting that illegal firearm possession is a precursor to committing a future shooting; that is, many people carry guns and do not shoot other people. There is evidence people who carry guns in Philadelphia are more likely to be shot in an assault than those not in possession of guns (Branas et al., 2009).</li>
+</ul>
+<p>The table below shows the number of guns legally sold and reported in Pennsylvania and the Philadelphia region (Philadelphia, Montgomery, Bucks, Chester, and Delaware counties) from 1999-2020. There were more guns sold in this period than there are residents of Pennsylvania.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_16_1.jpg" alt="" />
+<p class="caption">Table: Total Guns Legally Sold in Pennsylvania, 1999-2020</p>
+</div>
+<p>The next figure shows that the rate of gun sales has been increasing rapidly, with more than 1 million guns sold in Pennsylvania in 2020. There were 12,948,979 guns legally sold or transferred in Pennsylvania over this 22-year period (1999-2020), an average of over 1,600 each day across the Commonwealth.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_16_2.jpg" alt="" />
+<p class="caption">Chart showing that almost 750,000 guns are sold per year in Pennsylvania</p>
+</div>
+<p>The map by Dr. David Johnson, Associate Professor, University of Central Missouri, shows the number of gun dealers in and around Philadelphia county, by ZIP code. Since 2003, there have been between 11 and 23 Federally licensed gun sellers operating in Philadelphia County. However, 310 were open across Bucks, Chester, Delaware, and Montgomery counties in 2019 (see map), with more in New Jersey and other proximate counties and states.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_16_3.jpg" alt="" />
+<p class="caption">Map showing where gun dealer are located in Southeast Pennsylvania counties</p>
+</div>
+<p>However, in spite of the relatively few gun dealers in Philadelphia county, several of them have legally sold guns later recovered by law enforcement. A preliminary analysis by David Johnson, PhD, Associate Professor of Economics at the University of Central Missouri, found that, since 2003, law enforcement across the Commonwealth have recovered:</p>
+<ul>
+<li>Over 2,500 guns sold at Philadelphia Archery and Gun Club Inc. (831 Ellsworth St, Philadelphia, PA 19147), making it the seller with the second-most guns recovered by law enforcement since 2003.</li>
+<li>Over 1,500 guns sold at Lock’s Philadelphia Gun Exchange (6700 Rowland Ave, Philadelphia, PA 19149) were later recovered by law enforcement, the 4th-highest total statewide since 2003.</li>
+<li>Over 1,000 guns sold at Mike and Kates Sport Shoppe (7492 Oxford Ave, Philadelphia, PA 19111) were later recovered by law enforcement, the 9th-highest total statewide.</li>
+<li>Colosimo’s Gun Center (933 Spring Garden St #35, Philadelphia, PA 19123) – which closed in 2009<a href='#footnote-143' id='foot-loc-143'><sup>143</sup></a>– still ranks 10th in the state in producing guns recovered by law enforcement since 2003.</li>
+</ul>
+<p>There has been broad community support for targeting negligent gun-sellers, including efforts to close Colosimo’s.<a href='#footnote-144' id='foot-loc-144'><sup>144</sup></a> Identifying gun dealers whose guns are later recovered by police can help inform targeted enforcement strategies to reduce straw purchases. A preliminary analysis of national data indicates that as the percent of gun dealers that are inspected increases, the number of gun dealers decreases (David Johnson, personal correspondence), suggesting that increasing inspections of dealers in Philadelphia and surrounding counties might reduce straw sales and purchases and the flow of guns into Philadelphia.</p>
+<p>In contrast to the 12,948,979 guns legally sold or transferred in Pennsylvania from 1999-2020, only 85,071 “crime guns” were recovered in Philadelphia during this time period. Only half of those clearly originated through legal transactions in Pennsylvania; the rest were brought into Pennsylvania from other states or were unable to be traced to a legal sale. It is impossible to arrest our way out of illegal gun possession in Philadelphia: the supply and availability of guns are just too great.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_16_4.jpg" alt="" />
+<p class="caption">Table: Reported Crime Guns Recovered in PA, 1999-2019 And the origin of the gun, by prior sale</p>
+</div>
+<p>In Philadelphia, only 1 in 4 “crime guns” recovered by the police were clearly last legally sold in Philadelphia. Most guns were imported from another county or another state</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_16_5.jpg" alt="" />
+<p class="caption">Table: Guns Recovered 2015-2020 by state or county showing that most crime guns recovered in Philadelphia were not purchased in Philadelphia.</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-17-enforcement-illegal-gun">
+DAO 17. Enforcement of Illegal Gun Possession
+</h2>
+<p>A primary police strategy to deal with gun violence has been to increase enforcement of gun possession laws. The number of “crime guns” seized is regularly reported. Although there has been an increase in arrests for gun possession for the past several years, enforcement of gun possession laws increased starting in mid-2019, with massive increases in 2020 and 2021. In particular, the police have increased enforcement of firearm possession without a license—an offense charged when a person is not legally prohibited from owning a firearm because of a past conviction, but the person does not have a license to carry a firearm.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_17_1.jpg" alt="" />
+<p class="caption">Line chart showing how police rapidly increased enforcement of firearm possession without a license in late 2020.</p>
+</div>
+<p>Enforcement of possession without a license is unique to Philadelphia as compared to the rest of the state, as is the massive increase in enforcement since the start of the pandemic. The chart on the next page shows the rate at which Firearm Possession Without a License cases have been brought in each county, annually, from 2015-2019 and then in 2020 and 2021, controlling for population size. Prior to the pandemic, Philadelphia already charged twice as many of these cases annually, per capita, than any other Pennsylvania county. During the pandemic, Philadelphia more than doubled its prior charging rate, and now charges more than four times the number of Firearm Possession Without a License cases as other counties</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_17_2.jpg" alt="" />
+<p class="caption">Bar chart showing that Philadelphia County charges more gun possession without a license offenses than any other county, and more than doubled its charging rate since 2020, far beyond any other county.</p>
+</div>
+<p>Enforcement of gun possession laws has not been equal across racial groups. Despite Philadelphia’s population being only approximately 44% Black, almost 80% of arrestees for gun possession in Philadelphia were Black between 2007 and mid-2021.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_17_3.jpg" alt="" />
+<p class="caption">Table: Race Breakdown of Individuals Arrested for Gun Possession Offenses, Philadelphia</p>
+</div>
+<p>A similar disparity exists statewide. Despite a state population that is only 12% Black (including Philadelphia), 65% of those arrested for illegal firearm possession statewide were Black between 2007 and mid-2021.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_17_4.jpg" alt="" />
+<p class="caption">Table: Race Breakdown of Individuals Arrested for Gun Possession Offenses, PA (excluding Philadelphia)</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h2 id="dao-18-poster-court-actor">
+DAO 18. Poster on Court Actor Failures to Appear by Graef and Ouss (2021)
+</h2>
+<p>This poster was presented at the 2021 American Society of Criminology Conference.</p>
+<div class="figure">
+<img src="assets/images/shooting_report_images/appendix_dao_18_1.jpg" alt="" />
+<p class="caption">Poster showing that non-defendant FTA are very common for misdeameanors and correlated with case outcomes</p>
+</div>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+<h1 id="footnotes">
+Footnotes
+</h1>
+<p><strong id='footnote-1'>[1]</strong> Criminal shootings exclude such incidents as accidental shootings, self-inflicted shootings, and justifiable (e.g., self-defense) shootings. Some of the shootings involve multiple victims being struck in a single incident; this count is victim counts, not incident counts. <a href='#foot-loc-1'>▲ Back to report</a></p>
+<p><strong id='footnote-2'>[2]</strong> Here, clearance refers to the number of shootings in a given year that have either led to an arrest or where a suspect has been identified but cannot be arrested (i.e., exceptional clearances) (e.g. due to death or fleeing the country). <a href='#foot-loc-2'>▲ Back to report</a></p>
+<p><strong id='footnote-3'>[3]</strong> There are two main categories of illegal gun possession cases in Philadelphia: Possession of a firearm by a person who has been prohibited from carrying gun due to a past serious conviction or other prohibition (<a href='https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=18&div=0&chpt=61&sctn=5&subsctn=0' target='_blank'>18 Pa.C.S. § 6105</a>), and possession of a firearm without a license (<a href='https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=18&div=0&chpt=61&sctn=6&subsctn=0' target='_blank'>18 Pa.C.S. § 6106</a>). The former is generally viewed as the most serious illegal gun possession statute, while the latter is generally viewed as less serious than possession by a prohibited person. Both are non-violent offenses only related to illegal possession of a gun. <a href='#foot-loc-3'>▲ Back to report</a></p>
+<p><strong id='footnote-4'>[4]</strong> Note that the defendant is required to post only 10% of the bail amount set. <a href='#foot-loc-4'>▲ Back to report</a></p>
+<p><strong id='footnote-5'>[5]</strong> To pass the preliminary hearing, a judge must determine that there is enough evidence available to bring a case against the defendant. <a href='#foot-loc-5'>▲ Back to report</a></p>
+<p><strong id='footnote-6'>[6]</strong> While Defender Association supports the recommendation to involve community voices in the development and implementation of local law enforcement strategies, the agency did not participate in and does not endorse any other specific recommendations for enforcement. Defender notes that effective strategies should promote both public safety and racial equity. These values are mutually dependent not exclusive. We write separately to call for transparency in implementation and outcomes to support continued community engagement and accountability. <a href='#foot-loc-6'>▲ Back to report</a></p>
+<p><strong id='footnote-14'>[14]</strong> The DAO’s analysis and recommendations reflect the collaboration of many people within the Philadelphia District Attorney’s Office. Contributors include: Oren M. Gur, Michael Hollander, CJ Arayata, Yasmin Ayala-Johnson, Keziah Cameron, William Curtain, Mariel Delacruz, William Fritze, Gregory Holston, Sebastian Hoyos-Torres, Chance Lee, Sean Mason, Myra Maxwell, Christion Smith, Tyler Tran, Wes Weaver. The District Attorney’s Transparency Analytics (DATA) Lab was the primary, regular collaborator with PIRPSC. <a href='#foot-loc-14'>▲ Back to report</a></p>
+<p><strong id='footnote-15'>[15]</strong> Remster, B., &amp; Kramer, R. (2019). Shifting power: The impact of incarceration on political representation. Du Bois Review: Social Science Research on Race, 15(2), 417-439. <a href="doi:10.1017/S1742058X18000206" class="uri">doi:10.1017/S1742058X18000206</a> <a href='#foot-loc-15'>▲ Back to report</a></p>
+<p><strong id='footnote-16'>[16]</strong> There are two main categories of illegal gun possession cases in Philadelphia: Possession of a firearm by a person who has been prohibited from carrying gun due to a past serious conviction or other prohibition (<a href='https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=18&div=0&chpt=61&sctn=5&subsctn=0' target='_blank'>18 Pa.C.S. § 6105</a>), and possession of a firearm without a license (<a href='https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=18&div=0&chpt=61&sctn=6&subsctn=0' target='_blank'>18 Pa.C.S. § 6106</a>). The former is generally viewed as the most serious illegal gun possession statute, while the latter is generally viewed as less serious than possession by a prohibited person. <a href='#foot-loc-16'>▲ Back to report</a></p>
+<p><strong id='footnote-17'>[17]</strong> Holden, Joe (December 20, 2021). “Sources: Philadelphia Police Department Close To Announcing New Non-Fatal Shooting Unit Amid Gun Violence Epidemic.” CBS Philly, <a href="https://philadelphia.cbslocal.com/2021/12/20/sources-philadelphia-police-department-non-fatal-shooting-unit-gun-violence-larry-krasner/" class="uri">https://philadelphia.cbslocal.com/2021/12/20/sources-philadelphia-police-department-non-fatal-shooting-unit-gun-violence-larry-krasner/</a> <a href='#foot-loc-17'>▲ Back to report</a></p>
+<p><strong id='footnote-18'>[18]</strong> The Violent Incident Clearance and Technological Investigative Methods (VICTIM) Act (H.R. 5768) was recently sponsored seeking Congressional funding “to solve shooting cases [and] make neighborhoods safer.” Evans, Dwight. (November 1, 2021). “Evans Co-Leads Bill to Provide $1 Billion to Solve Shooting Cases, Make Neighborhoods Safer” <a href="https://evans.house.gov/media-center/press-releases/evans-co-leads-bill-provide-1-billion-solve-sho" class="uri">https://evans.house.gov/media-center/press-releases/evans-co-leads-bill-provide-1-billion-solve-sho</a> oting-cases-make, <a href="https://demings.house.gov/sites/demings.house.gov/files/VICTIM%20Act%20-%2010-26-21.pdf" class="uri">https://demings.house.gov/sites/demings.house.gov/files/VICTIM%20Act%20-%2010-26-21.pdf</a> <a href='#foot-loc-18'>▲ Back to report</a></p>
+<p><strong id='footnote-19'>[19]</strong> Tran, T. (December 29, 2021). “Clearing up clearance rates.” Data Story, The Philadelphia DAO Justice Wire. <a href="https://medium.com/philadelphia-justice/clearing-up-clearance-rates-ff87cc33a31a" class="uri">https://medium.com/philadelphia-justice/clearing-up-clearance-rates-ff87cc33a31a</a> <a href='#foot-loc-19'>▲ Back to report</a></p>
+<p><strong id='footnote-20'>[20]</strong> Cook, P.J., Braga, A.A., Turchan, B.S., &amp; Barao, L.M. (2019). Why do gun murders have a higher clearance rate than gunshot assaults? Criminology &amp; Public Policy, 18(3), 525-551. <a href='#foot-loc-20'>▲ Back to report</a></p>
+<p><strong id='footnote-21'>[21]</strong> For example, see “DATA Snapshot: Incidents, Arrests, and Charges – November 2021” (December 6, 2021). By the Numbers, The Philadelphia DAO Justice Wire. <a href="https://medium.com/philadelphia-justice/data-snapshot-incidents-arrests-and-charges-november-2021-6d4d24cc1c96" class="uri">https://medium.com/philadelphia-justice/data-snapshot-incidents-arrests-and-charges-november-2021-6d4d24cc1c96</a> <a href='#foot-loc-21'>▲ Back to report</a></p>
+<p><strong id='footnote-22'>[22]</strong> Amaral et al. (2021) analyzed 35,194 adult gun arrests and case outcomes between January 2010-March 2020 in Philadelphia. Preliminary results were presented at the 2021 American Society of Criminology Conference. Researchers at the University of Pennsylvania Department of Criminology are working closely with the DAO and DATA Lab to research the impact of policy changes at the DAO. Amaral, M.F.A., Loeffler, C., &amp; Ridgeway, G. (2021). Progressive prosecution and gun cases: Evidence from Philadelphia. Poster presented at the American Society of Criminology, Chicago, Ill., November 18. <a href='#foot-loc-22'>▲ Back to report</a></p>
+<p><strong id='footnote-23'>[23]</strong> Philadelphia District Attorney’s Office (September 18, 2018). “Krasner Announces Big Shakeup in Homicide Unit of DA’s Office.” The Justice Wire. <a href="https://medium.com/philadelphia-justice/krasner-announces-big-shakeup-in-homicide-unit-of-das-office-3581160b8a51" class="uri">https://medium.com/philadelphia-justice/krasner-announces-big-shakeup-in-homicide-unit-of-das-office-3581160b8a51</a> <a href='#foot-loc-23'>▲ Back to report</a></p>
+<p><strong id='footnote-24'>[24]</strong> Palmer, C. (September 9, 2019). “Philly courts, DA Larry Krasner try to speed up prosecutions of nonfatal shooting cases.” Philadelphia Inquirer. <a href="https://www.inquirer.com/news/philadelphia-court-system-da-larry-krasner-non-fatal-shooting-prosecutions-20190909.html" class="uri">https://www.inquirer.com/news/philadelphia-court-system-da-larry-krasner-non-fatal-shooting-prosecutions-20190909.html</a><br>Philadelphia District Attorney’s Office (September 9, 2019). “RELEASE: Philadelphia Courts, Justice Partners, to Implement Non-Fatal Shooting Program.” The Justice Wire. <a href="https://medium.com/philadelphia-justice/release-philadelphia-courts-justice-partners-to-implement-non-fatal-shooting-program-539f3c07f657" class="uri">https://medium.com/philadelphia-justice/release-philadelphia-courts-justice-partners-to-implement-non-fatal-shooting-program-539f3c07f657</a> <a href='#foot-loc-24'>▲ Back to report</a></p>
+<p><strong id='footnote-25'>[25]</strong> Settlement Agreement, Class Certification, and Consent Decree, Bailey v. City of Philadelphia (E.D. Pa. June 21, 2011) (No. 10-cv-05952). See American Civil Liberties Union (n.d.). BAILEY, ET AL. V. CITY OF PHILADELPHIA, ET AL. <a href="https://www.aclupa.org/en/cases/bailey-et-al-v-city-philadelphia-et-al" class="uri">https://www.aclupa.org/en/cases/bailey-et-al-v-city-philadelphia-et-al</a> <a href='#foot-loc-25'>▲ Back to report</a></p>
+<p><strong id='footnote-26'>[26]</strong> Comm. v. Hicks, 208 A.3d 916 (Pa. 2019) <a href='#foot-loc-26'>▲ Back to report</a></p>
+<p><strong id='footnote-27'>[27]</strong> Comm. v. Perfetto, 207 A.3d 812 (Pa. 2019) <a href='#foot-loc-27'>▲ Back to report</a></p>
+<p><strong id='footnote-28'>[28]</strong> Alexander v. Comm., 243 A.3d 177 (Pa. 2020) <a href='#foot-loc-28'>▲ Back to report</a></p>
+<p><strong id='footnote-29'>[29]</strong> Palmer, C., Purcell., D., Newall, M., &amp; Dean, M.M. (March 30, 2021). “Philly gun arrests are on a record pace, but convictions drop under DA Krasner.” Philadelphia Inquirer. <a href="https://www.inquirer.com/news/philadelphia-gun-arrests-2021-convictions-vufa-20210330.html" class="uri">https://www.inquirer.com/news/philadelphia-gun-arrests-2021-convictions-vufa-20210330.html</a>;<br> CBS3 Staff (December 14, 2021). “Pennsylvania AG Josh Shapiro says Philadelphia making progress in reducing gun violence.” CBS 3 Philly. <a href="https://philadelphia.cbslocal.com/2021/12/14/josh-shapiro-danielle-outlaw-west-philadelphia-shootings-gun-violence/" class="uri">https://philadelphia.cbslocal.com/2021/12/14/josh-shapiro-danielle-outlaw-west-philadelphia-shootings-gun-violence/</a>; PA Attorney General Josh Shapiro (December 14, 2021). “AG Shapiro Shares Results of New Law Enforcement Partnership.” YouTube.com. <a href="https://youtu.be/Oh0y2aYmUME" class="uri">https://youtu.be/Oh0y2aYmUME</a> <a href='#foot-loc-29'>▲ Back to report</a></p>
+<p><strong id='footnote-30'>[30]</strong> Peterson, S., &amp; Bushway, S. (2020). Law enforcement approaches for reducing gun violence. RAND. <a href="https://www.rand.org/research/gun-policy/analysis/essays/law-enforcement-approaches-for-reducing-gun-violence.html" class="uri">https://www.rand.org/research/gun-policy/analysis/essays/law-enforcement-approaches-for-reducing-gun-violence.html</a> <a href='#foot-loc-30'>▲ Back to report</a></p>
+<p><strong id='footnote-31'>[31]</strong> Deterrence theory also suggests severity of punishment is important, but research has not found support for this aspect of the theory (National Institute of Justice, 2016). National Institute of Justice (2016). “Five Things About Deterrence.” National Institute of Justice., NCJ No. 247350. <a href="https://www.ojp.gov/pdffiles1/nij/247350.pdf" class="uri">https://www.ojp.gov/pdffiles1/nij/247350.pdf</a>. <a href='#foot-loc-31'>▲ Back to report</a></p>
+<p><strong id='footnote-32'>[32]</strong> Of the nearly 13 million guns sold in Pennsylvania during this time, 266,186 were sold in Philadelphia, and 1,543,112 in Philadelphia, Bucks, Montgomery, and Delaware counties combined (Pennsylvania State Police, n.d.). There were an estimated 393,000,000 guns in circulation in the United States six years ago (Small Arms Survey, 2015), with 408,477,515 National Instant Criminal Background Firearm Backgrounds Checks between November 1998 through November 2021 (Federal Bureau of Investigations, 2021). Furthermore, a national survey found that 22% of recent gun purchasers reported buying their gun without a background check (Miller, Hepburn, Azrael, 2017). (<a href="#dao-16-data-gun-sales">See Appendix 7: DAO 16</a>).</p>
+<ul>
+<li>Small Arms Survey (2015). Annual Report. <a href="https://smallarmssurvey.org/sites/default/files/resources/SAS-Annual-Report-2015.pdf" class="uri">https://smallarmssurvey.org/sites/default/files/resources/SAS-Annual-Report-2015.pdf</a>.</li>
+<li>Federal Bureau of Investigations (2021). NICS Firearm Background Checks: Month/Year November 30, 1998-December 31, 2021. FBI. <a href="https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year.pdf" class="uri">https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year.pdf</a></li>
+<li>Miller, M., Hepburn, L., &amp; Azrael, D. (2017). Firearm acquisition without background checks: Results of a national survey. Annals of Internal Medicine, 166, 233-239. <a href="doi:10.7326/M16-1590" class="uri">doi:10.7326/M16-1590</a> <a href='#foot-loc-32'>▲ Back to report</a></li>
+</ul>
+<p><strong id='footnote-33'>[33]</strong> Sierra-Arévalo, M. (2016). Legal cynicism and protective gun ownership among active offenders in Chicago. Cogent Social Sciences, 2. <a href="https://isps.yale.edu/sites/default/files/publication/2016/09/cogentsocialsciences_2016_sierra-arevalo_legal_cynicism_and_protective_gun_ownership_among_active_offenders_in_chicago.pdf" class="uri">https://isps.yale.edu/sites/default/files/publication/2016/09/cogentsocialsciences_2016_sierra-arevalo_legal_cynicism_and_protective_gun_ownership_among_active_offenders_in_chicago.pdf</a><br> Fontaine, J., La Vigne, N.G., Leitson, D., Erondu, N., Okeke, C., &amp; Dwivedi, A. (2018). “We Carry Guns to Stay Safe”: Perspectives on Guns and Gun Violence from Young Adults Living in Chicago’s West and South Sides. Urban Institute Justice Policy Center, <a href="https://www.urban.org/sites/default/files/publication/99091/we_carry_guns_to_stay_safe_1.pdf" class="uri">https://www.urban.org/sites/default/files/publication/99091/we_carry_guns_to_stay_safe_1.pdf</a> <a href='#foot-loc-33'>▲ Back to report</a></p>
+<p><strong id='footnote-34'>[34]</strong> Publicly available Pennsylvania State Police data was organized and shared by Dr. David Johnson. See, e.g., Pennsylvania State Police (n.d.). Firearms Annual Reports. Pennsylvania State Police. <a href="https://www.psp.pa.gov/firearms-information/Pages/Firearms-Annual-Reports.aspx" class="uri">https://www.psp.pa.gov/firearms-information/Pages/Firearms-Annual-Reports.aspx</a> <a href='#foot-loc-34'>▲ Back to report</a></p>
+<p><strong id='footnote-35'>[35]</strong> Few agencies have been submitting data since 1999, and currently not all law enforcement agencies report gun seizure information (Attorney General’s Office, n.d.). Attorney General’s Office (n.d.). Pennsylvania Gun Tracing Analytics Platform. <a href="https://www.attorneygeneral.gov/gunviolence/pennsylvania-gun-tracing-analytics-platform/" class="uri">https://www.attorneygeneral.gov/gunviolence/pennsylvania-gun-tracing-analytics-platform/</a> <a href='#foot-loc-35'>▲ Back to report</a></p>
+<p><strong id='footnote-36'>[36]</strong> Pennsylvania Department of Corrections (n.d.). State Prisons. <a href="https://www.cor.pa.gov/Facilities/StatePrisons/Pages/default.aspx" class="uri">https://www.cor.pa.gov/Facilities/StatePrisons/Pages/default.aspx</a> <a href='#foot-loc-36'>▲ Back to report</a></p>
+<p><strong id='footnote-37'>[37]</strong> Cooke, B., Diop, B.Z., Fishbane, A., Ouss, A., Hayes, J., &amp; Shah, A. (2018). Using Behavioral Science to Improve Criminal Justice Outcomes: Preventing Failures to Appear in Court. UChicago Crime Lab. <a href="https://www.povertyactionlab.org/evaluation/text-message-reminders-decreased-failure-appear-cou" class="uri">https://www.povertyactionlab.org/evaluation/text-message-reminders-decreased-failure-appear-cou</a> rt-new-york-city<a href='#foot-loc-37'>▲ Back to report</a></p>
+<p><strong id='footnote-38'>[38]</strong> Palmer, C., &amp; Orso, A. (December 31, 2021). “Philly’s homicide crisis in 2021 featured more guns, more retaliatory shootings, and a decline in arrests and convictions.” Philadelphia Inquirer. <a href="https://www.inquirer.com/news/philadelphia-murders-shootings-gun-violence-2021-20211231.html" class="uri">https://www.inquirer.com/news/philadelphia-murders-shootings-gun-violence-2021-20211231.html</a> <a href='#foot-loc-38'>▲ Back to report</a></p>
+<p><strong id='footnote-39'>[39]</strong> Shefner, R.T., Sloan, J.S., Sandler, K.R., Anderson, E.D. (2018). Missed opportunities: Arrest and court touchpoints for individuals who fatally overdosed in Philadelphia in 2016. International Journal of Drug Policy, 78, <a href="https://doi.org/10.1016/j.drugpo.2020.102724" class="uri">https://doi.org/10.1016/j.drugpo.2020.102724</a> <a href='#foot-loc-39'>▲ Back to report</a></p>
+<p><strong id='footnote-103'>[103]</strong> Philadelphia District Attorney’s Office (n.d.). Exonerations. Public Data Dashboard. <a href="https://data.philadao.com/Exonerations.htm" class="uri">https://data.philadao.com/Exonerations.htm</a> <a href='#foot-loc-103'>▲ Back to report</a></p>
+<p><strong id='footnote-104'>[104]</strong> Ratcliffe, J.H. (2021). Policing and public health calls for service in Philadelphia. Crime Science, 10(5): 1-6.<a href='#foot-loc-104'>▲ Back to report</a></p>
+<p><strong id='footnote-105'>[105]</strong> Vollmer. A. (1936). The police and modern society. Berkeley, Calif., University of California Press. <a href='#foot-loc-105'>▲ Back to report</a></p>
+<p><strong id='footnote-106'>[106]</strong> Agan, A.Y., Doleac, J.L., &amp; Harvey, A. (2021). Misdemeanor Prosecution. National Bureau of Economic Research. <a href="https://www.nber.org/papers/w28600" class="uri">https://www.nber.org/papers/w28600</a> <a href='#foot-loc-106'>▲ Back to report</a></p>
+<p><strong id='footnote-107'>[107]</strong> Philadelphia Police Department (2021). Directive 3.23: POSSESSION OF SMALL AMOUNTS OF MARIJUANA (30 GRAMS OR LESS) CITY CODE CHAPTER §10-2100. <a href="http://www.phillypolice.com/assets/directives/D3.23-PossessionOfSmallAmountsOfMarijuana.pdf" class="uri">http://www.phillypolice.com/assets/directives/D3.23-PossessionOfSmallAmountsOfMarijuana.pdf</a> <a href='#foot-loc-107'>▲ Back to report</a></p>
+<p><strong id='footnote-108'>[108]</strong> Branas, C.C., South, E., Kondo, M.C., Hohl, B.C., Bourgeois, P., Wiebe, D.J., &amp; MacDonald, J.M. (2018). Citywide cluster randomized trial to restore blighted vacant land and its effects on violence, crime, and fear. Proceedings of the National Academy of Sciences, 115(12), 2946-2951. <a href="https://www.pnas.org/content/115/12/2946" class="uri">https://www.pnas.org/content/115/12/2946</a> <a href='#foot-loc-108'>▲ Back to report</a></p>
+<p><strong id='footnote-109'>[109]</strong> South, E.C., MacDonald, J.M., &amp; Reina, V. (2021). JAMA Netw Open., 4(7): e2117067. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2782142" class="uri">https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2782142</a> <a href='#foot-loc-109'>▲ Back to report</a></p>
+<p><strong id='footnote-110'>[110]</strong> MacDonald, J.M. (2019). A randomized trial of abandoned housing remediation, substance abuse, safety, and violence. ISRCTN Registry. <a href="https://www.isrctn.com/ISRCTN14973997" class="uri">https://www.isrctn.com/ISRCTN14973997</a> <a href='#foot-loc-110'>▲ Back to report</a></p>
+<p><strong id='footnote-111'>[111]</strong> Chalfin, A., Hansen, B., Lerner, J., &amp; Parker, L. Reducing Crime Through Environmental Design: Evidence from a Randomized Experiment of Street Lighting in New York City. Journal of Quantitative Criminology, 10.1007/s10940-020-09490-6; <a href="http://achalfin.weebly.com/uploads/8/5/4/8/8548116/lights_04242016.pdf" class="uri">http://achalfin.weebly.com/uploads/8/5/4/8/8548116/lights_04242016.pdf</a> <a href='#foot-loc-111'>▲ Back to report</a></p>
+<p><strong id='footnote-112'>[112]</strong> Marin, M., &amp; Briggs, R.W. (November 30, 2021). Broken streetlight complaints in Philly triple due to botched city contract. Philadelphia Inquirer. <a href="https://www.inquirer.com/news/street-light-outages-philadelphia-crime-rates-20211130.html" class="uri">https://www.inquirer.com/news/street-light-outages-philadelphia-crime-rates-20211130.html</a> <a href='#foot-loc-112'>▲ Back to report</a></p>
+<p><strong id='footnote-113'>[113]</strong> The Chicago Fund for Safe and Peaceful Communities (n.d.). Home page. www.safeandpeacefulchi.com <a href='#foot-loc-113'>▲ Back to report</a></p>
+<p><strong id='footnote-114'>[114]</strong> Partnerships for Safe and Peaceful Communities (n.d.). Our Strategies. <a href="https://safeandpeaceful.org/our-strategies/" class="uri">https://safeandpeaceful.org/our-strategies/</a> <a href='#foot-loc-114'>▲ Back to report</a></p>
+<p><strong id='footnote-115'>[115]</strong> Sharkey, P. (January 25, 2018). “Op-Ed. Community investment, not punishment, is key to reducing violence.” Los Angeles Times. <a href="https://www.latimes.com/opinion/op-ed/la-oe-sharkey-violence-community-investment-20180125-st" class="uri">https://www.latimes.com/opinion/op-ed/la-oe-sharkey-violence-community-investment-20180125-st</a> ory.html;<br>Sharkey, P. (2018). Uneasy peace: The great crime decline, the renewal of city life, and the next war on violence. WW Norton &amp; Company Inc. <a href='#foot-loc-115'>▲ Back to report</a></p>
+<p><strong id='footnote-116'>[116]</strong> Philadelphia Police Department (2021). Directive 3.9: DOMESTIC ABUSE AND VIOLENCE. <a href="http://www.phillypolice.com/assets/directives/D3.9-DomesticAbuseAndViolence.pdf" class="uri">http://www.phillypolice.com/assets/directives/D3.9-DomesticAbuseAndViolence.pdf</a> <a href='#foot-loc-116'>▲ Back to report</a></p>
+<p><strong id='footnote-117'>[117]</strong> The Editorial Board (December 9, 2019). “What’s the point in having gun control if Philadelphia doesn’t enforce it?” Philadelphia Inquirer. <a href="https://www.inquirer.com/opinion/editorials/gun-control-philadelphia-violence-domestic-abusers-law-sheriff-20191209.html" class="uri">https://www.inquirer.com/opinion/editorials/gun-control-philadelphia-violence-domestic-abusers-law-sheriff-20191209.html</a> <a href='#foot-loc-117'>▲ Back to report</a></p>
+<p><strong id='footnote-118'>[118]</strong> Sorenson, S.B. (2017). Guns in intimate partner violence: Comparing incidents by type of weapon. Journal of Women’s Health, 26(3), 249-258. www.liebertpub.com/doi/pdf/10.1089/jwh.2016.5832 <a href='#foot-loc-118'>▲ Back to report</a></p>
+<p><strong id='footnote-119'>[119]</strong> Sorenson, S.B. (November 12, 2018). A woman terrorized with a gun is a woman harmed by one. The Trace. www.thetrace.org/2018/11/coercive-control-domestic-violence-guns-public-health <a href='#foot-loc-119'>▲ Back to report</a></p>
+<p><strong id='footnote-120'>[120]</strong> Tierney, J.P., McClanahan, W.S., &amp; Hangley Jr., B. (2001). Murder is no mystery: An analysis of Philadelphia homicide, 1996-1999. Public/Private venture. <a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/murder-no-mystery-analysis-philadelphia-homicide-1996-1999" class="uri">https://www.ojp.gov/ncjrs/virtual-library/abstracts/murder-no-mystery-analysis-philadelphia-homicide-1996-1999</a> <a href='#foot-loc-120'>▲ Back to report</a></p>
+<p><strong id='footnote-121'>[121]</strong> Philadelphia District Attorney’s Office (n.d.). Exonerations. Public Data Dashboard. <a href="https://data.philadao.com/Exonerations.html" class="uri">https://data.philadao.com/Exonerations.html</a> <a href='#foot-loc-121'>▲ Back to report</a></p>
+<p><strong id='footnote-135'>[135]</strong> When the COVID-19 pandemic first started in March 2020, the PDP was an excellent partner in providing a daily spreadsheet of people in custody to the DAO, which helped the DAO, Defender Association, and First Judicial District to implement an emergency review process to consider who could potentially be released from jail. That data sharing was a critical part of the process to help release over 1,300 people over 6 weeks, and very likely saved lives given the high risk of COVID-19 spreading in the jails. (Moselle, A. (May 20, 2020). “Fewer people being released from Philly ails as pool of eligible cases shrinks.” WHYY PBS NPR, <a href="https://whyy.org/articles/fewer-people-being-released-from-philly-jails-as-pool-of-eligible-cases-shrinks/" class="uri">https://whyy.org/articles/fewer-people-being-released-from-philly-jails-as-pool-of-eligible-cases-shrinks/</a> <a href='#foot-loc-135'>▲ Back to report</a></p>
+<p><strong id='footnote-136'>[136]</strong> Even if arrest rates were high, trying to predict who may shoot someone in the future based on government data about Philadelphians is ethically fraught and technologically difficult. Models that do forecast future behavior often reflect, reinforce, and exacerbate systemic bias because they are based on administrative data that tends to track poor people and communities of color. Robinson, D., &amp; Koepke, L. (2016). Stuck in a pattern: Early evidence on ‘predictive policing’ and civil rights. Upturn. <a href="https://www.upturn.org/static/reports/2016/stuck-in-a-pattern/files/Upturn_-_Stuck_In_a_Pattern_v.1.01.pdf" class="uri">https://www.upturn.org/static/reports/2016/stuck-in-a-pattern/files/Upturn_-_Stuck_In_a_Pattern_v.1.01.pdf</a> <a href='#foot-loc-136'>▲ Back to report</a></p>
+<p><strong id='footnote-137'>[137]</strong> Kitsuse, J.I., &amp; Cicourel, A.V. (1963). A note on the use of official statistics. Social Problems, 11(2), 131-9. <a href='#foot-loc-137'>▲ Back to report</a></p>
+<p><strong id='footnote-138'>[138]</strong> Gur, O.M. (2015). Degrees of separation: Drug use by graduate and professional school students. Dissertation, University of Illinois at Chicago. <a href="https://indigo.uic.edu/articles/thesis/Degrees_of_Separation_Drug_Use_by_Graduate_and_Profession" class="uri">https://indigo.uic.edu/articles/thesis/Degrees_of_Separation_Drug_Use_by_Graduate_and_Profession</a> al_School_Students/10784270 <a href='#foot-loc-138'>▲ Back to report</a></p>
+<p><strong id='footnote-139'>[139]</strong> Davis, E., &amp; Whyde, A. (2018). Contacts between police and the public, 2015. US. Dept. of Justice Bureau of Justice Statistics. <a href="https://bjs.ojp.gov/content/pub/pdf/cpp15.pdf" class="uri">https://bjs.ojp.gov/content/pub/pdf/cpp15.pdf</a> <a href='#foot-loc-139'>▲ Back to report</a></p>
+<p><strong id='footnote-140'>[140]</strong> Few agencies have been submitting data since 1999, and currently not all law enforcement agencies report gun seizure information (Attorney General’s Office, n.d.). <a href='#foot-loc-140'>▲ Back to report</a></p>
+<p><strong id='footnote-141'>[141]</strong> The Driving Equality Bill passed by Philadelphia City Council in October 2021 aims to reduce the use of pretextual car stops in Philadelphia; it will go into effect in early 2022 (<a href="https://phlcouncil.com/city-council-approves-councilmember-thomas-driving-equality-bills/" class="uri">https://phlcouncil.com/city-council-approves-councilmember-thomas-driving-equality-bills/</a>). <a href='#foot-loc-141'>▲ Back to report</a></p>
+<p><strong id='footnote-142'>[142]</strong> Not all crime guns are recovered from vehicle and pedestrian stops. For example, the Philadelphia Sheriff’s Office removes guns from homes when a protection from abuse order is served. <a href='#foot-loc-142'>▲ Back to report</a></p>
+<p><strong id='footnote-143'>[143]</strong> <a href="https://www.inquirer.com/philly/news/breaking/20090930_At_a_notorious_gun_shop__the_end_of_an_era.html" class="uri">https://www.inquirer.com/philly/news/breaking/20090930_At_a_notorious_gun_shop__the_end_of_an_era.html</a> <a href='#foot-loc-143'>▲ Back to report</a></p>
+<p><strong id='footnote-144'>[144]</strong> <a href="https://nvdatabase.swarthmore.edu/content/faith-based-philadelphians-campaign-close-gun-shop-2009" class="uri">https://nvdatabase.swarthmore.edu/content/faith-based-philadelphians-campaign-close-gun-shop-2009</a> <a href='#foot-loc-144'>▲ Back to report</a></p>
+<p><a href='#report-toc'>▲ Back to Table of Contents</a></p>
+
+</div>
+<footer class="row">
+<div class="container-fluid padding">
+<div class="row text-center">
+	<div class="col-md-4">
+    <h2 class="connectext">Office</h2>
+		<hr class="light mx-auto">
+		<p>
+		  Three South Penn Square<br/>
+		  Philadelphia, PA 19107-3499<br/>
+		  215-686-8000
+		</p>
+	</div>
+	<div class="col-md-4">
+		<div class="col-12">
+			<h2 class="connectext">Connect</h2>
+		<hr class="light mx-auto">
+			</div>
+			<div class="col-12 social padding">
+				<a href="https://www.facebook.com/philaDAO/" target="_blank"><i class="fa fa-facebook social-circle-icon" title="facebook"></i></a>
+				<a href="https://www.instagram.com/philadao/?hl=en" target="_blank"><i class="fa fa-instagram social-circle-icon" title="instagram"></i></a>
+				<a href="https://twitter.com/philadao?lang=en" target="_blank"><i class="fa fa-twitter social-circle-icon" title="twitter"></i></a>
+				<a href="mailto:justice@phila.gov"><i class="fa fa-envelope social-circle-icon" title="email us"></i></a>
+			</div>
+		</div>
+	<div class="col-md-4">
+	  <div class="col-12">
+	    <h2 class="connectext">More</h2>
+		<hr class="light mx-auto">
+      <ul>
+        <li><a href="https://phillyda.org/" target="_blank">Office of the District Attorney</a></li>
+        <li><a href="https://phillyda.org/category/blog/" target="_blank">DAO Blog</a> | <a href="https://phillyda.org/news/" target="_blank">News/Press Releases</a></li>
+        <li><a href="howto.html#constraints">Public Access and Use</a></li>
+		  </ul>
+		</div>
+  </div>
+</div>
+<p class="copytext">&copy; City of Philadelphia, Philadelphia District Attorney's Office<p>
+</div>
+</footer>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+</body>
+</html>
