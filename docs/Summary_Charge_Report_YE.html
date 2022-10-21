@@ -29,8 +29,6 @@
 <script src="assets/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <link href="assets/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="assets/plotly-main-2.5.1/plotly-latest.min.js"></script>
-<script src="assets/kePrint-0.0.1/kePrint.js"></script>
-<link href="assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
 <script>
@@ -172,8 +170,8 @@ pre code {
   <div class="mx-n3">
     <div class="container-fluid px-0">
       <div class="row dao_header vertical-align pb-2">
-        <div class="col-sm-12 col-md-3 text-sm-center float-start"><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
-        <div class="col-sm-12 col-md-6 offset-md-3 text-md-end text-sm-center dao_header_title float-end">Public Data Dashboard</div>
+        <div class="col-sm-24 col-md-6 text-sm-center float-start"><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
+        <div class="col-sm-24 col-md-12 offset-md-6 text-md-end text-sm-center dao_header_title float-end">Public Data Dashboard</div>
       </div>
       <div class = "dao_navbar border border-1 border-transparent">
         <nav class = "navbar navbar-expand-lg navbar-dark bg-dark justify-content-center mb-0">
@@ -289,7 +287,7 @@ Understood
 </div>
 </div>
 <div class="row dao_report_title">
-<div class="col-6 text-end">
+<div class="col-12 text-end">
 <h1 class="dao_report_title_text">
 Summary Offense Charges
 </h1>
@@ -300,12 +298,12 @@ Year End 12/31/2021
 <a class="dao_report_body dao_report_body_emphasis" href="definitions.html">Definitions</a> | <a class="dao_report_body dao_report_body_emphasis" href="limitations.html">Limitations</a>
 </div>
 </div>
-<div class="col-5 dao_report_description dao_report_body">
+<div class="col-10 dao_report_description dao_report_body">
 <p>Summary Offenses may be charged directly by the police or by the DAO’s Charging Unit.</p>
 </div>
 </div>
 <div class="row dao_key_numbers">
-<div class="col-print-2 col-xs-6 col-sm-2 offset-print-2 offset-sm-2">
+<div class="col-print-4 col-xs-12 col-sm-4 offset-print-4 offset-sm-4">
 <p class="dao_key_number_value dao_metric">
 <span class="up-pointing-triangle"> </span> 1%
 </p>
@@ -316,7 +314,7 @@ All Offenses
 </h4>
 </h4>
 </div>
-<div class="col-print-2 col-xs-6 col-sm-2">
+<div class="col-print-4 col-xs-12 col-sm-4">
 <p class="dao_key_number_value dao_metric">
 <span class="down-pointing-triangle"> </span> -15%
 </p>
@@ -327,7 +325,7 @@ Property Offenses
 </h4>
 </h4>
 </div>
-<div class="col-print-2 col-xs-6 col-sm-2">
+<div class="col-print-4 col-xs-12 col-sm-4">
 <p class="dao_key_number_value dao_metric">
 <span class="right-pointing-triangle"> </span> 0
 </p>
@@ -338,7 +336,7 @@ Drug Offenses
 </h4>
 </h4>
 </div>
-<div class="col-print-2 col-xs-6 col-sm-2">
+<div class="col-print-4 col-xs-12 col-sm-4">
 <p class="dao_key_number_value dao_metric">
 <span class="up-pointing-triangle"> </span> 52%
 </p>
@@ -355,21 +353,21 @@ Other Offenses
 <div id="all-offenses" class="section level2">
 <h2>All Offenses</h2>
 <div class="row">
-<div class="col-md-8 offset-md-2 dao-warning dao_report_body">
+<div class="col-md-16 offset-md-4 dao-warning dao_report_body">
 <i class='fa fa-info-circle'></i>The offense categories have recently changed. Please see this <a href='https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d' target = '_blank'>data story</a> and the <a href='definitions.html'>definitions page</a> for more information.
 </div>
 </div>
 <div class="row">
-<div class="col-md-8 offset-md-2 dao-warning dao_report_body">
+<div class="col-md-16 offset-md-4 dao-warning dao_report_body">
 <i class='fa fa-info-circle'></i>The COVID-19 pandemic has had a profound effect on the criminal legal system. Among other changes, overall arrests and cases charged have been lower than prior years and those arrests that have happened tend to be for more serious offenses. Because of this, statistics about arrests, cases charged, and bail should be interpreted with caution.
 </div>
 </div>
 <div class="row">
-<div class="col-print-6 col-sm-6 dao_visuals">
-<div id="htmlwidget-d1dae3df56166431f0bc" style="width:100%;height:100%;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d1dae3df56166431f0bc">{"x":{"visdat":{"b07334321ef15":["function () ","plotlyVisDat"]},"cur_data":"b07334321ef15","attrs":{"b07334321ef15":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#4f6980"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"b07334321ef15.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2364,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2364,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2364,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2364,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2021.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened<\/b>","font":{"family":"nimbus-sans","size":14,"color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":".79rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"rect","fillcolor":"#A52A2A","line":{"color":"#A52A2A"},"opacity":0.15,"x0":"2020-03-18","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":0.95,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[1427,1690,1757,1879,2028,2023,1861,1854,1995,1997,1636,1504,1575,1743,2410,2448,2351,2004,2172,2753,2472,2609,2338,2188,2162,1827,2314,2948,2914,2418,2773,2904,2661,2578,2416,1843,2067,1887,2282,2955,2811,2481,2478,2027,1801,1742,1525,1260,1141,1190,1327,1393,1280,1286,870,1043,1030,1034,731,710,699,713,776,858,881,856,981,877,906,893,746,646,719,661,751,810,836,803,761,738,947,839,807,670,706,587,579,603,442,352,418,441,525,442,400,352,376,396,204,33,238,74,104,151,167,191,121,103,186,114,181,129,130,180,200,248,200,242,193],"mode":"markers","marker":{"color":"#4f6980","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2012: 1427 Cases","February 2012: 1690 Cases","March 2012: 1757 Cases","April 2012: 1879 Cases","May 2012: 2028 Cases","June 2012: 2023 Cases","July 2012: 1861 Cases","August 2012: 1854 Cases","September 2012: 1995 Cases","October 2012: 1997 Cases","November 2012: 1636 Cases","December 2012: 1504 Cases","January 2013: 1575 Cases","February 2013: 1743 Cases","March 2013: 2410 Cases","April 2013: 2448 Cases","May 2013: 2351 Cases","June 2013: 2004 Cases","July 2013: 2172 Cases","August 2013: 2753 Cases","September 2013: 2472 Cases","October 2013: 2609 Cases","November 2013: 2338 Cases","December 2013: 2188 Cases","January 2014: 2162 Cases","February 2014: 1827 Cases","March 2014: 2314 Cases","April 2014: 2948 Cases","May 2014: 2914 Cases","June 2014: 2418 Cases","July 2014: 2773 Cases","August 2014: 2904 Cases","September 2014: 2661 Cases","October 2014: 2578 Cases","November 2014: 2416 Cases","December 2014: 1843 Cases","January 2015: 2067 Cases","February 2015: 1887 Cases","March 2015: 2282 Cases","April 2015: 2955 Cases","May 2015: 2811 Cases","June 2015: 2481 Cases","July 2015: 2478 Cases","August 2015: 2027 Cases","September 2015: 1801 Cases","October 2015: 1742 Cases","November 2015: 1525 Cases","December 2015: 1260 Cases","January 2016: 1141 Cases","February 2016: 1190 Cases","March 2016: 1327 Cases","April 2016: 1393 Cases","May 2016: 1280 Cases","June 2016: 1286 Cases","July 2016: 870 Cases","August 2016: 1043 Cases","September 2016: 1030 Cases","October 2016: 1034 Cases","November 2016: 731 Cases","December 2016: 710 Cases","January 2017: 699 Cases","February 2017: 713 Cases","March 2017: 776 Cases","April 2017: 858 Cases","May 2017: 881 Cases","June 2017: 856 Cases","July 2017: 981 Cases","August 2017: 877 Cases","September 2017: 906 Cases","October 2017: 893 Cases","November 2017: 746 Cases","December 2017: 646 Cases","January 2018: 719 Cases","February 2018: 661 Cases","March 2018: 751 Cases","April 2018: 810 Cases","May 2018: 836 Cases","June 2018: 803 Cases","July 2018: 761 Cases","August 2018: 738 Cases","September 2018: 947 Cases","October 2018: 839 Cases","November 2018: 807 Cases","December 2018: 670 Cases","January 2019: 706 Cases","February 2019: 587 Cases","March 2019: 579 Cases","April 2019: 603 Cases","May 2019: 442 Cases","June 2019: 352 Cases","July 2019: 418 Cases","August 2019: 441 Cases","September 2019: 525 Cases","October 2019: 442 Cases","November 2019: 400 Cases","December 2019: 352 Cases","January 2020: 376 Cases","February 2020: 396 Cases","March 2020: 204 Cases","April 2020: 33 Cases","May 2020: 238 Cases","June 2020: 74 Cases","July 2020: 104 Cases","August 2020: 151 Cases","September 2020: 167 Cases","October 2020: 191 Cases","November 2020: 121 Cases","December 2020: 103 Cases","January 2021: 186 Cases","February 2021: 114 Cases","March 2021: 181 Cases","April 2021: 129 Cases","May 2021: 130 Cases","June 2021: 180 Cases","July 2021: 200 Cases","August 2021: 248 Cases","September 2021: 200 Cases","October 2021: 242 Cases","November 2021: 193 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[1495.47501296661,1561.3776072295,1620.56616995857,1681.42989288204,1738.18146333726,1794.83584214884,1847.95952704715,1901.32561981968,1953.06400419184,2001.24421006284,2048.89103341331,2092.75127650909,2135.56173781247,2175.62894544931,2209.30079625245,2244.74053845469,2277.85454290341,2310.37781030319,2339.75968213802,2367.48635027155,2392.05488169508,2412.36655860837,2429.30289321366,2446.29036646705,2467.76383222111,2490.39016393784,2509.43724263077,2526.35100844452,2535.93509792386,2536.04297832553,2527.45343301416,2512.68953286174,2492.47491965636,2468.23088108156,2438.86638623672,2406.77868887831,2370.35384752014,2331.14173441595,2287.1762956955,2224.17730850636,2153.50015614165,2075.36838369804,1999.54698625758,1925.91655924521,1862.09809529875,1799.30086068536,1721.7418523026,1638.64560366627,1548.88170993856,1459.63777761967,1380.63539285122,1305.26759373696,1245.44188442616,1190.3012258972,1135.33272606376,1078.58663985714,1023.63908069267,973.83596549641,927.571908175468,889.473153287765,860.078965110387,840.962192173224,830.3194644008,823.423829219466,819.220182031221,814.842777335728,808.099126015285,795.954148960744,785.243261801858,782.369236400683,784.166766003015,787.673382073514,790.149153956086,788.435924855606,780.746567752447,769.067421537933,759.10153462796,749.4879889092,740.180282761907,729.861376790267,718.122092891792,704.735049514465,688.111251447137,668.030338606281,643.200306115649,615.679899741195,589.734803445308,561.161026570936,535.001561020998,510.945217557249,488.134102016511,462.170803449563,434.816176665687,408.009154903597,380.985528448104,356.467924475242,333.844761122438,315.017440189238,299.416473484135,282.75352651142,266.961108483828,251.323657466667,237.172879976934,223.902656782459,212.349643331395,202.416731193347,192.868528508722,184.430082784837,176.652738005264,169.948998947279,164.914143110056,160.577050137607,157.804992879759,156.447711639143,156.462980313389,157.716223923183,160.089404115044,163.321139976084,167.491287672773],"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="col-print-12 col-sm-12 dao_visuals">
+<div id="htmlwidget-a7b703a40e5bee693291" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a7b703a40e5bee693291">{"x":{"visdat":{"dedb970f8ed21":["function () ","plotlyVisDat"]},"cur_data":"dedb970f8ed21","attrs":{"dedb970f8ed21":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#4f6980"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"dedb970f8ed21.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2364,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2364,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2364,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":2364,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2021.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened<\/b>","font":{"family":"nimbus-sans","size":14,"color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":".79rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"rect","fillcolor":"#A52A2A","line":{"color":"#A52A2A"},"opacity":0.15,"x0":"2020-03-18","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":0.95,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[1427,1690,1757,1879,2028,2023,1861,1854,1995,1997,1636,1504,1575,1743,2410,2448,2351,2004,2172,2753,2472,2609,2338,2188,2162,1827,2314,2948,2914,2418,2773,2904,2661,2578,2416,1843,2067,1887,2282,2955,2811,2481,2478,2027,1801,1742,1525,1260,1141,1190,1327,1393,1280,1286,870,1043,1030,1034,731,710,699,713,776,858,881,856,981,877,906,893,746,646,719,661,751,810,836,803,761,738,947,839,807,670,706,587,579,603,442,352,418,441,525,442,400,352,376,396,204,33,238,74,104,151,167,191,121,103,186,114,181,129,130,180,200,248,200,242,193],"mode":"markers","marker":{"color":"#4f6980","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2012: 1427 Cases","February 2012: 1690 Cases","March 2012: 1757 Cases","April 2012: 1879 Cases","May 2012: 2028 Cases","June 2012: 2023 Cases","July 2012: 1861 Cases","August 2012: 1854 Cases","September 2012: 1995 Cases","October 2012: 1997 Cases","November 2012: 1636 Cases","December 2012: 1504 Cases","January 2013: 1575 Cases","February 2013: 1743 Cases","March 2013: 2410 Cases","April 2013: 2448 Cases","May 2013: 2351 Cases","June 2013: 2004 Cases","July 2013: 2172 Cases","August 2013: 2753 Cases","September 2013: 2472 Cases","October 2013: 2609 Cases","November 2013: 2338 Cases","December 2013: 2188 Cases","January 2014: 2162 Cases","February 2014: 1827 Cases","March 2014: 2314 Cases","April 2014: 2948 Cases","May 2014: 2914 Cases","June 2014: 2418 Cases","July 2014: 2773 Cases","August 2014: 2904 Cases","September 2014: 2661 Cases","October 2014: 2578 Cases","November 2014: 2416 Cases","December 2014: 1843 Cases","January 2015: 2067 Cases","February 2015: 1887 Cases","March 2015: 2282 Cases","April 2015: 2955 Cases","May 2015: 2811 Cases","June 2015: 2481 Cases","July 2015: 2478 Cases","August 2015: 2027 Cases","September 2015: 1801 Cases","October 2015: 1742 Cases","November 2015: 1525 Cases","December 2015: 1260 Cases","January 2016: 1141 Cases","February 2016: 1190 Cases","March 2016: 1327 Cases","April 2016: 1393 Cases","May 2016: 1280 Cases","June 2016: 1286 Cases","July 2016: 870 Cases","August 2016: 1043 Cases","September 2016: 1030 Cases","October 2016: 1034 Cases","November 2016: 731 Cases","December 2016: 710 Cases","January 2017: 699 Cases","February 2017: 713 Cases","March 2017: 776 Cases","April 2017: 858 Cases","May 2017: 881 Cases","June 2017: 856 Cases","July 2017: 981 Cases","August 2017: 877 Cases","September 2017: 906 Cases","October 2017: 893 Cases","November 2017: 746 Cases","December 2017: 646 Cases","January 2018: 719 Cases","February 2018: 661 Cases","March 2018: 751 Cases","April 2018: 810 Cases","May 2018: 836 Cases","June 2018: 803 Cases","July 2018: 761 Cases","August 2018: 738 Cases","September 2018: 947 Cases","October 2018: 839 Cases","November 2018: 807 Cases","December 2018: 670 Cases","January 2019: 706 Cases","February 2019: 587 Cases","March 2019: 579 Cases","April 2019: 603 Cases","May 2019: 442 Cases","June 2019: 352 Cases","July 2019: 418 Cases","August 2019: 441 Cases","September 2019: 525 Cases","October 2019: 442 Cases","November 2019: 400 Cases","December 2019: 352 Cases","January 2020: 376 Cases","February 2020: 396 Cases","March 2020: 204 Cases","April 2020: 33 Cases","May 2020: 238 Cases","June 2020: 74 Cases","July 2020: 104 Cases","August 2020: 151 Cases","September 2020: 167 Cases","October 2020: 191 Cases","November 2020: 121 Cases","December 2020: 103 Cases","January 2021: 186 Cases","February 2021: 114 Cases","March 2021: 181 Cases","April 2021: 129 Cases","May 2021: 130 Cases","June 2021: 180 Cases","July 2021: 200 Cases","August 2021: 248 Cases","September 2021: 200 Cases","October 2021: 242 Cases","November 2021: 193 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[1495.47501296661,1561.3776072295,1620.56616995857,1681.42989288204,1738.18146333726,1794.83584214884,1847.95952704715,1901.32561981968,1953.06400419184,2001.24421006284,2048.89103341331,2092.75127650909,2135.56173781247,2175.62894544931,2209.30079625245,2244.74053845469,2277.85454290341,2310.37781030319,2339.75968213802,2367.48635027155,2392.05488169508,2412.36655860837,2429.30289321366,2446.29036646705,2467.76383222111,2490.39016393784,2509.43724263077,2526.35100844452,2535.93509792386,2536.04297832553,2527.45343301416,2512.68953286174,2492.47491965636,2468.23088108156,2438.86638623672,2406.77868887831,2370.35384752014,2331.14173441595,2287.1762956955,2224.17730850636,2153.50015614165,2075.36838369804,1999.54698625758,1925.91655924521,1862.09809529875,1799.30086068536,1721.7418523026,1638.64560366627,1548.88170993856,1459.63777761967,1380.63539285122,1305.26759373696,1245.44188442616,1190.3012258972,1135.33272606376,1078.58663985714,1023.63908069267,973.83596549641,927.571908175468,889.473153287765,860.078965110387,840.962192173224,830.3194644008,823.423829219466,819.220182031221,814.842777335728,808.099126015285,795.954148960744,785.243261801858,782.369236400683,784.166766003015,787.673382073514,790.149153956086,788.435924855606,780.746567752447,769.067421537933,759.10153462796,749.4879889092,740.180282761907,729.861376790267,718.122092891792,704.735049514465,688.111251447137,668.030338606281,643.200306115649,615.679899741195,589.734803445308,561.161026570936,535.001561020998,510.945217557249,488.134102016511,462.170803449563,434.816176665687,408.009154903597,380.985528448104,356.467924475242,333.844761122438,315.017440189238,299.416473484135,282.75352651142,266.961108483828,251.323657466667,237.172879976934,223.902656782459,212.349643331395,202.416731193347,192.868528508722,184.430082784837,176.652738005264,169.948998947279,164.914143110056,160.577050137607,157.804992879759,156.447711639143,156.462980313389,157.716223923183,160.089404115044,163.321139976084,167.491287672773],"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="col-print-6 col-sm-6 dao_visuals">
+<div class="col-print-12 col-sm-12 dao_visuals">
 <h2>
 Yearly Summary Cases Opened by Police District
 </h2>
@@ -382,268 +380,107 @@ Yearly Summary Cases Opened by Police District
 <h2 class="dao_table_header">
 Data: Year End Count of Summary Cases Opened by Offense Category
 </h2>
-<div class="table-wrapper">
-<table class="table table-responsive" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
-<thead>
-<tr>
-<th style="text-align:center;color: #4D7DBF !important;width: 10rem; text-align: left;">
-Offense Category
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2012
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2013
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2014
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2015
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2016
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2017
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2018
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2019
-</th>
-<th style="text-align:center;color: #4D7DBF !important;background-color: #fff4f5;">
-2020
-</th>
-<th style="text-align:center;color: #4D7DBF !important;background-color: #fff4f5;">
-2021
-</th>
-<th style="text-align:center;color: #4D7DBF !important;white-space:nowrap;background-color: #e8eef7 !important;">
-Yr-Yr<br>Change
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
-All Property Offenses
-</td>
-<td style="text-align:center;">
-6,516
-</td>
-<td style="text-align:center;">
-8,683
-</td>
-<td style="text-align:center;">
-10,065
-</td>
-<td style="text-align:center;">
-7,783
-</td>
-<td style="text-align:center;">
-7,317
-</td>
-<td style="text-align:center;">
-6,804
-</td>
-<td style="text-align:center;">
-7,100
-</td>
-<td style="text-align:center;">
-4,387
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-1,676
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-1,418
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
--15%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
-All Drug Offenses
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-15
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-14
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-0
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-3
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-Inf%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
-All Other Offenses
-</td>
-<td style="text-align:center;">
-3,838
-</td>
-<td style="text-align:center;">
-4,862
-</td>
-<td style="text-align:center;">
-4,275
-</td>
-<td style="text-align:center;">
-3,525
-</td>
-<td style="text-align:center;">
-2,313
-</td>
-<td style="text-align:center;">
-1,450
-</td>
-<td style="text-align:center;">
-1,182
-</td>
-<td style="text-align:center;">
-829
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-288
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-439
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-52%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
-Uncategorized Offenses
-</td>
-<td style="text-align:center;">
-11,295
-</td>
-<td style="text-align:center;">
-13,516
-</td>
-<td style="text-align:center;">
-15,409
-</td>
-<td style="text-align:center;">
-14,007
-</td>
-<td style="text-align:center;">
-3,400
-</td>
-<td style="text-align:center;">
-1,557
-</td>
-<td style="text-align:center;">
-1,048
-</td>
-<td style="text-align:center;">
-613
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-189
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-322
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-70%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;width: 10rem; text-align: left;">
-All Offenses
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-21,650
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-27,061
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-29,749
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-25,315
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-13,031
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-9,826
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-9,330
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-5,843
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #fff4f5;">
-2,153
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #fff4f5;">
-2,182
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;white-space:nowrap;background-color: #e8eef7 !important;">
-1%
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup></sup> Areas in red coincide with the COVID-19 pandemic. During the pandemic, the criminal legal system has operated completely differently than it normally does. The changes that can be observed on our dashboard include: 1) isolation, closed schools, and the loss of community programming has led to an increase in serious violent crime, 2) police have made fewer arrests overall (in particular for minor offenses), 3) court policies and other restrictions meant to keep people safe have also disrupted or delayed court hearings and led to a significant increase in open cases forced dismissals and withdrawals. See our <a href="COVID19_Report.html">report on the justice system during COVID-19</a> to learn more.
-</td>
-</tr>
-</tfoot>
-</table>
+<div class="container table dao-table text-center">
+<div class="container-lg border-bottom border-1 border-dao-medium-blue">
+<div class="row dao-header d-flex align-items-end flex-wrap border-bottom border-1">
+<div class="col-5 pb-1 pt-1 text-start">Offense Category</div>
+<div class="col">2012 </div>
+<div class="col">2013 </div>
+<div class="col">2014 </div>
+<div class="col">2015 </div>
+<div class="col">2016 </div>
+<div class="col">2017 </div>
+<div class="col">2018 </div>
+<div class="col">2019 </div>
+<div class="col pb-1 pt-1 dao-covid-column">2020 </div>
+<div class="col pb-1 pt-1 dao-covid-column">2021 </div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row dao-highlight-row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">All Property Offenses</div>
+<div class="col">6,516</div>
+<div class="col">8,683</div>
+<div class="col">10,065</div>
+<div class="col">7,783</div>
+<div class="col">7,317</div>
+<div class="col">6,804</div>
+<div class="col">7,100</div>
+<div class="col">4,387</div>
+<div class="col pb-1 pt-1 dao-covid-column">1,676</div>
+<div class="col pb-1 pt-1 dao-covid-column">1,418</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row dao-highlight-row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">All Drug Offenses</div>
+<div class="col">1</div>
+<div class="col">0</div>
+<div class="col">0</div>
+<div class="col">0</div>
+<div class="col">1</div>
+<div class="col">15</div>
+<div class="col">0</div>
+<div class="col">14</div>
+<div class="col pb-1 pt-1 dao-covid-column">0</div>
+<div class="col pb-1 pt-1 dao-covid-column">3</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row dao-highlight-row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">All Other Offenses</div>
+<div class="col">3,838</div>
+<div class="col">4,862</div>
+<div class="col">4,275</div>
+<div class="col">3,525</div>
+<div class="col">2,313</div>
+<div class="col">1,450</div>
+<div class="col">1,182</div>
+<div class="col">829</div>
+<div class="col pb-1 pt-1 dao-covid-column">288</div>
+<div class="col pb-1 pt-1 dao-covid-column">439</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row dao-highlight-row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">Uncategorized Offenses</div>
+<div class="col">11,295</div>
+<div class="col">13,516</div>
+<div class="col">15,409</div>
+<div class="col">14,007</div>
+<div class="col">3,400</div>
+<div class="col">1,557</div>
+<div class="col">1,048</div>
+<div class="col">613</div>
+<div class="col pb-1 pt-1 dao-covid-column">189</div>
+<div class="col pb-1 pt-1 dao-covid-column">322</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row dao-highlight-row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">All Offenses</div>
+<div class="col">21,650</div>
+<div class="col">27,061</div>
+<div class="col">29,749</div>
+<div class="col">25,315</div>
+<div class="col">13,031</div>
+<div class="col">9,826</div>
+<div class="col">9,330</div>
+<div class="col">5,843</div>
+<div class="col pb-1 pt-1 dao-covid-column">2,153</div>
+<div class="col pb-1 pt-1 dao-covid-column">2,182</div>
+</div>
+</div>
 </div>
 </div>
 <div id="property" class="section level2">
 <h2>Property</h2>
 <div class="row">
-<div class="col-md-8 offset-md-2 dao-warning dao_report_body">
+<div class="col-md-16 offset-md-4 dao-warning dao_report_body">
 <i class='fa fa-info-circle'></i>The offense categories have recently changed. Please see this <a href='https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d' target = '_blank'>data story</a> and the <a href='definitions.html'>definitions page</a> for more information.
 </div>
 </div>
 <div class="row">
-<div class="col-md-8 offset-md-2 dao-warning dao_report_body">
+<div class="col-md-16 offset-md-4 dao-warning dao_report_body">
 <i class='fa fa-info-circle'></i>The COVID-19 pandemic has had a profound effect on the criminal legal system. Among other changes, overall arrests and cases charged have been lower than prior years and those arrests that have happened tend to be for more serious offenses. Because of this, statistics about arrests, cases charged, and bail should be interpreted with caution.
 </div>
 </div>
 <div class="row">
-<div class="col-print-6 col-sm-6 dao_visuals">
-<div id="htmlwidget-8327388f1c0f71b67a58" style="width:100%;height:100%;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8327388f1c0f71b67a58">{"x":{"visdat":{"b07337fb0e6f3":["function () ","plotlyVisDat"]},"cur_data":"b07337fb0e6f3","attrs":{"b07337fb0e6f3":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#4f6980"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"b07337fb0e6f3.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":824,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":824,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":824,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":824,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2021.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Property<\/b>","font":{"family":"nimbus-sans","size":14,"color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":".79rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"rect","fillcolor":"#A52A2A","line":{"color":"#A52A2A"},"opacity":0.15,"x0":"2020-03-18","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":0.95,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[422,453,489,507,598,600,629,589,634,575,531,489,513,522,667,671,737,587,806,911,782,895,814,778,781,607,821,921,1030,863,950,828,821,847,843,753,742,572,638,743,859,720,720,582,515,631,580,481,535,572,551,691,672,697,629,675,627,691,518,459,534,446,492,568,655,620,764,498,561,600,580,486,590,499,539,635,652,610,616,567,600,601,663,528,615,497,423,426,348,260,316,283,335,297,306,281,311,316,144,19,205,62,83,98,116,141,93,88,173,100,101,78,94,117,153,111,129,124,121],"mode":"markers","marker":{"color":"#4f6980","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2012: 422 Cases","February 2012: 453 Cases","March 2012: 489 Cases","April 2012: 507 Cases","May 2012: 598 Cases","June 2012: 600 Cases","July 2012: 629 Cases","August 2012: 589 Cases","September 2012: 634 Cases","October 2012: 575 Cases","November 2012: 531 Cases","December 2012: 489 Cases","January 2013: 513 Cases","February 2013: 522 Cases","March 2013: 667 Cases","April 2013: 671 Cases","May 2013: 737 Cases","June 2013: 587 Cases","July 2013: 806 Cases","August 2013: 911 Cases","September 2013: 782 Cases","October 2013: 895 Cases","November 2013: 814 Cases","December 2013: 778 Cases","January 2014: 781 Cases","February 2014: 607 Cases","March 2014: 821 Cases","April 2014: 921 Cases","May 2014: 1030 Cases","June 2014: 863 Cases","July 2014: 950 Cases","August 2014: 828 Cases","September 2014: 821 Cases","October 2014: 847 Cases","November 2014: 843 Cases","December 2014: 753 Cases","January 2015: 742 Cases","February 2015: 572 Cases","March 2015: 638 Cases","April 2015: 743 Cases","May 2015: 859 Cases","June 2015: 720 Cases","July 2015: 720 Cases","August 2015: 582 Cases","September 2015: 515 Cases","October 2015: 631 Cases","November 2015: 580 Cases","December 2015: 481 Cases","January 2016: 535 Cases","February 2016: 572 Cases","March 2016: 551 Cases","April 2016: 691 Cases","May 2016: 672 Cases","June 2016: 697 Cases","July 2016: 629 Cases","August 2016: 675 Cases","September 2016: 627 Cases","October 2016: 691 Cases","November 2016: 518 Cases","December 2016: 459 Cases","January 2017: 534 Cases","February 2017: 446 Cases","March 2017: 492 Cases","April 2017: 568 Cases","May 2017: 655 Cases","June 2017: 620 Cases","July 2017: 764 Cases","August 2017: 498 Cases","September 2017: 561 Cases","October 2017: 600 Cases","November 2017: 580 Cases","December 2017: 486 Cases","January 2018: 590 Cases","February 2018: 499 Cases","March 2018: 539 Cases","April 2018: 635 Cases","May 2018: 652 Cases","June 2018: 610 Cases","July 2018: 616 Cases","August 2018: 567 Cases","September 2018: 600 Cases","October 2018: 601 Cases","November 2018: 663 Cases","December 2018: 528 Cases","January 2019: 615 Cases","February 2019: 497 Cases","March 2019: 423 Cases","April 2019: 426 Cases","May 2019: 348 Cases","June 2019: 260 Cases","July 2019: 316 Cases","August 2019: 283 Cases","September 2019: 335 Cases","October 2019: 297 Cases","November 2019: 306 Cases","December 2019: 281 Cases","January 2020: 311 Cases","February 2020: 316 Cases","March 2020: 144 Cases","April 2020: 19 Cases","May 2020: 205 Cases","June 2020: 62 Cases","July 2020: 83 Cases","August 2020: 98 Cases","September 2020: 116 Cases","October 2020: 141 Cases","November 2020: 93 Cases","December 2020: 88 Cases","January 2021: 173 Cases","February 2021: 100 Cases","March 2021: 101 Cases","April 2021: 78 Cases","May 2021: 94 Cases","June 2021: 117 Cases","July 2021: 153 Cases","August 2021: 111 Cases","September 2021: 129 Cases","October 2021: 124 Cases","November 2021: 121 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[406.744919388392,434.369602378079,459.257068185928,484.888643204708,508.784071125803,532.586305166662,554.807506385659,576.979012886769,598.322727585607,618.10878604867,637.616232059332,655.548206158397,673.060146504971,689.496952979349,703.384792566019,717.823135402158,730.956627976723,743.606047047483,754.902855374301,765.545384098431,775.084486326901,783.212244572534,790.415719971173,797.089929200537,804.271648956494,811.185495515061,816.731181666405,821.578000571585,824.461134226029,825.024201992471,821.91161315525,814.600863310711,804.228943524451,792.3246491314,779.176972318448,766.670451228416,755.053929601727,745.866075342117,737.238085777111,724.387967274559,709.876198491659,694.042050764083,679.157906927294,665.538213313373,655.036114423955,646.536938702601,637.352486442308,628.33660923268,619.161232299175,610.406655690223,602.846299096834,595.70294470506,589.971726407271,585.706902485386,583.131176702448,581.618418779145,580.811454787551,580.262775051977,579.481385696267,578.082722229336,577.414793111834,578.783087242821,581.18539768229,584.490215634299,587.694438340241,590.328634082228,591.569026864874,590.815262975402,589.910802700164,590.586071790391,591.996821108928,593.20080767069,593.389030169959,591.600200710013,587.525179763911,581.462202256447,575.455353922957,568.879125287719,561.942363334207,553.957564345367,544.913821052659,534.935762243084,523.133131075851,508.755528404315,490.223720842455,469.243465024229,449.271007455265,427.224402834153,407.139979130928,388.944769077858,371.899699920954,352.454255678406,331.906629547661,311.696084832564,291.223053238221,272.524188168015,255.100699970043,240.367070314629,227.964004041267,214.609953917564,201.835825589891,189.046906008656,177.314193046651,166.11240134533,156.108843189861,147.276798836512,138.592587403688,130.697143149095,123.148370374934,116.305096828668,110.802483700366,105.541132162556,101.414385067358,98.1683562544918,95.9177838734438,94.4137154434149,93.6441017661094,93.5028895489707,93.8817503221266],"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="col-print-12 col-sm-12 dao_visuals">
+<div id="htmlwidget-0538ea8d035fa5b5f481" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0538ea8d035fa5b5f481">{"x":{"visdat":{"dedb922abe7d2":["function () ","plotlyVisDat"]},"cur_data":"dedb922abe7d2","attrs":{"dedb922abe7d2":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#4f6980"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"dedb922abe7d2.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":824,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":824,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":824,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":824,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2021.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Property<\/b>","font":{"family":"nimbus-sans","size":14,"color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":".79rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"rect","fillcolor":"#A52A2A","line":{"color":"#A52A2A"},"opacity":0.15,"x0":"2020-03-18","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":0.95,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[422,453,489,507,598,600,629,589,634,575,531,489,513,522,667,671,737,587,806,911,782,895,814,778,781,607,821,921,1030,863,950,828,821,847,843,753,742,572,638,743,859,720,720,582,515,631,580,481,535,572,551,691,672,697,629,675,627,691,518,459,534,446,492,568,655,620,764,498,561,600,580,486,590,499,539,635,652,610,616,567,600,601,663,528,615,497,423,426,348,260,316,283,335,297,306,281,311,316,144,19,205,62,83,98,116,141,93,88,173,100,101,78,94,117,153,111,129,124,121],"mode":"markers","marker":{"color":"#4f6980","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2012: 422 Cases","February 2012: 453 Cases","March 2012: 489 Cases","April 2012: 507 Cases","May 2012: 598 Cases","June 2012: 600 Cases","July 2012: 629 Cases","August 2012: 589 Cases","September 2012: 634 Cases","October 2012: 575 Cases","November 2012: 531 Cases","December 2012: 489 Cases","January 2013: 513 Cases","February 2013: 522 Cases","March 2013: 667 Cases","April 2013: 671 Cases","May 2013: 737 Cases","June 2013: 587 Cases","July 2013: 806 Cases","August 2013: 911 Cases","September 2013: 782 Cases","October 2013: 895 Cases","November 2013: 814 Cases","December 2013: 778 Cases","January 2014: 781 Cases","February 2014: 607 Cases","March 2014: 821 Cases","April 2014: 921 Cases","May 2014: 1030 Cases","June 2014: 863 Cases","July 2014: 950 Cases","August 2014: 828 Cases","September 2014: 821 Cases","October 2014: 847 Cases","November 2014: 843 Cases","December 2014: 753 Cases","January 2015: 742 Cases","February 2015: 572 Cases","March 2015: 638 Cases","April 2015: 743 Cases","May 2015: 859 Cases","June 2015: 720 Cases","July 2015: 720 Cases","August 2015: 582 Cases","September 2015: 515 Cases","October 2015: 631 Cases","November 2015: 580 Cases","December 2015: 481 Cases","January 2016: 535 Cases","February 2016: 572 Cases","March 2016: 551 Cases","April 2016: 691 Cases","May 2016: 672 Cases","June 2016: 697 Cases","July 2016: 629 Cases","August 2016: 675 Cases","September 2016: 627 Cases","October 2016: 691 Cases","November 2016: 518 Cases","December 2016: 459 Cases","January 2017: 534 Cases","February 2017: 446 Cases","March 2017: 492 Cases","April 2017: 568 Cases","May 2017: 655 Cases","June 2017: 620 Cases","July 2017: 764 Cases","August 2017: 498 Cases","September 2017: 561 Cases","October 2017: 600 Cases","November 2017: 580 Cases","December 2017: 486 Cases","January 2018: 590 Cases","February 2018: 499 Cases","March 2018: 539 Cases","April 2018: 635 Cases","May 2018: 652 Cases","June 2018: 610 Cases","July 2018: 616 Cases","August 2018: 567 Cases","September 2018: 600 Cases","October 2018: 601 Cases","November 2018: 663 Cases","December 2018: 528 Cases","January 2019: 615 Cases","February 2019: 497 Cases","March 2019: 423 Cases","April 2019: 426 Cases","May 2019: 348 Cases","June 2019: 260 Cases","July 2019: 316 Cases","August 2019: 283 Cases","September 2019: 335 Cases","October 2019: 297 Cases","November 2019: 306 Cases","December 2019: 281 Cases","January 2020: 311 Cases","February 2020: 316 Cases","March 2020: 144 Cases","April 2020: 19 Cases","May 2020: 205 Cases","June 2020: 62 Cases","July 2020: 83 Cases","August 2020: 98 Cases","September 2020: 116 Cases","October 2020: 141 Cases","November 2020: 93 Cases","December 2020: 88 Cases","January 2021: 173 Cases","February 2021: 100 Cases","March 2021: 101 Cases","April 2021: 78 Cases","May 2021: 94 Cases","June 2021: 117 Cases","July 2021: 153 Cases","August 2021: 111 Cases","September 2021: 129 Cases","October 2021: 124 Cases","November 2021: 121 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[406.744919388392,434.369602378079,459.257068185928,484.888643204708,508.784071125803,532.586305166662,554.807506385659,576.979012886769,598.322727585607,618.10878604867,637.616232059332,655.548206158397,673.060146504971,689.496952979349,703.384792566019,717.823135402158,730.956627976723,743.606047047483,754.902855374301,765.545384098431,775.084486326901,783.212244572534,790.415719971173,797.089929200537,804.271648956494,811.185495515061,816.731181666405,821.578000571585,824.461134226029,825.024201992471,821.91161315525,814.600863310711,804.228943524451,792.3246491314,779.176972318448,766.670451228416,755.053929601727,745.866075342117,737.238085777111,724.387967274559,709.876198491659,694.042050764083,679.157906927294,665.538213313373,655.036114423955,646.536938702601,637.352486442308,628.33660923268,619.161232299175,610.406655690223,602.846299096834,595.70294470506,589.971726407271,585.706902485386,583.131176702448,581.618418779145,580.811454787551,580.262775051977,579.481385696267,578.082722229336,577.414793111834,578.783087242821,581.18539768229,584.490215634299,587.694438340241,590.328634082228,591.569026864874,590.815262975402,589.910802700164,590.586071790391,591.996821108928,593.20080767069,593.389030169959,591.600200710013,587.525179763911,581.462202256447,575.455353922957,568.879125287719,561.942363334207,553.957564345367,544.913821052659,534.935762243084,523.133131075851,508.755528404315,490.223720842455,469.243465024229,449.271007455265,427.224402834153,407.139979130928,388.944769077858,371.899699920954,352.454255678406,331.906629547661,311.696084832564,291.223053238221,272.524188168015,255.100699970043,240.367070314629,227.964004041267,214.609953917564,201.835825589891,189.046906008656,177.314193046651,166.11240134533,156.108843189861,147.276798836512,138.592587403688,130.697143149095,123.148370374934,116.305096828668,110.802483700366,105.541132162556,101.414385067358,98.1683562544918,95.9177838734438,94.4137154434149,93.6441017661094,93.5028895489707,93.8817503221266],"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="col-print-6 col-sm-6 dao_visuals">
+<div class="col-print-12 col-sm-12 dao_visuals">
 <h2>
 Yearly Summary Cases Opened by Police District
 </h2>
@@ -656,344 +493,145 @@ Yearly Summary Cases Opened by Police District
 <h2 class="dao_table_header">
 Data: Year End Count of Summary Cases Opened by Offense Category
 </h2>
-<div class="table-wrapper">
-<table class="table table-responsive" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
-<thead>
-<tr>
-<th style="text-align:center;color: #4D7DBF !important;width: 10rem; text-align: left;">
-Offense Category
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2012
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2013
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2014
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2015
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2016
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2017
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2018
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2019
-</th>
-<th style="text-align:center;color: #4D7DBF !important;background-color: #fff4f5;">
-2020
-</th>
-<th style="text-align:center;color: #4D7DBF !important;background-color: #fff4f5;">
-2021
-</th>
-<th style="text-align:center;color: #4D7DBF !important;white-space:nowrap;background-color: #e8eef7 !important;">
-Yr-Yr<br>Change
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+<div class="container table dao-table text-center">
+<div class="container-lg border-bottom border-1 border-dao-medium-blue">
+<div class="row dao-header d-flex align-items-end flex-wrap border-bottom border-1">
+<div class="col-5 pb-1 pt-1 text-start">Offense Category</div>
+<div class="col">2012 </div>
+<div class="col">2013 </div>
+<div class="col">2014 </div>
+<div class="col">2015 </div>
+<div class="col">2016 </div>
+<div class="col">2017 </div>
+<div class="col">2018 </div>
+<div class="col">2019 </div>
+<div class="col pb-1 pt-1 dao-covid-column">2020 </div>
+<div class="col pb-1 pt-1 dao-covid-column">2021 </div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#retailtheft" class="dao_table_link" target="_blank">Retail Theft</a>
-</td>
-<td style="text-align:center;">
-2,652
-</td>
-<td style="text-align:center;">
-2,347
-</td>
-<td style="text-align:center;">
-1,993
-</td>
-<td style="text-align:center;">
-1,799
-</td>
-<td style="text-align:center;">
-1,682
-</td>
-<td style="text-align:center;">
-1,393
-</td>
-<td style="text-align:center;">
-2,350
-</td>
-<td style="text-align:center;">
-2,471
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-1,311
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-877
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
--33%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+</div>
+<div class="col">2,652</div>
+<div class="col">2,347</div>
+<div class="col">1,993</div>
+<div class="col">1,799</div>
+<div class="col">1,682</div>
+<div class="col">1,393</div>
+<div class="col">2,350</div>
+<div class="col">2,471</div>
+<div class="col pb-1 pt-1 dao-covid-column">1,311</div>
+<div class="col pb-1 pt-1 dao-covid-column">877</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#theft" class="dao_table_link" target="_blank">Theft</a>
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-9
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-0
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-4
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-Inf%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+</div>
+<div class="col">2</div>
+<div class="col">2</div>
+<div class="col">1</div>
+<div class="col">1</div>
+<div class="col">2</div>
+<div class="col">0</div>
+<div class="col">9</div>
+<div class="col">2</div>
+<div class="col pb-1 pt-1 dao-covid-column">0</div>
+<div class="col pb-1 pt-1 dao-covid-column">4</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#theftofservices" class="dao_table_link" target="_blank">Theft of Services</a>
-</td>
-<td style="text-align:center;">
-609
-</td>
-<td style="text-align:center;">
-2,942
-</td>
-<td style="text-align:center;">
-4,730
-</td>
-<td style="text-align:center;">
-2,757
-</td>
-<td style="text-align:center;">
-2,557
-</td>
-<td style="text-align:center;">
-2,901
-</td>
-<td style="text-align:center;">
-3,482
-</td>
-<td style="text-align:center;">
-951
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-35
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-130
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-271%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+</div>
+<div class="col">609</div>
+<div class="col">2,942</div>
+<div class="col">4,730</div>
+<div class="col">2,757</div>
+<div class="col">2,557</div>
+<div class="col">2,901</div>
+<div class="col">3,482</div>
+<div class="col">951</div>
+<div class="col pb-1 pt-1 dao-covid-column">35</div>
+<div class="col pb-1 pt-1 dao-covid-column">130</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#trespass" class="dao_table_link" target="_blank">Trespass</a>
-</td>
-<td style="text-align:center;">
-2,710
-</td>
-<td style="text-align:center;">
-2,747
-</td>
-<td style="text-align:center;">
-2,648
-</td>
-<td style="text-align:center;">
-2,795
-</td>
-<td style="text-align:center;">
-2,762
-</td>
-<td style="text-align:center;">
-2,351
-</td>
-<td style="text-align:center;">
-1,115
-</td>
-<td style="text-align:center;">
-860
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-252
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-342
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-36%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+</div>
+<div class="col">2,710</div>
+<div class="col">2,747</div>
+<div class="col">2,648</div>
+<div class="col">2,795</div>
+<div class="col">2,762</div>
+<div class="col">2,351</div>
+<div class="col">1,115</div>
+<div class="col">860</div>
+<div class="col pb-1 pt-1 dao-covid-column">252</div>
+<div class="col pb-1 pt-1 dao-covid-column">342</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#criminalmischief" class="dao_table_link" target="_blank">Criminal Mischief</a>
-</td>
-<td style="text-align:center;">
-348
-</td>
-<td style="text-align:center;">
-302
-</td>
-<td style="text-align:center;">
-272
-</td>
-<td style="text-align:center;">
-212
-</td>
-<td style="text-align:center;">
-189
-</td>
-<td style="text-align:center;">
-114
-</td>
-<td style="text-align:center;">
-132
-</td>
-<td style="text-align:center;">
-102
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-78
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-65
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
--17%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+</div>
+<div class="col">348</div>
+<div class="col">302</div>
+<div class="col">272</div>
+<div class="col">212</div>
+<div class="col">189</div>
+<div class="col">114</div>
+<div class="col">132</div>
+<div class="col">102</div>
+<div class="col pb-1 pt-1 dao-covid-column">78</div>
+<div class="col pb-1 pt-1 dao-covid-column">65</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#otherpropertycrimes" class="dao_table_link" target="_blank">Other Property Crimes</a>
-</td>
-<td style="text-align:center;">
-195
-</td>
-<td style="text-align:center;">
-343
-</td>
-<td style="text-align:center;">
-421
-</td>
-<td style="text-align:center;">
-219
-</td>
-<td style="text-align:center;">
-125
-</td>
-<td style="text-align:center;">
-45
-</td>
-<td style="text-align:center;">
-12
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-0
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-0
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-0%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;width: 10rem; text-align: left;">
-All Property Offenses
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-6,516
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-8,683
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-10,065
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-7,783
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-7,317
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-6,804
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-7,100
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-4,387
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #fff4f5;">
-1,676
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #fff4f5;">
-1,418
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;white-space:nowrap;background-color: #e8eef7 !important;">
--15%
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup></sup> Areas in red coincide with the COVID-19 pandemic. During the pandemic, the criminal legal system has operated completely differently than it normally does. The changes that can be observed on our dashboard include: 1) isolation, closed schools, and the loss of community programming has led to an increase in serious violent crime, 2) police have made fewer arrests overall (in particular for minor offenses), 3) court policies and other restrictions meant to keep people safe have also disrupted or delayed court hearings and led to a significant increase in open cases forced dismissals and withdrawals. See our <a href="COVID19_Report.html">report on the justice system during COVID-19</a> to learn more.
-</td>
-</tr>
-</tfoot>
-</table>
+</div>
+<div class="col">195</div>
+<div class="col">343</div>
+<div class="col">421</div>
+<div class="col">219</div>
+<div class="col">125</div>
+<div class="col">45</div>
+<div class="col">12</div>
+<div class="col">1</div>
+<div class="col pb-1 pt-1 dao-covid-column">0</div>
+<div class="col pb-1 pt-1 dao-covid-column">0</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row dao-highlight-row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">All Property Offenses</div>
+<div class="col">6,516</div>
+<div class="col">8,683</div>
+<div class="col">10,065</div>
+<div class="col">7,783</div>
+<div class="col">7,317</div>
+<div class="col">6,804</div>
+<div class="col">7,100</div>
+<div class="col">4,387</div>
+<div class="col pb-1 pt-1 dao-covid-column">1,676</div>
+<div class="col pb-1 pt-1 dao-covid-column">1,418</div>
+</div>
+</div>
 </div>
 </div>
 <div id="drugs" class="section level2">
 <h2>Drugs</h2>
 <div class="row">
-<div class="col-md-8 offset-md-2 dao-warning dao_report_body">
+<div class="col-md-16 offset-md-4 dao-warning dao_report_body">
 <i class='fa fa-info-circle'></i>The offense categories have recently changed. Please see this <a href='https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d' target = '_blank'>data story</a> and the <a href='definitions.html'>definitions page</a> for more information.
 </div>
 </div>
 <div class="row">
-<div class="col-md-8 offset-md-2 dao-warning dao_report_body">
+<div class="col-md-16 offset-md-4 dao-warning dao_report_body">
 <i class='fa fa-info-circle'></i>The COVID-19 pandemic has had a profound effect on the criminal legal system. Among other changes, overall arrests and cases charged have been lower than prior years and those arrests that have happened tend to be for more serious offenses. Because of this, statistics about arrests, cases charged, and bail should be interpreted with caution.
 </div>
 </div>
 <div class="row">
-<div class="col-print-6 col-sm-6 dao_visuals">
-<div id="htmlwidget-135fc40fdcff5d1576a9" style="width:100%;height:100%;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-135fc40fdcff5d1576a9">{"x":{"visdat":{"b07331b51f6f0":["function () ","plotlyVisDat"]},"cur_data":"b07331b51f6f0","attrs":{"b07331b51f6f0":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#4f6980"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"b07331b51f6f0.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":11.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":11.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":11.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":11.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2021.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Drugs<\/b>","font":{"family":"nimbus-sans","size":14,"color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":".79rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"rect","fillcolor":"#A52A2A","line":{"color":"#A52A2A"},"opacity":0.15,"x0":"2020-03-18","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":0.95,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,14,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0],"mode":"markers","marker":{"color":"#4f6980","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2012: 0 Cases","February 2012: 0 Cases","March 2012: 0 Cases","April 2012: 0 Cases","May 2012: 0 Cases","June 2012: 0 Cases","July 2012: 1 Cases","August 2012: 0 Cases","September 2012: 0 Cases","October 2012: 0 Cases","November 2012: 0 Cases","December 2012: 0 Cases","January 2013: 0 Cases","February 2013: 0 Cases","March 2013: 0 Cases","April 2013: 0 Cases","May 2013: 0 Cases","June 2013: 0 Cases","July 2013: 0 Cases","August 2013: 0 Cases","September 2013: 0 Cases","October 2013: 0 Cases","November 2013: 0 Cases","December 2013: 0 Cases","January 2014: 0 Cases","February 2014: 0 Cases","March 2014: 0 Cases","April 2014: 0 Cases","May 2014: 0 Cases","June 2014: 0 Cases","July 2014: 0 Cases","August 2014: 0 Cases","September 2014: 0 Cases","October 2014: 0 Cases","November 2014: 0 Cases","December 2014: 0 Cases","January 2015: 0 Cases","February 2015: 0 Cases","March 2015: 0 Cases","April 2015: 0 Cases","May 2015: 0 Cases","June 2015: 0 Cases","July 2015: 0 Cases","August 2015: 0 Cases","September 2015: 0 Cases","October 2015: 0 Cases","November 2015: 0 Cases","December 2015: 0 Cases","January 2016: 0 Cases","February 2016: 0 Cases","March 2016: 0 Cases","April 2016: 0 Cases","May 2016: 0 Cases","June 2016: 0 Cases","July 2016: 0 Cases","August 2016: 0 Cases","September 2016: 0 Cases","October 2016: 1 Cases","November 2016: 0 Cases","December 2016: 0 Cases","January 2017: 0 Cases","February 2017: 0 Cases","March 2017: 0 Cases","April 2017: 0 Cases","May 2017: 0 Cases","June 2017: 14 Cases","July 2017: 1 Cases","August 2017: 0 Cases","September 2017: 0 Cases","October 2017: 0 Cases","November 2017: 0 Cases","December 2017: 0 Cases","January 2018: 0 Cases","February 2018: 0 Cases","March 2018: 0 Cases","April 2018: 0 Cases","May 2018: 0 Cases","June 2018: 0 Cases","July 2018: 0 Cases","August 2018: 0 Cases","September 2018: 0 Cases","October 2018: 0 Cases","November 2018: 0 Cases","December 2018: 0 Cases","January 2019: 0 Cases","February 2019: 0 Cases","March 2019: 0 Cases","April 2019: 0 Cases","May 2019: 0 Cases","June 2019: 11 Cases","July 2019: 0 Cases","August 2019: 0 Cases","September 2019: 0 Cases","October 2019: 1 Cases","November 2019: 2 Cases","December 2019: 0 Cases","January 2020: 0 Cases","February 2020: 0 Cases","March 2020: 0 Cases","April 2020: 0 Cases","May 2020: 0 Cases","June 2020: 0 Cases","July 2020: 0 Cases","August 2020: 0 Cases","September 2020: 0 Cases","October 2020: 0 Cases","November 2020: 0 Cases","December 2020: 0 Cases","January 2021: 1 Cases","February 2021: 0 Cases","March 2021: 0 Cases","April 2021: 2 Cases","May 2021: 0 Cases","June 2021: 0 Cases","July 2021: 0 Cases","August 2021: 0 Cases","September 2021: 0 Cases","October 2021: 0 Cases","November 2021: 0 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[0.0950177855446321,0.0893400927860268,0.0841679068393531,0.0787874701663544,0.0737263102550207,0.068646654049085,0.0638758744104501,0.0590955569676956,0.0544917152635729,0.0502177827077642,0.0459728947331977,0.0420156610328507,0.0380663302966821,0.0342429053227868,0.0308840889077125,0.0271973680046281,0.0236351567242881,0.0200073903631816,0.0165935060962315,0.0132133276874862,0.0100312627055405,0.00718636184958623,0.00453638111107151,0.00221957700963666,2.78489494425784e-05,-0.00193715630544038,-0.00349938207219522,-0.00497394520614036,-0.00612632023377318,-0.00701256901568718,-0.00785100873043075,-0.0089005056701652,-0.00997450943490813,-0.0108833329550871,-0.0115285667845186,-0.0117163866969163,-0.0113003163389113,-0.0101024883722063,-0.0161284437986669,-0.0362051962492652,-0.06283570803127,-0.0911608771489682,-0.113002606579121,-0.123182542169225,-0.114026282710064,-0.0862556961545963,-0.0445380305766868,0.00492506947644568,0.0617640964690275,0.120697005145191,0.174385846029602,0.226668250262416,0.268765806258639,0.320840143336683,0.391939528182961,0.477261914932629,0.564933204769884,0.642778658837537,0.706445969218834,0.742693740975762,0.758962368844511,0.76632169120151,0.767133795723641,0.763590708256193,0.757713954248755,0.751244525119369,0.746641344697075,0.745730309305594,0.736439201529101,0.710776577230798,0.6738525493975,0.634578488014349,0.597157076929169,0.569882057608168,0.559796922610812,0.556736188680306,0.551237104523203,0.54357326588097,0.534851929415939,0.525131874049051,0.515342900768495,0.506423631481691,0.498419649588128,0.501408224189152,0.521144061812662,0.551339499507494,0.582170442509638,0.614228851700925,0.637225042503393,0.646335347279119,0.644704057574443,0.640697898598631,0.634540428345657,0.626730554744036,0.616951499793132,0.606029329118726,0.593439778248662,0.579732776374942,0.565646240557479,0.548752542835321,0.530521017411762,0.509655193687358,0.487423684725189,0.462263354356573,0.43479702375693,0.405828234884306,0.373434471342915,0.33993408028478,0.303332337319198,0.264955933600749,0.228971958952045,0.187895354948458,0.14727924494835,0.104493188160335,0.0620619863861423,0.0169107757307629,-0.029817626090584,-0.0767785340230188,-0.127348792372099],"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="col-print-12 col-sm-12 dao_visuals">
+<div id="htmlwidget-d1420b5ca4febd856694" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d1420b5ca4febd856694">{"x":{"visdat":{"dedb96b7fa7e5":["function () ","plotlyVisDat"]},"cur_data":"dedb96b7fa7e5","attrs":{"dedb96b7fa7e5":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#4f6980"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"dedb96b7fa7e5.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":11.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":11.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":11.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":11.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2021.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Drugs<\/b>","font":{"family":"nimbus-sans","size":14,"color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":".79rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"rect","fillcolor":"#A52A2A","line":{"color":"#A52A2A"},"opacity":0.15,"x0":"2020-03-18","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":0.95,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,14,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0],"mode":"markers","marker":{"color":"#4f6980","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2012: 0 Cases","February 2012: 0 Cases","March 2012: 0 Cases","April 2012: 0 Cases","May 2012: 0 Cases","June 2012: 0 Cases","July 2012: 1 Cases","August 2012: 0 Cases","September 2012: 0 Cases","October 2012: 0 Cases","November 2012: 0 Cases","December 2012: 0 Cases","January 2013: 0 Cases","February 2013: 0 Cases","March 2013: 0 Cases","April 2013: 0 Cases","May 2013: 0 Cases","June 2013: 0 Cases","July 2013: 0 Cases","August 2013: 0 Cases","September 2013: 0 Cases","October 2013: 0 Cases","November 2013: 0 Cases","December 2013: 0 Cases","January 2014: 0 Cases","February 2014: 0 Cases","March 2014: 0 Cases","April 2014: 0 Cases","May 2014: 0 Cases","June 2014: 0 Cases","July 2014: 0 Cases","August 2014: 0 Cases","September 2014: 0 Cases","October 2014: 0 Cases","November 2014: 0 Cases","December 2014: 0 Cases","January 2015: 0 Cases","February 2015: 0 Cases","March 2015: 0 Cases","April 2015: 0 Cases","May 2015: 0 Cases","June 2015: 0 Cases","July 2015: 0 Cases","August 2015: 0 Cases","September 2015: 0 Cases","October 2015: 0 Cases","November 2015: 0 Cases","December 2015: 0 Cases","January 2016: 0 Cases","February 2016: 0 Cases","March 2016: 0 Cases","April 2016: 0 Cases","May 2016: 0 Cases","June 2016: 0 Cases","July 2016: 0 Cases","August 2016: 0 Cases","September 2016: 0 Cases","October 2016: 1 Cases","November 2016: 0 Cases","December 2016: 0 Cases","January 2017: 0 Cases","February 2017: 0 Cases","March 2017: 0 Cases","April 2017: 0 Cases","May 2017: 0 Cases","June 2017: 14 Cases","July 2017: 1 Cases","August 2017: 0 Cases","September 2017: 0 Cases","October 2017: 0 Cases","November 2017: 0 Cases","December 2017: 0 Cases","January 2018: 0 Cases","February 2018: 0 Cases","March 2018: 0 Cases","April 2018: 0 Cases","May 2018: 0 Cases","June 2018: 0 Cases","July 2018: 0 Cases","August 2018: 0 Cases","September 2018: 0 Cases","October 2018: 0 Cases","November 2018: 0 Cases","December 2018: 0 Cases","January 2019: 0 Cases","February 2019: 0 Cases","March 2019: 0 Cases","April 2019: 0 Cases","May 2019: 0 Cases","June 2019: 11 Cases","July 2019: 0 Cases","August 2019: 0 Cases","September 2019: 0 Cases","October 2019: 1 Cases","November 2019: 2 Cases","December 2019: 0 Cases","January 2020: 0 Cases","February 2020: 0 Cases","March 2020: 0 Cases","April 2020: 0 Cases","May 2020: 0 Cases","June 2020: 0 Cases","July 2020: 0 Cases","August 2020: 0 Cases","September 2020: 0 Cases","October 2020: 0 Cases","November 2020: 0 Cases","December 2020: 0 Cases","January 2021: 1 Cases","February 2021: 0 Cases","March 2021: 0 Cases","April 2021: 2 Cases","May 2021: 0 Cases","June 2021: 0 Cases","July 2021: 0 Cases","August 2021: 0 Cases","September 2021: 0 Cases","October 2021: 0 Cases","November 2021: 0 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[0.0950177855446321,0.0893400927860268,0.0841679068393531,0.0787874701663544,0.0737263102550207,0.068646654049085,0.0638758744104501,0.0590955569676956,0.0544917152635729,0.0502177827077642,0.0459728947331977,0.0420156610328507,0.0380663302966821,0.0342429053227868,0.0308840889077125,0.0271973680046281,0.0236351567242881,0.0200073903631816,0.0165935060962315,0.0132133276874862,0.0100312627055405,0.00718636184958623,0.00453638111107151,0.00221957700963666,2.78489494425784e-05,-0.00193715630544038,-0.00349938207219522,-0.00497394520614036,-0.00612632023377318,-0.00701256901568718,-0.00785100873043075,-0.0089005056701652,-0.00997450943490813,-0.0108833329550871,-0.0115285667845186,-0.0117163866969163,-0.0113003163389113,-0.0101024883722063,-0.0161284437986669,-0.0362051962492652,-0.06283570803127,-0.0911608771489682,-0.113002606579121,-0.123182542169225,-0.114026282710064,-0.0862556961545963,-0.0445380305766868,0.00492506947644568,0.0617640964690275,0.120697005145191,0.174385846029602,0.226668250262416,0.268765806258639,0.320840143336683,0.391939528182961,0.477261914932629,0.564933204769884,0.642778658837537,0.706445969218834,0.742693740975762,0.758962368844511,0.76632169120151,0.767133795723641,0.763590708256193,0.757713954248755,0.751244525119369,0.746641344697075,0.745730309305594,0.736439201529101,0.710776577230798,0.6738525493975,0.634578488014349,0.597157076929169,0.569882057608168,0.559796922610812,0.556736188680306,0.551237104523203,0.54357326588097,0.534851929415939,0.525131874049051,0.515342900768495,0.506423631481691,0.498419649588128,0.501408224189152,0.521144061812662,0.551339499507494,0.582170442509638,0.614228851700925,0.637225042503393,0.646335347279119,0.644704057574443,0.640697898598631,0.634540428345657,0.626730554744036,0.616951499793132,0.606029329118726,0.593439778248662,0.579732776374942,0.565646240557479,0.548752542835321,0.530521017411762,0.509655193687358,0.487423684725189,0.462263354356573,0.43479702375693,0.405828234884306,0.373434471342915,0.33993408028478,0.303332337319198,0.264955933600749,0.228971958952045,0.187895354948458,0.14727924494835,0.104493188160335,0.0620619863861423,0.0169107757307629,-0.029817626090584,-0.0767785340230188,-0.127348792372099],"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="col-print-6 col-sm-6 dao_visuals">
+<div class="col-print-12 col-sm-12 dao_visuals">
 <h2>
 Yearly Summary Cases Opened by Police District
 </h2>
@@ -1006,154 +644,70 @@ Yearly Summary Cases Opened by Police District
 <h2 class="dao_table_header">
 Data: Year End Count of Summary Cases Opened by Offense Category
 </h2>
-<div class="table-wrapper">
-<table class="table table-responsive" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
-<thead>
-<tr>
-<th style="text-align:center;color: #4D7DBF !important;width: 10rem; text-align: left;">
-Offense Category
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2012
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2013
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2014
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2015
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2016
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2017
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2018
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2019
-</th>
-<th style="text-align:center;color: #4D7DBF !important;background-color: #fff4f5;">
-2020
-</th>
-<th style="text-align:center;color: #4D7DBF !important;background-color: #fff4f5;">
-2021
-</th>
-<th style="text-align:center;color: #4D7DBF !important;white-space:nowrap;background-color: #e8eef7 !important;">
-Yr-Yr<br>Change
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+<div class="container table dao-table text-center">
+<div class="container-lg border-bottom border-1 border-dao-medium-blue">
+<div class="row dao-header d-flex align-items-end flex-wrap border-bottom border-1">
+<div class="col-5 pb-1 pt-1 text-start">Offense Category</div>
+<div class="col">2012 </div>
+<div class="col">2013 </div>
+<div class="col">2014 </div>
+<div class="col">2015 </div>
+<div class="col">2016 </div>
+<div class="col">2017 </div>
+<div class="col">2018 </div>
+<div class="col">2019 </div>
+<div class="col pb-1 pt-1 dao-covid-column">2020 </div>
+<div class="col pb-1 pt-1 dao-covid-column">2021 </div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#drugpossession" class="dao_table_link" target="_blank">Drug Possession</a>
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-15
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-14
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-0
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-3
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-Inf%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;width: 10rem; text-align: left;">
-All Drug Offenses
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-1
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-0
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-0
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-0
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-1
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-15
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-0
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-14
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #fff4f5;">
-0
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #fff4f5;">
-3
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;white-space:nowrap;background-color: #e8eef7 !important;">
-Inf%
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup></sup> Areas in red coincide with the COVID-19 pandemic. During the pandemic, the criminal legal system has operated completely differently than it normally does. The changes that can be observed on our dashboard include: 1) isolation, closed schools, and the loss of community programming has led to an increase in serious violent crime, 2) police have made fewer arrests overall (in particular for minor offenses), 3) court policies and other restrictions meant to keep people safe have also disrupted or delayed court hearings and led to a significant increase in open cases forced dismissals and withdrawals. See our <a href="COVID19_Report.html">report on the justice system during COVID-19</a> to learn more.
-</td>
-</tr>
-</tfoot>
-</table>
+</div>
+<div class="col">1</div>
+<div class="col">0</div>
+<div class="col">0</div>
+<div class="col">0</div>
+<div class="col">1</div>
+<div class="col">15</div>
+<div class="col">0</div>
+<div class="col">14</div>
+<div class="col pb-1 pt-1 dao-covid-column">0</div>
+<div class="col pb-1 pt-1 dao-covid-column">3</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row dao-highlight-row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">All Drug Offenses</div>
+<div class="col">1</div>
+<div class="col">0</div>
+<div class="col">0</div>
+<div class="col">0</div>
+<div class="col">1</div>
+<div class="col">15</div>
+<div class="col">0</div>
+<div class="col">14</div>
+<div class="col pb-1 pt-1 dao-covid-column">0</div>
+<div class="col pb-1 pt-1 dao-covid-column">3</div>
+</div>
+</div>
 </div>
 </div>
 <div id="other" class="section level2">
 <h2>Other</h2>
 <div class="row">
-<div class="col-md-8 offset-md-2 dao-warning dao_report_body">
+<div class="col-md-16 offset-md-4 dao-warning dao_report_body">
 <i class='fa fa-info-circle'></i>The offense categories have recently changed. Please see this <a href='https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d' target = '_blank'>data story</a> and the <a href='definitions.html'>definitions page</a> for more information.
 </div>
 </div>
 <div class="row">
-<div class="col-md-8 offset-md-2 dao-warning dao_report_body">
+<div class="col-md-16 offset-md-4 dao-warning dao_report_body">
 <i class='fa fa-info-circle'></i>The COVID-19 pandemic has had a profound effect on the criminal legal system. Among other changes, overall arrests and cases charged have been lower than prior years and those arrests that have happened tend to be for more serious offenses. Because of this, statistics about arrests, cases charged, and bail should be interpreted with caution.
 </div>
 </div>
 <div class="row">
-<div class="col-print-6 col-sm-6 dao_visuals">
-<div id="htmlwidget-eeae3e61483b0e207a7c" style="width:100%;height:100%;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-eeae3e61483b0e207a7c">{"x":{"visdat":{"b073319150e5e":["function () ","plotlyVisDat"]},"cur_data":"b073319150e5e","attrs":{"b073319150e5e":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#4f6980"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"b073319150e5e.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":479.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":479.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":479.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":479.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2021.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Other<\/b>","font":{"family":"nimbus-sans","size":14,"color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":".79rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"rect","fillcolor":"#A52A2A","line":{"color":"#A52A2A"},"opacity":0.15,"x0":"2020-03-18","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":0.95,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[284,326,298,442,333,271,285,273,377,392,279,278,328,349,534,599,393,305,289,449,462,440,387,327,333,326,398,462,366,291,309,464,418,346,294,268,239,258,345,399,298,235,244,254,394,351,274,234,240,228,291,299,243,192,77,138,243,144,102,116,77,130,155,146,95,98,85,95,196,206,83,84,71,84,109,95,88,47,47,67,253,162,79,80,44,44,81,89,50,35,35,108,137,91,62,53,36,51,30,4,13,4,8,44,39,39,15,5,5,8,61,9,18,22,15,94,48,75,52],"mode":"markers","marker":{"color":"#4f6980","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2012: 284 Cases","February 2012: 326 Cases","March 2012: 298 Cases","April 2012: 442 Cases","May 2012: 333 Cases","June 2012: 271 Cases","July 2012: 285 Cases","August 2012: 273 Cases","September 2012: 377 Cases","October 2012: 392 Cases","November 2012: 279 Cases","December 2012: 278 Cases","January 2013: 328 Cases","February 2013: 349 Cases","March 2013: 534 Cases","April 2013: 599 Cases","May 2013: 393 Cases","June 2013: 305 Cases","July 2013: 289 Cases","August 2013: 449 Cases","September 2013: 462 Cases","October 2013: 440 Cases","November 2013: 387 Cases","December 2013: 327 Cases","January 2014: 333 Cases","February 2014: 326 Cases","March 2014: 398 Cases","April 2014: 462 Cases","May 2014: 366 Cases","June 2014: 291 Cases","July 2014: 309 Cases","August 2014: 464 Cases","September 2014: 418 Cases","October 2014: 346 Cases","November 2014: 294 Cases","December 2014: 268 Cases","January 2015: 239 Cases","February 2015: 258 Cases","March 2015: 345 Cases","April 2015: 399 Cases","May 2015: 298 Cases","June 2015: 235 Cases","July 2015: 244 Cases","August 2015: 254 Cases","September 2015: 394 Cases","October 2015: 351 Cases","November 2015: 274 Cases","December 2015: 234 Cases","January 2016: 240 Cases","February 2016: 228 Cases","March 2016: 291 Cases","April 2016: 299 Cases","May 2016: 243 Cases","June 2016: 192 Cases","July 2016: 77 Cases","August 2016: 138 Cases","September 2016: 243 Cases","October 2016: 144 Cases","November 2016: 102 Cases","December 2016: 116 Cases","January 2017: 77 Cases","February 2017: 130 Cases","March 2017: 155 Cases","April 2017: 146 Cases","May 2017: 95 Cases","June 2017: 98 Cases","July 2017: 85 Cases","August 2017: 95 Cases","September 2017: 196 Cases","October 2017: 206 Cases","November 2017: 83 Cases","December 2017: 84 Cases","January 2018: 71 Cases","February 2018: 84 Cases","March 2018: 109 Cases","April 2018: 95 Cases","May 2018: 88 Cases","June 2018: 47 Cases","July 2018: 47 Cases","August 2018: 67 Cases","September 2018: 253 Cases","October 2018: 162 Cases","November 2018: 79 Cases","December 2018: 80 Cases","January 2019: 44 Cases","February 2019: 44 Cases","March 2019: 81 Cases","April 2019: 89 Cases","May 2019: 50 Cases","June 2019: 35 Cases","July 2019: 35 Cases","August 2019: 108 Cases","September 2019: 137 Cases","October 2019: 91 Cases","November 2019: 62 Cases","December 2019: 53 Cases","January 2020: 36 Cases","February 2020: 51 Cases","March 2020: 30 Cases","April 2020: 4 Cases","May 2020: 13 Cases","June 2020: 4 Cases","July 2020: 8 Cases","August 2020: 44 Cases","September 2020: 39 Cases","October 2020: 39 Cases","November 2020: 15 Cases","December 2020: 5 Cases","January 2021: 5 Cases","February 2021: 8 Cases","March 2021: 61 Cases","April 2021: 9 Cases","May 2021: 18 Cases","June 2021: 22 Cases","July 2021: 15 Cases","August 2021: 94 Cases","September 2021: 48 Cases","October 2021: 75 Cases","November 2021: 52 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[296.781718553387,305.48050889183,313.241939254929,321.116235278447,328.301160203075,335.254826953424,341.508623070109,347.45858622388,352.884839681079,357.661876112306,362.129889432136,366.021416213312,369.61761639374,372.803885440732,375.348027787572,377.729905303413,379.548334429303,380.955209659665,381.88911894207,382.442988781377,382.610116985898,382.433301073706,381.931419203353,380.845894962597,378.88640131206,376.249724355122,373.432744310059,369.99411658934,366.506987567965,362.910406251256,359.185473794811,354.762405901862,349.8540765076,344.735468979748,339.161879134836,333.585300198901,327.730496561266,321.879959317657,316.501067930569,310.274413693396,304.012108528475,297.334148110259,290.707247883424,283.727097184961,276.650520110414,269.275622428052,260.805984024505,252.055976265736,242.722182396205,233.375986401983,224.876308617781,216.323115285458,208.834907756985,201.026298375438,192.652793121529,183.554292064676,174.407263091358,165.894385257383,157.846267126832,151.163244913502,145.007294867402,138.999642990732,133.740610266264,128.147290018925,123.00726853345,118.02441071191,113.564733711449,109.37745873314,106.20340471328,104.355116983199,103.290566199708,102.677538339011,102.056354715877,101.021974977676,99.3746219705085,97.4079256022456,96.0574899257731,95.0409631222282,94.2398317832923,93.4083643792717,92.3777301461551,91.004590016059,89.0050785398791,86.5984155595378,83.8977434049725,81.0495022528234,78.4086840721535,75.4743059814435,72.6881849757489,69.9331778771079,67.089210794495,63.7214788572776,60.1013839216649,56.532628206824,52.9579679894962,49.7809711713621,46.9705112889433,44.8238682844118,43.17434096259,41.4243419661852,39.7953286898572,38.2330568810992,36.8903496884945,35.7320499317849,34.8619190348065,34.232189899254,33.7085965084675,33.3419773440156,33.1257117017224,33.0927980845851,33.2358944566215,33.6025259164746,34.2009521163654,35.0813823507825,36.1645312586844,37.4991206036909,39.0287022964988,40.6718708505321,42.5146826724856],"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="col-print-12 col-sm-12 dao_visuals">
+<div id="htmlwidget-27428f643c64668d959b" style="width:100%;height:100%;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-27428f643c64668d959b">{"x":{"visdat":{"dedb948ccb3e3":["function () ","plotlyVisDat"]},"cur_data":"dedb948ccb3e3","attrs":{"dedb948ccb3e3":{"x":{},"y":{},"mode":"markers","marker":{"size":4,"color":"#4f6980"},"hoverinfo":"text","text":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"dedb948ccb3e3.1":{"x":{},"y":{},"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":80,"l":0,"t":30,"r":0,"pad":0},"annotations":[{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":479.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":479.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":479.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Philly COVID-19 Shutdown","x":"2020-01-16","y":479.2,"font":{"family":"nimbus-sans","size":13,"color":"#a1a1a1","alpha":0.4},"textangle":-90,"showarrow":false},{"text":"Source: DAO Analysis of criminal justice data.  Current as of 12/31/2021.","x":0,"y":-0.1,"align":"left","showarrow":false,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"top","xshift":-20,"yshift":0,"font":{"family":"nimbus-sans"}}],"autosize":true,"yaxis":{"domain":[0,1],"automargin":true,"title":null,"zeroline":false,"showline":false,"showticklabels":true,"showgrid":true,"gridwidth":"1px","gridcolor":"#CFCFCF","fixedrange":true,"rangemode":"tozero","tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"ticksuffix":" &nbsp;"},"xaxis":{"domain":[0,1],"automargin":true,"title":null,"showgrid":false,"zeroline":false,"showline":true,"fixedrange":true,"linecolor":"#CFCFCF","linewidth":5,"tickfont":{"family":"nimbus-sans","size":11,"color":"#444444"},"dtick":31622400000,"tick0":"2014-01-01","tickformat":"%Y"},"title":{"text":"<b>Summary Cases Opened: Other<\/b>","font":{"family":"nimbus-sans","size":14,"color":"#192833"},"xanchor":"left","x":0},"showlegend":false,"hoverlabel":{"bgcolor":"white","font":{"family":"nimbus-sans","size":".79rem","color":"#444444"}},"shapes":[{"type":"rect","fillcolor":"#D3E8FC","line":{"color":"#D3E8FC"},"opacity":0.3,"x0":"2018-01-01","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"rect","fillcolor":"#A52A2A","line":{"color":"#A52A2A"},"opacity":0.15,"x0":"2020-03-18","xref":"x","y0":0,"y1":0.95,"yref":"paper","layer":"below","x1":"2021-12-31"},{"type":"line","x0":"2020-03-01","x1":"2020-03-01","yref":"paper","y0":0,"y1":0.95,"line":{"color":"#a1a1a1","alpha":0.4,"dash":"dot"}}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"modeBarButtonsToRemove":["sendDataToCloud","autoScale2d","select2d","resetScale2d","hoverClosestCartesian","hoverCompareCartesian","toggleSpikelines","pan2d","lasso2d","zoomIn2d","zoomOut2d"]},"data":[{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[284,326,298,442,333,271,285,273,377,392,279,278,328,349,534,599,393,305,289,449,462,440,387,327,333,326,398,462,366,291,309,464,418,346,294,268,239,258,345,399,298,235,244,254,394,351,274,234,240,228,291,299,243,192,77,138,243,144,102,116,77,130,155,146,95,98,85,95,196,206,83,84,71,84,109,95,88,47,47,67,253,162,79,80,44,44,81,89,50,35,35,108,137,91,62,53,36,51,30,4,13,4,8,44,39,39,15,5,5,8,61,9,18,22,15,94,48,75,52],"mode":"markers","marker":{"color":"#4f6980","size":4,"line":{"color":"rgba(31,119,180,1)"}},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["January 2012: 284 Cases","February 2012: 326 Cases","March 2012: 298 Cases","April 2012: 442 Cases","May 2012: 333 Cases","June 2012: 271 Cases","July 2012: 285 Cases","August 2012: 273 Cases","September 2012: 377 Cases","October 2012: 392 Cases","November 2012: 279 Cases","December 2012: 278 Cases","January 2013: 328 Cases","February 2013: 349 Cases","March 2013: 534 Cases","April 2013: 599 Cases","May 2013: 393 Cases","June 2013: 305 Cases","July 2013: 289 Cases","August 2013: 449 Cases","September 2013: 462 Cases","October 2013: 440 Cases","November 2013: 387 Cases","December 2013: 327 Cases","January 2014: 333 Cases","February 2014: 326 Cases","March 2014: 398 Cases","April 2014: 462 Cases","May 2014: 366 Cases","June 2014: 291 Cases","July 2014: 309 Cases","August 2014: 464 Cases","September 2014: 418 Cases","October 2014: 346 Cases","November 2014: 294 Cases","December 2014: 268 Cases","January 2015: 239 Cases","February 2015: 258 Cases","March 2015: 345 Cases","April 2015: 399 Cases","May 2015: 298 Cases","June 2015: 235 Cases","July 2015: 244 Cases","August 2015: 254 Cases","September 2015: 394 Cases","October 2015: 351 Cases","November 2015: 274 Cases","December 2015: 234 Cases","January 2016: 240 Cases","February 2016: 228 Cases","March 2016: 291 Cases","April 2016: 299 Cases","May 2016: 243 Cases","June 2016: 192 Cases","July 2016: 77 Cases","August 2016: 138 Cases","September 2016: 243 Cases","October 2016: 144 Cases","November 2016: 102 Cases","December 2016: 116 Cases","January 2017: 77 Cases","February 2017: 130 Cases","March 2017: 155 Cases","April 2017: 146 Cases","May 2017: 95 Cases","June 2017: 98 Cases","July 2017: 85 Cases","August 2017: 95 Cases","September 2017: 196 Cases","October 2017: 206 Cases","November 2017: 83 Cases","December 2017: 84 Cases","January 2018: 71 Cases","February 2018: 84 Cases","March 2018: 109 Cases","April 2018: 95 Cases","May 2018: 88 Cases","June 2018: 47 Cases","July 2018: 47 Cases","August 2018: 67 Cases","September 2018: 253 Cases","October 2018: 162 Cases","November 2018: 79 Cases","December 2018: 80 Cases","January 2019: 44 Cases","February 2019: 44 Cases","March 2019: 81 Cases","April 2019: 89 Cases","May 2019: 50 Cases","June 2019: 35 Cases","July 2019: 35 Cases","August 2019: 108 Cases","September 2019: 137 Cases","October 2019: 91 Cases","November 2019: 62 Cases","December 2019: 53 Cases","January 2020: 36 Cases","February 2020: 51 Cases","March 2020: 30 Cases","April 2020: 4 Cases","May 2020: 13 Cases","June 2020: 4 Cases","July 2020: 8 Cases","August 2020: 44 Cases","September 2020: 39 Cases","October 2020: 39 Cases","November 2020: 15 Cases","December 2020: 5 Cases","January 2021: 5 Cases","February 2021: 8 Cases","March 2021: 61 Cases","April 2021: 9 Cases","May 2021: 18 Cases","June 2021: 22 Cases","July 2021: 15 Cases","August 2021: 94 Cases","September 2021: 48 Cases","October 2021: 75 Cases","November 2021: 52 Cases"],"type":"scatter","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],"y":[296.781718553387,305.48050889183,313.241939254929,321.116235278447,328.301160203075,335.254826953424,341.508623070109,347.45858622388,352.884839681079,357.661876112306,362.129889432136,366.021416213312,369.61761639374,372.803885440732,375.348027787572,377.729905303413,379.548334429303,380.955209659665,381.88911894207,382.442988781377,382.610116985898,382.433301073706,381.931419203353,380.845894962597,378.88640131206,376.249724355122,373.432744310059,369.99411658934,366.506987567965,362.910406251256,359.185473794811,354.762405901862,349.8540765076,344.735468979748,339.161879134836,333.585300198901,327.730496561266,321.879959317657,316.501067930569,310.274413693396,304.012108528475,297.334148110259,290.707247883424,283.727097184961,276.650520110414,269.275622428052,260.805984024505,252.055976265736,242.722182396205,233.375986401983,224.876308617781,216.323115285458,208.834907756985,201.026298375438,192.652793121529,183.554292064676,174.407263091358,165.894385257383,157.846267126832,151.163244913502,145.007294867402,138.999642990732,133.740610266264,128.147290018925,123.00726853345,118.02441071191,113.564733711449,109.37745873314,106.20340471328,104.355116983199,103.290566199708,102.677538339011,102.056354715877,101.021974977676,99.3746219705085,97.4079256022456,96.0574899257731,95.0409631222282,94.2398317832923,93.4083643792717,92.3777301461551,91.004590016059,89.0050785398791,86.5984155595378,83.8977434049725,81.0495022528234,78.4086840721535,75.4743059814435,72.6881849757489,69.9331778771079,67.089210794495,63.7214788572776,60.1013839216649,56.532628206824,52.9579679894962,49.7809711713621,46.9705112889433,44.8238682844118,43.17434096259,41.4243419661852,39.7953286898572,38.2330568810992,36.8903496884945,35.7320499317849,34.8619190348065,34.232189899254,33.7085965084675,33.3419773440156,33.1257117017224,33.0927980845851,33.2358944566215,33.6025259164746,34.2009521163654,35.0813823507825,36.1645312586844,37.4991206036909,39.0287022964988,40.6718708505321,42.5146826724856],"type":"scatter","mode":"lines","line":{"color":"#4f6980","width":4},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
-<div class="col-print-6 col-sm-6 dao_visuals">
+<div class="col-print-12 col-sm-12 dao_visuals">
 <h2>
 Yearly Summary Cases Opened by Police District
 </h2>
@@ -1166,248 +720,95 @@ Yearly Summary Cases Opened by Police District
 <h2 class="dao_table_header">
 Data: Year End Count of Summary Cases Opened by Offense Category
 </h2>
-<div class="table-wrapper">
-<table class="table table-responsive" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
-<thead>
-<tr>
-<th style="text-align:center;color: #4D7DBF !important;width: 10rem; text-align: left;">
-Offense Category
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2012
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2013
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2014
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2015
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2016
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2017
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2018
-</th>
-<th style="text-align:center;color: #4D7DBF !important;">
-2019
-</th>
-<th style="text-align:center;color: #4D7DBF !important;background-color: #fff4f5;">
-2020
-</th>
-<th style="text-align:center;color: #4D7DBF !important;background-color: #fff4f5;">
-2021
-</th>
-<th style="text-align:center;color: #4D7DBF !important;white-space:nowrap;background-color: #e8eef7 !important;">
-Yr-Yr<br>Change
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+<div class="container table dao-table text-center">
+<div class="container-lg border-bottom border-1 border-dao-medium-blue">
+<div class="row dao-header d-flex align-items-end flex-wrap border-bottom border-1">
+<div class="col-5 pb-1 pt-1 text-start">Offense Category</div>
+<div class="col">2012 </div>
+<div class="col">2013 </div>
+<div class="col">2014 </div>
+<div class="col">2015 </div>
+<div class="col">2016 </div>
+<div class="col">2017 </div>
+<div class="col">2018 </div>
+<div class="col">2019 </div>
+<div class="col pb-1 pt-1 dao-covid-column">2020 </div>
+<div class="col pb-1 pt-1 dao-covid-column">2021 </div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#disorderlyconduct" class="dao_table_link" target="_blank">Disorderly Conduct</a>
-</td>
-<td style="text-align:center;">
-2,792
-</td>
-<td style="text-align:center;">
-3,165
-</td>
-<td style="text-align:center;">
-2,696
-</td>
-<td style="text-align:center;">
-2,255
-</td>
-<td style="text-align:center;">
-1,541
-</td>
-<td style="text-align:center;">
-851
-</td>
-<td style="text-align:center;">
-600
-</td>
-<td style="text-align:center;">
-379
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-124
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-122
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
--2%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+</div>
+<div class="col">2,792</div>
+<div class="col">3,165</div>
+<div class="col">2,696</div>
+<div class="col">2,255</div>
+<div class="col">1,541</div>
+<div class="col">851</div>
+<div class="col">600</div>
+<div class="col">379</div>
+<div class="col pb-1 pt-1 dao-covid-column">124</div>
+<div class="col pb-1 pt-1 dao-covid-column">122</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#alcoholpossessionbyminor" class="dao_table_link" target="_blank">Alcohol Possession by Minor</a>
-</td>
-<td style="text-align:center;">
-629
-</td>
-<td style="text-align:center;">
-1,290
-</td>
-<td style="text-align:center;">
-972
-</td>
-<td style="text-align:center;">
-629
-</td>
-<td style="text-align:center;">
-369
-</td>
-<td style="text-align:center;">
-448
-</td>
-<td style="text-align:center;">
-489
-</td>
-<td style="text-align:center;">
-413
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-161
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-296
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-84%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+</div>
+<div class="col">629</div>
+<div class="col">1,290</div>
+<div class="col">972</div>
+<div class="col">629</div>
+<div class="col">369</div>
+<div class="col">448</div>
+<div class="col">489</div>
+<div class="col">413</div>
+<div class="col pb-1 pt-1 dao-covid-column">161</div>
+<div class="col pb-1 pt-1 dao-covid-column">296</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#publicdrunkenness" class="dao_table_link" target="_blank">Public Drunkenness</a>
-</td>
-<td style="text-align:center;">
-401
-</td>
-<td style="text-align:center;">
-387
-</td>
-<td style="text-align:center;">
-592
-</td>
-<td style="text-align:center;">
-615
-</td>
-<td style="text-align:center;">
-386
-</td>
-<td style="text-align:center;">
-140
-</td>
-<td style="text-align:center;">
-86
-</td>
-<td style="text-align:center;">
-30
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-1
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-18
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-1700%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 10rem; text-align: left;">
+</div>
+<div class="col">401</div>
+<div class="col">387</div>
+<div class="col">592</div>
+<div class="col">615</div>
+<div class="col">386</div>
+<div class="col">140</div>
+<div class="col">86</div>
+<div class="col">30</div>
+<div class="col pb-1 pt-1 dao-covid-column">1</div>
+<div class="col pb-1 pt-1 dao-covid-column">18</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">
 <a href="definitions.html#illegaldumpinglittering" class="dao_table_link" target="_blank">Illegal Dumping/Littering</a>
-</td>
-<td style="text-align:center;">
-16
-</td>
-<td style="text-align:center;">
-20
-</td>
-<td style="text-align:center;">
-15
-</td>
-<td style="text-align:center;">
-26
-</td>
-<td style="text-align:center;">
-17
-</td>
-<td style="text-align:center;">
-11
-</td>
-<td style="text-align:center;">
-7
-</td>
-<td style="text-align:center;">
-7
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-2
-</td>
-<td style="text-align:center;background-color: #fff4f5;">
-3
-</td>
-<td style="text-align:center;white-space:nowrap;background-color: #e8eef7 !important;">
-50%
-</td>
-</tr>
-<tr>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;width: 10rem; text-align: left;">
-All Other Offenses
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-3,838
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-4,862
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-4,275
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-3,525
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-2,313
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-1,450
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-1,182
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;">
-829
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #fff4f5;">
-288
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;background-color: #fff4f5;">
-439
-</td>
-<td style="text-align:center;font-weight: bold;color: #4D7DBF !important;white-space:nowrap;background-color: #e8eef7 !important;">
-52%
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup></sup> Areas in red coincide with the COVID-19 pandemic. During the pandemic, the criminal legal system has operated completely differently than it normally does. The changes that can be observed on our dashboard include: 1) isolation, closed schools, and the loss of community programming has led to an increase in serious violent crime, 2) police have made fewer arrests overall (in particular for minor offenses), 3) court policies and other restrictions meant to keep people safe have also disrupted or delayed court hearings and led to a significant increase in open cases forced dismissals and withdrawals. See our <a href="COVID19_Report.html">report on the justice system during COVID-19</a> to learn more.
-</td>
-</tr>
-</tfoot>
-</table>
+</div>
+<div class="col">16</div>
+<div class="col">20</div>
+<div class="col">15</div>
+<div class="col">26</div>
+<div class="col">17</div>
+<div class="col">11</div>
+<div class="col">7</div>
+<div class="col">7</div>
+<div class="col pb-1 pt-1 dao-covid-column">2</div>
+<div class="col pb-1 pt-1 dao-covid-column">3</div>
+</div>
+<div data-bs-toggle="collapse" aria-expanded="false" class="row dao-highlight-row border-bottom clickable">
+<div class="col-5 pb-1 pt-1 text-start">All Other Offenses</div>
+<div class="col">3,838</div>
+<div class="col">4,862</div>
+<div class="col">4,275</div>
+<div class="col">3,525</div>
+<div class="col">2,313</div>
+<div class="col">1,450</div>
+<div class="col">1,182</div>
+<div class="col">829</div>
+<div class="col pb-1 pt-1 dao-covid-column">288</div>
+<div class="col pb-1 pt-1 dao-covid-column">439</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1419,7 +820,7 @@ All Other Offenses
 <footer class="row">
 <div class="container-fluid padding">
 <div class="row text-center">
-	<div class="col-md-4">
+	<div class="col-md-8">
     <h2 class="connectext">Office</h2>
 		<hr class="light mx-auto">
 		<p>
@@ -1428,20 +829,20 @@ All Other Offenses
 		  215-686-8000
 		</p>
 	</div>
-	<div class="col-md-4">
-		<div class="col-12">
+	<div class="col-md-8">
+		<div class="col-24">
 			<h2 class="connectext">Connect</h2>
 		<hr class="light mx-auto">
 			</div>
-			<div class="col-12 social padding">
+			<div class="col-24 social padding">
 				<a href="https://www.facebook.com/philaDAO/" target="_blank"><i class="fa fa-facebook social-circle-icon" title="facebook"></i></a>
 				<a href="https://www.instagram.com/philadao/?hl=en" target="_blank"><i class="fa fa-instagram social-circle-icon" title="instagram"></i></a>
 				<a href="https://twitter.com/philadao?lang=en" target="_blank"><i class="fa fa-twitter social-circle-icon" title="twitter"></i></a>
 				<a href="mailto:justice@phila.gov"><i class="fa fa-envelope social-circle-icon" title="email us"></i></a>
 			</div>
 		</div>
-	<div class="col-md-4">
-	  <div class="col-12">
+	<div class="col-md-8">
+	  <div class="col-24">
 	    <h2 class="connectext">More</h2>
 		<hr class="light mx-auto">
       <ul>

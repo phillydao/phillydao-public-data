@@ -163,8 +163,8 @@ pre code {
   <div class="mx-n3">
     <div class="container-fluid px-0">
       <div class="row dao_header vertical-align pb-2">
-        <div class="col-sm-12 col-md-3 text-sm-center float-start"><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
-        <div class="col-sm-12 col-md-6 offset-md-3 text-md-end text-sm-center dao_header_title float-end">Public Data Dashboard</div>
+        <div class="col-sm-24 col-md-6 text-sm-center float-start"><img src="assets/images/dao_logo.svg" alt="DAO Logo"></div>
+        <div class="col-sm-24 col-md-12 offset-md-6 text-md-end text-sm-center dao_header_title float-end">Public Data Dashboard</div>
       </div>
       <div class = "dao_navbar border border-1 border-transparent">
         <nav class = "navbar navbar-expand-lg navbar-dark bg-dark justify-content-center mb-0">
@@ -254,7 +254,7 @@ pre code {
 
 
 <div class="row dao_page_header">
-<div class="col-md-2 offset-md-1 h1">
+<div class="col-md-4 offset-md-2 h1">
 Updates
 </h1>
 </div>
@@ -263,14 +263,37 @@ Updates
  
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-1">
 <div class="dao-definition">
 <p>In the course of our work at the District Attorney’s Office, we often discover new and better ways to look at, organize, and interpret the data. We make changes and updates to the Public Data Dashboard to keep it as accurate and informative as possible. We also want to be clear to users of this site about the changes we’ve made. This page is a timeline of updates, fixes, and changes that we’ve implemented.</p>
 </div>
 </div>
 </div>
+<div class='row dao_definition_block'>
+<div class='col-md-20 offset-md-2'>
+<div class="dao-definition-title-word">
+October 21, 2022
+</div>
+<div class='dao-definition'>
+<p>We made two significant updates:</p>
+<ul>
+<li>We updated the Case Outcomes pages to collapse Guilty and Guilty Plea into a single category that can be clicked on to expand and view sub-categories. The subcategories include Guilty at Trial, Open/Negotiated Guilty Plea, Nolo, and Other Guilty Plea. We did this to reduce the complexity of this page for most users, but allow for additional granularity for users who want to know more. We also rewrote the underlying structure of our tables to use divs and bootstrap classes rather than the traditional kable structure. This allows us far more control over page layout as well as sped up double expand-collapse levels, like on the outcomes page. The update should be unnoticable to the average user (except for speed improvements), but took a lot of work under the hood.</li>
+<li>We have included new Key Metrics on our <a href='index.html' target='_blank'>homepage</a> and <a href='Case_Outcomes_Report.html' target='_blank'>Case Outcomes</a> page. The Key Metrics include <a href='definitions.html#arrestrate' target='blank'>Arrest Rates</a> for <a href='definitions.html#homicideshooting' target='blank'>Homicide: Shootings</a> and <a href='definitions.html#nonfatalshooting' target='blank'>Non-Fatal Shootings</a>, as well as our <a href='definitions.html#trialreadyconvictionrate' target='blank'>Trial-Ready Conviction Rates</a> for Homicide: Shootings, Non-Fatal Shootings, <a href='definitions.html#rape' target='blank'>Rape</a>, and <a href='definitions.html#carjacking' target='blank'>Carjackings</a>.
+</div>
+</div>
+</div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
+<div class="dao-definition-title-word">
+September 15, 2022
+</div>
+<div class="dao-definition">
+We added secondary disposition types for Dismissed/Withdrawn/Etc outcomes so that it is clear whether a case was dismissed by the courts, withdrawn by the DAO, or the case ended for another reason. This required a rewrite of the internals of the tables on our main data pages to take advantage of Bootstrap 5. The rewrite that we did creates a massive speed increase of the expanding and collapsing of rows that are hidden (like on the bail report) and allows us to nest more columns in the future.
+</div>
+</div>
+</div>
+<div class="row dao_definition_block">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 September 07, 2022
 </div>
@@ -279,22 +302,27 @@ We updated our outcomes to properly identify cases that have completed the ‘Al
 </div>
 </div>
 </div>
-<div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class='row dao_definition_block'>
+<div class='col-md-20 offset-md-2'>
 <div class="dao-definition-title-word">
 August 17, 2022
 </div>
-<div class="dao-definition">
-<p>We have adjusted how we classify Homicide: Shooting and Non-Fatal Shooting cases in all of our data.</p>
+<div class='dao-definition'>
+We have adjusted how we classify Homicide: Shooting and Non-Fatal Shooting cases in all of our data.</li>
+</ul>
 <ul>
-<li><p>For Incidents, we now count the number of shooting victims rather than the number of shooting incidents. Previously, if the police classified multiple shootings as belonging to the same shooting incident, we only counted the shooting incident once. We felt it was appropriate to county shootings by individual impacted both because of the gravity of the crime and the availability of data. It should be noted that no other incident type has victim-level information available, so other incidents are still counted by the overall incident, not each individual offense associated with the incident.<br />
-</p></li>
-<li><p>For arrests and court cases, we updated our classification system to be more accurate. Previously, if there was a shooting incident that included both fatal and non-fatal shootings, we classified the arrest and court cases as non-fatal shootings. This was incorrect. We now classify the arrest and cases as fatal shootings if at least one of the shootings in the incident was fatal and the person was charged with (or the police recommended charging with) a homicide.</p>
+<li>
+For Incidents, we now count the number of shooting victims rather than the number of shooting incidents. Previously, if the police classified multiple shootings as belonging to the same shooting incident, we only counted the shooting incident once. We felt it was appropriate to county shootings by individual impacted both because of the gravity of the crime and the availability of data. It should be noted that no other incident type has victim-level information available, so other incidents are still counted by the overall incident, not each individual offense associated with the incident.
+</li>
+<li>
+For arrests and court cases, we updated our classification system to be more accurate. Previously, if there was a shooting incident that included both fatal and non-fatal shootings, we classified the arrest and court cases as non-fatal shootings. This was incorrect. We now classify the arrest and cases as fatal shootings if at least one of the shootings in the incident was fatal and the person was charged with (or the police recommended charging with) a homicide.
+</li>
+<ul>
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 July 22, 2022
 </div>
@@ -304,7 +332,7 @@ We have added the DAO excerpts of the 100 Shooting Review Committee Report as a 
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 June 29, 2022
 </div>
@@ -314,7 +342,7 @@ We have added the ability to directly link to items on the <a href='Research.htm
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 May 26, 2022
 </div>
@@ -324,21 +352,31 @@ We added a <a href='2020_Civil_Unrest.html'>story</a> describing how Philadelphi
 </div>
 </div>
 <div class='row dao_definition_block'>
-<div class='col-md-10 offset-md-1'>
+<div class='col-md-20 offset-md-2'>
 <div class="dao-definition-title-word">
 April 15, 2022
 </div>
 <div class='dao-definition'>
-<p>We have made several content and user experience updates to the dashboard. This is the first in a series of updates over the next few months to improve the dashboard.</p></li>
-<li><p>We have added <a href='definitions.html#withdrawnintheinterestofjustice'>Withdrawn in the Interest of Justice</a> as a category on the <a href='Case_Outcomes_Report.html'>Case Outcomes report</a> and in the downloadable data.</p></li>
-<li><p>We have removed several of the columns comparing time periods beyond year-to-year. While these comparisons were useful at the launch of the dashboard, they have become less so as the time period has increased. The COVID-19 pandemic changed how the court systems functioned, making direct comparisons misleading.</p></li>
-<li><p>We have replaced the color scale for charts on all report pages. There are only so many shades of blue, and we were running out of them.</p></li>
-<li><p>We have changed how the home page pulls data stories and data snapshots. We are now pulling from the new <a href='https://phillyda.org'>District Attorney’s Office website</a> and providng both data stories and snapshots as separate categories. The Data Stories link in the menu bar has also been updated to link to the new website.</p>
+<p>We have made several content and user experience updates to the dashboard. This is the first in a series of updates over the next few months to improve the dashboard.</p>
+<ul>
+<li>
+We have added <a href='definitions.html#withdrawnintheinterestofjustice'>Withdrawn in the Interest of Justice</a> as a category on the <a href='Case_Outcomes_Report.html'>Case Outcomes report</a> and in the downloadable data.
+</li>
+<li>
+We have removed several of the columns comparing time periods beyond year-to-year. While these comparisons were useful at the launch of the dashboard, they have become less so as the time period has increased. The COVID-19 pandemic changed how the court systems functioned, making direct comparisons misleading.
+</li>
+<li>
+We have replaced the color scale for charts on all report pages. There are only so many shades of blue, and we were running out of them.
+</li>
+<li>
+We have changed how the home page pulls data stories and data snapshots. We are now pulling from the new <a href='https://phillyda.org'>District Attorney’s Office website</a> and providng both data stories and snapshots as separate categories. The Data Stories link in the menu bar has also been updated to link to the new website.
+</li>
+<ul>
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 February 16, 2022
 </div>
@@ -348,20 +386,28 @@ We have added <a href='definitions.html#illegaldumpinglittering'>‘Illegal Dump
 </div>
 </div>
 <div class='row dao_definition_block'>
-<div class='col-md-10 offset-md-1'>
+<div class='col-md-20 offset-md-2'>
 <div class="dao-definition-title-word">
 January 14, 2022
 </div>
 <div class='dao-definition'>
-<p>We made a number of small improvements:</p></li>
-<li><p>We added additional ways to highlight that the criminal legal system has operated differently during the pandemic. There is a popup that appears notifying users, we have highlighted the graph and table for periods during the pandemic, and we have added a note to the table explaining the pandemic’s impact.</p></li>
-<li><p>We added links from the offense categories and case outcomes to the definitions page so that users can understand exactly what each phrase means. We hope this will create a broader understanding of the work we are presenting on the dashboard.</p></li>
-<li><p>The case outcomes includes a row for ‘cases opened at the end of the time period.’ The goal is to help people understand how the backlog of cases has changed during the pandemic, particularly in more serious cases.</p>
+<p>We made a number of small improvements:</p>
+<ul>
+<li>
+We added additional ways to highlight that the criminal legal system has operated differently during the pandemic. There is a popup that appears notifying users, we have highlighted the graph and table for periods during the pandemic, and we have added a note to the table explaining the pandemic’s impact.
+</li>
+<li>
+We added links from the offense categories and case outcomes to the definitions page so that users can understand exactly what each phrase means. We hope this will create a broader understanding of the work we are presenting on the dashboard.
+</li>
+<li>
+The case outcomes includes a row for ‘cases opened at the end of the time period.’ The goal is to help people understand how the backlog of cases has changed during the pandemic, particularly in more serious cases.
+</li>
+<ul>
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 December 17, 2021
 </div>
@@ -371,19 +417,25 @@ We have added <a href='definitions.html#victimwitnessintimidationretaliation'>�
 </div>
 </div>
 <div class='row dao_definition_block'>
-<div class='col-md-10 offset-md-1'>
+<div class='col-md-20 offset-md-2'>
 <div class="dao-definition-title-word">
 December 14, 2021
 </div>
 <div class='dao-definition'>
-<p><strong>Major Update!</strong></p></li>
-<li><p><strong>Offense Categorization:</strong> We have changed the way offenses are categorized on the dashboard for arrest and case data. In October 2021, the Philadelphia Police Department ended support for FBI UCR categorization of offenses for cases received by the District Attorney’s Office. This meant that we could no longer use UCR categorization on the Public Data Dashboard. In this update, we have introduced a new classification system that is based on the Pennsylvania statutes of the most serious offense suggested by police for the <a href='Arrest_Report.html'>Arrests</a> and <a href='Summary_Arrest_Report.html'>Summary Arrests</a> and the most serious offense charged by the District Attorney’s Office for the <a href='Charge_Report.html'>Charges</a>, <a href='Bail_Report.html'>Bail</a>, <a href='Case_Outcomes_Report.html'>Outcomes</a>, <a href='Case_Length_Report.html'>Case Length</a>, <a href='Future_Years_Incarceration_Report.html'>Future Years of Incarceration</a>, <a href='Future_Years_Supervision_Report.html'>Future Years of Supervision</a>, <a href='Summary_Charge_Report.html'>Summary Charges</a>, <a href='Summary_Case_Outcomes_Report.html'>Summary Case Outcomes</a>, <a href='Summary_Case_Length_Report.html'>Summary Case Length</a> Reports. The <a href='Incidents_Report.html'>Incidents</a> report is unaffected. While this change means categorizations of an event may change between incident, arrest, and case charging, it allows for a more accurate and complete view of each stage in the process. It also allows us to categorize more offenses than we could previously. For more information about these classifications see <a href='https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d'>this data story</a> and the updated <a href='definitions.html'>Definitons page</a>. The <a href='limitations.html'>Limitations page</a> has also been updated to reflect these changes.</p></li>
-<li><p><strong>Technical Updates:</strong> We have rewritten the internals of the layout to make use of Bootstrap 5. This will help us maintain a more modern and multi-device compatible layout. We have also made several behind-the-scenes, ease-of-use, and bug fix updates that will improve the overall experience of the site.</p>
+<p><strong>Major Update!</strong></p>
+<ul>
+<li>
+<strong>Offense Categorization:</strong> We have changed the way offenses are categorized on the dashboard for arrest and case data. In October 2021, the Philadelphia Police Department ended support for FBI UCR categorization of offenses for cases received by the District Attorney’s Office. This meant that we could no longer use UCR categorization on the Public Data Dashboard. In this update, we have introduced a new classification system that is based on the Pennsylvania statutes of the most serious offense suggested by police for the <a href='Arrest_Report.html'>Arrests</a> and <a href='Summary_Arrest_Report.html'>Summary Arrests</a> and the most serious offense charged by the District Attorney’s Office for the <a href='Charge_Report.html'>Charges</a>, <a href='Bail_Report.html'>Bail</a>, <a href='Case_Outcomes_Report.html'>Outcomes</a>, <a href='Case_Length_Report.html'>Case Length</a>, <a href='Future_Years_Incarceration_Report.html'>Future Years of Incarceration</a>, <a href='Future_Years_Supervision_Report.html'>Future Years of Supervision</a>, <a href='Summary_Charge_Report.html'>Summary Charges</a>, <a href='Summary_Case_Outcomes_Report.html'>Summary Case Outcomes</a>, <a href='Summary_Case_Length_Report.html'>Summary Case Length</a> Reports. The <a href='Incidents_Report.html'>Incidents</a> report is unaffected. While this change means categorizations of an event may change between incident, arrest, and case charging, it allows for a more accurate and complete view of each stage in the process. It also allows us to categorize more offenses than we could previously. For more information about these classifications see <a href='https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d'>this data story</a> and the updated <a href='definitions.html'>Definitons page</a>. The <a href='limitations.html'>Limitations page</a> has also been updated to reflect these changes.
+</li>
+<li>
+<strong>Technical Updates:</strong> We have rewritten the internals of the layout to make use of Bootstrap 5. This will help us maintain a more modern and multi-device compatible layout. We have also made several behind-the-scenes, ease-of-use, and bug fix updates that will improve the overall experience of the site.
+</li>
+<ul>
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 May 07, 2021
 </div>
@@ -392,20 +444,19 @@ We have improved our ability to categorize non-traditional diversion programs in
 </div>
 </div>
 </div>
-<div class='row dao_definition_block'>
-<div class='col-md-10 offset-md-1'>
+<div class="row dao_definition_block">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 April 19, 2021
 </div>
-<div class='dao-definition'>
-<p>We have added a <a href='Research.html#reports'>DAO Publications</a> section to the Research Page. This section includes reports on internal studies at the District Attorney’s Office.</p></li>
-</ul>
+<div class="dao-definition">
+<p>We have added a <a href='Research.html#reports'>DAO Publications</a> section to the Research Page. This section includes reports on internal studies at the District Attorney’s Office.</p>
 We have also reorganized the menu to simplify it and make it more clear which reports are year-to-date and which are year-end.
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 March 25, 2021
 </div>
@@ -415,7 +466,7 @@ We have added a <a href='Research.html'>Research</a> page detailing the work of 
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 March 22, 2021
 </div>
@@ -426,7 +477,7 @@ We have also changed the text of two firearms labels to more clearly state what 
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 December 02, 2020
 </div>
@@ -436,7 +487,7 @@ We have added quarterly data summarized by Census tract to the <a href="https://
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 November 19, 2020
 </div>
@@ -446,7 +497,7 @@ We added in ‘Non-Fatal Shootings’ as an offense category. We identify these 
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 September 17, 2020
 </div>
@@ -456,7 +507,7 @@ We are now able to identify cases in which the defendant has been exonerated or 
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 July 23, 2020
 </div>
@@ -466,7 +517,7 @@ We improved the quality of bail information that is on the dashboard. In particu
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 July 07, 2020
 </div>
@@ -476,7 +527,7 @@ We added <a href='Exonerations.html'>a report</a> detailing the exonerations tha
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 June 06, 2020
 </div>
@@ -486,7 +537,7 @@ We added <a href='COVID19_Report.html'>a report</a> that shows the effects of th
 </div>
 </div>
 <div class='row dao_definition_block'>
-<div class='col-md-10 offset-md-1'>
+<div class='col-md-20 offset-md-2'>
 <div class="dao-definition-title-word">
 January 24, 2020
 </div>
@@ -506,7 +557,7 @@ January 24, 2020
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 January 08, 2020
 </div>
@@ -516,7 +567,7 @@ Hotfix: Fixed the calculation of 18-present year averages related to the start o
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 December 31, 2019
 </div>
@@ -526,7 +577,7 @@ Hotfix: Fixed a calculation issue that would cause the dashboard build to fail a
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 October 24, 2019
 </div>
@@ -536,7 +587,7 @@ Added Updates page.
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 October 22, 2019
 </div>
@@ -546,7 +597,7 @@ We discovered that due to server issues in May and June of 2019, we were missing
 </div>
 </div>
 <div class='row dao_definition_block'>
-<div class='col-md-10 offset-md-1'>
+<div class='col-md-20 offset-md-2'>
 <div class="dao-definition-title-word">
 October 09, 2019
 </div>
@@ -560,7 +611,7 @@ Various bug fixes, including:</li>
 </div>
 </div>
 <div class="row dao_definition_block">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">
 October 03, 2019
 </div>
@@ -575,7 +626,7 @@ The Philadelphia DAO Public Data Dashboard Released! See the District Attorney�
 <footer class="row">
 <div class="container-fluid padding">
 <div class="row text-center">
-	<div class="col-md-4">
+	<div class="col-md-8">
     <h2 class="connectext">Office</h2>
 		<hr class="light mx-auto">
 		<p>
@@ -584,20 +635,20 @@ The Philadelphia DAO Public Data Dashboard Released! See the District Attorney�
 		  215-686-8000
 		</p>
 	</div>
-	<div class="col-md-4">
-		<div class="col-12">
+	<div class="col-md-8">
+		<div class="col-24">
 			<h2 class="connectext">Connect</h2>
 		<hr class="light mx-auto">
 			</div>
-			<div class="col-12 social padding">
+			<div class="col-24 social padding">
 				<a href="https://www.facebook.com/philaDAO/" target="_blank"><i class="fa fa-facebook social-circle-icon" title="facebook"></i></a>
 				<a href="https://www.instagram.com/philadao/?hl=en" target="_blank"><i class="fa fa-instagram social-circle-icon" title="instagram"></i></a>
 				<a href="https://twitter.com/philadao?lang=en" target="_blank"><i class="fa fa-twitter social-circle-icon" title="twitter"></i></a>
 				<a href="mailto:justice@phila.gov"><i class="fa fa-envelope social-circle-icon" title="email us"></i></a>
 			</div>
 		</div>
-	<div class="col-md-4">
-	  <div class="col-12">
+	<div class="col-md-8">
+	  <div class="col-24">
 	    <h2 class="connectext">More</h2>
 		<hr class="light mx-auto">
       <ul>
