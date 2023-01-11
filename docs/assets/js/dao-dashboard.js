@@ -16,15 +16,6 @@ $(document).click(function(){
   $(".drop-menu-item").hide();
 });
 
-
-/* allows clickable links in the collapsable dashboard tables.
-Without this, you cannot click on links as the tr takes the click action and expands the row but doesn't
-go to the definitions page. */
-$('.dao_table_link').click(function(e) { 
-  window.open($(this).attr("href"))
-  e.stopPropagation();
-})
-
 /* Clicks within the dropdown won't make
    it past the dropdown itself */
 $(".drop-menu-item").click(function(e){
@@ -99,21 +90,6 @@ async function copy_link(text_var) {
 
 }
 
-// handle tag switching for collapsible table icons
-$(function(){
-  $('tr').on('click', function(e){
-    // delay the function by a tenth of a second to allow transition to happen
-    setTimeout(function(){
-      var trow = $(e.currentTarget);
-      if(trow.attr('aria-expanded') === 'true') {
-		    $(this).attr('aria-expanded', 'false');
-		    } else {
-			    $(this).attr('aria-expanded', 'true')
-		    }
-    }, 10)
-  })
-});
-
 function fix_rowspanning() {
   if ($(window).width() > 550) {
     $("tspan:contains('____')").removeAttr('x');
@@ -131,9 +107,8 @@ $(window).on("load", function() {fix_rowspanning();});
 $(window).resize(function() {setTimeout(()=>  {fix_rowspanning();}, 5)});
 
 var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
+for (var i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
@@ -144,3 +119,61 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+function scrollTableToLastColumn(e) {
+  var scrollTo = $(e).find('.tbl .tr:first .td:last').first()
+  var position = scrollTo.position().left
+  $(e).scrollLeft(position)  
+}
+
+function handleTableParentRowToggle(e) {
+  if(e.target.closest('.tr').classList.contains('has-child-rows')){
+    const parentRow = e.target.closest('.dao-expandable-parent')
+    const tbl = e.target.closest('.tbl')
+    if(!!parentRow){
+      const childSelector = parentRow.getAttribute('data-dao-table-row-target')
+      const parent = $(parentRow)
+      parent
+        .siblings(`.dao-expandable-child[data-dao-parent-id="${childSelector}"]`)
+        .toggleClass('hidden')
+      // if this is the root parent, collapse all descendants  
+      if(!parent.attr('data-dao-parent-id')) {
+        if(parent.attr('aria-expanded') == 'true') {
+          const category = parent.attr('data-dao-category')
+          parent
+            .siblings(`[data-dao-category=${category}]`)
+            .addClass('hidden')
+            .attr('aria-expanded', 'false')
+        }
+      } 
+      parent.attr('aria-expanded', (i, attr) => {
+        return attr == 'true' ? 'false' : 'true'
+      })
+    }
+  }
+}
+
+function initTables(els) {
+  const initAttr = '__dao-tbl-init'
+  
+  const init = (tblContainer) => {
+    $(tblContainer).click(handleTableParentRowToggle)
+    tblContainer.setAttribute(initAttr, true)
+  }
+  els.forEach((e) => {
+    if(!e.getAttribute(initAttr)){
+      init(e)
+    }
+    scrollTableToLastColumn(e)
+  })
+}
+
+$(window).on('load', () => {
+  const tableContainers = () => {
+    return document.querySelectorAll('.tbl-container') 
+  }
+  initTables(tableContainers())
+  $('ul.nav-tabs li a[role="tab"]').click(() => {
+    setTimeout(() => initTables(tableContainers()), 900)
+  })
+})
