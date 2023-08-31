@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>2023 Racial Injustice Report</title>
+
+<script src="assets/header-attrs-2.14/header-attrs.js"></script>
+<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="assets/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
+<script src="assets/bs3compat-0.3.1/transition.js"></script>
+<script src="assets/bs3compat-0.3.1/tabs.js"></script>
+<script src="assets/bs3compat-0.3.1/bs3compat.js"></script>
+<script src="assets/navigation-1.1/tabsets.js"></script>
+<meta name="twitter:title" content="2023 Racial Injustice Report"/>
+<meta name="twitter:description" content="A report by the District Attorney&#39;s Office detailing racial disparities in Philadelphia’s criminal courts from 2015 to 2022"/>
+<meta name="twitter:image" content="https://data.philadao.com/assets/images/rir2023/rir2023-opengraph-16-9.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:title" content="2023 Racial Injustice Report"/>
+<meta property="og:description" content="A report by the District Attorney&#39;s Office detailing racial disparities in Philadelphia’s criminal courts from 2015 to 2022"/>
+<meta property="og:image" content="https://data.philadao.com/assets/images/rir2023/rir2023-opengraph-16-9.jpg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_US"/>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141263577-1');
+</script>
+<script type="text/javascript" src="./assets/js/dao-dashboard-mapmaker.js"></script>
+<script type='text/javascript' src='./assets/js/dao-dashboard.js'></script>
+<script type='text/javascript' src='./assets/dao-dashboard/app.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+<script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css' />
+<script type='text/javascript' src='./assets/js/leaflet-choropleth/choropleth.js'></script>
+<script src="https://use.fontawesome.com/42c4092025.js"></script>
+<link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
+<script src="https://kit.fontawesome.com/c950400c1b.js" crossorigin="anonymous"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+  <div class="mx-n3">
+    <div class="container-fluid px-0">
+      <div class="row dao_header vertical-align pb-2">
+        <div class="col-sm-24 col-md-6 text-sm-center float-start">
+          <a href="/">
+            <img class="dao-logo" src="assets/images/dao_logo.svg" alt="DAO Logo">
+          </a>
+        </div>
+        <div class="col-sm-24 col-md-12 offset-md-6 text-md-end text-sm-center dao_header_title float-end">Public Data Dashboard</div>
+      </div>
+      <div class = "dao_navbar border border-1 border-transparent">
+        <nav class = "navbar navbar-expand-lg navbar-dark bg-dark justify-content-center mb-0">
+        <div class="container-fluid">
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse order-last" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-fill w-100">
+              <li class="nav-item active"><a href="index.html" class="nav-link btn-dao-menu">Home</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle btn-dao-menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+                <div class="dropdown-menu btn-dao-menu dropdown-submenu bg-dark" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Year to Date Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                    <ul class="dropdown-menu dao_menu drop-menu-item">
+                      <li><a href="Incidents_Report.html">Incidents</a></li>
+                      <li><a href="Arrest_Report.html">Arrests</a></li>
+                      <li><a href="Charge_Report.html">Charges</a></li>
+                      <li><a href="Bail_Report.html">Bail</a></li>
+                      <li><a href="Case_Outcomes_Report.html">Outcomes</a></li>
+                      <li><a href="Case_Length_Report.html">Case Length</a></li>
+                      <li><a href="Future_Years_Incarceration_Report.html">Future Years of Incarceration</a></li>
+                      <li><a href="Future_Years_Supervision_Report.html">Future Years of Supervision</a></li>
+                      <li><a href="Summary_Arrest_Report.html">Summary Arrests</a></li>
+                      <li><a href="Summary_Charge_Report.html">Summary Charges</a></li>
+                      <li><a href="Summary_Case_Outcomes_Report.html">Summary Case Outcomes</a></li>
+                      <li><a href="Summary_Case_Length_Report.html">Summary Case Length</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Year End Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                    <ul class="dropdown-menu dao_menu drop-menu-item">
+                        <li><a href="Incidents_Report_YE.html">Year End Incidents</a></li>
+                        <li><a href="Arrest_Report_YE.html">Year End Arrests</a></li>
+                        <li><a href="Charge_Report_YE.html">Year End Charges</a></li>
+                        <li><a href="Bail_Report_YE.html">Year End Bail</a></li>
+                        <li><a href="Case_Outcomes_Report_YE.html">Year End Outcomes</a></li>
+                        <li><a href="Case_Length_Report_YE.html">Year End Case Length</a></li>
+                        <li><a href="Future_Years_Incarceration_Report_YE.html">Year End Future Years of Incarceration</a></li>
+                        <li><a href="Future_Years_Supervision_Report_YE.html">Year End Future Years of Supervision</a></li>
+                        <li><a href="Summary_Arrest_Report_YE.html">Year End Summary Arrests</a></li>
+                        <li><a href="Summary_Charge_Report_YE.html">Year End Summary Charges</a></li>
+                        <li><a href="Summary_Case_Outcomes_Report_YE.html">Year End Summary Case Outcomes</a></li>
+                        <li><a href="Summary_Case_Length_Report_YE.html">Year End Summary Case Length</a></li>
+                    </ul>
+                  </div>  
+                  <div class="dropdown-item btn-dao-menu px-6 py-7">
+                    <a href="#" class="drop-menu-head btn-dao-menu text-decoration-none">Special Reports <span class="dropdown-submenu right-pointing-triangle"></span></a>
+                      <ul class="dropdown-menu dao_menu drop-menu-item">
+                        <li><a href="Exonerations.html">Exonerations</a></li>
+                        <li><a href="2023_racial_injustice_report.html">2023 Racial Injustice Report</a></li>
+                        <li><a href="COVID19_Report.html">COVID-19 Report</a></li>
+                        <li><a href="2020_Civil_Unrest.html">2020 Civil Unrest Cases</a></li>
+                        <li><a href="100_shooting_review.html">100 Shooting Review Committee Report</a></li>
+                      </ul>
+                  </div>
+                  <a href="Research.html#reports" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">DAO Publications</a>
+                </div>
+              </li>
+              <li class="nav-item"><a href="Research.html" class="nav-link btn-dao-menu">Research</a></li>
+              <li class="nav-item"><a href="https://phillyda.org/tag/datastories/" class="nav-link btn-dao-menu">Data Stories</a></li>
+              <li class="nav-item"><a href="download.html" class="nav-link btn-dao-menu">Downloads</a></li>
+              <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle btn-dao-menu" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <div class="dropdown-menu btn-dao-menu dropdown-submenu bg-dark" aria-labelledby="navbarDropdown">
+                  <!--<div class="dropdown-item btn-dao-menu px-6 py-7">-->
+                  <a href="about.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">About</a>
+                  <a href="definitions.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Definitions</a>
+                  <a href="limitations.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Limitations</a>
+                  <a href="howto.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">How to Use This Site</a>
+                  <a href="updates.html" class="dropdown-item btn-dao-menu px-6 py-7 text-decoration-none">Updates</a>
+                </div> 
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+  </div>
+</div>  
+<div class="rmd-container-fluid rmd-container">
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">2023 Racial Injustice Report</h1>
+
+</div>
+
+
+<div class="dao-full-width-container">
+<iframe src="https://storymaps.arcgis.com/stories/06890fd482ea497c9baf32b6ae4c0309" frameborder="0" allowfullscreen allow="geolocation" class="dao-iframe">
+</iframe>
+</div>
+
+</div>
+<footer class="row">
+<div class="container-fluid padding">
+<div class="row text-center">
+	<div class="col-md-8">
+    <h2 class="connectext">Office</h2>
+		<hr class="light mx-auto">
+		<p>
+		  Three South Penn Square<br/>
+		  Philadelphia, PA 19107-3499<br/>
+		  215-686-8000
+		</p>
+	</div>
+	<div class="col-md-8">
+		<div class="col-24">
+			<h2 class="connectext">Connect</h2>
+		<hr class="light mx-auto">
+			</div>
+			<div class="col-24 social padding">
+				<a href="https://www.facebook.com/philaDAO/" target="_blank"><i class="fa fa-facebook social-circle-icon" title="facebook"></i></a>
+				<a href="https://www.instagram.com/philadao/?hl=en" target="_blank"><i class="fa fa-instagram social-circle-icon" title="instagram"></i></a>
+				<a href="https://twitter.com/philadao?lang=en" target="_blank"><i class="fa fa-twitter social-circle-icon" title="twitter"></i></a>
+				<a href="mailto:datalab@phila.gov"><i class="fa fa-envelope social-circle-icon" title="email us"></i></a>
+			</div>
+		</div>
+	<div class="col-md-8">
+	  <div class="col-24">
+	    <h2 class="connectext">More</h2>
+		<hr class="light mx-auto">
+      <ul>
+        <li><a href="https://phillyda.org/" target="_blank">Office of the District Attorney</a></li>
+        <li><a href="https://phillyda.org/category/blog/" target="_blank">DAO Blog</a> | <a href="https://phillyda.org/news/" target="_blank">News/Press Releases</a></li>
+        <li><a href="howto.html#constraints">Public Access and Use</a></li>
+		  </ul>
+		</div>
+  </div>
+</div>
+<p class="copytext">&copy; City of Philadelphia, Philadelphia District Attorney's Office<p>
+</div>
+</footer>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+</body>
+</html>
