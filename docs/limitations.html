@@ -13,14 +13,14 @@
 
 <title>Data Limitations - PhilaDAO Data Dashboard</title>
 
-<script src="assets/header-attrs-2.14/header-attrs.js"></script>
+<script src="assets/header-attrs-2.24/header-attrs.js"></script>
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link href="assets/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
-<script src="assets/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
-<script src="assets/bs3compat-0.3.1/transition.js"></script>
-<script src="assets/bs3compat-0.3.1/tabs.js"></script>
-<script src="assets/bs3compat-0.3.1/bs3compat.js"></script>
+<link href="assets/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-5.2.2/bootstrap.bundle.min.js"></script>
+<script src="assets/bs3compat-0.5.1/transition.js"></script>
+<script src="assets/bs3compat-0.5.1/tabs.js"></script>
+<script src="assets/bs3compat-0.5.1/bs3compat.js"></script>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -103,8 +103,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -112,16 +112,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -298,17 +291,12 @@ pre code {
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Offense Categorizations Change Between Incident&amp;#44; Arrest&amp;#44; and Case Data</div>
-<div class="dao-definition"><p>The method used to categorize an event in the criminal legal system is different for an incident, an arrest, and a case within the court system. </p>
-
-<p>Incidents receive an intial classification by the Philadelpiha Police Department at the time of reporting, which may or may not reflect the reality of the event. When an arrest is made, the police recommend a set of charges that they believe the arrestee should be charged with. Ultimately, the District Attorney&#39;s Office determines whether to charge an arrestee and what to charge that person with. The Dashboard uses incident classification to categorize incidents, police recommended charges to categorize arrests, and the actual charges brought in court to categorize the case from the time of charging and beyond. </p>
-
-<p>The advantage of this system is that it allows users of the Dashboard to view incidents, arrests, and cases as they actually moved through the system. If an incident is originaly classified as an Aggravated Assault and the police recommended charges for Aggravated assault, the dashboard will reflect that even if the DAO ultimately disagreed and charged the case as a Simple Assault. Similarly, the dashboard will count that case as a simple assault for the purpos of court-related activity, like bail, case outcomes, and sentencing, rather than keep the original police category of Aggravated Assault. This system also allows for a more granular look at the system, breaking incidents categorized as, for example, Illegal Firearm Possession into its component offenses of Firearm Possession by a Prohibited Person and Firearm Possession Without a License. </p>
-
-<p>The disadvantage of this system is that it limits the ability to track a set of incidents through the entire system. For example, an incident that was initially called a &ldquo;Robbery/Gun&rdquo; on the Incidents page could become an &ldquo;Aggravated Assault&rdquo; on the Arrests page, which could then become an &ldquo;Attempted Homicide&rdquo; on the Charges page. That means that it isn&#39;t possible to use the dashboard to know, for example, what percentage of Robbery/Gun incidents lead to an arrest, and what the case outcomes for the subsequent cases are.</p>
-
-<p>For the first two years of the Dashboard&#39;s existence, we did the opposite: we used the original police classification of each incident to classify that case as it moved through the system.  While there were advantages to this system, it distorted outcomes in the court system in a way that we believe was inaccurate.</p>
-
-<p>We feel that it is important to show the most accurate picture of the criminal legal system that can be understood at each stage of the process. We also feel it is the responsibility of the District Attorney&#39;s Office to show the decisions we have made. We cannot go &#39;back in time&#39; and reclassify incidents and arrests after a charging decision has been made without distorting history and presenting a false view of these stages. Given the constraints of our data, and for these reasons, we feel that categorizing each event at each stage allows for the most complete representation of the system available. For more information about this change, please read <a href="https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d">this data story</a>.</p>
+<div class="dao-definition"><p>The method used to categorize an event in the criminal legal system is different for an incident, an arrest, and a case within the court system.</p>
+<p>Incidents receive an intial classification by the Philadelpiha Police Department at the time of reporting, which may or may not reflect the reality of the event. When an arrest is made, the police recommend a set of charges that they believe the arrestee should be charged with. Ultimately, the District Attorney’s Office determines whether to charge an arrestee and what to charge that person with. The Dashboard uses incident classification to categorize incidents, police recommended charges to categorize arrests, and the actual charges brought in court to categorize the case from the time of charging and beyond.</p>
+<p>The advantage of this system is that it allows users of the Dashboard to view incidents, arrests, and cases as they actually moved through the system. If an incident is originaly classified as an Aggravated Assault and the police recommended charges for Aggravated assault, the dashboard will reflect that even if the DAO ultimately disagreed and charged the case as a Simple Assault. Similarly, the dashboard will count that case as a simple assault for the purpos of court-related activity, like bail, case outcomes, and sentencing, rather than keep the original police category of Aggravated Assault. This system also allows for a more granular look at the system, breaking incidents categorized as, for example, Illegal Firearm Possession into its component offenses of Firearm Possession by a Prohibited Person and Firearm Possession Without a License.</p>
+<p>The disadvantage of this system is that it limits the ability to track a set of incidents through the entire system. For example, an incident that was initially called a “Robbery/Gun” on the Incidents page could become an “Aggravated Assault” on the Arrests page, which could then become an “Attempted Homicide” on the Charges page. That means that it isn’t possible to use the dashboard to know, for example, what percentage of Robbery/Gun incidents lead to an arrest, and what the case outcomes for the subsequent cases are.</p>
+<p>For the first two years of the Dashboard’s existence, we did the opposite: we used the original police classification of each incident to classify that case as it moved through the system.  While there were advantages to this system, it distorted outcomes in the court system in a way that we believe was inaccurate.</p>
+<p>We feel that it is important to show the most accurate picture of the criminal legal system that can be understood at each stage of the process. We also feel it is the responsibility of the District Attorney’s Office to show the decisions we have made. We cannot go ‘back in time’ and reclassify incidents and arrests after a charging decision has been made without distorting history and presenting a false view of these stages. Given the constraints of our data, and for these reasons, we feel that categorizing each event at each stage allows for the most complete representation of the system available. For more information about this change, please read <a href="https://medium.com/philadelphia-justice/changing-the-way-the-public-data-dashboard-categorizes-arrests-and-cases-49ec1a2a1d6d">this data story</a>.</p>
 </div>
 </div>
 </div>
@@ -322,7 +310,7 @@ pre code {
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Fatal and Non-Fatal Shooting Information Only for Shootings Since 2015</div>
-<div class="dao-definition"><p>Information about Fatal and Non-Fatal Shootings is based on the <a href="https://www.opendataphilly.org/dataset/shooting-victims">Open Data Philly Shooting Victims dataset</a> which only includes shooting victims since 2015.  That means that all information about shooting victims (arrests, cases charged, outcomes, etc&hellip;) only reflects shooting incidents since 1/1/2015.  As an example, the <a href="https://data.philadao.com/Case_Outcomes_Report.html">Case Outcomes report</a> shows very few cases resolved in 2015 and a very high rate of non-convictions.  The reason for this is that very few shooting incidents that occured in 2015 were also resolved in 2015; those that were resolved that quickly were often quickly dismissed.</p>
+<div class="dao-definition"><p>Information about Fatal and Non-Fatal Shootings is based on the <a href="https://www.opendataphilly.org/dataset/shooting-victims">Open Data Philly Shooting Victims dataset</a> which only includes shooting victims since 2015.  That means that all information about shooting victims (arrests, cases charged, outcomes, etc…) only reflects shooting incidents since 1/1/2015.  As an example, the <a href="https://data.philadao.com/Case_Outcomes_Report.html">Case Outcomes report</a> shows very few cases resolved in 2015 and a very high rate of non-convictions.  The reason for this is that very few shooting incidents that occured in 2015 were also resolved in 2015; those that were resolved that quickly were often quickly dismissed.</p>
 </div>
 </div>
 </div>
@@ -352,14 +340,14 @@ In addition, the District Attorney’s Office (DAO) is presently working with cr
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Arrests Prior to 2012</div>
-<div class="dao-definition"><p>The data used to create this dashboard includes all arrests that took place since 1/1/2012 and all cases that had hearings since 1/1/2012.  As a general matter, this should not affect any of our statistics.  Cases that began with an arrest prior to 2012 will be classified as &ldquo;other offenses&rdquo; since the arrest classification was not available to our data.</p>
+<div class="dao-definition"><p>The data used to create this dashboard includes all arrests that took place since 1/1/2012 and all cases that had hearings since 1/1/2012.  As a general matter, this should not affect any of our statistics.  Cases that began with an arrest prior to 2012 will be classified as “other offenses” since the arrest classification was not available to our data.</p>
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Exonerations not Categorized as Such</div>
-<div class="dao-definition"><p>Cases that are overturned after appeal are often overturned years after the arrest.  Because we can only classify arrests from 2012 forward, it is impossible to classify the offense type of most overturned cases.  Rather than misclassify these cases as &ldquo;Other&rdquo; we decided to not include this categorization.  These cases still appear in our data, generally categorized as &ldquo;Withdrawn&rdquo; cases.</p>
+<div class="dao-definition"><p>Cases that are overturned after appeal are often overturned years after the arrest.  Because we can only classify arrests from 2012 forward, it is impossible to classify the offense type of most overturned cases.  Rather than misclassify these cases as “Other” we decided to not include this categorization.  These cases still appear in our data, generally categorized as “Withdrawn” cases.</p>
 </div>
 </div>
 </div>
@@ -373,7 +361,7 @@ In addition, the District Attorney’s Office (DAO) is presently working with cr
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Declination Rate Cannot Be Calculated</div>
-<div class="dao-definition"><p>The DAO&#39;s declination rate (the rate at which we decline to charge arrests) cannot be calculated from the data on this website.  This is because declination is more complicated than comparing arrests to cases charged.  For example, it is common for the DAO to open multiple cases based on a single arrest.  The DAO can also decline and ask the police to gather more evidence before charging an individual case.  If the person is later rearrested and charged, the prior declination will be lost.</p>
+<div class="dao-definition"><p>The DAO’s declination rate (the rate at which we decline to charge arrests) cannot be calculated from the data on this website.  This is because declination is more complicated than comparing arrests to cases charged.  For example, it is common for the DAO to open multiple cases based on a single arrest.  The DAO can also decline and ask the police to gather more evidence before charging an individual case.  If the person is later rearrested and charged, the prior declination will be lost.</p>
 </div>
 </div>
 </div>
@@ -387,20 +375,19 @@ In addition, the District Attorney’s Office (DAO) is presently working with cr
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Diversion Outcomes Only Reflect People Who Have Completed Diversion</div>
-<div class="dao-definition"><p>We made a decision to only include people who have completed their diversion program in our data, rather than people who started but never completed.  This means that the District Attorney&#39;s Office diverts an even larger number of cases each year, but individuals may not complete their assigned program.</p>
+<div class="dao-definition"><p>We made a decision to only include people who have completed their diversion program in our data, rather than people who started but never completed.  This means that the District Attorney’s Office diverts an even larger number of cases each year, but individuals may not complete their assigned program.</p>
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Incident Reporting is Preliminary and is not Authoritative</div>
-<div class="dao-definition"><p>The District Attorney&#39;s Office does not have data on crime incidents in the City other than what is available to the public through the City of Philadelphia&#39;s open data program. We use <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly&#39;s Parts I &amp; II Crime Incidents</a> dataset to study crime events, many of which do not lead to arrests. This leads to a number of limitations:</p>
-
+<div class="dao-definition"><p>The District Attorney’s Office does not have data on crime incidents in the City other than what is available to the public through the City of Philadelphia’s open data program. We use <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly’s Parts I &amp; II Crime Incidents</a> dataset to study crime events, many of which do not lead to arrests. This leads to a number of limitations:</p>
 <ul>
 <li>This database only records crimes classified as Part I or Part II crimes by the FBI, and does not include all violations. This means that not all crimes that happen within the City are shown in our Incident report.</li>
-<li>The incidents recorded in this dataset are given a generalized of the <a href="https://www.fbi.gov/file-repository/ucr/ucr-srs-user-manual-v1.pdf/view">FBI Uniform Crime Reporting (UCR)</a> code. We cannot determine the specific nature offenses from the data available. For example, all Thefts are recorded as &ldquo;Theft&rdquo; in the Incident Report, while we can separate &ldquo;Theft&rdquo; from &ldquo;Retail Theft&rdquo; in all other reports. Another example of this is that all drug violations are recorded as simply Drug Offenses, and we cannot separate them into possession and sales as we do in all other reports.</li>
+<li>The incidents recorded in this dataset are given a generalized of the <a href="https://www.fbi.gov/file-repository/ucr/ucr-srs-user-manual-v1.pdf/view">FBI Uniform Crime Reporting (UCR)</a> code. We cannot determine the specific nature offenses from the data available. For example, all Thefts are recorded as “Theft” in the Incident Report, while we can separate “Theft” from “Retail Theft” in all other reports. Another example of this is that all drug violations are recorded as simply Drug Offenses, and we cannot separate them into possession and sales as we do in all other reports.</li>
 <li>This dataset is intended to allow members of the public, community groups, researchers, and other departments to access up-to-date and actionable data on crime incidents in Philadelphia. It is not intended to be an authoritative crime reporting database. The statistics generated from this database may not reflect the official reporting by the Philadelphia Police Department (PPD).</li>
-<li>As a result of the point above, it is possible to derive three different numbers for Homicides from Police sources. We have summarized the <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly Incidents</a> and derived the total number of incidents that have been classified in that data as Homicides. This is often different than the number reported on the front page of the Police <a href="https://www.phillypolice.com/crime-maps-stats/">Crime Maps &amp; Stats page</a>. Another number for homicides can be found in the Police&#39;s weekly <a href="https://drive.google.com/drive/folders/0B23Pg6Sgxll1M0o4Xy1vb2xOZ1U">Crime Stats Reports</a>; this number is also often different than those found in the Incident Data and Crime Maps &amp; Stats page.
+<li>As a result of the point above, it is possible to derive three different numbers for Homicides from Police sources. We have summarized the <a href="https://www.opendataphilly.org/dataset/crime-incidents">OpenDataPhilly Incidents</a> and derived the total number of incidents that have been classified in that data as Homicides. This is often different than the number reported on the front page of the Police <a href="https://www.phillypolice.com/crime-maps-stats/">Crime Maps &amp; Stats page</a>. Another number for homicides can be found in the Police’s weekly <a href="https://drive.google.com/drive/folders/0B23Pg6Sgxll1M0o4Xy1vb2xOZ1U">Crime Stats Reports</a>; this number is also often different than those found in the Incident Data and Crime Maps &amp; Stats page.
 <br><br>
 We have decided to include the Incident Report to help those who view the dashboard get as complete a view of the criminal justice system as possible, starting from the incident to the future years of supervision or incarceration generated.</li>
 </ul>
@@ -417,24 +404,22 @@ We have decided to include the Incident Report to help those who view the dashbo
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">SOB and Cash Bail</div>
-<div class="dao-definition"><p>On a modest number of older cases, we know the amount of bail that was set, but we don&#39;t know whether that bail was set as Cash bail (requiring the person to pay in order to be released) or SOB (allowing the person to be released without paying any money).  In these situations we assume that the person is required to pay Cash bail.</p>
+<div class="dao-definition"><p>On a modest number of older cases, we know the amount of bail that was set, but we don’t know whether that bail was set as Cash bail (requiring the person to pay in order to be released) or SOB (allowing the person to be released without paying any money).  In these situations we assume that the person is required to pay Cash bail.</p>
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Geographic Information is Limited</div>
-<div class="dao-definition"><p>Due to the quality of the data available, our ability to locate incidents and associated arrest and case information throughout the City is currently limited to what we can connect from public data sources. This affects what data we can deliver for download. Data by Police District is the most complete, but data independent from Police Districts, such as Census Tracts, may be incomplete because we&#39;re missing precise location information that allows us to map an incident to a geography. We estimate that approximately 8% of all arrest and case information is classified as Unknown. Census Tract information is limited to weekly due to file size limitations.</p>
+<div class="dao-definition"><p>Due to the quality of the data available, our ability to locate incidents and associated arrest and case information throughout the City is currently limited to what we can connect from public data sources. This affects what data we can deliver for download. Data by Police District is the most complete, but data independent from Police Districts, such as Census Tracts, may be incomplete because we’re missing precise location information that allows us to map an incident to a geography. We estimate that approximately 8% of all arrest and case information is classified as Unknown. Census Tract information is limited to weekly due to file size limitations.</p>
 </div>
 </div>
 </div>
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">Downloadable ZIP Code data is by ZIP Code Tabulation Area (ZCTA)</div>
-<div class="dao-definition"><p>The data by ZIP code available for download is actually by ZIP Code Tabulation Area, a geography defined by the United States Census Bureau using the majority ZIP Code for addresses in Census blocks. In densely populated cities like Philadelphia, ZCTAs and postal ZIP codes are functionally identical. For more information, visit the <a href="https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html">U.S. Census Bureau&#39;s page on ZIP Code Tabulation Areas</a>.</p>
-
+<div class="dao-definition"><p>The data by ZIP code available for download is actually by ZIP Code Tabulation Area, a geography defined by the United States Census Bureau using the majority ZIP Code for addresses in Census blocks. In densely populated cities like Philadelphia, ZCTAs and postal ZIP codes are functionally identical. For more information, visit the <a href="https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html">U.S. Census Bureau’s page on ZIP Code Tabulation Areas</a>.</p>
 <p>We use ZCTAs in the downloadable sets for two reasons:</p>
-
 <ul>
 <li>ZCTAs allow for easy and clean connection to U.S. Census data.</li>
 <li>The location data of the incident tends to be more reliable than the ZIP Code in the Court information. Currently, Court data contains a large number of missing, incomplete, wrong, or otherwise bad ZIP Codes. This is likely due to the data being human-entered in the field, where one might not know what ZIP code they are currently in.</li>

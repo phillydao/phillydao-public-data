@@ -13,14 +13,14 @@
 
 <title>Philadelphia DAO Data Dashboard</title>
 
-<script src="assets/header-attrs-2.14/header-attrs.js"></script>
+<script src="assets/header-attrs-2.24/header-attrs.js"></script>
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link href="assets/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
-<script src="assets/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
-<script src="assets/bs3compat-0.3.1/transition.js"></script>
-<script src="assets/bs3compat-0.3.1/tabs.js"></script>
-<script src="assets/bs3compat-0.3.1/bs3compat.js"></script>
+<link href="assets/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-5.2.2/bootstrap.bundle.min.js"></script>
+<script src="assets/bs3compat-0.5.1/transition.js"></script>
+<script src="assets/bs3compat-0.5.1/tabs.js"></script>
+<script src="assets/bs3compat-0.5.1/bs3compat.js"></script>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -103,8 +103,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -112,16 +112,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -400,12 +393,12 @@ Arrest Rate for
 <h4 class="dao_key_numbers_emphasis">
 Homicide: Shootings
 </h4>
-(Jun '22-'23)
+(Jul '22-'23)
 </h4>
 </div>
 <div class="col-print-4 col-xs-12 col-sm-4" onclick="location.href=&#39;definitions.html#trialreadyconvictionrate&#39;;" style="cursor:pointer;">
 <p class="dao_key_number_value dao_metric">
-86%
+87%
 </p>
 <h4 class="dao_key_number_text">
 Trial-Ready Conviction Rate:
@@ -424,7 +417,7 @@ Arrest Rate for
 <h4 class="dao_key_numbers_emphasis">
 Non-Fatal Shootings
 </h4>
-(Jun '22-'23)
+(Jul '22-'23)
 </h4>
 </div>
 <div class="col-print-4 col-xs-12 col-sm-4" onclick="location.href=&#39;definitions.html#trialreadyconvictionrate&#39;;" style="cursor:pointer;">

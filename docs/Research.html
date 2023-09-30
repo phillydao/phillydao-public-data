@@ -13,14 +13,14 @@
 
 <title>Research at the DAO - PhilaDAO Data Dashboard</title>
 
-<script src="assets/header-attrs-2.14/header-attrs.js"></script>
+<script src="assets/header-attrs-2.24/header-attrs.js"></script>
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link href="assets/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
-<script src="assets/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
-<script src="assets/bs3compat-0.3.1/transition.js"></script>
-<script src="assets/bs3compat-0.3.1/tabs.js"></script>
-<script src="assets/bs3compat-0.3.1/bs3compat.js"></script>
+<link href="assets/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet" />
+<script src="assets/bootstrap-5.2.2/bootstrap.bundle.min.js"></script>
+<script src="assets/bs3compat-0.5.1/transition.js"></script>
+<script src="assets/bs3compat-0.5.1/tabs.js"></script>
+<script src="assets/bs3compat-0.5.1/bs3compat.js"></script>
 <script src="assets/navigation-1.1/tabsets.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141263577-1"></script>
@@ -103,8 +103,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -112,16 +112,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -352,9 +345,7 @@ Press Release
 </div>
 <div class="accordion-description">
 <p><p>Research partners from Penn’s Department of Criminology will focus on the quantitative impacts of reforms on a broad scope of prosecutor touchpoints, while research partners from Temple University’s Department of Criminal Justice will utilize mixed methods to study the implementation fidelity of new policies and practices.</p>
-
 <p>This unique partnership will:</p>
-
 <ul>
   <li>Improve existing data systems and bolster the DAO’s data analytics and programming capacity</li>
   <li>Establish a local and national hub for research on prosecutorial decision-making, data-informed policy, and analytical innovations</li>
@@ -470,7 +461,6 @@ DAO, and court data spanning 2015 to 2022</p>
 </div>
 <div class="accordion-description">
 <p><p>Addressing racial injustice is among the most important goals of criminal justice reform. In Philadelphia and throughout the U.S., the negative impact of the legal system has fallen most heavily on Black communities. This report begins with a historical review, followed by a presentation of the data, and concludes with a discussion of future policy directions. The analysis, conducted by the District Attorney’s Transparency Analytics (DATA) Lab, encompasses over 290,000 cases charged from 2015-2022 and focuses on five main stages of a criminal case: 1) stop and arrest, 2) charging, 3) bail and pre-trial detention, 4) case outcomes, and 5) sentencing and incarceration.</p>
-
 <p>The data confirmed that while overall the system is shrinking, and far fewer Black and Latinx Philadelphians are arrested and incarcerated now than in 2015, significant disparities remain. During the study’s 8-year timeframe, Black Philadelphians were overrepresented at nearly every stage of the system compared to white and AAPI Philadelphians. Black Philadelphians were stopped and arrested at disproportionately higher rates than other groups, charged with more serious offenses, less frequently released pre-trial, and finally, when convicted, were more likely to be sentenced to incarceration. For charges alleging possession of drugs with intent to distribute, Latinx individuals were charged at a rate that was 12 times higher than white individuals. Other disparate trends were observed at nearly every stage of analysis. The historical research and data findings strongly suggest that disparities in the criminal legal system are driven by structural inequalities in society, such as concentrated poverty and widespread community disinvestment. The report concludes with a discussion of future policy directions to be taken by this office and other justice stakeholders.</p>
 </p>
 <p class="accordion-inner-btn toggle_btn">
@@ -513,7 +503,7 @@ View DAO Excerpts
 <p></p>
 </div>
 <div class="accordion-description">
-<p><p>Firearm violence in Philadelphia is a public health and racial justice crisis. In this report agencies provide analyses and recommendations on how to address the increase in homicides, shootings, and access to firearms in Philadelphia. Collectively, we present 16 key findings and 27 recommendations. Key findings focus on what we know about shootings, including information on arrest and case processing. Recommendations identify opportunities to improve enforcement, intervention, and prevention. In addition, the DAO, led by the District Attorney&#39;s Transparency Analytics (DATA) Lab, offer in-depth analyses on 1) improving shooting clearance rates, 2) improving gun case outcomes, 3) deterrence of illegal firearm possession, and 4) improving victim and witness appearance rates. We then offer recommendations on those same themes, and on preventing gun violence in the community more holistically. This report offers a framework, findings, and recommendations, but does not constitute a comprehensive plan; we hope it can help inform a broad citywide strategy to address gun violence through law enforcement and much more.</p>
+<p><p>Firearm violence in Philadelphia is a public health and racial justice crisis. In this report agencies provide analyses and recommendations on how to address the increase in homicides, shootings, and access to firearms in Philadelphia. Collectively, we present 16 key findings and 27 recommendations. Key findings focus on what we know about shootings, including information on arrest and case processing. Recommendations identify opportunities to improve enforcement, intervention, and prevention. In addition, the DAO, led by the District Attorney’s Transparency Analytics (DATA) Lab, offer in-depth analyses on 1) improving shooting clearance rates, 2) improving gun case outcomes, 3) deterrence of illegal firearm possession, and 4) improving victim and witness appearance rates. We then offer recommendations on those same themes, and on preventing gun violence in the community more holistically. This report offers a framework, findings, and recommendations, but does not constitute a comprehensive plan; we hope it can help inform a broad citywide strategy to address gun violence through law enforcement and much more.</p>
 </p>
 <p class="accordion-inner-btn toggle_btn">
 <i class="fas fa-times-circle"></i>
@@ -551,7 +541,7 @@ Press Release
 <p></p>
 </div>
 <div class="accordion-description">
-<p><p><strong>Abstract:</strong> Probation and parole \u2013 commonly called community supervision \u2013 can be less restrictive alternatives to incarceration, but overly lengthy supervision terms are harmful to the defendant and to public safety. Community supervision rates in Pennsylvania and Philadelphia are particularly high: at the beginning of District Attorney Krasner&#39;s term, 1 in 23 adults in Philadelphia was on community supervision. This evaluation documents two policies to end mass supervision that were implemented in the Philadelphia District Attorney&#39;s Office. Under the policies, median supervision lengths decreased by 12 months (a 25% reduction) for felony negotiated guilty pleas and 3 months (a 33% reduction) for misdemeanor negotiated pleas. Prior to the policy changes, white defendants received supervision sentences that were almost 11 months shorter than Black defendants&#39;, on average. The policy reduced the disparity to 5.2 months, a more-than-50% reduction. The policies were implemented without an increase in recidivism: there was no measurable change in re-charge rates between people sentenced under the policies and those sentenced beforehand. The DAO has made progress, but collaboration by all system actors and lawmakers across the Commonwealth is necessary to end mass supervision in Pennsylvania.</p>
+<p><p><strong>Abstract:</strong> Probation and parole \u2013 commonly called community supervision \u2013 can be less restrictive alternatives to incarceration, but overly lengthy supervision terms are harmful to the defendant and to public safety. Community supervision rates in Pennsylvania and Philadelphia are particularly high: at the beginning of District Attorney Krasner’s term, 1 in 23 adults in Philadelphia was on community supervision. This evaluation documents two policies to end mass supervision that were implemented in the Philadelphia District Attorney’s Office. Under the policies, median supervision lengths decreased by 12 months (a 25% reduction) for felony negotiated guilty pleas and 3 months (a 33% reduction) for misdemeanor negotiated pleas. Prior to the policy changes, white defendants received supervision sentences that were almost 11 months shorter than Black defendants’, on average. The policy reduced the disparity to 5.2 months, a more-than-50% reduction. The policies were implemented without an increase in recidivism: there was no measurable change in re-charge rates between people sentenced under the policies and those sentenced beforehand. The DAO has made progress, but collaboration by all system actors and lawmakers across the Commonwealth is necessary to end mass supervision in Pennsylvania.</p>
 </p>
 <p class="accordion-inner-btn toggle_btn">
 <i class="fas fa-times-circle"></i>
@@ -589,7 +579,7 @@ Press Release
 <p></p>
 </div>
 <div class="accordion-description">
-<p><p><strong>Abstract:</strong> The use of cash bail and pretrial detention disproportionately impacts people living in poverty and people of color, influencing the trajectory of legal cases, and is a driver of mass incarceration. Fifty days into DA Krasner&#39;s administration, the Philadelphia DAO implemented a new policy targeting 25 charges where an analysis of historical data showed the courts had been setting bail very low— requiring payment of less than $1,000. For these specific charges, a presumption was created to not request cash bail. As a result, the release on recognizance rate for eligible charges increased from 83% pre-policy to 90% post-policy for misdemeanors, and from 24% pre-policy to 32% post-policy for felonies. We observed a continued upward trend in the likelihood that someone would fail to appear in court at least once, but no increase in pre-trial re-arrest rates for either misdemeanors or felonies targeted by the bail policy. Overall the policy and evaluation demonstrate that more people can safely be released during the pretrial period, offering broad social benefits to individuals and communities while reducing unnecessary burdens on the criminal legal system.</p>
+<p><p><strong>Abstract:</strong> The use of cash bail and pretrial detention disproportionately impacts people living in poverty and people of color, influencing the trajectory of legal cases, and is a driver of mass incarceration. Fifty days into DA Krasner’s administration, the Philadelphia DAO implemented a new policy targeting 25 charges where an analysis of historical data showed the courts had been setting bail very low— requiring payment of less than $1,000. For these specific charges, a presumption was created to not request cash bail. As a result, the release on recognizance rate for eligible charges increased from 83% pre-policy to 90% post-policy for misdemeanors, and from 24% pre-policy to 32% post-policy for felonies. We observed a continued upward trend in the likelihood that someone would fail to appear in court at least once, but no increase in pre-trial re-arrest rates for either misdemeanors or felonies targeted by the bail policy. Overall the policy and evaluation demonstrate that more people can safely be released during the pretrial period, offering broad social benefits to individuals and communities while reducing unnecessary burdens on the criminal legal system.</p>
 </p>
 <p class="accordion-inner-btn toggle_btn">
 <i class="fas fa-times-circle"></i>
@@ -627,7 +617,7 @@ Press Release
 <p></p>
 </div>
 <div class="accordion-description">
-<p><p><strong>Abstract:</strong> Our sworn oath as prosecutors is to seek justice unconditionally, with no limit as to time. When we discover past injustices, we must not only right those wrongs, but implement policies to ensure that they do not occur again in the future. This report describes how an independent Conviction Integrity Unit, with a broad mandate, has worked to change the culture and practices of the District Attorney&#39;s Office. Our oath requires that we never stop trying to fix injustices, even if they turn out to be the product of our administration&#39; s missteps. During court proceedings involving defendants the CIU has determined to be innocent of the crimes for which they were wrongly convicted, the District Attorney&#39;s Office as an institution has apologized to the exonerees. We should. Lost years and decades of a life cannot be returned. But we remain enormously proud of what we have done to date.</p>
+<p><p><strong>Abstract:</strong> Our sworn oath as prosecutors is to seek justice unconditionally, with no limit as to time. When we discover past injustices, we must not only right those wrongs, but implement policies to ensure that they do not occur again in the future. This report describes how an independent Conviction Integrity Unit, with a broad mandate, has worked to change the culture and practices of the District Attorney’s Office. Our oath requires that we never stop trying to fix injustices, even if they turn out to be the product of our administration’ s missteps. During court proceedings involving defendants the CIU has determined to be innocent of the crimes for which they were wrongly convicted, the District Attorney’s Office as an institution has apologized to the exonerees. We should. Lost years and decades of a life cannot be returned. But we remain enormously proud of what we have done to date.</p>
 </p>
 <p class="accordion-inner-btn toggle_btn">
 <i class="fas fa-times-circle"></i>
@@ -672,7 +662,6 @@ Report 2
 </a>
 </p>
 <em><p>Two qualitative explorations of how criminal legal system actors in Philadelphia, Atlanta, Chicago, and New York City handle cases involving individuals with serious mental illnesses.</p>
-
 <ul>
 <li>Report 1: <a href="https://rdcu.be/c9aQM">Contexts Shaping misdemeanor system interventions among people with mental illnesses: Findings from a multi-site system mapping exercise</a></li>
 <li>Report 2: <a href="https://link.springer.com/article/10.1007/s10488-023-01252-3">Competing Concerns in Efforts to Reduce Criminal Legal Contact Among People with Serious Mental Illnesses: Findings from a Multi-City Study on Misdemeanor Arrests</a></li>
@@ -683,14 +672,17 @@ Report 2
 <div class="accordion-description">
 <p><p>The research team worked with stakeholders from Philadelphia, Atlanta, Chicago, and Manhattan to conduct two studies about criminal legal system involvement among people with serious mental illnesses. Pope et al. draws from focus groups and group interviews, while Wood et al. gains insights from system mapping exercises in each city. Both publications reveal that despite a common end goal of keeping people out of the system, legal actors diverge from this goal and from one another in practice when handling the cases, or the potential cases of individuals with mental illness. Across cities, actors are met with barriers such as pressure from other stakeholders (i.e., complainants) and inefficient treatment programs for defendants. Authors recommend that stakeholders from all stages in the legal system come together, share their difficulties, and strategize to meet their shared goal.
 Authors’ additional studies on the involvement of those with serious mental illness in the criminal legal system:</p>
-
 <ul>
-<li><p>Misdemeanor charges among individuals with serious mental illnesses: A
+<li>
+<p>Misdemeanor charges among individuals with serious mental illnesses: A
 statewide analysis of more than two million arrests. Psychiatric Services.
-Online ahead of print.  <a href="https://doi.org/10.1176/appi.ps.202000936">https://doi.org/10.1176/appi.ps.202000936</a></p></li>
-<li><p>Characterizing arrests and charges among individuals with serious mental
+Online ahead of print.  <a href="https://doi.org/10.1176/appi.ps.202000936">https://doi.org/10.1176/appi.ps.202000936</a></p>
+</li>
+<li>
+<p>Characterizing arrests and charges among individuals with serious mental
 illnesses in public sector treatment settings. Psychiatric Services. Online
-ahead of print.  <a href="https://doi.org/10.1176/appi.ps.202000581">https://doi.org/10.1176/appi.ps.202000581</a></p></li>
+ahead of print.  <a href="https://doi.org/10.1176/appi.ps.202000581">https://doi.org/10.1176/appi.ps.202000581</a></p>
+</li>
 </ul>
 </p>
 <div class="logo-row">
@@ -889,12 +881,12 @@ Highlights Report Slideshow
 Process Report
 </a>
 </p>
-<em><p>Highlights and process evaluation of the new Crisis Assistance, Response &amp; Engagement for Survivors (CARES) program in the Philadelphia District Attorney&#39;s Office.</p>
+<em><p>Highlights and process evaluation of the new Crisis Assistance, Response &amp; Engagement for Survivors (CARES) program in the Philadelphia District Attorney’s Office.</p>
 </em>
 <p></p>
 </div>
 <div class="accordion-description">
-<p><p><strong>Abstract:</strong> Crisis Assistance, Response &amp; Engagement for Survivors (CARES) provides crisis response and service connections for those who have lost loved ones to homicide. CARES, which began providing services in 2019, is housed in the Philadelphia District Attorney&#39;s Office (DAO) and funded by the Pennsylvania Commission on Crime and Delinquency (PCCD). What makes CARES uniquely effective is that all of their staff have lived experience – they know what it&#39;s like to lose someone to homicide. The first document — available in PDF and as a slideshow — provides highlights of CARES, while the second document offers a more detailed process evaluation that will help improve the program and can serve as a roadmap for other jurisdictions to adopt the CARES model. This PCCD-funded process evaluation was conducted between 2019 and 2021 by researchers in the Temple University Department of Criminal Justice with assistance from faculty at Drexel University. A journal article co-written by CARES staff and Temple researchers is currently under production and will be posted when available.</p>
+<p><p><strong>Abstract:</strong> Crisis Assistance, Response &amp; Engagement for Survivors (CARES) provides crisis response and service connections for those who have lost loved ones to homicide. CARES, which began providing services in 2019, is housed in the Philadelphia District Attorney’s Office (DAO) and funded by the Pennsylvania Commission on Crime and Delinquency (PCCD). What makes CARES uniquely effective is that all of their staff have lived experience – they know what it’s like to lose someone to homicide. The first document — available in PDF and as a slideshow — provides highlights of CARES, while the second document offers a more detailed process evaluation that will help improve the program and can serve as a roadmap for other jurisdictions to adopt the CARES model. This PCCD-funded process evaluation was conducted between 2019 and 2021 by researchers in the Temple University Department of Criminal Justice with assistance from faculty at Drexel University. A journal article co-written by CARES staff and Temple researchers is currently under production and will be posted when available.</p>
 </p>
 <div class="logo-row">
 <a href="https://www.cla.temple.edu/criminal-justice/">
@@ -1044,9 +1036,7 @@ Peer-Reviewed Paper
 </div>
 <div class="accordion-description">
 <p><p><strong>Abstract:</strong> Many studies document high risk of fatal overdose after incarceration. Few explore earlier touchpoints in criminal justice processes, like arrests and court hearings. Understanding these touchpoints is important for several reasons. Arrest and adjudicatory processes are harmful even when not resulting in incarceration. Arrests and criminal hearings also may reflect changes in overdose-related risk factors like transitions in employment and housing stability. Moreover, knowledge about these touchpoints contextualizes debate about the implementation of court-based programs like Drug Treatment Courts. This study described the incidence and accumulation of touchpoints for people who fatally overdosed in Philadelphia in 2016, and depicted how touchpoint incidence and characteristics interface with court-program eligibility.</p>
-
 <p>In 2016, 907 people fatally overdosed in Philadelphia. Of these, 605 had at least one or more of 3,926 arrests and 3,822 hearings over their lifetime. There were 488 arrests and 533 hearings in the two years before death, with public disorder charges especially common closer to death. Less than 20% of these hearings resulted in custodial sentences. Of individuals with touchpoints, only nine participated in Drug Treatment Court, consistent with findings that most individuals were ineligible. Latent class analysis suggested five distinguishable patterns in age, timing, and characteristics of touchpoints.</p>
-
 <p>The type and frequency of touchpoints preceding fatal overdose reflect a period of complex vulnerability. Few individuals qualified for court-based programming, underscoring the limitations of supporting this population in specialized court settings. Reducing incidence and improving the health impact of criminal justice touchpoints remain important public health priorities.</p>
 </p>
 <div class="logo-row">
