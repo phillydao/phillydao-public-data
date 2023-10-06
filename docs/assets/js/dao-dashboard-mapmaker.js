@@ -14,8 +14,8 @@ function generateReportMap(divnamestring, jsondata, category, type, metric_type 
 	}).fitBounds([[39.867021, -75.280308], [40.137943, -74.955750]]);
 	map.setMinZoom(map.getBoundsZoom(map.options.maxBounds));
 
-  var basemap = new L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  var basemap = new L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd',
     minZoom: 0,
     maxZoom: 20,
