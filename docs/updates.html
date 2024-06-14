@@ -272,6 +272,27 @@ pre code {
 <div>
 <div class="row dao_definition_block">
 <div class="col-md-20 offset-md-2">
+<div class="dao-definition-title-word">June 14, 2024</div>
+<div class="dao-definition"><p> We learned from a member of the public about an issue with the arrests and offense category classification on the dashboard. After investigating, we are reporting on the fix for this issue and how implementing the fix affects the data. </p>
+<p> Arrest offense category classification is derived from charge codes used by the police. We use additional information about the arrest to differentiate between “Aggravated Assault" and "Homicide: Other” in our categorizations. </p>
+<p> What was likely a change in an external arrests database broke this distinction, moving what was previously in the “Homicide: Other” category into the “Aggravated Assault” category. The fix properly reclassifies these records. Please see before/after numbers below as an example of the effect of this fix. This issue was identified 6/10 and resolved 6/14. </p>
+<p> Pre/post fix example, arrests, violent, year-end report: </p>
+<div>
+  <b>
+  Before this fix
+  </b>
+</div> <div> <img src='/assets/images/updates/dashboard_arrests_non_summary_violent_2024-06-14_pre_fix.png' /> </div> <div>
+  <b>
+  After this fix
+  </b>
+</div> <div> <img src='/assets/images/updates/dashboard_arrests_non_summary_violent_2024-06-14_post_fix.png' /> </div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="row dao_definition_block">
+<div class="col-md-20 offset-md-2">
 <div class="dao-definition-title-word">December 08, 2023</div>
 <div class="dao-definition"><p>The <a href="https://data.philadao.com/howto.html">how to use this site</a> page has been updated to show instructions for the <a href="https://data.philadao.com/">home page</a>, report pages, and the <a href="https://data.philadao.com/download.html">new downloads page</a>. Menu items on the homepage were updated and lightly reorganized. Carousel was updated to include the <a href="https://data.philadao.com/2023_racial_injustice_report.html">2023 Racial Injustice Report</a>.</p>
 </div>
