@@ -14,9 +14,9 @@ function generateReportMap(divnamestring, jsondata, category, type, metric_type 
 	}).fitBounds([[39.867021, -75.280308], [40.137943, -74.955750]]);
 	map.setMinZoom(map.getBoundsZoom(map.options.maxBounds));
 
-  var basemap = new L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
+  var basemap = new L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
+    //subdomains: 'abcd',
     minZoom: 0,
     maxZoom: 20,
     ext: 'png'
